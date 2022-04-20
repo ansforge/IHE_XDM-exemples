@@ -1,7 +1,7 @@
 # IHE_XDM-exemples
 
 #### Contenu du répertoire ####
-Le répertoire  contient des exemple d'archive IHE_XDM pour l'ensemble des volets CDA du [CI_SIS](https://esante.gouv.fr/interoperabilite/ci-sis/espace-publication) :
+Le répertoire  contient des exemple d'archive IHE_XDM pour l'ensemble des volets CDA du [CI-SIS](https://esante.gouv.fr/interoperabilite/ci-sis/espace-publication) :
 - ANEST-CR-ANEST_2021.01
 - ANEST-CR-CPA_2021.01
 - AVC-AUNV_2.2
