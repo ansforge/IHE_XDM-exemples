@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/cda_asip.xsl"?>
+<?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
@@ -34,7 +34,7 @@
   <!-- Déclaration de conformité IHE XDS-SD -->
   <templateId root="1.3.6.1.4.1.19376.1.2.20"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.9"/>
+  <id root="1.3.6.1.4.1.19376.1.2.20.1"/>
   <!-- Type de document -->
   <code code="11502-2" displayName="CR d'examens biologiques" codeSystem="2.16.840.1.113883.6.1"
     codeSystemName="LOINC"/>
@@ -48,7 +48,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="1.2.250.1.213.1.1.9"/>
+  <setId root="F5CAAF6A-8047-46F1-89B8-A500B3161CB7"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1"/>
   
@@ -62,7 +62,7 @@
       <!-- Adresse du patient -->
       <addr>
         <houseNumber>24</houseNumber>
-        <streetName>Av de Breteuil</streetName><!--
+        <streetName>Avenue de Breteuil</streetName><!--
         <postalCode>75007</postalCode>-->
         <city>PARIS</city><!--
         <country>FRANCE</country>-->
@@ -70,14 +70,16 @@
       <!-- Coordonnées télécom du patient -->
       <telecom value="tel:0686970800" use="H"/>
       <telecom value="tel:0186940900" use="MC"/><!--
-      <telecom value="mailto:ruth.decourcy@mail.fr"/>-->
+      <telecom value="mailto:276059205062865@patient.mssante.fr"/>-->
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
-          <given qualifier="BR">Marie</given>
-          <family qualifier="BR">DECOURCY</family><!--
-          <family qualifier="SP">DECOURCY</family>
-          <family qualifier="CL">DECOURCY</family>-->
+          <!-- Nom et prénom(s) de naissance -->
+          <family qualifier="BR">NESSI</family>            
+          <given>Ruth Isabelle</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">DECOURCY</family>
+          <given qualifier="CL">Ruth</given>   
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
         <birthTime value="19760531"/>
@@ -85,7 +87,7 @@
         <guardian>
           <addr use="H">
             <houseNumber>24</houseNumber>
-            <streetName>Av de Breteuil</streetName>
+            <streetName>Avenue de Breteuil</streetName>
             <postalCode>75007</postalCode>
             <city>PARIS</city>
             <country>FRANCE</country>
