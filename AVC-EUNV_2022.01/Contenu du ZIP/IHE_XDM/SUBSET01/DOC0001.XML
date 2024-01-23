@@ -11,7 +11,7 @@
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
   <!-- 
       **********************************************************************************************************
-      Document : Episode de soins en UNV (AVC-EUNV_2.2)
+      Document : Episode de soins en UNV (AVC-EUNV_2022.01)
       Auteur : ANS / PML
       **********************************************************************************************************
       format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
@@ -22,6 +22,7 @@
       13/07/2021 : unité "10*6/mm3" remplacé par 10*12/L comme demandé dans JDV Circuit de la biologie pour code="789-8" 
       13/07/2021 : unité "10*6/mm3" remplacé par 10*12/L comme demandé dans JDV Circuit de la biologie pour code="6690-2" 
       05/04/2022 : Migration des terminologies et JDV en SNOMED CT
+      25/08/2023 : Migration des terminologies et JDVs après validation
       **********************************************************************************************************
    -->
   <realmCode code="FR" />
@@ -53,8 +54,8 @@
   <!-- Patient -->
   <recordTarget>
     <patientRole>
-      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-      <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
       <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
       <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
       <!-- Adresse du patient -->
@@ -69,19 +70,19 @@
       <!-- Coordonnées télécom du patient -->
       <telecom value="tel:0144534551" use="H"/>
       <telecom value="tel:0647151010" use="MC"/>
-      <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">NESSI</family>            
-          <given>Ruth Isabelle</given>
+          <family qualifier="BR">PAT-TROIS</family>            
+          <given>DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>        
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-        <birthTime value="19770714"/>
+        <birthTime value="19790328"/>
         <!-- Représentant du patient -->
         <guardian>
           <addr use="H">
@@ -948,7 +949,7 @@
                   <td>
                     <content ID="neuro">Aggravation neurologique</content>
                   </td>
-                  <td>Récidive d'infarctus</td>
+                  <td>infarctus du myocarde récidivant</td>
                   <td>23/09/2018</td>
                   <td>texte libre</td>
                 </tr>
@@ -1151,7 +1152,7 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="0FFCEB4F-83E5-4356-A163-32BFD6A1D0C2" />
-                  <code code="I22.9" displayName="Récidive d'infarctus" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <code code="I22" displayName="infarctus du myocarde récidivant" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
                   <text>
                     <reference value="neuro">
                     </reference>
@@ -1313,7 +1314,7 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="D45BE306-33DD-4E37-B7F7-EB2260B47A32" />
-                  <code code="I26.9" displayName="Embolie pulmonaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <code code="I26" displayName="Embolie pulmonaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
                   <text>
                     <reference value="emboliePulmo">
                     </reference>
@@ -1566,7 +1567,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="877A5D31-F1CC-46B9-92B0-BF6396022050" />
-              <code code="GEN-092" displayName="Autre" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <code code="GEN-092.01.01" displayName="Autre problème" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
               <text>
                 <reference value="autres">
                 </reference>
@@ -2014,7 +2015,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="3095B53F-1735-47E9-A975-8C763BA3CD46" />
-                  <code code="2339-0" displayName="Glycémie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                  <code code="2345-7" displayName="Glucose [Masse/Volume] Sérum/Plasma ; Numérique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
                     <originalText><reference value="#glycemie"/></originalText>
                   </code>
                   <statusCode code="completed" />
@@ -2168,7 +2169,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="8FFDAECB-93AD-4FEF-A176-99A89D9431D7" />
-                  <code code="3173-2" displayName="Temps de céphaline activée" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <code code="14979-9" displayName="Temps de céphaline activée [Temps] Plasma pauvre en plaquettes ; Numérique ; Coagulation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                     <originalText><reference value="#cephalineactive"/></originalText>
                   </code>
                   <statusCode code="completed" />
@@ -2183,7 +2184,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="C82D7F5B-D8A9-4178-872F-50908EAB6C4F" />
-                  <code code="34714-6" displayName="Temps de quick INR" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <code code="6301-6" displayName="Temps de quick INR [Temps relatif] Plasma pauvre en plaquettes ; Numérique ; Coagulation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                     <originalText><reference value="#inr"/></originalText>
                   </code>
                   <statusCode code="completed" />
@@ -2338,8 +2339,8 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="789-8" codeSystem="2.16.840.1.113883.6.1" displayName="Erythtocytes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
-                        <originalText><reference value="#Erythtocytes"/></originalText>
+                      <code code="789-8" codeSystem="2.16.840.1.113883.6.1" displayName="Erythrocytes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
+                        <originalText><reference value="#Erythrocytes"/></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20131112113000+0100" />
@@ -2354,7 +2355,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="20509-6" codeSystem="2.16.840.1.113883.6.1" displayName="Hémoglobine [Masse/Volume] Sang ; Numérique ; Résultat calculé">
+                      <code code="718-7" codeSystem="2.16.840.1.113883.6.1" displayName="Hémoglobine [Masse/Volume] Sang ; Numérique">
                         <originalText><reference value="#hemoglobine"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2386,7 +2387,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="787-2" codeSystem="2.16.840.1.113883.6.1" displayName="Volume globulaire moyen [Volume d'entité] Erythrocytes ; Numérique ; Comptage automate">
+                      <code code="30428-7" codeSystem="2.16.840.1.113883.6.1" displayName="Volume globulaire moyen [Volume d'entité] Érythrocytes ; Numérique">
                         <originalText><reference value="#volumemoyen"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2402,7 +2403,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="786-4" codeSystem="2.16.840.1.113883.6.1" displayName="Indice de distribution érythrocytaire [Ratio] Erythrocytes ; Numérique ; Comptage automate">
+                      <code code="28540-3" codeSystem="2.16.840.1.113883.6.1" displayName="Concentration corpusculaire moyenne en hémoglobine [Masse/Volume] Érythrocytes ; Numérique">
                         <originalText><reference value="#ccmh"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2418,7 +2419,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="785-6" codeSystem="2.16.840.1.113883.6.1" displayName="Teneur corpusculaire moyenne en hémoglobine [Masse d'entité] Erythrocytes ; Numérique ; Comptage automate">
+                      <code code="28539-5" codeSystem="2.16.840.1.113883.6.1" displayName="Teneur corpusculaire moyenne en hémoglobine [Masse d'entité] Érythrocytes ; Numérique">
                         <originalText><reference value="#tcmh"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2466,7 +2467,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="770-8" codeSystem="2.16.840.1.113883.6.1" displayName="Polynuclaires neutrophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26511-6" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires neutrophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#pnneutrophiles"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2482,7 +2483,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="713-8" codeSystem="2.16.840.1.113883.6.1" displayName="Polynuclaires éosinophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26450-7" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires éosinophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#pneosinophiles"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2498,7 +2499,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="706-2" codeSystem="2.16.840.1.113883.6.1" displayName="Polynuclaires basophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="30180-4" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires basophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#pnbasophyles"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2514,7 +2515,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="736-9" codeSystem="2.16.840.1.113883.6.1" displayName="Lymphocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26478-8" codeSystem="2.16.840.1.113883.6.1" displayName="Lymphocytes totaux/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#lymphocytes"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -2530,7 +2531,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="5905-5" codeSystem="2.16.840.1.113883.6.1" displayName="Monocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26485-3" codeSystem="2.16.840.1.113883.6.1" displayName="Monocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#monocytes"/></originalText>
                       </code>
                       <statusCode code="completed" />

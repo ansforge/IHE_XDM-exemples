@@ -12,7 +12,7 @@
   xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
   <!-- 
       **********************************************************************************************************
-      Document : Admission en UNV (AVC-AUNV_2.2)
+      Document : Admission en UNV (AVC-AUNV_2022.01)
       Auteur : ANS / PML
       **********************************************************************************************************
       format HL7 - CDA Release 2 - selon schéma XML (CDA.xsd) du standard ANSI/HL7 CDA, R2-2005 4/21/2005
@@ -24,6 +24,7 @@
       21/07/2021 : unité "verre/j" remplacé par {drink}/d pour respecter MC-CDA
       22/09/2021 : unité "/j" remplacé par "/d" pour le score d'epworth
       05/04/2022 : Migration des terminologies et JDV en SNOMED CT
+      25/08/2023 : Migration des terminologies et JDVs après validation
       **********************************************************************************************************
    -->
   <realmCode code="FR" />
@@ -54,8 +55,8 @@
   <!-- Patient -->
   <recordTarget>
     <patientRole>
-      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-      <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
       <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
       <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
       <!-- Adresse du patient -->
@@ -70,19 +71,19 @@
       <!-- Coordonnées télécom du patient -->
       <telecom value="tel:0144534551" use="H"/>
       <telecom value="tel:0647151010" use="MC"/>
-      <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">NESSI</family>            
-          <given>Ruth Isabelle</given>
+          <family qualifier="BR">PAT-TROIS</family>            
+          <given>DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>        
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-        <birthTime value="19770714"/>
+        <birthTime value="19790328"/>
         <!-- Représentant du patient -->
         <guardian>
           <addr use="H">
@@ -318,7 +319,7 @@
             <table border="0">
               <thead align="center">
                 <tr>
-                  <th colspan="5">Mode de transport</th>
+                  <th colspan="2">Mode de transport</th>
                 </tr>
               </thead>
               <tbody align="left">
@@ -575,7 +576,7 @@
               <effectiveTime>
                 <low value="201809232030" />
               </effectiveTime>
-              <!-- Valeur issue du JDV_SymptomesAVC-CISIS -->
+              <!-- Valeur issue du JDV_SymptomesAVC_CISIS -->
               <value xsi:type="CD" code="F-A2200" codeSystem="1.2.250.1.213.2.12" displayName="Troubles sensitifs" codeSystemName="SNOMED 3.5">
                 <originalText>
                   <reference value="#troubSens" />
@@ -608,12 +609,12 @@
                   <reference value="#ataxie" />
                 </originalText>
               </value>
-              <targetSiteCode code="182245002" displayName="membre supérieur entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+              <targetSiteCode code="53120007" displayName="membre supérieur" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <qualifier>
                   <value code="24028007" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </qualifier>
               </targetSiteCode>
-              <targetSiteCode code="182281004" displayName="membre inférieur entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+              <targetSiteCode code="61685007" displayName="membre inférieur" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <qualifier>
                   <value code="24028007" displayName="gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </qualifier>
@@ -640,13 +641,12 @@
               <effectiveTime>
                 <low value="201809232030" />
               </effectiveTime>
-              <!-- [ANS] Code à trouver en SNOMED CT -->
               <value xsi:type="CD" code="H53.9" displayName="Trouble de la vision, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                 <originalText>
                   <reference value="#troublesVis" />
                 </originalText>
               </value>
-              <targetSiteCode code="77674003" displayName="hémianopsie" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+              <targetSiteCode code="DA-74640" displayName="Troubles visuels - Hémianopsie" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
                 <qualifier>
                   <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                 </qualifier>
@@ -963,7 +963,7 @@
                       </text>
                       <statusCode code="completed" />
                       <effectiveTime value="2018" />
-                      <value xsi:type="CD" code="active" displayName="Actif" codeSystem="2.16.840.1.113883.4.642.1.1074" codeSystemName="HL7:condition-clinical" />
+                      <value xsi:type="CD" code="55561003" displayName="actif" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -1003,7 +1003,7 @@
                       </text>
                       <statusCode code="completed" />
                       <effectiveTime value="2018" />
-                      <value xsi:type="CD" code="active" displayName="Actif" codeSystem="2.16.840.1.113883.4.642.1.1074" codeSystemName="HL7:condition-clinical" />
+                      <value xsi:type="CD" code="55561003" displayName="actif" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -1318,7 +1318,7 @@
                   <effectiveTime>
                     <low value="201809232030" />
                   </effectiveTime>
-                  <!-- Valeur issue du JDV_AntecedantsMedicaux-CISIS -->
+                  <!-- Valeur issue du JDV_AntecedantsMedicaux_CISIS -->
                   <value xsi:type="CD" code="D3-89500" displayName="AIT" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
                     <originalText>
                       <reference value="ait" />
@@ -1502,7 +1502,7 @@
                   <effectiveTime>
                     <low value="2006" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="MED-532" displayName="Angor Stable" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
+                  <value xsi:type="CD" code="I20.9" displayName="Angine de poitrine, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText>
                       <reference value="angor" />
                     </originalText>
@@ -1545,7 +1545,7 @@
                       </text>
                       <statusCode code="completed" />
                       <effectiveTime value="2007" />
-                      <value xsi:type="CD" code="G-A468" displayName="Paroxystique" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
+                      <value xsi:type="CD" code="26593000" displayName="paroxystique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -1716,7 +1716,7 @@
               <effectiveTime>
                 <low value="20080811" />
               </effectiveTime>
-              <targetSiteCode code="181323003" displayName="artère vertébrale entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <targetSiteCode code="85234005" displayName="artère vertébrale" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </procedure>
           </entry>
           <!-- Entrée FR-Acte : Angioplastie -->
@@ -1738,7 +1738,7 @@
               <effectiveTime>
                 <low value="20080811" />
               </effectiveTime>
-              <targetSiteCode code="244204009" displayName="artère intracrânienne entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <targetSiteCode code="127955005" displayName="artère intracrânienne" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </procedure>
           </entry>
           <!-- Entrée FR-Acte : Angioplastie -->
@@ -1760,7 +1760,7 @@
               <effectiveTime>
                 <low value="20080811" />
               </effectiveTime>
-              <targetSiteCode code="181294004" displayName="artère coronaire entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <targetSiteCode code="41801008" displayName="artère coronaire" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </procedure>
           </entry>
           <!-- Entrée FR-Acte : 0..* Stent -->
@@ -1782,7 +1782,7 @@
               <effectiveTime>
                 <low value="20080811" />
               </effectiveTime>
-              <targetSiteCode code="244330006" displayName="artère iliaque entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <targetSiteCode code="10293006" displayName="artère iliaque" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </procedure>
           </entry>
         </section>
@@ -1864,6 +1864,7 @@
                       </originalText>
                       <translation code="H02AB06" displayName="prednisolone" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC Code" />
                     </code>
+                    <name>SOLUPRED 20 mg, comprimé effervescent</name>
                   </manufacturedMaterial>
                 </manufacturedProduct>
               </consumable>
@@ -1918,6 +1919,7 @@
                       </originalText>
                       <translation code="B01A" displayName="Antithrombotiques" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC Code" />
                     </code>
+                    <name>PLAVIX 75 mg, comprimé pelliculé</name>
                   </manufacturedMaterial>
                 </manufacturedProduct>
               </consumable>
@@ -1989,6 +1991,7 @@
                         <reference value="#zz0004" />
                       </originalText>
                     </code>
+                    <name>SOLUPRED 20 mg, comprimé effervescent</name>
                   </manufacturedMaterial>
                 </manufacturedProduct>
               </consumable>
@@ -2266,7 +2269,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.50" />
                       <id root="3C8DD36F-71F7-4F3F-8336-0F85A4D595E3" />
-                      <code code="59408-5" displayName="Saturation en oxygène" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                      <code code="20564-1" displayName="Saturation en O2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                       <text>
                         <reference value="satO2" />
                       </text>
@@ -3197,7 +3200,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.80" />
-                  <code code="2339-0" displayName="Glycémie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <code code="2345-7" displayName="Glucose [Masse/Volume] Sérum/Plasma ; Numérique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                     <originalText><reference value="#glycemie"/></originalText>
                   </code>
                   <statusCode code="completed" />
@@ -3356,7 +3359,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="789-8" codeSystem="2.16.840.1.113883.6.1" displayName="Erythtocytes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
+                      <code code="789-8" codeSystem="2.16.840.1.113883.6.1" displayName="Erythrocytes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
                         <originalText><reference value="#erythrocytes"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3372,7 +3375,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="20509-6" codeSystem="2.16.840.1.113883.6.1" displayName="Hémoglobine [Masse/Volume] Sang ; Numérique ; Résultat calculé">
+                      <code code="718-7" codeSystem="2.16.840.1.113883.6.1" displayName="Hémoglobine [Masse/Volume] Sang ; Numérique">
                         <originalText><reference value="#hemoglobine"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3404,7 +3407,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="787-2" codeSystem="2.16.840.1.113883.6.1" displayName="Volume globulaire moyen [Volume d'entité] Erythrocytes ; Numérique ; Comptage automate">
+                      <code code="30428-7" codeSystem="2.16.840.1.113883.6.1" displayName="Volume globulaire moyen [Volume d'entité] Érythrocytes ; Numérique">
                         <originalText><reference value="#vgm"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3420,7 +3423,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="786-4" codeSystem="2.16.840.1.113883.6.1" displayName="Concentration corpusculaire moyenne en hémoglobine [Masse/Volume] Érythrocytes ; Numérique ; Comptage automate">
+                      <code code="28540-3" codeSystem="2.16.840.1.113883.6.1" displayName="Concentration corpusculaire moyenne en hémoglobine [Masse/Volume] Érythrocytes ; Numérique">
                         <originalText><reference value="#ccmh"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3436,7 +3439,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="785-6" codeSystem="2.16.840.1.113883.6.1" displayName="Teneur corpusculaire moyenne en hémoglobine [Masse d'entité] Erythrocytes ; Numérique ; Comptage automate">
+                      <code code="28539-5" codeSystem="2.16.840.1.113883.6.1" displayName="Teneur corpusculaire moyenne en hémoglobine [Masse d'entité] Érythrocytes ; Numérique">
                         <originalText><reference value="#tcmh"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3484,7 +3487,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="770-8" codeSystem="2.16.840.1.113883.6.1" displayName="Polynuclaires neutrophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26511-6" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires neutrophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#pnneutrophiles"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3500,7 +3503,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="713-8" codeSystem="2.16.840.1.113883.6.1" displayName="Polynuclaires éosinophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26450-7" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires éosinophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#pnoesinophiles"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3516,7 +3519,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="706-2" codeSystem="2.16.840.1.113883.6.1" displayName="Polynuclaires basophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="30180-4" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires basophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#pnbasophiles"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3532,7 +3535,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="736-9" codeSystem="2.16.840.1.113883.6.1" displayName="Lymphocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26478-8" codeSystem="2.16.840.1.113883.6.1" displayName="Lymphocytes totaux/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#lymphocytes"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3548,7 +3551,7 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.80" />
-                      <code code="5905-5" codeSystem="2.16.840.1.113883.6.1" displayName="Monocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique ; Comptage automate">
+                      <code code="26485-3" codeSystem="2.16.840.1.113883.6.1" displayName="Monocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique">
                         <originalText><reference value="#monocytes"/></originalText>
                       </code>
                       <statusCode code="completed" />
@@ -3616,7 +3619,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.80" />
-                  <code code="3173-2" displayName="Temps de céphaline activée" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <code code="14979-9" displayName="Temps de céphaline activée [Temps] Plasma pauvre en plaquettes ; Numérique ; Coagulation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                     <originalText><reference value="#tca"/></originalText>
                   </code>
                   <statusCode code="completed" />
@@ -3631,7 +3634,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.3.1.6" />
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.80" />
-                  <code code="34714-6" displayName="Temps de quick INR" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <code code="6301-6" displayName="Temps de quick INR [Temps relatif] Plasma pauvre en plaquettes ; Numérique ; Coagulation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                     <originalText><reference value="#inr"/></originalText>
                   </code>
                   <statusCode code="completed" />
@@ -3943,7 +3946,7 @@
               </text>
               <statusCode code="completed" />
               <effectiveTime value="20110622" />
-              <value xsi:type="CD" code="F-38002" displayName="ECG Anormal" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
+              <value xsi:type="CD" code="102594003" displayName="électrocardiogramme anormal" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                 <originalText>
                   <reference value="#diag-01" />
                 </originalText>
@@ -4031,7 +4034,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="181314001" displayName="artère communicante postérieure entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <targetSiteCode code="43119007" displayName="artère communicante postérieure" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                   </targetSiteCode>
                 </observation>
               </entryRelationship>
@@ -4052,7 +4055,7 @@
                   <value xsi:type="CD" code="50974003" displayName="jonctionnel" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entryRelationship>
-              <!-- Entrée FR-Simple-Observation : Tronc cérébral = Oui + Gauche + localisation Bulbe -->
+              <!-- Entrée FR-Simple-Observation : Tronc cérébral = Oui + Gauche + localisation moelle allongée -->
               <entryRelationship typeCode="SPRT" inversionInd="false">
                 <observation classCode="OBS" moodCode="EVN" negationInd="false">
                   <!-- Conformité IHE PCC -->
@@ -4071,7 +4074,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="279104005" displayName="bulbe entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <targetSiteCode code="26519002" displayName="moelle allongée" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Simple-Observation : Tronc cérébral = Oui + Gauche + localisation Pont -->
@@ -4094,7 +4097,7 @@
                     </qualifier>
                   </value>
                   <!-- [ANS] code à trouver dans la SNOMED CT -->
-                  <targetSiteCode code="T-A5400" displayName="Pont" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
+                  <targetSiteCode code="49557009" displayName="pont" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                 </observation>
               </entryRelationship>
               <!-- Entrée FR-Simple-Observation : Cervelet = Oui + Gauche + localisation Artère cérébelleuse supérieure -->
@@ -4116,7 +4119,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="244214000" displayName="artère cérébelleuse supérieure entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <targetSiteCode code="51691006" displayName="artère cérébelleuse supérieure" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                   </targetSiteCode>
                 </observation>
               </entryRelationship>
@@ -4160,7 +4163,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="180920004" displayName="lobe frontal entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <targetSiteCode code="83251001" displayName="lobe frontal" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                   </targetSiteCode>
                 </observation>
               </entryRelationship>
@@ -4183,7 +4186,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="279297002" displayName="noyau Caudé entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <targetSiteCode code="11000004" displayName="noyau caudé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                   </targetSiteCode>
                 </observation>
               </entryRelationship>
@@ -4223,7 +4226,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="279105006" displayName="vermis cérébelleux entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <targetSiteCode code="58501004" displayName="vermis cérébelleux" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                   </targetSiteCode>
                 </observation>
               </entryRelationship>
@@ -4246,7 +4249,7 @@
                       <value code="C25229" displayName="Gauche" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT"/>
                     </qualifier>
                   </value>
-                  <targetSiteCode code="279099009" displayName="mésencéphale entier" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <targetSiteCode code="61962009" displayName="mésencéphale" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                   </targetSiteCode>
                 </observation>
               </entryRelationship>
@@ -4288,7 +4291,7 @@
                   <reference value="#diag-04" />
                 </originalText>
               </value>
-              <targetSiteCode code="341484008" displayName="veine profonde entière" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+              <targetSiteCode code="87003004" displayName="veine profonde" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
               </targetSiteCode>
             </observation>
           </entry>
@@ -4850,6 +4853,7 @@
                         </originalText>
                       </translation>
                     </code>
+                    <name>METALYSE 10000 unités, poudre et solvant pour solution injectable</name>
                   </manufacturedMaterial>
                 </manufacturedProduct>
               </consumable>
@@ -5074,6 +5078,7 @@
                         </originalText>
                       </translation>
                     </code>
+                    <name>METALYSE 10000 unités, poudre et solvant pour solution injectable</name>
                   </manufacturedMaterial>
                 </manufacturedProduct>
               </consumable>

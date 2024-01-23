@@ -6,16 +6,17 @@
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
-<?oxygen SCHSchema="../schematrons/CI-SIS_BIO-CR-BIO_2021.01.sch"?>
+<?oxygen SCHSchema="../schematrons/CI-SIS_BIO-CR-BIO_2023.01.sch"?>
 <!-- 
 	**********************************************************************************************************
-    Document : Compte-rendu d’examens de biologie médicale (BIO-CR-BIO_2022.01)      
+    Document : Compte-rendu d’examens de biologie médicale (BIO-CR-BIO_2023.01)      
     Auteur : ANS
     **********************************************************************************************************
     format HL7 - CDA Release 2 niveau 3
     **********************************************************************************************************
     Historique :
-    13/10/2022 : version 2022.01
+    17/09/2023 : version 2023.01
+    17/10/2023 : Modification du code de la Section FR-Document-PDF-copie
     **********************************************************************************************************
 -->
 <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:lab="urn:oid:1.3.6.1.4.1.19376.1.3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -33,8 +34,8 @@
   <templateId root="1.2.250.1.213.1.1.1.1" />
   <!-- Déclarations de conformité à IHE PALM -->
   <templateId root="1.3.6.1.4.1.19376.1.3.3"/>
-  <!-- Déclarations de conformité au modèle CR-BIO du CI-SIS -->
-  <templateId root="1.2.250.1.213.1.1.1.55" />
+  <!-- Déclarations de conformité au modèle CR-BIO_2023.01 du CI-SIS -->
+  <templateId root="1.2.250.1.213.1.1.1.55" extension="2023.01"/>
   <!-- Identifiant du document -->
   <id root="1.3.6.1.4.1.19376.1.3.3.4"/>
   <!-- Type de document -->
@@ -42,7 +43,7 @@
   <!-- Titre du document -->
   <title>Compte rendu d'examens biologiques</title>
   <!-- Date et heure de création du document -->
-  <effectiveTime value="20210104160527+0100" />
+  <effectiveTime value="20230104160527+0100" />
   <!-- Niveau de confidentialité du document -->
   <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25" />
   <!-- Langue du document -->
@@ -112,9 +113,10 @@
       </patient>
     </patientRole>
   </recordTarget>
+  
   <!-- Auteur -->
   <author>
-    <time value="20210104160527+0100" />
+    <time value="20230104160527+0100" />
     <assignedAuthor>
       <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
       <code code="G15_10/SM03" displayName="Médecin - Biologie médicale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
@@ -201,7 +203,7 @@
   <!-- Responsable du document -->
   <legalAuthenticator>
     <!-- Date et heure de la prise de responsabilité -->
-    <time value="20210104160527+0100" />
+    <time value="20230104160527+0100" />
     <signatureCode code="S" />
     <assignedEntity>
       <!-- PS identifié par son N°RPPS -->
@@ -248,7 +250,7 @@
   <!-- Biologiste ayant validé des résultats présents sur le compte rendu -->
   <authenticator>
     <templateId root="1.3.6.1.4.1.19376.1.3.3.1.5" />
-    <time value="202101041120+0100" />
+    <time value="202301041120+0100" />
     <signatureCode code="S" />
     <assignedEntity>
       <id root="1.2.250.1.71.4.2.1" extension="801234567898" />
@@ -289,7 +291,7 @@
   <!-- Biologiste ayant validé des résultats présents sur le compte rendu -->
   <authenticator>
     <templateId root="1.3.6.1.4.1.19376.1.3.3.1.5" />
-    <time value="202101041130+0100" />
+    <time value="202301041130+0100" />
     <signatureCode code="S" />
     <assignedEntity>
       <id root="1.2.250.1.71.4.2.1" extension="801234567866" />
@@ -370,7 +372,7 @@
     <functionCode code="PRELV" displayName="Préleveur" codeSystem="1.2.250.1.213.1.1.4.2.280" />
     <!-- Date et heure de prélèvement -->
     <time xsi:type="IVL_TS">
-      <high value="202101040735+0100" />
+      <high value="202301040735+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567893" />
@@ -409,20 +411,20 @@
   <!--  Identifiant de la prescription d'examens de biologie reçue par le laboratoire -->
   <inFulfillmentOf>
     <order>
-      <id root="1.2.250.1.213.1.1.9" extension="2021123456789" />
+      <id root="1.2.250.1.213.1.1.9" extension="2023123456789" />
     </order>
   </inFulfillmentOf>
   <!--  Acte principal : La demande d'examens enregistrée dans le SI du laboratoire (SGL) et le 1er chapitre du compte rendu -->
   <documentationOf>
     <serviceEvent>
-      <id root="1.2.250.1.213.1.1.9" extension="202111111123" />
+      <id root="1.2.250.1.213.1.1.9" extension="202311111123" />
       <code code="18719-5" displayName="Biochimie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
       <lab:statusCode code="completed" />
       <effectiveTime>
         <!-- Date de réception de la demande et des échantillons -->
-        <low value="20210104092200+0100" />
+        <low value="20230104092200+0100" />
         <!-- Date de fin de traitement = date et heure de libération du compte rendu final -->
-        <high value="20210104160500+0100" />
+        <high value="20230104160500+0100" />
       </effectiveTime>
       <!-- Elément FR-Laboratoire-executant -->
       <performer typeCode="PRF">
@@ -431,7 +433,7 @@
         <!-- Conformité FR-Laboratoire-executant (CI-SIS) -->
         <templateId root="1.2.250.1.213.1.1.3.23" />
         <time>
-          <high value="20210104152530+0100" />
+          <high value="20230104152530+0100" />
         </time>
         <assignedEntity>
           <!-- Identifiant du directeur du laboratoire -->
@@ -491,7 +493,7 @@
       <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
       <code code="AMB" displayName="ambulatoire" codeSystem="2.16.840.1.113883.5.4" />
       <effectiveTime>
-        <low value="202101040735+0100" />
+        <low value="202301040735+0100" />
       </effectiveTime>
       <!-- Biologiste et laboratoire responsable -->
       <responsibleParty>
@@ -604,7 +606,7 @@
               <code code="14340-4" displayName="Electrophorèse des protéines" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
               <title>Electrophorèse des protéines sériques :</title>
               <text>
-                <paragraph>Prélèvement du 04/01/2021 à 07h35 par le Cabinet
+                <paragraph>Prélèvement du 04/01/2023 à 07h35 par le Cabinet
 									d'infirmières de BB</paragraph>
                 <paragraph>Technique d'analyse : Electrophorèse</paragraph>
                 <table border="0">
@@ -614,7 +616,7 @@
                     </tr>
                     <tr>
                       <th />
-                      <th>04/01/2021 13:19:33</th>
+                      <th>04/01/2023 13:19:33</th>
                       <th>Valeurs de référence</th>
                     </tr>
                   </thead>
@@ -712,7 +714,7 @@
                 </table>
                 <renderMultiMedia referencedObject="ELECTROPHORESE" />
                 <br />
-                <paragraph>Résultats validés par Jean DE SANTS - 04/01/2021,
+                <paragraph>Résultats validés par Jean DE SANTS - 04/01/2023,
 									11h20</paragraph>
                 <br />
               </text>
@@ -733,7 +735,7 @@
                     <templateId root="1.3.6.1.4.1.19376.1.3.3.1.7" />
                     <!-- Conformité FR-Laboratoire-executant (CI-SIS) -->
                     <templateId root="1.2.250.1.213.1.1.3.23" />
-                    <time value="202101041050+0100" />
+                    <time value="202301041050+0100" />
                     <assignedEntity>
                       <id root="1.2.250.1.71.4.2.1" extension="801234567833" />
                       <addr nullFlavor="MSK" />
@@ -751,9 +753,7 @@
                         <name>LABORATOIRE SOUS-TRAITANT</name>
                         <telecom nullFlavor="MSK" />
                         <addr nullFlavor="MSK" />
-                        <standardIndustryClassCode code="ETABLISSEMENT"
-                          displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9"
-                          codeSystemName="practiceSettingCode"/>
+                        <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé" codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode" />
                       </representedOrganization>
                     </assignedEntity>
                   </performer>
@@ -764,7 +764,7 @@
                     <!-- Conformité FR-Participant (CI-SIS) -->
                     <templateId root="1.2.250.1.213.1.1.3.109"/>
                     <time>
-                      <high value="202101041120+0100" />
+                      <high value="202301041120+0100" />
                     </time>
                     <participantRole>
                       <id root="1.2.250.1.71.4.2.1" extension="801234567898" />
@@ -795,7 +795,7 @@
                       <code code="9050" codeSystem="1.2.250.1.213.2.7" displayName="Ponction veineuse" codeSystemName="NABM" />
                       <!-- Date et heure  prélèvement -->
                       <effectiveTime>
-                        <high value="202101040735+0100" />
+                        <high value="202301040735+0100" />
                       </effectiveTime>
                       <!-- Préleveur -->
                       <performer>
@@ -868,7 +868,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="75.0" unit="g/L" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                           <referenceRange typeCode="REFV">
@@ -895,7 +895,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="60.0" unit="%" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                         </observation>
@@ -913,7 +913,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="45.0" unit="g/L" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                           <referenceRange typeCode="REFV">
@@ -940,7 +940,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="5.0" unit="%" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                         </observation>
@@ -958,7 +958,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="3.8" unit="g/L" />
                           <interpretationCode code="H" displayName="Anormalement haut" codeSystem="2.16.840.1.113883.5.83" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
@@ -986,7 +986,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="9.0" unit="%" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                         </observation>
@@ -1004,7 +1004,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="6.8" unit="g/L" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                           <referenceRange typeCode="REFV">
@@ -1031,7 +1031,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="11.0" unit="%" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                         </observation>
@@ -1049,7 +1049,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="8.3" unit="g/L" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                           <referenceRange typeCode="REFV">
@@ -1076,7 +1076,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="15.0" unit="%" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                         </observation>
@@ -1094,7 +1094,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="11.3" unit="g/L" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                           <referenceRange typeCode="REFV">
@@ -1121,7 +1121,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104131933+0100" />
+                          <effectiveTime value="20230104131933+0100" />
                           <value xsi:type="PQ" value="1.50" unit="{ratio}" />
                           <methodCode code="0064" displayName="Electrophoresis" codeSystem="2.16.840.1.113883.5.84" />
                         </observation>
@@ -1217,7 +1217,7 @@
                       <th colspan="2">Résultats antérieurs</th>
                     </tr>
                     <tr>
-                      <th>04/01/2021 10:10</th>
+                      <th>04/01/2023 10:10</th>
                       <th>12/09/2020 08:15</th>
                       <th>03/01/2020 08:12</th>
                     </tr>
@@ -1246,7 +1246,7 @@
                   </tbody>
                 </table>
                 <br />
-                <paragraph>Résultats validés par Thierry DIAZ - 04/01/2021,
+                <paragraph>Résultats validés par Thierry DIAZ - 04/01/2023,
 									11h30</paragraph>
                 <br />
               </text>
@@ -1266,7 +1266,7 @@
                     <!-- Conformité FR-Participant (CI-SIS) -->
                     <templateId root="1.2.250.1.213.1.1.3.109"/>
                     <time>
-                      <high value="202101041130+0100" />
+                      <high value="202301041130+0100" />
                     </time>
                     <participantRole>
                       <id root="1.2.250.1.71.4.2.1" extension="801234567866" />
@@ -1300,7 +1300,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="202101041010+0100" />
+                      <effectiveTime value="202301041010+0100" />
                       <value xsi:type="PQ" value="10.02" unit="mmol/L">
                         <translation value="0.60" code="g/L" />
                       </value>
@@ -1356,7 +1356,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="202101041010+0100" />
+                      <effectiveTime value="202301041010+0100" />
                       <value xsi:type="PQ" value="7.2" unit="mmol/L">
                         <!-- unité principale -->
                         <translation value="1.30" code="g/L" />
@@ -1422,7 +1422,7 @@
           <text>
             <paragraph>Motif de l'examen : Bilan sanguin préopératoire.</paragraph>
             <paragraph>Prescription initiale non modifiée.</paragraph>
-            <paragraph>Prélèvement du 04/01/2021 à 07h35 par le Cabinet d'infirmières BB</paragraph>
+            <paragraph>Prélèvement du 04/01/2023 à 07h35 par le Cabinet d'infirmières BB</paragraph>
             <table border="0">
               <thead>
                 <tr>
@@ -1432,7 +1432,7 @@
                 </tr>
                 <tr>
                   <th />
-                  <th>04/01/2021 11:30</th>
+                  <th>04/01/2023 11:30</th>
                   <th>Valeurs de référence</th>
                   <th>Interprétation</th>
                   <th>12/09/2020 08:15</th>
@@ -1587,7 +1587,7 @@
             </table>
             <br />
             <paragraph styleCode="Bold" ID="ANISO">Interprétation : Anisocytose</paragraph>
-            <paragraph>Résultats validés par Jean DE SANTS - 04/01/2021, 11h20</paragraph>
+            <paragraph>Résultats validés par Jean DE SANTS - 04/01/2023, 11h20</paragraph>
             <br />
           </text>
           <!-- Entrée FR-Resultats-examens-de-biologie-medicale : RESULTATS DE L'HEMOGRAMME -->
@@ -1606,7 +1606,7 @@
                 <!-- Conformité FR-Participant (CI-SIS) -->
                 <templateId root="1.2.250.1.213.1.1.3.109"/>
                 <time>
-                  <high value="202101041120+0100" />
+                  <high value="202301041120+0100" />
                 </time>
                 <participantRole>
                   <id root="1.2.250.1.71.4.2.1" extension="801234567898" />
@@ -1649,7 +1649,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="8.2" unit="10*9/L" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -1685,7 +1685,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="4.95" unit="10*12/L" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <entryRelationship typeCode="REFR">
@@ -1721,7 +1721,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="13.4" unit="g/dL" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -1757,7 +1757,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="45" unit="%" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -1793,7 +1793,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="97" unit="fL" />
                       <interpretationCode code="H" displayName="Anormalement haut" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/09 à 8h15 -->
@@ -1829,7 +1829,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="17.5" unit="%" />
                       <interpretationCode code="H" displayName="Anormalement haut" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -1865,7 +1865,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="33.0" unit="g/dL" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -1901,7 +1901,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="31.0" unit="pg" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <entryRelationship typeCode="REFR">
@@ -1937,7 +1937,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="220" unit="10*9/L" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -1973,7 +1973,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="8" unit="fL" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -2009,7 +2009,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="12" unit="%" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
                       <entryRelationship typeCode="REFR">
@@ -2035,7 +2035,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="72" unit="%" />
                       <interpretationCode code="H" displayName="Anormalement haut" codeSystem="2.16.840.1.113883.5.83" />
                       <entryRelationship typeCode="REFR">
@@ -2071,7 +2071,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="2" unit="%" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -2107,7 +2107,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="0" unit="%" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -2143,7 +2143,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="20" unit="%" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -2179,7 +2179,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104113000+0100" />
+                      <effectiveTime value="20230104113000+0100" />
                       <value xsi:type="PQ" value="6" unit="%" />
                       <interpretationCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" />
                       <!-- résultat antérieur du 12/09/20 à 8h15 -->
@@ -2252,7 +2252,7 @@
                   <td>
                     <content ID="prelevement-nature-echantillon">urine</content>
                   </td>
-                  <td>04/01/2021 à 07:35</td>
+                  <td>04/01/2023 à 07:35</td>
                 </tr>
               </tbody>
             </table>
@@ -2424,7 +2424,7 @@
             </table>
             <br />
             <paragraph styleCode="bold" ID="C_ECBU">Traitement immédiat</paragraph>
-            <paragraph>Résultats validés par Jean DE SANTS - 4 janvier 2021, 11h20</paragraph>
+            <paragraph>Résultats validés par Jean DE SANTS - 4 janvier 2023, 11h20</paragraph>
             <br />
           </text>
           <!-- Entrée FR-Resultats-examens-de-biologie-medicale : RESULTATS DE L'ECBU -->
@@ -2443,7 +2443,7 @@
                 <!-- Conformité FR-Participant (CI-SIS) -->
                 <templateId root="1.2.250.1.213.1.1.3.109"/>
                 <time>
-                  <high value="202101041120+0100" />
+                  <high value="202301041120+0100" />
                 </time>
                 <participantRole>
                   <id root="1.2.250.1.71.4.2.1" extension="801234567898" />
@@ -2479,7 +2479,7 @@
                   </code>
                   <!-- Date et heure du prélèvement -->
                   <effectiveTime>
-                    <high value="202101040735+0100" />
+                    <high value="202301040735+0100" />
                   </effectiveTime>
                   <!-- Echantillon prélevé -->
                   <participant typeCode="PRD">
@@ -2504,7 +2504,7 @@
                       <!-- Conformité FR-Echantillon-date-reception (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.107" />
                       <code code="SPRECEIVE" displayName="Échantillon reçu" codeSystem="1.3.5.1.4.1.19376.1.5.3.2" codeSystemName="IHEActCode" />
-                      <effectiveTime value="202101040752+0100" />
+                      <effectiveTime value="202301040752+0100" />
                     </act>
                   </entryRelationship>
                 </procedure>
@@ -2536,7 +2536,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104131933+0100" />
+                      <effectiveTime value="20230104131933+0100" />
                       <value xsi:type="CD">
                         <originalText>
                           <reference value="#CBU-couleur-resultat" />
@@ -2557,7 +2557,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104131933+0100" />
+                      <effectiveTime value="20230104131933+0100" />
                       <value xsi:type="CD">
                         <originalText>
                           <reference value="#CBU-aspect-resultat" />
@@ -2594,7 +2594,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104131933+0100" />
+                      <effectiveTime value="20230104131933+0100" />
                       <value xsi:type="PQ" value="500" unit="/mL" />
                     </observation>
                   </component>
@@ -2611,7 +2611,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104131933+0100" />
+                      <effectiveTime value="20230104131933+0100" />
                       <value xsi:type="PQ" value="200" unit="/mL" />
                     </observation>
                   </component>
@@ -2628,7 +2628,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104131933+0100" />
+                      <effectiveTime value="20230104131933+0100" />
                       <value xsi:type="CD">
                         <originalText>
                           <reference value="#CBU-epitheliales-resultat" />
@@ -2649,7 +2649,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104131933+0100" />
+                      <effectiveTime value="20230104131933+0100" />
                       <value xsi:type="CD">
                         <originalText>
                           <reference value="#CBU-gram-resultat" />
@@ -2667,7 +2667,7 @@
                   <!-- Conformité FR-Isolat-microbiologique (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.79" />
                   <statusCode code="completed" />
-                  <effectiveTime value="20210104155000+0100" />
+                  <effectiveTime value="20230104155000+0100" />
                   <!-- Germe identifié -->
                   <specimen typeCode="SPC">
                     <specimenRole classCode="SPEC">
@@ -2698,7 +2698,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104155000+0100" />
+                      <effectiveTime value="20230104155000+0100" />
                       <value xsi:type="PQ" value="100000" unit="/mL" />
                     </observation>
                   </component>
@@ -2728,7 +2728,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104155000+0100" />
+                          <effectiveTime value="20230104155000+0100" />
                           <value xsi:type="IVL_PQ">
                             <low value="0.512" unit="ug/mL" inclusive="true" />
                           </value>
@@ -2749,7 +2749,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104155000+0100" />
+                          <effectiveTime value="20230104155000+0100" />
                           <value xsi:type="IVL_PQ">
                             <high value="0.128" unit="ug/mL" inclusive="false" />
                           </value>
@@ -2770,7 +2770,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104155000+0100" />
+                          <effectiveTime value="20230104155000+0100" />
                           <value xsi:type="IVL_PQ">
                             <high value="0.032" unit="ug/mL" inclusive="false" />
                           </value>
@@ -2790,7 +2790,7 @@
                   <!-- Conformité FR-Isolat-microbiologique (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.79" />
                   <statusCode code="completed" />
-                  <effectiveTime value="20210104155000+0100" />
+                  <effectiveTime value="20230104155000+0100" />
                   <!-- Germe identifié -->
                   <specimen typeCode="SPC">
                     <specimenRole classCode="SPEC">
@@ -2821,7 +2821,7 @@
                         </originalText>
                       </code>
                       <statusCode code="completed" />
-                      <effectiveTime value="20210104155000+0100" />
+                      <effectiveTime value="20230104155000+0100" />
                       <value xsi:type="PQ" value="200000" unit="/mL" />
                     </observation>
                   </component>
@@ -2851,7 +2851,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104155000+0100" />
+                          <effectiveTime value="20230104155000+0100" />
                           <value xsi:type="IVL_PQ">
                             <high value="0.012" unit="ug/mL" inclusive="false" />
                           </value>
@@ -2872,7 +2872,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104155000+0100" />
+                          <effectiveTime value="20230104155000+0100" />
                           <value xsi:type="IVL_PQ">
                             <high value="0.013" unit="ug/mL" inclusive="false" />
                           </value>
@@ -2893,7 +2893,7 @@
                             </originalText>
                           </code>
                           <statusCode code="completed" />
-                          <effectiveTime value="20210104155000+0100" />
+                          <effectiveTime value="20230104155000+0100" />
                           <value xsi:type="IVL_PQ">
                             <high value="0.014" unit="ug/mL" inclusive="false" />
                           </value>
@@ -2942,7 +2942,68 @@
           <text>(texte libre)</text>
         </section>
       </component>
-    
+      
+      <!-- [0..1] Section FR-Document-PDF-copie -->
+      <component>
+        <section>
+          <!-- Conformité FR-Document-PDF-copie (CI-SIS) -->
+          <templateId root="1.2.250.1.213.1.1.2.243"/>
+          <id root="770B0DC2-A6B8-468E-8432-632B18D35F68"/>
+          <code code="55108-5" displayName="Copie du document"
+            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+          <title>Copie du document</title>
+          <text>
+            <table border="0">							
+              <tbody>
+                <tr>
+                  <td><renderMultiMedia referencedObject="doc-1"/></td>
+                </tr>
+              </tbody>
+            </table>
+          </text>
+          
+          <!-- [1..*] Entrée FR-Document-attache : Copie PDF du document -->
+          <entry>
+            <organizer classCode="CLUSTER" moodCode="EVN">
+              <!-- Conformité FR-Document-attache (CI-SIS) -->
+              <templateId root="1.2.250.1.213.1.1.3.18"/>
+              <id root="88BEB395-3B4C-37F5-9A31-03BEA73A8D8B"/>
+              <code code="55107-7" displayName="Document attaché"
+                codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+              <statusCode code="completed"/>
+              <!-- [1..1] Entrée FR-Type-document-attache -->
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <!-- Conformité Simple Observation (IHE PCC) -->
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                  <!-- Conformité FR-Simple-Observation (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48"/>
+                  <!-- Conformité FR-Type-document-attache (CI-SIS) -->
+                  <templateId root="1.2.250.1.213.1.1.3.48.18"/>
+                  <id root="0D1629B3-CC69-4632-81F3-2301FD4C318B"/>
+                  <code code="69764-9" displayName="Type de document"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                  <text><reference value="#doc1"/></text>
+                  <statusCode code="completed"/>
+                  <effectiveTime nullFlavor="NA"/>
+                  <value xsi:type="CD" code="55108-5" displayName="Copie du document"
+                    codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                </observation>
+              </component>
+              <!-- [1..1] Entrée ObservationMedia -->
+              <component>
+                <observationMedia classCode="OBS" moodCode="EVN" ID="doc-1">
+                  <value mediaType="application/pdf" representation="B64">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NU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDEgNzkuMmEwZDhkOSwgMjAyMy8wMy8xNC0xMToxOTo0NiAgICAgICAgIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICAgICAgICAgICB4bWxuczpwZGY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGRmLzEuMy8iCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6cGRmdWFpZD0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZ1YS9ucy9pZC8iCiAgICAgICAgICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgICAgICAgICB4bWxuczpwZGZhRXh0ZW5zaW9uPSJodHRwOi8vd3d3LmFpaW0ub3JnL3BkZmEvbnMvZXh0ZW5zaW9uLyIKICAgICAgICAgICAgeG1sbnM6cGRmYVNjaGVtYT0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZhL25zL3NjaGVtYSMiCiAgICAgICAgICAgIHhtbG5zOnBkZmFQcm9wZXJ0eT0iaHR0cDovL3d3dy5haWltLm9yZy9wZGZhL25zL3Byb3BlcnR5IyI+CiAgICAgICAgIDxkYzpmb3JtYXQ+YXBwbGljYXRpb24vcGRmPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxkYzpjcmVhdG9yPgogICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgPHJkZjpsaT5uaXphcjwvcmRmOmxpPgogICAgICAgICAgICA8L3JkZjpTZXE+CiAgICAgICAgIDwvZGM6Y3JlYXRvcj4KICAgICAgICAgPGRjOmRlc2NyaXB0aW9uPgogICAgICAgICAgICA8cmRmOkFsdD4KICAgICAgICAgICAgICAgPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij52aWV3ZXI8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6QWx0PgogICAgICAgICA8L2RjOmRlc2NyaXB0aW9uPgogICAgICAgICA8cGRmOlByb2R1Y2VyPmlUZXh0wq4gNS41LjEzLjMgwqkyMDAwLTIwMjIgaVRleHQgR3JvdXAgTlYgKEFHUEwtdmVyc2lvbik8L3BkZjpQcm9kdWNlcj4KICAgICAgICAgPHhtcDpDcmVhdGVEYXRlPjIwMjMtMDktMjVUMTI6MjU6NTMrMDI6MDA8L3htcDpDcmVhdGVEYXRlPgogICAgICAgICA8eG1wOk1vZGlmeURhdGU+MjAyMy0wOS0yNVQxMjoyNjowNSswMjowMDwveG1wOk1vZGlmeURhdGU+CiAgICAgICAgIDx4bXA6TWV0YWRhdGFEYXRlPjIwMjMtMDktMjVUMTI6MjY6MDUrMDI6MDA8L3htcDpNZXRhZGF0YURhdGU+CiAgICAgICAgIDxwZGZ1YWlkOnBhcnQ+MTwvcGRmdWFpZDpwYXJ0PgogICAgICAgICA8eG1wTU06RG9jdW1lbnRJRD51dWlkOjUyODNiNDJjLTk0NjktNDc3Zi04MmI4LTliNjc5N2M4NzBmZjwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOkluc3RhbmNlSUQ+dXVpZDowOTgyMDlhYi1iZjM5LTRhMjktOWZlNi00YjRhMjE5MzEyZDY8L3htcE1NOkluc3RhbmNlSUQ+CiAgICAgICAgIDxwZGZhRXh0ZW5zaW9uOnNjaGVtYXM+CiAgICAgICAgICAgIDxyZGY6QmFnPgogICAgICAgICAgICAgICA8cmRmOmxpIHJkZjpwYXJzZVR5cGU9IlJlc291cmNlIj4KICAgICAgICAgICAgICAgICAgPHBkZmFTY2hlbWE6bmFtZXNwYWNlVVJJPmh0dHA6Ly93d3cuYWlpbS5vcmcvcGRmdWEvbnMvaWQvPC9wZGZhU2NoZW1hOm5hbWVzcGFjZVVSST4KICAgICAgICAgICAgICAgICAgPHBkZmFTY2hlbWE6cHJlZml4PnBkZnVhaWQ8L3BkZmFTY2hlbWE6cHJlZml4PgogICAgICAgICAgICAgICAgICA8cGRmYVNjaGVtYTpzY2hlbWE+UERGL1VBIGlkZW50aWZpY2F0aW9uIHNjaGVtYTwvcGRmYVNjaGVtYTpzY2hlbWE+CiAgICAgICAgICAgICAgICAgIDxwZGZhU2NoZW1hOnByb3BlcnR5PgogICAgICAgICAgICAgICAgICAgICA8cmRmOlNlcT4KICAgICAgICAgICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6Y2F0ZWdvcnk+aW50ZXJuYWw8L3BkZmFQcm9wZXJ0eTpjYXRlZ29yeT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBkZmFQcm9wZXJ0eTpkZXNjcmlwdGlvbj5QREYvVUEgdmVyc2lvbiBpZGVudGlmaWVyPC9wZGZhUHJvcGVydHk6ZGVzY3JpcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6bmFtZT5wYXJ0PC9wZGZhUHJvcGVydHk6bmFtZT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBkZmFQcm9wZXJ0eTp2YWx1ZVR5cGU+SW50ZWdlcjwvcGRmYVByb3BlcnR5OnZhbHVlVHlwZT4KICAgICAgICAgICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5OmNhdGVnb3J5PmludGVybmFsPC9wZGZhUHJvcGVydHk6Y2F0ZWdvcnk+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6ZGVzY3JpcHRpb24+UERGL1VBIGFtZW5kbWVudCBpZGVudGlmaWVyPC9wZGZhUHJvcGVydHk6ZGVzY3JpcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6bmFtZT5hbWQ8L3BkZmFQcm9wZXJ0eTpuYW1lPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8cGRmYVByb3BlcnR5OnZhbHVlVHlwZT5UZXh0PC9wZGZhUHJvcGVydHk6dmFsdWVUeXBlPgogICAgICAgICAgICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6Y2F0ZWdvcnk+aW50ZXJuYWw8L3BkZmFQcm9wZXJ0eTpjYXRlZ29yeT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBkZmFQcm9wZXJ0eTpkZXNjcmlwdGlvbj5QREYvVUEgY29ycmlnZW5kYSBpZGVudGlmaWVyPC9wZGZhUHJvcGVydHk6ZGVzY3JpcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwZGZhUHJvcGVydHk6bmFtZT5jb3JyPC9wZGZhUHJvcGVydHk6bmFtZT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBkZmFQcm9wZXJ0eTp2YWx1ZVR5cGU+VGV4dDwvcGRmYVByb3BlcnR5OnZhbHVlVHlwZT4KICAgICAgICAgICAgICAgICAgICAgICAgPC9yZGY6bGk+CiAgICAgICAgICAgICAgICAgICAgIDwvcmRmOlNlcT4KICAgICAgICAgICAgICAgICAgPC9wZGZhU2NoZW1hOnByb3BlcnR5PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6QmFnPgogICAgICAgICA8L3BkZmFFeHRlbnNpb246c2NoZW1hcz4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/Pg0KZW5kc3RyZWFtDWVuZG9iag0xNSAwIG9iag08PC9GaWx0ZXIvRmxhdGVEZWNvZGUvRmlyc3QgNS9MZW5ndGggNjIvTiAxL1R5cGUvT2JqU3RtPj5zdHJlYW0NCmjeMjZUMFCwsdF3zi/NK1Ew1ffOTCmONjYFCgYpGIJJEzBpDhExAFGx+iGVBan6AYnpqcV2dgABBgARsBBnDQplbmRzdHJlYW0NZW5kb2JqDTE2IDAgb2JqDTw8L0ZpbHRlci9GbGF0ZURlY29kZS9GaXJzdCA1L0xlbmd0aCAxNTcvTiAxL1R5cGUvT2JqU3RtPj5zdHJlYW0NCmjeZI2xCsIwFAB/5W1NkDavL0RQSqFY6KJSUJxcahswDo080yr+kYvfaHFwcb47ThMgZJkqhnD2LHr3bFiqFdsmON+XTbCiXBKSxgWZlMgYPUOKECOpNr77F+ZofkLNvhtay8Lt7SO8wSQmSXWi4UWIGE8VwRdBxX64wvYAR1FU9ToeLd+m/1FKtRtOF9sGMTp7tyzz/CPAAGy/M14NCmVuZHN0cmVhbQ1lbmRvYmoNMTcgMCBvYmoNPDwvRGVjb2RlUGFybXM8PC9Db2x1bW5zIDQvUHJlZGljdG9yIDEyPj4vRmlsdGVyL0ZsYXRlRGVjb2RlL0lEWzw3NjBGQTZENzc5RkVGMDVBQzBCODIxMzc2NEYxNzgxMD48RkRFRUI4NkJBQzExQjc0OUFFRTMxNkMyRDlERUQwQUQ+XS9JbmZvIDMyIDAgUi9MZW5ndGggNzgvUm9vdCAzNCAwIFIvU2l6ZSAzMy9UeXBlL1hSZWYvV1sxIDIgMV0+PnN0cmVhbQ0KaN5iYgACJkaLfQxMDIwnQMRUICH9GUgwwLkCB1C4Qowg1mmQ2DQgwXkLSDDVAQkxD5DEbBDxG2ho8luQEgZG8gmmL0CCkQEgwAD3dA5VDQplbmRzdHJlYW0NZW5kb2JqDXN0YXJ0eHJlZg0KMTE2DQolJUVPRg0K
+                  </value>
+                </observationMedia>
+              </component>
+            </organizer>
+          </entry>						
+          
+        </section>
+      </component>
+      
+      
     </structuredBody>
   </component>
 </ClinicalDocument>
