@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -33,6 +32,7 @@
       03/05/2021 : Mise à jour des card dans les commentaires
       09/02/2022 : Mise à jour de la codification d'un DM avec EMDN
       11/04/2022 : Migration des terminologies et JDVs en SNOMED CT et mise en conformité LDL-EES_2022.01
+      28/08/2023 : MAJ des JDV
       **************************************************************************************************************
    -->
 
@@ -72,8 +72,8 @@
     <!-- Patient -->
     <recordTarget>
         <patientRole>
-            <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-            <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+            <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+            <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
             <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
             <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
             <!-- Adresse du patient -->
@@ -88,19 +88,23 @@
             <!-- Coordonnées télécom du patient -->
             <telecom value="tel:0144534551" use="H"/>
             <telecom value="tel:0647151010" use="MC"/>
-            <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+            <telecom value="mailto:279035121518989@patient.mssante.fr"/>
             <!-- Identité du patient -->
             <patient classCode="PSN">
                 <name>
                     <!-- Nom et prénom(s) de naissance -->
-                    <family qualifier="BR">NESSI</family>            
-                    <given>Ruth Isabelle</given>
+                    <!-- Nom de l’acte de naissance -->
+                    <family qualifier="BR">PAT-TROIS</family> 
+                    <!-- Prénoms de l’acte de naissance -->
+                    <given>DOMINIQUE MARIE-LOUISE</given>
+                    <!-- Premier prénom de l’acte de naissance -->
+                    <given qualifier="BR">DOMINIQUE</given>
                     <!-- Nom et prénom utilisés -->
-                    <family qualifier="CL">DECOURCY</family>
-                    <given qualifier="CL">Ruth</given>   
+                    <family qualifier="CL">PAT-TROIS</family>
+                    <given qualifier="CL">DOMINIQUE</given>        
                 </name>
                 <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-                <birthTime value="19770714"/>
+                <birthTime value="19790328"/>
                 <!-- Représentant du patient -->
                 <guardian>
                     <addr use="H">
@@ -324,7 +328,7 @@
     <!-- Actes documentés-->
     <documentationOf typeCode="DOC">
         <serviceEvent classCode="ACT" moodCode="EVN">
-            <code code="IMP" displayName="Hospitalisation" 
+            <code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)" 
                 codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"/>
             <effectiveTime>
                 <!-- Date de début d'hospitalisation -->
@@ -526,8 +530,8 @@
                             <text><reference value="modaliteE"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181029"/>
-                            <value xsi:type="CE" code="ORG-069" displayName="Transfert" 
-                                codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
+                            <value xsi:type="CE" code="4563007" displayName="hospitalisation, transfert d'un autre hôpital ou établissement de santé" 
+                                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                             <author>
                                 <time value="20191203133000+0100"/>
                                 <assignedAuthor classCode="ASSIGNED">
@@ -601,7 +605,7 @@
                             <id root="174F6D84-986E-4032-8F99-91975403B955"/>
                             <code code="MED-142" displayName="Synthèse médicale"
                                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName='TA_ASIP'/>
-                            <text><reference value="synthese"></reference></text>
+                            <text><reference value="synthese"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value='20181203'/>
                             <value xsi:type='ST'>Infection respiratoire aigüe</value>
@@ -841,7 +845,7 @@
                             <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
                             <id root="2ED5EF29-8305-4383-8945-C13F2A988D5E"/>
                             <code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"></code>
-                            <text><reference value="#MED-001"></reference></text>
+                            <text><reference value="#MED-001"/></text>
                             <statusCode code="completed"/>
                             <!-- Durée du traitement -->
                             <effectiveTime xsi:type="IVL_TS">
@@ -953,7 +957,7 @@
                             <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
                             <id root="2ED5EF29-8305-4383-8945-C13F2A988D5E"/>
                             <code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"></code>
-                            <text><reference value="#MED-002"></reference></text>
+                            <text><reference value="#MED-002"/></text>
                             <statusCode code="completed"/>
                             <!-- Durée du traitement -->
                             <effectiveTime xsi:type="IVL_TS">
@@ -1213,9 +1217,9 @@
                                     <id root="xxxxxxxxxxxxxxxxxxxxxx" extension="{01}00844588003288{17}141120{10}7654321D{21}10987654d321" />
                                     <!-- [1..1] Catégorie de DM -->
                                     <playingDevice classCode="DEV" determinerCode="INSTANCE">
-                                        <code code="J010104" displayName="STIMULATEUR CARDIAQUE IMPLANTABLE TRIPLE CHAMBRE" 
+                                        <code code="J010104" displayName="STIMULATEURS CARDIAQUES IMPLANTABLES TRIPLE CHAMBRE" 
                                             codeSystem="1.2.250.1.213.2.68" codeSystemName="EMDN">                                            
-                                            <originalText><reference value="#DM001-categorie"></reference></originalText>
+                                            <originalText><reference value="#DM001-categorie"/></originalText>
                                             <translation code="C50FA05" displayName="STIMULATEUR CARDIAQUE IMPLANTABLE TRIPLE CHAMBRE" 
                                                 codeSystem="1.2.250.1.213.2.65" codeSystemName="CLADIMED">
                                             </translation>            
@@ -1280,8 +1284,8 @@
                                     <templateId root="1.2.250.1.213.1.1.3.41" />
                                     <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2A0"/>
                                     <!-- Type d'allergie / intolérance -->
-                                    <code code="DALG" displayName="Allergie médicamenteuse"
-                                        codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"/>
+                                    <code code="416098002" displayName="allergie médicamenteuse"
+                                        codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                                     <text><reference value="#NO-ALL"/></text>
                                     <statusCode code="completed"/>
                                     <!-- Date de l'allergie / intolérance -->

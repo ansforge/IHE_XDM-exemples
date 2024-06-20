@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -89,11 +88,14 @@
          <patient classCode="PSN">
             <name>
                <!-- Nom et prénom(s) de naissance -->
-               <family qualifier="BR">DECOURCY</family>            
-               <given>Léa</given>
+               <family qualifier="BR">DECOURCY</family>
+               <!-- Prénoms de l’acte de naissance -->
+               <given>Ruth Isabelle</given>
+               <!-- Premier prénom de l’acte de naissance -->
+               <given qualifier="BR">Ruth</given>
                <!-- Nom et prénom utilisés -->
                <family qualifier="CL">DECOURCY</family>
-               <given qualifier="CL">Léa</given>   
+               <given qualifier="CL">Ruth</given>   
             </name>
             <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
             <birthTime value="20230425"/>
@@ -381,7 +383,7 @@
          </effectiveTime>
          <location>
             <healthCareFacility>
-               <code code="SA03" displayName="Etablissement Privé PSPH"
+               <code code="SA03" displayName="Etablissement privé PSPH"
                   codeSystem="1.2.250.1.71.4.2.4">
                </code>
             </healthCareFacility>
@@ -497,9 +499,7 @@
                         <qualifier><value code="82589-3" displayName="Niveau d'études"
                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#niv_etud_mere"/>
-                     </text>
+                     <text><reference value="#niv_etud_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="CD" code="PAT-039" displayName="Bac +3 et +"
@@ -548,9 +548,7 @@
                         <qualifier><value code="ORG-099" displayName="Profession"
                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#profession_mere"/>
-                     </text>
+                     <text><reference value="#profession_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <!-- Valeur issue du JDV_Profession_CISIS (1.2.250.1.213.1.1.5.109) -->
@@ -600,9 +598,7 @@
                         <qualifier><value code="ORG-075" displayName="Activité professionnelle"
                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#act_pro_mere"/>
-                     </text>
+                     <text><reference value="#act_pro_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="CD" code="PAT-040" displayName="Activité salariée"
@@ -651,9 +647,7 @@
                         <qualifier><value code="82589-3" displayName="Niveau d'études"
                            codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#niv_etud_pere"/>
-                     </text>
+                     <text><reference value="#niv_etud_pere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="CD" code="PAT-039" displayName="Bac +3 et +"
@@ -694,9 +688,7 @@
                         <qualifier><value code="ORG-099" displayName="Profession"
                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#profession_pere"/>
-                     </text>
+                     <text><reference value="#profession_pere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <!-- Valeur issue du JDV_Profession_CISIS (1.2.250.1.213.1.1.5.109) -->
@@ -738,9 +730,7 @@
                         <qualifier><value code="ORG-075" displayName="Activité professionnelle"
                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#act_pro_pere"/>
-                     </text>
+                     <text><reference value="#act_pro_pere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="CD" code="PAT-040" displayName="Activité salariée"
@@ -778,9 +768,7 @@
                      <templateId root="1.2.250.1.213.1.1.3.52"/>
                      <id root="582BB12C-7B63-11EB-9439-0242AC130008"/>
                      <code code="74013-4" displayName="Consommation d'alcool" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-                     <text>
-                        <reference value="#alcool_mere"/>
-                     </text>
+                     <text><reference value="#alcool_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="INT" value="2"/>
@@ -825,9 +813,7 @@
                      <templateId root="1.2.250.1.213.1.1.3.52"/>
                      <id root="582BB12C-7B63-11EB-9439-0242AC130009"/>
                      <code code="74011-8" displayName="Consommation tabagique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>                      
-                     <text>
-                        <reference value="#tabac_mere"/>
-                     </text>
+                     <text><reference value="#tabac_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="INT" value="0"/> 
@@ -875,9 +861,7 @@
                         <qualifier><value code="GEN-092.01.04" displayName="Autre addiction"
                            codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"></value></qualifier>
                      </code>
-                     <text>
-                        <reference value="#addiction_autres_substances_mere"/>
-                     </text>
+                     <text><reference value="#addiction_autres_substances_mere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="BL" value="true"/>
@@ -1015,7 +999,7 @@
                            <statusCode code="completed"/>
                            <!-- Organisme de couverture sociale -->
                            <performer typeCode="PRF">
-                              <assignedEntity>
+                              <assignedEntity classCode="ASSIGNED">
                                  <id root="582BB12C-7B63-11EB-9439-0242AC130012" extension="999999"/>
                                  <code code="GUAR" displayName="Garant"
                                     codeSystem="2.16.840.1.113883.5.110"
@@ -1033,8 +1017,8 @@
                               </assignedEntity>
                            </performer>
                            <!-- Assuré -->
-                           <participant typeCode="HLD">
-                              <participantRole classCode="IND">
+                           <participant typeCode="COV">
+                              <participantRole classCode="PAT">
                                  <id extension="64579890112345678100" root="1.2.250.1.213.1.4.2"/>
                                  <addr use="H">
                                     <houseNumber>24</houseNumber>
@@ -1351,9 +1335,7 @@
                      <id root="582BB12C-7B63-11EB-9439-0242AC130032"/>
                      <code code="8348-5" displayName="Poids corporel avant grossesse"
                         codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-                     <text>
-                        <reference value="#poidsMere"/>
-                     </text>
+                     <text><reference value="#poidsMere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="PQ" value="58" unit="kg"/>
@@ -1372,9 +1354,7 @@
                      <id root="582BB12C-7B63-11EB-9439-0242AC130033"/>
                      <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" displayName="Taille"
                         codeSystemName="LOINC"/>
-                     <text>
-                        <reference value="#tailleMere"/>
-                     </text>
+                     <text><reference value="#tailleMere"/></text>
                      <statusCode code="completed"/>
                      <effectiveTime nullFlavor="NA"/>
                      <value xsi:type="PQ" value="172" unit="cm"/>
@@ -2022,9 +2002,7 @@
                                        <id root="582BB12C-7B63-11EB-9439-0242AC130054"/>
                                        <code code="29463-7" codeSystem="2.16.840.1.113883.6.1"
                                           displayName="Poids" codeSystemName="LOINC"/>
-                                       <text>
-                                          <reference value="#poidsNaiss"/>
-                                       </text>
+                                       <text><reference value="#poidsNaiss"/></text>
                                        <statusCode code="completed"/>
                                        <effectiveTime nullFlavor="NA"/>
                                        <value xsi:type="PQ" value="3900" unit="g"/>
@@ -2044,9 +2022,7 @@
                                        <id root="582BB12C-7B63-11EB-9439-0242AC130054"/>
                                        <code code="8302-2" codeSystem="2.16.840.1.113883.6.1"
                                           displayName="Taille" codeSystemName="LOINC"/>
-                                       <text>
-                                          <reference value="#tailleNaiss"/>
-                                       </text>
+                                       <text><reference value="#tailleNaiss"/></text>
                                        <statusCode code="completed"/>
                                        <effectiveTime nullFlavor="NA"/>
                                        <value xsi:type="PQ" value="52" unit="cm"/>
@@ -2066,9 +2042,7 @@
                                        <id root="582BB12C-7B63-11EB-9439-0242AC130055"/>
                                        <code code="8287-5" codeSystem="2.16.840.1.113883.6.1"
                                           displayName="Périmètre crânien" codeSystemName="LOINC"/>
-                                       <text>
-                                          <reference value="#periCrane"/>
-                                       </text>
+                                       <text><reference value="#periCrane"/></text>
                                        <statusCode code="completed"/>
                                        <effectiveTime nullFlavor="NA"/>
                                        <value xsi:type="PQ" value="35" unit="cm"/>
@@ -2088,9 +2062,7 @@
                                        <id root="582BB12C-7B63-11EB-9439-0242AC130056"/>
                                        <code code="9272-6" codeSystem="2.16.840.1.113883.6.1"
                                           displayName="APGAR à 1mn" codeSystemName="LOINC"/>
-                                       <text>
-                                          <reference value="apgar1"/>
-                                       </text>
+                                       <text><reference value="apgar1"/></text>
                                        <statusCode code="completed"/>
                                        <effectiveTime nullFlavor="NA"/>
                                        <value xsi:type="PQ" value="10" unit="{score}"/>
@@ -2110,9 +2082,7 @@
                                        <id root="582BB12C-7B63-11EB-9439-0242AC130057"/>
                                        <code code="9274-2" codeSystem="2.16.840.1.113883.6.1"
                                           displayName="APGAR à 5mn" codeSystemName="LOINC"/>
-                                       <text>
-                                          <reference value="apgar5"/>
-                                       </text>
+                                       <text><reference value="apgar5"/></text>
                                        <statusCode code="completed"/>
                                        <effectiveTime nullFlavor="NA"/>
                                        <value xsi:type="PQ" value="10" unit="{score}"/>
@@ -2132,9 +2102,7 @@
                                        <id root="582BB12C-7B63-11EB-9439-0242AC130057"/>
                                        <code code="9271-8" codeSystem="2.16.840.1.113883.6.1"
                                           displayName="APGAR à 10mn" codeSystemName="LOINC"/>
-                                       <text>
-                                          <reference value="apgar10"/>
-                                       </text>
+                                       <text><reference value="apgar10"/></text>
                                        <statusCode code="completed"/>
                                        <effectiveTime nullFlavor="NA"/>
                                        <value xsi:type="PQ" value="10" unit="{score}"/>
@@ -2186,9 +2154,7 @@
                                  <value xsi:type="CD" code="MED-179"
                                     displayName="Audition à recontrôler"
                                     codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
-                                    <originalText>
-                                       <reference value="#auditionARecontroler"/>
-                                    </originalText>
+                                    <originalText><reference value="#auditionARecontroler"/></originalText>
                                  </value>
                               </observation>
                            </entry>
@@ -2506,9 +2472,7 @@
                            <code code="DRUG" displayName="Médicament"
                               codeSystem="2.16.840.1.113883.5.4"/>                           
                            <!-- Elément narratif de la section -->
-                           <text>
-                              <reference value="#med-1"/>
-                           </text>
+                           <text><reference value="#med-1"/></text>
                            <statusCode code="completed"/>
                            <!-- Durée d'administration -->
                            <effectiveTime xsi:type="IVL_TS">
@@ -2539,9 +2503,7 @@
                                        displayName="IMMUNOGLOBULINE HUMAINE DE L'HEPATITE B LFB 100 UI/ml, 
                               solution injectable en seringue préremplie (IM)"
                                        codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                                       <originalText mediaType="text/xml">
-                                          <reference value="#med-1"/>
-                                       </originalText>
+                                       <originalText mediaType="text/xml"><reference value="#med-1"/></originalText>
                                        <translation code="3400958157646"
                                           displayName="1 seringue(s) préremplie(s) en verre de 1 ml avec aiguille(s)"
                                           codeSystem="1.2.250.1.213.2.3.2" codeSystemName="CIP"/>
@@ -2620,7 +2582,7 @@
                               <!-- Type de service : valeur issue du JDV_TypeService-CISIS (1.2.250.1.213.1.1.5.127) -->
                               <translation code="405269005" displayName="unité de soins intensifs néonatals"
                                  codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
-                                 <originalText><reference value="#typeService"></reference></originalText>
+                                 <originalText><reference value="#typeService"/></originalText>
                               </translation>
                            </code>
                            <text><reference value="#destination"/></text>
@@ -2722,7 +2684,7 @@
                            <manufacturedMaterial>
                               <code>
                                  <originalText><reference value="#vaccin-antituberculeux"/></originalText>
-                                 <translation code="J07AN" displayName="Vaccin antituberculeux"
+                                 <translation code="J07AN" displayName="vaccins de la tuberculose"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin antituberculeux</name>
@@ -2764,7 +2726,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-Hepatite-B"/></originalText>
                                  <!-- Code ATC -->
-                                 <translation code="J07BC01" displayName="Vaccin contre l'hépatite B"
+                                 <translation code="J07BC01" displayName="hépatite B, antigène purifié"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC">
                                  </translation>
                               </code>
@@ -2835,7 +2797,7 @@
                      <!-- Conformité FR-Rencontre (CI-SIS) -->
                      <templateId root="1.2.250.1.213.1.1.3.58" />
                      <id root="958940F6-BA68-423C-A435-F8FB84497C8F"/>
-                     <code code="AMB" displayName="Ambulatoire" codeSystem="2.16.840.1.113883.5.4">
+                     <code code="AMB" displayName="Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4">
                         <qualifier>
                            <name code="GEN-314" displayName="Type de rencontre" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
                            <value code="ORG-196" displayName="Lien avec le médecin de PMI après accord des parents"

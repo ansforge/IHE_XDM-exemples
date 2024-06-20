@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
 
 <!-- 
@@ -51,14 +50,14 @@
 	<!-- Patient -->
 	<recordTarget>
 		<patientRole>
-			<!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-			<id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+			<!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+			<id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
 			<!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
 			<id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
 			<!-- Adresse du patient -->
 			<addr>
 				<houseNumber>28</houseNumber>
-				<streetName>Avenue de Breteuil</streetName>
+				<streetName>Av de Breteuil</streetName>
 				<unitID>Escalier A</unitID>
 				<postalCode>75007</postalCode>
 				<city>PARIS</city>
@@ -67,24 +66,28 @@
 			<!-- Coordonnées télécom du patient -->
 			<telecom value="tel:0144534551" use="H"/>
 			<telecom value="tel:0647151010" use="MC"/>
-			<telecom value="mailto:277076322082910@patient.mssante.fr"/>
+			<telecom value="mailto:279035121518989@patient.mssante.fr"/>
 			<!-- Identité du patient -->
 			<patient classCode="PSN">
 				<name>
 					<!-- Nom et prénom(s) de naissance -->
-					<family qualifier="BR">NESSI</family>            
-					<given>Ruth Isabelle</given>
+					<!-- Nom de l’acte de naissance -->
+					<family qualifier="BR">PAT-TROIS</family> 
+					<!-- Prénoms de l’acte de naissance -->
+					<given>DOMINIQUE MARIE-LOUISE</given>
+					<!-- Premier prénom de l’acte de naissance -->
+					<given qualifier="BR">DOMINIQUE</given>
 					<!-- Nom et prénom utilisés -->
-					<family qualifier="CL">DECOURCY</family>
-					<given qualifier="CL">Ruth</given>        
+					<family qualifier="CL">PAT-TROIS</family>
+					<given qualifier="CL">DOMINIQUE</given>        
 				</name>
 				<administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-				<birthTime value="19770714"/>
+				<birthTime value="19790328"/>
 				<!-- Représentant du patient -->
 				<guardian>
 					<addr use="H">
 						<houseNumber>28</houseNumber>
-						<streetName>Avenue de Breteuil</streetName>
+						<streetName>Av de Breteuil</streetName>
 						<postalCode>75007</postalCode>
 						<city>PARIS</city>
 						<country>FRANCE</country>
@@ -332,6 +335,7 @@
 	</authenticator>
 	<!-- Médecin prescripteur des examens de biologie (ici, un gynécologue) -->
 	<participant typeCode="REF">
+		<templateId root='1.3.6.1.4.1.19376.1.3.3.1.6'/>
 		<!-- Date de l'ordonnance -->
 		<time xsi:type="IVL_TS">
 			<high value="20201231"/>
@@ -473,7 +477,8 @@
 	<!-- Contexte de la prise en charge -->
 	<componentOf>
 		<encompassingEncounter>
-			<code code="AMB" displayName="ambulatoire" codeSystem="2.16.840.1.113883.5.4"/>
+			<id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+			<code code="AMB" displayName="Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4"/>
 			<effectiveTime>
 				<low value="202101040735+0100"/>
 			</effectiveTime>

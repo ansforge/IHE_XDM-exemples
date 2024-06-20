@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
@@ -75,8 +74,12 @@
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">PAT-TROIS</family>            
-          <given>DOMINIQUE</given>
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
           <family qualifier="CL">PAT-TROIS</family>
           <given qualifier="CL">DOMINIQUE</given>        
@@ -283,7 +286,7 @@
       <location>
         <healthCareFacility>
           <id root="1.2.250.1.71.4.2.2" extension="11223344" assigningAuthorityName="Clinique de Breteuil" />
-          <code code="SA04" displayName="Etablissement Privé Non PSPH" codeSystem="1.2.250.1.71.4.2.4" />
+          <code code="SA04" displayName="Etablissement privé non PSPH" codeSystem="1.2.250.1.71.4.2.4" />
         </healthCareFacility>
       </location>
     </encompassingEncounter>
@@ -340,16 +343,12 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="64515370-0A35-410C-BA15-AA3D2D000347" />
                   <code code="LA6111-4" displayName="Pas de symptomes" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#rankin" />
-                  </text>
+                  <text><reference value="#rankin" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="2018" />
                   <value xsi:type="INT" value="0" />
                   <interpretationCode xsi:type="CE" code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" codeSystemName="ObservationInterpretation">
-                    <originalText>
-                      <reference value="#rankin" />
-                    </originalText>
+                    <originalText><reference value="#rankin" /></originalText>
                   </interpretationCode>
                 </observation>
               </entry>
@@ -391,16 +390,12 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="64515370-0A35-410C-BA15-AA3D2D000347" />
                   <code code="9269-2" displayName="Glasgow coma score total" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#glasgow" />
-                  </text>
+                  <text><reference value="#glasgow" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="2018" />
                   <value xsi:type="INT" value="15" />
                   <interpretationCode xsi:type="CE" code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.83" codeSystemName="ObservationInterpretation">
-                    <originalText>
-                      <reference value="#glasgow" />
-                    </originalText>
+                    <originalText><reference value="#glasgow" /></originalText>
                   </interpretationCode>
                 </observation>
               </entry>
@@ -549,9 +544,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.6" />
                   <id root="6B6D16AF-EDD3-41CA-9452-0F200C4D858F" />
                   <code code="72089-6" displayName="Score total NIHSS" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#nihssTotal" />
-                  </text>
+                  <text><reference value="#nihssTotal" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20180923" />
                   <value xsi:type="INT" value="4" />
@@ -567,16 +560,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="29B7A445-1587-4131-BD74-1038448285C0" />
                       <code code="70184-7" displayName="Niveau conscience [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="nihssCons" />
-                      </text>
+                      <text><reference value="nihssCons" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18436-8" displayName="Vigilant, réagit vivement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssCons" />
-                        </originalText>
+                        <originalText><reference value="#nihssCons" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -591,16 +580,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="2A992809-13B0-44B0-B06B-3F2884078182" />
                       <code code="70185-4" displayName="LOC Questions [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssQuest" />
-                      </text>
+                      <text><reference value="#nihssQuest" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="1" />
                       <interpretationCode code="LA18441-8" displayName="Ne répond correctement qu'à une seule question." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssQuest" />
-                        </originalText>
+                        <originalText><reference value="#nihssQuest" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -615,16 +600,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="21B4B643-33CF-44C7-8391-9F21D000B75F" />
                       <code code="70186-2" displayName="LOC Commandes [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssCom" />
-                      </text>
+                      <text><reference value="#nihssCom" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="1" />
                       <interpretationCode code="LA18444-2" displayName="Exécute un seul ordre sur les deux." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssCom" />
-                        </originalText>
+                        <originalText><reference value="#nihssCom" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -639,16 +620,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="B77937B0-19F2-49C1-9B54-8A5F10810374" />
                       <code code="70187-0" displayName="Occulomotricité [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssOculo" />
-                      </text>
+                      <text><reference value="#nihssOculo" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="1" />
                       <interpretationCode code="LA18446-7" displayName="Paralysie partielle (ce score est attribué quand l'oculomotricité est anormale pour 1 ou 2 yeux, mais sans déviation forcée, ni paralysie complète)." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssOculo" />
-                        </originalText>
+                        <originalText><reference value="#nihssOculo" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -663,16 +640,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="5D38DB2C-0AB4-4109-AAD8-1D484B40FD1D" />
                       <code code="70188-8" displayName="Champ visuel [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssVisu" />
-                      </text>
+                      <text><reference value="#nihssVisu" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18448-3" displayName="Aucun trouble du champ visuel." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssVisu" />
-                        </originalText>
+                        <originalText><reference value="#nihssVisu" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -687,16 +660,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="097D441F-E55C-4057-B257-44AAD643C99C" />
                       <code code="70189-6" displayName="Paralysie faciale [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssPara" />
-                      </text>
+                      <text><reference value="#nihssPara" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18453-3" displayName="Paralysie mineure (effacement du sillon nasogénien, asymétrie du sourire)." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssPara" />
-                        </originalText>
+                        <originalText><reference value="#nihssPara" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -711,16 +680,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="E1DCC546-7766-41C5-927E-AD85184536DD" />
                       <code code="70967-5" displayName="motricité MSD [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssMsd" />
-                      </text>
+                      <text><reference value="#nihssMsd" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18456-6" displayName="Absence de chute; maintien du membre supérieur à 90° (ou 45°) pendant 10 secondes." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssMsd" />
-                        </originalText>
+                        <originalText><reference value="#nihssMsd" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -734,17 +699,13 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="FB1416EA-1B50-43FE-9D9A-C65FA0892279" />
-                      <code code="70190-4" displayName=" motricité MSG [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssMsg" />
-                      </text>
+                      <code code="70190-4" displayName="motricité MSG [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                      <text><reference value="#nihssMsg" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18456-6" displayName="Absence de chute; maintien du membre supérieur à 90° (ou 45°) pendant 10 secondes." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssMsg" />
-                        </originalText>
+                        <originalText><reference value="#nihssMsg" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -758,17 +719,13 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="197F16F3-01D3-48E2-B59C-186A61206082" />
-                      <code code="70968-3" displayName=" motricité MID [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssMid" />
-                      </text>
+                      <code code="70968-3" displayName="motricité MID [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                      <text><reference value="#nihssMid" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="1" />
                       <interpretationCode code="LA18463-2" displayName="Chute; la position ne peut être maintenue pendant 5 secondes mais le membre inférieur ne retombe pas sur le lit." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssMid" />
-                        </originalText>
+                        <originalText><reference value="#nihssMid" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -783,16 +740,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="66ED6999-6F8A-4267-8A55-56D6EB518A26" />
                       <code code="70191-2" displayName="motricité MIG [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssMig" />
-                      </text>
+                      <text><reference value="#nihssMig" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18463-2" displayName="Chute; la position ne peut être maintenue pendant 5 secondes mais le membre inférieur ne retombe pas sur le lit." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssMig" />
-                        </originalText>
+                        <originalText><reference value="#nihssMig" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -807,16 +760,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="BA2F75F3-F34B-4B64-A620-3E8338A5A62F" />
                       <code code="70192-0" displayName="Ataxie des membres [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssAtax" />
-                      </text>
+                      <text><reference value="#nihssAtax" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="2" />
                       <interpretationCode code="LA18467-3" displayName="présente pour deux membres." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssAtax" />
-                        </originalText>
+                        <originalText><reference value="#nihssAtax" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -831,16 +780,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="1A679701-D664-4324-98CB-9791E13638FB" />
                       <code code="70193-8" displayName="Sensibilité [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssSensi" />
-                      </text>
+                      <text><reference value="#nihssSensi" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18478-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Normal">
-                        <originalText>
-                          <reference value="#nihssSensi" />
-                        </originalText>
+                        <originalText><reference value="#nihssSensi" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -855,16 +800,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="3246ADB7-71BA-4816-9BA6-2BEF487E1479" />
                       <code code="70194-6" displayName="Meilleur langage [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssLang" />
-                      </text>
+                      <text><reference value="#nihssLang" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18472-3" displayName="Aphasie discrète à modérée." codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#nihssLang" />
-                        </originalText>
+                        <originalText><reference value="#nihssLang" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -879,16 +820,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="DB559AB5-5794-4253-85B5-F7E2FCE41EED" />
                       <code code="70195-3" displayName="Dysarthrie [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssDysarthrie" />
-                      </text>
+                      <text><reference value="#nihssDysarthrie" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18468-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Normal">
-                        <originalText>
-                          <reference value="#nihssDysarthrie" />
-                        </originalText>
+                        <originalText><reference value="#nihssDysarthrie" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -903,16 +840,12 @@
                       <templateId root="1.2.250.1.213.1.1.3.8" />
                       <id root="E9320616-D940-4BF0-821B-B69BC0B98ECE" />
                       <code code="70196-1" displayName="Extinction ou négligence [NIHSS]" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#nihssNegli" />
-                      </text>
+                      <text><reference value="#nihssNegli" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="20180923" />
                       <value xsi:type="INT" value="0" />
                       <interpretationCode code="LA18468-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Normal">
-                        <originalText>
-                          <reference value="#nihssNegli" />
-                        </originalText>
+                        <originalText><reference value="#nihssNegli" /></originalText>
                       </interpretationCode>
                     </observation>
                   </entryRelationship>
@@ -1138,10 +1071,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="D31AC1C2-E2A3-45CE-A067-980B600857E9" />
               <code code="MED-503" displayName="Aggravation neurologique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="neuro">
-                </reference>
-              </text>
+              <text><reference value="neuro"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20180923" />
               <value xsi:type="BL" value="true" />
@@ -1153,10 +1083,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="0FFCEB4F-83E5-4356-A163-32BFD6A1D0C2" />
                   <code code="I22" displayName="infarctus du myocarde récidivant" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
-                  <text>
-                    <reference value="neuro">
-                    </reference>
-                  </text>
+                  <text><reference value="neuro"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1172,11 +1099,8 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="19529072-CDFE-4A84-B0FF-99F93BCCE5C3" />
-              <code code="DA-30000" displayName="Crise convulsive" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
-              <text>
-                <reference value="conv">
-                </reference>
-              </text>
+              <code code="R56.8" displayName="Convulsions, autres et non précisées" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+              <text><reference value="conv"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
               <value xsi:type="BL" value="true" />
@@ -1191,10 +1115,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="0878DFBF-94B7-488A-B5DC-DDA1ACA72518" />
               <code code="MED-504" displayName="Troubles de la déglution justifiant une Gastrostomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="deglution">
-                </reference>
-              </text>
+              <text><reference value="deglution"/></text>
               <statusCode code="completed" />
               <effectiveTime value="21040112" />
               <value xsi:type="BL" value="true" />
@@ -1209,10 +1130,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="C4E803C8-C909-49BD-8B68-43C2393FB231" />
               <code code="MED-518" displayName="Complications pulmonaires" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="pulmo">
-                </reference>
-              </text>
+              <text><reference value="pulmo"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20140112" />
               <value xsi:type="BL" value="true" />
@@ -1224,11 +1142,8 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="DA8D1EBD-D5AC-42F0-8507-E71ABC5C82CB" />
-                  <code code="D2-00100" displayName="Infection pulmonaire" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
-                  <text>
-                    <reference value="infectPulmo">
-                    </reference>
-                  </text>
+                  <code code="J22" displayName="Infection aigüe des voies respiratoires inférieures, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <text><reference value="infectPulmo"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1243,10 +1158,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="27E37D8C-7012-4ABF-B5B6-6BBBC96CFC42" />
                   <code code="MED-511" displayName="Troubles respiratoires justifiant une Ventilation assistée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="respVenti">
-                    </reference>
-                  </text>
+                  <text><reference value="respVenti"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1261,10 +1173,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="72E15D0C-20C4-4016-878D-3AFDEE68228D" />
                   <code code="MED-505" displayName="Troubles respiratoires justifiant une VNI" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="respVNI">
-                    </reference>
-                  </text>
+                  <text><reference value="respVNI"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1279,10 +1188,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="722182FA-AB11-4454-9E8C-07978BBFC322" />
                   <code code="MED-506" displayName="Troubles respiratoires justifiant une Trachéotomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="respTrach">
-                    </reference>
-                  </text>
+                  <text><reference value="respTrach"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1299,10 +1205,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="14F6D9B4-E293-4170-9384-EF7FA9A3D1D1" />
               <code code="MED-519" displayName="Complications thromboemboliques" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="complithromb">
-                </reference>
-              </text>
+              <text><reference value="complithromb"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20140112" />
               <value xsi:type="BL" value="true" />
@@ -1315,10 +1218,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="D45BE306-33DD-4E37-B7F7-EB2260B47A32" />
                   <code code="I26" displayName="Embolie pulmonaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
-                  <text>
-                    <reference value="emboliePulmo">
-                    </reference>
-                  </text>
+                  <text><reference value="emboliePulmo"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1333,10 +1233,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="7F027D5A-9834-4A72-BF84-4D184FD950BF" />
                   <code code="I80.2" displayName="Thrombose veineuse profonde" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
-                  <text>
-                    <reference value="thrombVein">
-                    </reference>
-                  </text>
+                  <text><reference value="thrombVein"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1350,11 +1247,8 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="400947AB-F5B2-4DF8-B9BC-ED372A102A50" />
-                  <code code="M-35106" displayName="Thrombus systémique" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
-                  <text>
-                    <reference value="thrombSys">
-                    </reference>
-                  </text>
+                  <code code="I82.9" displayName="Embolie et thrombose d'une veine non précisée" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <text><reference value="thrombSys"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1371,14 +1265,11 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="543EC994-030F-46F6-9438-61336497CBB3" />
               <code code="MED-520" displayName="Complications urinaires" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="compliUri">
-                </reference>
-              </text>
+              <text><reference value="compliUri"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20140112" />
               <value xsi:type="BL" value="true" />
-              <!-- 	 Infection urinaire -->
+              <!-- Infection urinaire -->
               <entryRelationship typeCode="RSON">
                 <observation classCode="OBS" moodCode="EVN" negationInd="false">
                   <!-- Conformité IHE PCC -->
@@ -1386,11 +1277,8 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="1C9A4BDB-F315-491B-8F2D-54D4DD8E8228" />
-                  <code code="N39.0" displayName="Infection urinaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
-                  <text>
-                    <reference value="infUri">
-                    </reference>
-                  </text>
+                  <code code="N39.0" displayName="Infection des voies urinaires, siège non précisé" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <text><reference value="infUri"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1402,10 +1290,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.48" />
                       <id root="DC648D6F-AF06-4840-8975-08B15CB3B631" />
                       <code code="MED-509" displayName="Germe" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                      <text>
-                        <reference value="germe">
-                        </reference>
-                      </text>
+                      <text><reference value="germe"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
                       <value xsi:type="ST">fsd</value>
@@ -1422,10 +1307,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="F39D9213-7FEA-42D1-A805-61B2838884BE" />
                   <code code="MED-507" displayName="Troubles urinaires justifiant une Sonde urinaire" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="sonde">
-                    </reference>
-                  </text>
+                  <text><reference value="sonde"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1442,10 +1324,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="A8FB0157-13E1-4BE1-B934-241C8F0E2930" />
               <code code="MED-521" displayName="Complications digestives" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="compliDig">
-                </reference>
-              </text>
+              <text><reference value="compliDig"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20140112" />
               <value xsi:type="BL" value="true" />
@@ -1457,11 +1336,8 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="98EE550D-C462-4C4B-9289-03B13E9656AD" />
-                  <code code="D5-00100" displayName="Hémorragie digestive" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
-                  <text>
-                    <reference value="hemoDig">
-                    </reference>
-                  </text>
+                  <code code="K92.2" displayName="Hémorragie gastro-intestinale, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <text><reference value="hemoDig"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1476,10 +1352,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="765245BF-F25A-4B70-A87A-317718506FB9" />
                   <code code="MED-508" displayName="Toubles digestifs justifiant une Sonde gastrique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="sondeGast">
-                    </reference>
-                  </text>
+                  <text><reference value="sondeGast"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1496,10 +1369,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8DCEB2C9-BDFA-46BB-AC4C-980FFF7285D6" />
               <code code="GEN-092.01.01" displayName="Autre problème" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="autreInfect">
-                </reference>
-              </text>
+              <text><reference value="autreInfect"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
               <value xsi:type="BL" value="true" />
@@ -1514,10 +1384,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="07CEB1C2-096C-4513-83CF-61E8734D7BFC" />
               <code code="MED-522" displayName="Complication neuropsychiatrique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="compliDig">
-                </reference>
-              </text>
+              <text><reference value="compliDig"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20140112" />
               <value xsi:type="BL" value="true" />
@@ -1529,11 +1396,8 @@
                   <!-- Conformité CI-SIS Simple Observation -->
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="07CEB1C2-096C-4513-83CF-61E8734D7BFC" />
-                  <code code="F-92300" displayName="Dépression" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
-                  <text>
-                    <reference value="dep">
-                    </reference>
-                  </text>
+                  <code code="F32.9" displayName="Épisode dépressif, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+                  <text><reference value="dep"/></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="BL" value="true" />
@@ -1549,11 +1413,8 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8A21D3C6-8BBC-469A-8081-F6EEE72AED7C" />
-              <code code="D3-16001" displayName="Insuffisance cardiaque aiguë" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5" />
-              <text>
-                <reference value="insuCard">
-                </reference>
-              </text>
+              <code code="I50.9" displayName="Insuffisance cardiaque, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
+              <text><reference value="insuCard"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
               <value xsi:type="BL" value="true" />
@@ -1568,10 +1429,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="877A5D31-F1CC-46B9-92B0-BF6396022050" />
               <code code="GEN-092.01.01" displayName="Autre problème" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="autres">
-                </reference>
-              </text>
+              <text><reference value="autres"/></text>
               <statusCode code="completed" />
               <effectiveTime nullFlavor="NA" />
               <value xsi:type="ST">hhh</value>
@@ -1680,9 +1538,7 @@
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="AADF4F65-5072-439A-A552-222A4078C378" />
               <code code="30954-2" displayName="Résultats d'examens" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-              <text>
-                <reference value="resultats" />
-              </text>
+              <text><reference value="resultats" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
             </procedure>
@@ -1696,9 +1552,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="F930A233-D89F-49A4-86E8-344D37FC6D3C" />
               <code code="EAQM004" displayName="Echo-Doppler cervical" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="echoDoppler"/>
-              </text>
+              <text><reference value="echoDoppler"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1713,9 +1567,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8352B130-AAE6-4541-B7D1-4516AC182074" />
               <code code="EAQM002" displayName="DTC" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="dtc"/>
-              </text>
+              <text><reference value="dtc"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1730,9 +1582,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="DA78C7CD-F066-484C-B840-2032421C91F6"/>
               <code code="ACQN001" displayName="ARM Cervicale" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
-              <text>
-                <reference value="armCervicale"/>
-              </text>
+              <text><reference value="armCervicale"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20181001"/>
               <value xsi:type="ST"/>
@@ -1747,9 +1597,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="E599F408-B6F9-41BC-A6F2-78787BA3B944" />
               <code code="EBQH006" displayName="Angiographie cervicale" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="angioscanner"/>
-              </text>
+              <text><reference value="angioscanner"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1764,9 +1612,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="16264E10-CE45-4CBD-84AB-ABB1CAA2BC7E" />
               <code code="DEQP003" displayName="ECG" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="ecg"/>
-              </text>
+              <text><reference value="ecg"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1781,9 +1627,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8B8AA227-7C95-486D-9A11-EB645BB127E1" />
               <code code="DEQP004" displayName="Scope" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="scope"/>
-              </text>
+              <text><reference value="scope"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1798,9 +1642,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="3E136C79-3FF1-4E3C-B233-3094521D3057" />
               <code code="DEQP005" displayName="Holter" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="holter"/>
-              </text>
+              <text><reference value="holter"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1815,9 +1657,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="15CE7FEB-6A24-420D-A79D-7A8599B4AD6D" />
               <code code="DZQM006" displayName="Echographie Transthoracique" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="echoTrans"/>
-              </text>
+              <text><reference value="echoTrans"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -1832,9 +1672,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="C08B5338-2EC7-4FC0-B057-45F391E656FA" />
               <code code="DZQJ001" displayName="Echographie Transoesophagienne" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
-              <text>
-                <reference value="echoTransoesophagienne"/>
-              </text>
+              <text><reference value="echoTransoesophagienne"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
               <value xsi:type="ST"/>
@@ -2608,15 +2446,10 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
-              <code code="P1-30330" displayName="Endartériectomie" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
-                <originalText>
-                  <reference value="#avc_10" />
-                </originalText>
+              <code code="392031002" displayName="endartériectomie" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                <originalText><reference value="#avc_10" /></originalText>
               </code>
-              <text>
-                <reference value="#avc_10">
-                </reference>
-              </text>
+              <text><reference value="#avc_10"/></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20181001" />
@@ -2633,15 +2466,10 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
-              <code code="P1-30800" displayName="Angioplastie" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
-                <originalText>
-                  <reference value="#avc_11" />
-                </originalText>
+              <code code="2119009" displayName="réparation d'un vaisseau sanguin" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                <originalText><reference value="#avc_11" /></originalText>
               </code>
-              <text>
-                <reference value="#avc_11">
-                </reference>
-              </text>
+              <text><reference value="#avc_11"/></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20181001" />
@@ -2658,15 +2486,10 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
-              <code code="P1-91300" displayName="Crâniectomie" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
-                <originalText>
-                  <reference value="#avc_12" />
-                </originalText>
+              <code code="36910002" displayName="craniectomie" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                <originalText><reference value="#avc_12" /></originalText>
               </code>
-              <text>
-                <reference value="#avc_12">
-                </reference>
-              </text>
+              <text><reference value="#avc_12"/></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20181001" />
@@ -2683,15 +2506,10 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
-              <code code="P1-91221" displayName="Evacuation hématome intracérébral" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5">
-                <originalText>
-                  <reference value="#avc_13" />
-                </originalText>
+              <code code="10458001" displayName="évacuation d'un hématome intracérébral" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                <originalText><reference value="#avc_13" /></originalText>
               </code>
-              <text>
-                <reference value="#avc_13">
-                </reference>
-              </text>
+              <text><reference value="#avc_13"/></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20181001" />
@@ -2709,14 +2527,9 @@
               <templateId root="1.2.250.1.213.1.1.3.62" />
               <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
               <code code="MED-512" displayName="Pose Valve / Dérivation externe" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
-                <originalText>
-                  <reference value="#avc_14" />
-                </originalText>
+                <originalText><reference value="#avc_14" /></originalText>
               </code>
-              <text>
-                <reference value="#avc_14">
-                </reference>
-              </text>
+              <text><reference value="#avc_14"/></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20181001" />
@@ -2744,13 +2557,10 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="7E8F0E39-C756-4B73-BC00-BC72D29E41BB" />
               <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference nullFlavor="NA">
-                </reference>
-              </text>
+              <text><reference nullFlavor="NA"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181011232000+0100" />
-              <value xsi:type="CD" code="9571008" displayName="Approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </observation>
           </entry>
         </section>

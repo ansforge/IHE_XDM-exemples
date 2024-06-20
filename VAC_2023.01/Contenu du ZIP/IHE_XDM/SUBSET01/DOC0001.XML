@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
@@ -17,7 +16,7 @@
       Historique :
       15/04/2022 : Modification des terminologies et JDVs
       30/01/2023 : Nouvelle version du volet VAC 2023.01
-      
+      15/05/2024 : Mise à jour pour intégrer le commentaire dans la partie structurée (après la reference)      
       **********************************************************************************************************
    -->
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
@@ -56,8 +55,8 @@
   <!-- Patient -->
   <recordTarget>
     <patientRole>
-      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-      <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
       <!-- Adresse du patient -->
       <addr>
         <houseNumber>28</houseNumber>
@@ -70,19 +69,23 @@
       <!-- Coordonnées télécom du patient -->
       <telecom value="tel:0144534551" use="H"/>
       <telecom value="tel:0647151010" use="MC"/>
-      <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">NESSI</family>            
-          <given>Ruth Isabelle</given>
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>   
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-        <birthTime value="19770714"/>
+        <birthTime value="19790328"/>
         <!-- Représentant du patient -->
         <guardian>
           <addr use="H">
@@ -302,8 +305,7 @@
                   <td>voie intramusculaire</td>
                   <td><content ID="approachSiteCode-01">Deltoïde gauche</content></td>
                   <td><content ID="bcg-reac">fièvre due à des médicaments</content></td>
-                  <td ID="bcg-comment">L'usager a été informé des avantages et risques liés à
-                              la vaccination</td>
+                  <td><content ID="bcg-comment">L'usager a été informé des avantages et risques liés à la vaccination</content></td>
                   <td>Dr Charles MULLER</td>
                 </tr>
               </tbody>
@@ -341,7 +343,7 @@
                   <td>voie intramusculaire</td>
                   <td><content ID="approachSiteCode-02">Deltoïde gauche</content></td>
                   <td><content ID="tetanos1-reac">fièvre due à des médicaments</content></td>
-                  <td ID="tetanos1-comment">-</td>
+                  <td><content ID="tetanos1-comment">(texte libre)</content></td>
                   <td>Dr Charles MULLER</td>
                 </tr>
                 <tr>
@@ -354,7 +356,7 @@
                   <td>voie intramusculaire</td>
                   <td><content ID="approachSiteCode-03">Deltoïde gauche</content></td>
                   <td><content ID="tetanos2-reac">fièvre due à des médicaments</content></td>
-                  <td ID="tetanos2-comment">Prise récente et ponctuelle de solupred (60mg) en une prise pendant 2 jours</td>
+                  <td><content ID="tetanos2-comment">Prise récente et ponctuelle de solupred (60mg) en une prise pendant 2 jours</content></td>
                   <td>Dr Charles MULLER</td>
                 </tr>
               </tbody>
@@ -391,7 +393,7 @@
                   <td>voie intramusculaire</td>
                   <td><content ID="approachSiteCode-04">Deltoïde gauche</content></td>
                   <td><content ID="meningo-reac">-</content></td>
-                  <td><content ID="meningo-comment">-</content></td>
+                  <td><content ID="meningo-comment"></content></td>
                   <td>Dr Charles MULLER</td>
                 </tr>
               </tbody>
@@ -429,19 +431,14 @@
               <id root="41DAC707-7C96-47B7-B600-AC63D8002142" />
               <code code="INITIMMUNIZ" displayName="1ère série vaccinante" 
                     codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActSubstanceAdministrationImmunizationCode" />
-              <text>
-                <reference value="bcg" />
-              </text>
+              <text><reference value="bcg" /></text>
               <statusCode code="completed" />
               <effectiveTime value="1975" />
-              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
               <routeCode code="20035000" displayName="voie intramusculaire" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM" />
-              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode-CISIS (1.2.250.1.213.1.1.5.621) -->
+              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode_CISIS (1.2.250.1.213.1.1.5.621) -->
               <approachSiteCode code="16217701000119102" displayName="deltoïde gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
-                <originalText>
-                  <reference value="#approachSiteCode-01">
-                  </reference>
-                </originalText>
+                <originalText><reference value="#approachSiteCode-01"/></originalText>
               </approachSiteCode>
               <!-- Vaccin -->
               <consumable typeCode="CSM">
@@ -454,18 +451,17 @@
                   <templateId root="1.2.250.1.213.1.1.3.43"/>
                   <manufacturedMaterial>  
                     <code code="61077869" displayName="VACCIN BCG SSI, poudre et solvant pour suspension injectable" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                      <originalText>
-                        <reference value="#bcg" />
-                      </originalText>
+                      <originalText><reference value="#bcg" /></originalText>
                       <translation code="J07AN" displayName="Vaccin antituberculeux" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                       <translation code="3400936466425" displayName="1 flacon(s) en verre jaune(brun) - 1 flacon(s) en verre de 1 ml avec nécessaire(s) avec aiguille(s)" codeSystem="1.2.250.1.213.2.3.3" codeSystemName="CIP" />
                     </code>
+                    <name>VACCIN BCG SSI, poudre et solvant pour suspension injectable</name>
                     <lotNumberText>235421176</lotNumberText>
                   </manufacturedMaterial>
                 </manufacturedProduct>
               </consumable>
               <!-- Exécutant -->
-              <performer>
+              <performer typeCode="PRF">
                 <assignedEntity>
                   <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
                   <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
@@ -487,7 +483,7 @@
                   <representedOrganization>
                     <id root="1.2.250.1.71.4.2.2" extension="101238887" />
                     <name>Cabinet médical du Dr MULLER</name>
-                    <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
+                    <!-- JDV_J04-XdsPracticeSettingCode_CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
                   </representedOrganization>
                 </assignedEntity>
@@ -542,7 +538,7 @@
                   <representedOrganization>
                     <id root="1.2.250.1.71.4.2.2" extension="101238887" />
                     <name>Cabinet médical du Dr MULLER</name>
-                    <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
+                    <!-- JDV_J04-XdsPracticeSettingCode_CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
                   </representedOrganization>
                 </assignedEntity>
@@ -581,9 +577,7 @@
                   <!-- réactions à une vaccination : CIM-10 -->
                   <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments" 
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#bcg-reac" />
-                    </originalText>
+                    <originalText><reference value="#bcg-reac" /></originalText>
                   </value>
                 </observation>
               </entryRelationship>
@@ -597,9 +591,7 @@
                   <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#bcg-comment" />
-                  </text>
+                  <text><reference value="#bcg-comment" />L'usager a été informé des avantages et risques liés à la vaccination</text>
                   <statusCode code="completed" />
                 </act>
               </entryRelationship>
@@ -617,19 +609,14 @@
               <templateId root="1.2.250.1.213.1.1.3.45"/>
               <id root="41DAC707-7C96-47B7-B600-AC63D8002142" />
               <code code="INITIMMUNIZ" displayName="1ère série vaccinante" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActSubstanceAdministrationImmunizationCode" />
-              <text>
-                <reference value="#tetanos1" />
-              </text>
+              <text><reference value="#tetanos1" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20090928094914+0100" />
-              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
               <routeCode code="20035000" displayName="voie intramusculaire" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM" />
-              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode-CISIS (1.2.250.1.213.1.1.5.621) -->
+              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode_CISIS (1.2.250.1.213.1.1.5.621) -->
               <approachSiteCode code="16217701000119102" displayName="deltoïde gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
-                <originalText>
-                  <reference value="#approachSiteCode-02">
-                  </reference>
-                </originalText>
+                <originalText><reference value="#approachSiteCode-02"/></originalText>
               </approachSiteCode>
               <!-- Vaccin -->
               <consumable typeCode="CSM">
@@ -642,12 +629,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.43"/>
                   <manufacturedMaterial>
                     <code code="68747507" displayName="VACCIN TETANIQUE PASTEUR, suspension injectable en seringue préremplie vaccin tétanique adsorbé" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                      <originalText>
-                        <reference value="#tetanos1" />
-                      </originalText>
+                      <originalText><reference value="#tetanos1" /></originalText>
                       <translation code="J07AM" displayName="VACCIN TETANIQUE" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                       <translation code="3400932857241" displayName="1 seringue(s) préremplie(s) en verre de 0,5 ml" codeSystem="1.2.250.1.213.2.3.3" codeSystemName="CIP" />
                     </code>
+                    <name>VACCIN TETANIQUE PASTEUR, suspension injectable en seringue préremplie vaccin tétanique adsorbé</name>
                     <lotNumberText>4456668</lotNumberText>
                   </manufacturedMaterial>
                 </manufacturedProduct>
@@ -675,7 +661,7 @@
                   <representedOrganization>
                     <id root="1.2.250.1.71.4.2.2" extension="101238887" />
                     <name>Cabinet médical du Dr MULLER</name>
-                    <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
+                    <!-- JDV_J04-XdsPracticeSettingCode_CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
                   </representedOrganization>
                 </assignedEntity>
@@ -741,9 +727,7 @@
                   <!-- réactions à une vaccination : CIM-10 -->
                   <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments" 
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#tetanos1-reac" />
-                    </originalText>
+                    <originalText><reference value="#tetanos1-reac" /></originalText>
                   </value>
                 </observation>
               </entryRelationship>
@@ -757,9 +741,7 @@
                   <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#tetanos1-comment" />
-                  </text>
+                  <text><reference value="#tetanos1-comment" />(texte libre)</text>
                   <statusCode code="completed" />
                 </act>
               </entryRelationship>
@@ -777,19 +759,14 @@
               <templateId root="1.2.250.1.213.1.1.3.45"/>
               <id root="41DAC707-7C96-47B7-B600-AC63D8002142" />
               <code code="INITIMMUNIZ" displayName="1ère série vaccinante" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActSubstanceAdministrationImmunizationCode" />
-              <text>
-                <reference value="#tetanos2" />
-              </text>
+              <text><reference value="#tetanos2" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20090928094914+0100" />
-              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
               <routeCode code="20035000" displayName="voie intramusculaire" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM" />
-              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode-CISIS (1.2.250.1.213.1.1.5.621) -->
+              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode_CISIS (1.2.250.1.213.1.1.5.621) -->
               <approachSiteCode code="16217701000119102" displayName="deltoïde gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
-                <originalText>
-                  <reference value="#approachSiteCode-03">
-                  </reference>
-                </originalText>
+                <originalText><reference value="#approachSiteCode-03"/></originalText>
               </approachSiteCode>
               <!-- Vaccin -->
               <consumable typeCode="CSM">
@@ -802,12 +779,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.43"/>
                   <manufacturedMaterial>
                     <code code="68747507" displayName="VACCIN TETANIQUE PASTEUR, suspension injectable en seringue préremplie vaccin tétanique adsorbé" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                      <originalText>
-                        <reference value="#tetanos2" />
-                      </originalText>
+                      <originalText><reference value="#tetanos2" /></originalText>
                       <translation code="J07AM" displayName="VACCIN TETANIQUE" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                       <translation code="3400932857241" displayName="1 seringue(s) préremplie(s) en verre de 0,5 ml" codeSystem="1.2.250.1.213.2.3.3" codeSystemName="CIP" />
                     </code>
+                    <name>VACCIN TETANIQUE PASTEUR, suspension injectable en seringue préremplie vaccin tétanique adsorbé</name>
                     <lotNumberText>4456672</lotNumberText>
                   </manufacturedMaterial>
                 </manufacturedProduct>
@@ -835,7 +811,7 @@
                   <representedOrganization>
                     <id root="1.2.250.1.71.4.2.2" extension="101238887" />
                     <name>Cabinet médical du Dr MULLER</name>
-                    <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
+                    <!-- JDV_J04-XdsPracticeSettingCode_CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
                   </representedOrganization>
                 </assignedEntity>
@@ -901,9 +877,7 @@
                   <!-- réactions à une vaccination : CIM-10 -->
                   <value xsi:type="CD" code="R50.2" displayName="Fièvre due à des médicaments" 
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#tetanos2-reac" />
-                    </originalText>
+                    <originalText><reference value="#tetanos2-reac" /></originalText>
                   </value>
                 </observation>
               </entryRelationship>
@@ -917,9 +891,7 @@
                   <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#tetanos2-comment" />
-                  </text>
+                  <text><reference value="#tetanos2-comment" />Prise récente et ponctuelle de solupred (60mg) en une prise pendant 2 jours</text>
                   <statusCode code="completed" />
                 </act>
               </entryRelationship>
@@ -937,19 +909,14 @@
               <templateId root="1.2.250.1.213.1.1.3.45"/>
               <id root="41DAC707-7C96-47B7-B600-AC63D8004465" />
               <code code="INITIMMUNIZ" codeSystem="2.16.840.1.113883.5.4" displayName="1ère série vaccinante" codeSystemName="ActSubstanceAdministrationImmunizationCode" />
-              <text>
-                <reference value="#meningo" />
-              </text>
+              <text><reference value="#meningo" /></text>
               <statusCode code="completed" />
               <effectiveTime value="20210409" />
-              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+              <!-- Voie d'administration : valeur issue du JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
               <routeCode code="20035000" displayName="voie intramusculaire" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM" />
-              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode-CISIS (1.2.250.1.213.1.1.5.621) -->
+              <!-- Région d'administration : valeur issue du JDV_ImmunizationApproachSiteCode_CISIS (1.2.250.1.213.1.1.5.621) -->
               <approachSiteCode code="16217701000119102" displayName="deltoïde gauche" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">                
-                <originalText>
-                  <reference value="#approachSiteCode-04">
-                  </reference>
-                </originalText>
+                <originalText><reference value="#approachSiteCode-04"/></originalText>
               </approachSiteCode>
               <!-- Vaccin -->
               <consumable typeCode="CSM">
@@ -962,12 +929,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.43"/>
                   <manufacturedMaterial>
                     <code code="61920725" displayName="VACCIN MENINGOCOCCIQUE A+C POLYOSIDIQUE, poudre et solvant pour suspension injectable en seringue préremplie" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                      <originalText>
-                        <reference value="#meningo" />
-                      </originalText>
+                      <originalText><reference value="#meningo" /></originalText>
                       <translation code="J07AH" displayName="VACCIN MENINGOCOCCIQUE" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                       <translation code="3400933465841" displayName="1 flacon(s) en verre de 10 dose(s) - 1 flacon(s) en verre de 5 ml" codeSystem="1.2.250.1.213.2.3.3" codeSystemName="CIP" />
                     </code>
+                    <name>VACCIN MENINGOCOCCIQUE A+C POLYOSIDIQUE, poudre et solvant pour suspension injectable en seringue préremplie</name>
                     <lotNumberText>357904636</lotNumberText>
                   </manufacturedMaterial>
                 </manufacturedProduct>
@@ -995,7 +961,7 @@
                   <representedOrganization>
                     <id root="1.2.250.1.71.4.2.2" extension="101238887" />
                     <name>Cabinet médical du Dr MULLER</name>
-                    <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
+                    <!-- JDV_J04-XdsPracticeSettingCode_CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire" codeSystem="1.2.250.1.213.1.1.4.9" />
                   </representedOrganization>
                 </assignedEntity>

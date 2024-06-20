@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns5:SubmitObjectsRequest xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+                          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <RegistryObjectList xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"><!--##################################################################--><!--RegistryPackage--><!--##################################################################-->
+      <ns2:RegistryPackage xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+                           id="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                           status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"><!--===================--><!--SubmissionTime--><!--===================-->
+         <ns2:Slot name="submissionTime">
+            <ns2:ValueList>
+               <ns2:Value>20240619105527</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--Name-->
+         <!--===================-->
+         <ns2:Name>
+            <ns2:LocalizedString charset="UTF8" value="Données de remboursement" xml:lang="FR"/>
+         </ns2:Name>
+         <!--===================-->
+         <!--Description (comments)-->
+         <!--===================-->
+         <ns2:Description>
+            <ns2:LocalizedString charset="UTF8" value="" xml:lang="FR"/>
+         </ns2:Description>
+         <!--===================-->
+         <!--Classification-->
+         <!--===================-->
+         <ns2:Classification classificationNode="urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="SubmissionSet01_c001"
+                             nodeRepresentation=""/>
+         <!--===================-->
+         <!--Author attributes-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:5340425e-5f5a-4f30-be12-812f1ec9f7aa"
+                             nodeRepresentation=""><!--===================--><!--AuthorInstitution--><!--===================-->
+            <ns2:Slot name="authorInstitution">
+               <ns2:ValueList>
+                  <ns2:Value>Assurance Maladie^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^318003502400041</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <!--===================-->
+            <!--AuthorPerson-->
+            <!--===================-->
+            <ns2:Slot name="authorPerson">
+               <ns2:ValueList>
+                  <ns2:Value>518003502400041/1.2.250.1.215.1.2^Assurance Maladie^.^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^U^^^RI</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <!--===================-->
+            <!--authorSpecialty-->
+            <!--===================-->
+            <ns2:Slot name="authorSpecialty">
+               <ns2:ValueList>
+                  <ns2:Value>ALIM_AM^Alimentation auto à partir du SI de l'Ass Maladie^1.2.250.1.213.1.1.4.6</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+         </ns2:Classification>
+         <!--===================-->
+         <!--HealthcareFacility-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="SubmissionSet01_c002"
+                             nodeRepresentation="SA24">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString charset="UTF8" value="Organisme de sécurité sociale" xml:lang="FR"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--PatientId-->
+         <!--===================-->
+         <ns2:ExternalIdentifier id="urn:uuid:717855d2-b0ea-4992-8b95-ad95e5412fd1"
+                                 identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446"
+                                 registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6"
+                                 value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+            <ns2:Name>
+               <ns2:LocalizedString value="XDSSubmissionSet.patientId"/>
+            </ns2:Name>
+         </ns2:ExternalIdentifier>
+         <!--===================-->
+         <!--SourceId-->
+         <!--===================-->
+         <ns2:ExternalIdentifier id="urn:uuid:b5e26fd2-fb9c-4057-8682-34dde6d4e2ca"
+                                 identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832"
+                                 registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6"
+                                 value="1.2.250.1.71.4.2.2.318003502400041">
+            <ns2:Name>
+               <ns2:LocalizedString value="XDSSubmissionSet.sourceId"/>
+            </ns2:Name>
+         </ns2:ExternalIdentifier>
+         <!--===================-->
+         <!--UniqueId-->
+         <!--===================-->
+         <ns2:ExternalIdentifier id="urn:uuid:a27c7c2b-66f4-4327-857c-a34fe3e3c841"
+                                 identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8"
+                                 registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6"
+                                 value="1.2.250.1.213.1.1.1.1.2024.6.6.1718787327864">
+            <ns2:Name>
+               <ns2:LocalizedString value="XDSSubmissionSet.uniqueId"/>
+            </ns2:Name>
+         </ns2:ExternalIdentifier>
+      </ns2:RegistryPackage>
+      <!--##################################################################-->
+      <!--Extrinsic object - CDA CNAM-HR_2021.01.xml-->
+      <!--##################################################################-->
+      <ns2:ExtrinsicObject xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+                           id="urn:uuid:c6afae68-1747-474a-ab8e-6ee3e9e110e3"
+                           mimeType="text/xml"
+                           objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
+                           status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"><!--===================--><!--Hash--><!--===================-->
+         <ns2:Slot name="hash">
+            <ns2:ValueList>
+               <ns2:Value>6650D016C8F1C2BB2B84FC97208ECB2FB7FC4DD1</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--Size-->
+         <!--===================-->
+         <ns2:Slot name="size">
+            <ns2:ValueList>
+               <ns2:Value>111514</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--URI-->
+         <!--===================-->
+         <ns2:Slot name="URI">
+            <ns2:ValueList>
+               <ns2:Value>DOC0001.XML</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--CreationTime-->
+         <!--===================-->
+         <ns2:Slot name="creationTime">
+            <ns2:ValueList>
+               <ns2:Value>20190701154900</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--LangageCode-->
+         <!--===================-->
+         <ns2:Slot name="languageCode">
+            <ns2:ValueList>
+               <ns2:Value>fr-FR</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--LegalAuthenticator-->
+         <!--===================-->
+         <ns2:Slot name="legalAuthenticator">
+            <ns2:ValueList>
+               <ns2:Value>518003502400041/1.2.250.1.215.1.2^Assurance Maladie^.^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--ServiceStartTime-->
+         <!--===================-->
+         <ns2:Slot name="serviceStartTime">
+            <ns2:ValueList>
+               <ns2:Value>20190101144500</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--ServiceStopTime-->
+         <!--===================-->
+         <ns2:Slot name="serviceStopTime">
+            <ns2:ValueList>
+               <ns2:Value>20190701144500</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--SourcePatientId-->
+         <!--===================-->
+         <ns2:Slot name="sourcePatientId">
+            <ns2:ValueList>
+               <ns2:Value>1234567890121^^^&amp;1.2.3.4.567.8.9.10&amp;ISO^PI</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--SourcePatientInfo-->
+         <!--===================-->
+         <ns2:Slot name="sourcePatientInfo">
+            <ns2:ValueList>
+               <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^DOMINIQUE MARIE-LOUISE^^^^L</ns2:Value>
+               <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^^^^^D</ns2:Value>
+               <ns2:Value>PID-7|19790328</ns2:Value>
+               <ns2:Value>PID-8|F</ns2:Value>
+               <ns2:Value>PID-11|^^^^^^BDL^^63220</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+         <!--===================-->
+         <!--Name-->
+         <!--===================-->
+         <ns2:Name>
+            <ns2:LocalizedString charset="UTF8" value="Données de remboursement" xml:lang="FR"/>
+         </ns2:Name>
+         <!--===================-->
+         <!--Description (Comments)-->
+         <!--===================-->
+         <ns2:Description>
+            <ns2:LocalizedString charset="UTF8" value="" xml:lang="FR"/>
+         </ns2:Description>
+         <!--===================-->
+         <!--Authors Attributes-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:af1e399a-1610-4767-a1da-707e7c49ee0b"
+                             nodeRepresentation=""><!--===================--><!--AuthorInstitution--><!--===================-->
+            <ns2:Slot name="authorInstitution">
+               <ns2:ValueList>
+                  <ns2:Value>Assurance Maladie^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^318003502400041</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <!--===================-->
+            <!--AuthorPerson-->
+            <!--===================-->
+            <ns2:Slot name="authorPerson">
+               <ns2:ValueList>
+                  <ns2:Value>518003502400041/1.2.250.1.215.1.2^Assurance Maladie^.^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^U^^^RI</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <!--===================-->
+            <!--AuthorSpecialty-->
+            <!--===================-->
+            <ns2:Slot name="authorSpecialty">
+               <ns2:ValueList>
+                  <ns2:Value>ALIM_AM^Alimentation auto à partir du SI de l'Ass Maladie^1.2.250.1.213.1.1.4.6</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+         </ns2:Classification>
+         <!--===================-->
+         <!--Class-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:e4df5c65-258e-4d72-bc0c-1bd926e29007"
+                             nodeRepresentation="60">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>1.2.250.1.213.1.1.4.1</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString value="Données de remboursement"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--Confidentiality-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:04ceea77-035d-4c8f-a5b7-c7f8c21edff7"
+                             nodeRepresentation="N">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>2.16.840.1.113883.5.25</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString value="Normal"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--Format-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:0e8a2d1b-1fb3-4811-b26d-c3f2f6c73a25"
+                             nodeRepresentation="urn:asip:ci-sis:hr:2019">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>1.2.250.1.213.1.1.4.2.282</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString value="Données de remboursement"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--HealthcareFacility-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:9fe4bc02-8989-446f-80f8-0849da46554a"
+                             nodeRepresentation="SA24">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString value="Organisme de sécurité sociale"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--Practice Settings-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:cfa52f73-59a1-4c00-8931-e937a45875f6"
+                             nodeRepresentation="AMO">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>1.2.250.1.213.1.1.4.9</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString charset="UTF8"
+                                    value="Organisme d'assurance maladie obligatoire"
+                                    xml:lang="FR"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--Type-->
+         <!--===================-->
+         <ns2:Classification classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
+                             classifiedObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                             id="urn:uuid:632cb6bc-eeeb-4e5b-a830-8d685cafbf90"
+                             nodeRepresentation="REMB">
+            <ns2:Slot name="codingScheme">
+               <ns2:ValueList>
+                  <ns2:Value>1.2.250.1.213.1.1.4.12</ns2:Value>
+               </ns2:ValueList>
+            </ns2:Slot>
+            <ns2:Name>
+               <ns2:LocalizedString charset="UTF8" value="Données de remboursement" xml:lang="FR"/>
+            </ns2:Name>
+         </ns2:Classification>
+         <!--===================-->
+         <!--PatientId-->
+         <!--===================-->
+         <ns2:ExternalIdentifier id="urn:uuid:4b5d7242-b222-4f91-93e6-2443ff3d8f3e"
+                                 identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
+                                 registryObject="urn:uuid:4a889fd4-012f-4000-e008-12c48372fe64"
+                                 value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+            <ns2:Name>
+               <ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
+            </ns2:Name>
+         </ns2:ExternalIdentifier>
+         <!--===================-->
+         <!--UniqueId-->
+         <!--===================-->
+         <ns2:ExternalIdentifier id="urn:uuid:eb859faf-04d7-4875-9406-ace86dca96cb"
+                                 identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
+                                 registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0"
+                                 value="1.2.250.1.213.1.1.1.36.1">
+            <ns2:Name>
+               <ns2:LocalizedString charset="UTF8" value="XDSDocumentEntry.uniqueId" xml:lang="FR"/>
+            </ns2:Name>
+         </ns2:ExternalIdentifier>
+      </ns2:ExtrinsicObject>
+      <!--===================-->
+      <!--ASSOCIATIONS-->
+      <!--===================-->
+      <ns2:Association xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+                       associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"
+                       id="urn:uuid:a380ca7a-b167-4e90-8d5d-e2f5fa40360b"
+                       objectType="Original"
+                       sourceObject="urn:uuid:25c16d57-b1b3-41a9-abd2-3241fde31fc7"
+                       targetObject="urn:uuid:d59786b2-fdf5-4455-ac32-530b64153ebe">
+         <ns2:Slot name="SubmissionSetStatus">
+            <ns2:ValueList>
+               <ns2:Value>Original</ns2:Value>
+            </ns2:ValueList>
+         </ns2:Slot>
+      </ns2:Association>
+   </RegistryObjectList>
+</ns5:SubmitObjectsRequest>

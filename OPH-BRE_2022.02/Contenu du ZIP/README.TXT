@@ -1,25 +1,25 @@
-Emetteur :
-=============
-    . Nom :  VACQUIER Bernard
-    . Organisme : Opticien du centre(101238887)
+Emetteur: 
+============= 
+    . Nom:  VACQUIER Bernard
+    . Organisme: Opticien du centre (101238887) 
     . Adresse : 
-    . Téléphone: 
+    . Téléphone : 
 
-Application de l'emetteur :
-=========================
-    . Nom : ADK Healthcare
-    . Version : 1.2
-    . Editeur : ADK Software Limited
+Application de l'emetteur : 
+============= 
+    . Nom : ADK Healthcare 
+    . Version : 1.2 
+    . Editeur : ADK Software Limited 
 
-Instructions :
-=============
-. Consultez les fichiers reçus par messagerie securisee de sante dans votre logiciel de professionnel de sante.
+Instructions: 
+============= 
+. Consultez les fichiers reçus par messagerie securisee de sante dans votre logiciel de professionnel de sante. 
 
-Arborescence :
-============
-     README.TXT
-     INDEX.HTM
-     + IHE_XDM
-           +SUBSET01
-                METADATA.XML
-                DOC0001.XML
+Arborescence: 
+============= 
+     README.TXT 
+     INDEX.HTM 
+     + IHE_XDM 
+           +SUBSET01 
+                METADATA.XML 
+                DOC0001.XML 

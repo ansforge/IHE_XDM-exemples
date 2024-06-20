@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -74,11 +73,15 @@
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
-          <given qualifier="BR">DOMINIQUE</given>
-          <given>DOMINIQUE</given>
-          <family qualifier="BR">PAT-TROIS</family>
-          <family qualifier="SP">PAT-TROIS</family>
-          <family qualifier="CL">PAT-TROIS</family>
+          <!-- Nom et prénom(s) de naissance -->
+          <family qualifier="BR">DECOURCY</family>
+          <!-- Prénoms de l’acte de naissance -->
+          <given>Ruth Isabelle</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">Ruth</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">DECOURCY</family>
+          <given qualifier="CL">Ruth</given>   
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1" />
         <birthTime value="19790328"/>
@@ -289,6 +292,7 @@
   </authenticator>
   <!-- Médecin prescripteur des examens de biologie (ici, un gynécologue) -->
   <participant typeCode="REF">
+    <templateId root='1.3.6.1.4.1.19376.1.3.3.1.6'/>
     <!-- Date de l'ordonnance -->
     <time xsi:type="IVL_TS">
       <high value="20201231" />
@@ -431,7 +435,8 @@
   <!-- Contexte de la prise en charge -->
   <componentOf>
     <encompassingEncounter>
-      <code code="AMB" displayName="ambulatoire" codeSystem="2.16.840.1.113883.5.4" />
+      <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
+      <code code="AMB" displayName="Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4" />
       <effectiveTime>
         <low value="202101040735+0100" />
       </effectiveTime>
@@ -640,21 +645,21 @@
                   <td>
                     <content ID="isolat-1-amoxicilline">Amoxicilline</content>
                   </td>
-                  <td>&gt;=0,512 (µg/ml)</td>
+                  <td>&gt;=0,512 µg/ml</td>
                   <td>R</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-1-ampicilline">Ampicilline</content>
                   </td>
-                  <td>&lt;0,128 (µg/ml)</td>
+                  <td>&lt;0,128 µg/ml</td>
                   <td>I</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-1-gentamicine">Gentamicine</content>
                   </td>
-                  <td>&lt;0,0032 (µg/ml)</td>
+                  <td>&lt;0,0032 µg/ml</td>
                   <td>S</td>
                 </tr>
               </tbody>
@@ -687,21 +692,21 @@
                   <td>
                     <content ID="isolat-2-amoxicilline">Amoxicilline</content>
                   </td>
-                  <td>&lt;0,012 (µg/ml)</td>
+                  <td>&lt;0,012 µg/ml</td>
                   <td>S</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-2-ampicilline">Ampicilline</content>
                   </td>
-                  <td>&lt;0,013 (µg/ml)</td>
+                  <td>&lt;0,013 µg/ml</td>
                   <td>S</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-2-gentamicine">Gentamicine</content>
                   </td>
-                  <td>&lt;0,014 (µg/ml)</td>
+                  <td>&lt;0,014 µg/ml</td>
                   <td>S</td>
                 </tr>
               </tbody>
@@ -709,8 +714,7 @@
             <br />
             <paragraph styleCode="bold" ID="C_ECBU">Traitement immédiat</paragraph>
             <paragraph>Résultats validés par Jean DE SANTS - 4 janvier 2021, 11h20</paragraph>
-            <br />
-          </text>
+            <br /></text>
           <!-- Entrée FR-Resultats-examens-de-biologie-medicale : RESULTATS DE L'ECBU -->
           <entry typeCode="DRIV">
             <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
@@ -757,9 +761,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.77"/>
                   <!-- Code affiné NABM de l'acte -->
                   <code code="5201" displayName="EX MICROBIO URINES (ECBU)" codeSystem="1.2.250.1.213.2.7" codeSystemName="NABM">
-                    <originalText>
-                      <reference value="#prelevement-code-nabm" />
-                    </originalText>
+                    <originalText><reference value="#prelevement-code-nabm" /></originalText>
                   </code>
                   <!-- Date et heure du prélèvement -->
                   <effectiveTime>
@@ -770,12 +772,10 @@
                     <participantRole classCode="SPEC">
                       <!-- Identifiant de l'échantillon -->
                       <id root="1.2.250.1.71.4.2.1" extension="801234567893" />
-                      <!-- Nature de l'échantillon : valeur issue du JDV_HL7_SpecimenType-CISIS (2.16.840.1.113883.5.129) -->
+                      <!-- Nature de l'échantillon : valeur issue du JDV_HL7_SpecimenType-CISIS (2.16.840.1.113883.21.327) -->
                       <playingEntity>
-                        <code code="UR" displayName="urine" codeSystem="2.16.840.1.113883.5.129">
-                          <originalText>
-                            <reference value="#prelevement-nature-echantillon" />
-                          </originalText>
+                        <code code="UR" displayName="Urine" codeSystem="2.16.840.1.113883.18.311">
+                          <originalText><reference value="#prelevement-nature-echantillon" /></originalText>
                         </code>
                       </playingEntity>
                     </participantRole>
@@ -801,9 +801,7 @@
                   <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.78"/>
                   <code>
-                    <originalText>
-                      <reference value="#CBU_EXDIR" />                    
-                    </originalText>
+                    <originalText><reference value="#CBU_EXDIR" /></originalText>
                     <translation code="4" displayName="Examen macroscopique" codeSystem="2.16.840.1.113883.5.84" codeSystemName="HL7:ObservationMethod"/>                    
                   </code>  
                   <statusCode code="completed" />
@@ -814,17 +812,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="5778-6" codeSystem="2.16.840.1.113883.6.1" displayName="Couleur [Type] Urine ; Résultat textuel">
-                        <originalText>
-                          <reference value="#CBU-couleur" />
-                        </originalText>
+                      <code code="5778-6" codeSystem="2.16.840.1.113883.6.1" displayName="Couleur [Type] Urine ; Résultat nominal">
+                        <originalText><reference value="#CBU-couleur" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-couleur-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-couleur-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -835,17 +829,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="5767-9" codeSystem="2.16.840.1.113883.6.1" displayName="Aspect [Aspect] Urine ; Résultat textuel">
-                        <originalText>
-                          <reference value="#CBU-aspect" />
-                        </originalText>
+                      <code code="5767-9" codeSystem="2.16.840.1.113883.6.1" displayName="Aspect [Aspect] Urine ; Résultat nominal">
+                        <originalText><reference value="#CBU-aspect" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-aspect-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-aspect-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -859,9 +849,7 @@
                   <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.78"/>
                   <code>
-                    <originalText>
-                      <reference value="#CBU_MICRO" />
-                    </originalText>
+                    <originalText><reference value="#CBU_MICRO" /></originalText>
                     <translation code="107" displayName="Microscopie" codeSystem="2.16.840.1.113883.5.84" codeSystemName="HL7:ObservationMethod"/>
                   </code>
                   <statusCode code="completed" />
@@ -872,10 +860,8 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="24122-4" codeSystem="2.16.840.1.113883.6.1" displayName="Leucocytes [Nombre/Volume] Urine ; Numérique ; Comptage manuel">
-                        <originalText>
-                          <reference value="#CBU-leucocytes" />
-                        </originalText>
+                      <code code="30405-5" codeSystem="2.16.840.1.113883.6.1" displayName="Leucocytes [Nombre/Volume] Urine ; Numérique">
+                        <originalText><reference value="#CBU-leucocytes" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
@@ -889,10 +875,8 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="799-7" codeSystem="2.16.840.1.113883.6.1" displayName="Érythrocytes [Nombre/Volume] Urine ; Numérique ; Comptage manuel">
-                        <originalText>
-                          <reference value="#CBU-erythrocytes" />
-                        </originalText>
+                      <code code="30391-7" codeSystem="2.16.840.1.113883.6.1" displayName="Érythrocytes [Nombre/Volume] Urine ; Numérique">
+                        <originalText><reference value="#CBU-erythrocytes" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
@@ -906,17 +890,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="24123-2" codeSystem="2.16.840.1.113883.6.1" displayName="Cellules épithéliales [Nombre/Volume] Urine ; Numérique ; Comptage manuel">
-                        <originalText>
-                          <reference value="#CBU-epitheliales" />
-                        </originalText>
+                      <code code="30383-4" codeSystem="2.16.840.1.113883.6.1" displayName="Cellules épithéliales [Nombre/Volume] Urine ; Numérique">
+                        <originalText><reference value="#CBU-epitheliales" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-epitheliales-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-epitheliales-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -927,17 +907,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="653-6" codeSystem="2.16.840.1.113883.6.1" displayName="Observation microscopique [Identification] Urine ; Résultat textuel ; Coloration Gram">
-                        <originalText>
-                          <reference value="#CBU-gram" />
-                        </originalText>
+                      <code code="653-6" codeSystem="2.16.840.1.113883.6.1" displayName="Observation microscopique [Identification] Urine ; Résultat nominal ; Coloration Gram">
+                        <originalText><reference value="#CBU-gram" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-gram-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-gram-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -960,9 +936,7 @@
                         <!-- code de l'agent infectieux (SNOMED-CT) -->
                         <code code="112283007" displayName="Escherichia coli (organism)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                           <!-- Précision sur l'agent infectieux -->
-                          <originalText>
-                            <reference value="#isolat-1" />
-                          </originalText>
+                          <originalText><reference value="#isolat-1" /></originalText>
                           <!-- code de l'agent infectieux (NCBI-Taxonomy) -->
                           <translation code="562" displayName="Escherichia coli" codeSystem="2.16.840.1.113883.3.9471" codeSystemName="NCBI-Taxonomy"/>
                         </code>
@@ -977,9 +951,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="51480-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bactérie [Nombre/Volume] Urine ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#isolat-1-denombrement" />
-                        </originalText>
+                        <originalText><reference value="#isolat-1-denombrement" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104155000+0100" />
@@ -994,9 +966,7 @@
                       <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.78"/>
                       <code code="18769-0" displayName="Antibiogramme" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#isolat-1-antibiogramme" />
-                        </originalText>
+                        <originalText><reference value="#isolat-1-antibiogramme" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <!-- Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent : Amoxicilline -->
@@ -1007,9 +977,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="20-8" codeSystem="2.16.840.1.113883.6.1" displayName="Amoxicilline+clavulanate [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-1-amoxicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-1-amoxicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -1028,9 +996,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="28-1" codeSystem="2.16.840.1.113883.6.1" displayName="Ampicilline [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-1-ampicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-1-ampicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -1049,9 +1015,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="18928-2" codeSystem="2.16.840.1.113883.6.1" displayName="Gentamicine [Sensibilité] Isolat ; Alphanumérique">
-                            <originalText>
-                              <reference value="#isolat-1-gentamicine" />
-                            </originalText>
+                            <originalText><reference value="#isolat-1-gentamicine" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -1083,9 +1047,7 @@
                         <!-- code de l'agent infectieux (SNOMED-CT) -->
                         <code code="58800005" displayName="Genus Streptococcus (organism)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                           <!-- Précision sur l'agent infectieux -->
-                          <originalText>
-                            <reference value="#isolat-2" />
-                          </originalText>                          
+                          <originalText><reference value="#isolat-2" /></originalText>                          
                           <!-- code de l'agent infectieux (NCBI-Taxonomy) -->
                           <translation code="1306" displayName="Streptococcus sp." codeSystem="2.16.840.1.113883.3.9471" codeSystemName="NCBI-Taxonomy"/>
                         </code>
@@ -1100,9 +1062,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="51480-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bactérie [Nombre/Volume] Urine ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#isolat-2-denombrement" />
-                        </originalText>
+                        <originalText><reference value="#isolat-2-denombrement" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104155000+0100" />
@@ -1117,9 +1077,7 @@
                       <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.78"/>
                       <code code="18769-0" displayName="Antibiogramme" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#isolat-2-antibiogramme" />
-                        </originalText>
+                        <originalText><reference value="#isolat-2-antibiogramme" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <!-- Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent : Amoxicilline -->
@@ -1130,9 +1088,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="20-8" codeSystem="2.16.840.1.113883.6.1" displayName="Amoxicilline+clavulanate [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-2-amoxicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-2-amoxicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -1151,9 +1107,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="28-1" codeSystem="2.16.840.1.113883.6.1" displayName="Ampicilline [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-2-ampicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-2-ampicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -1172,9 +1126,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="18928-2" codeSystem="2.16.840.1.113883.6.1" displayName="Gentamicine [Sensibilité] Isolat ; Alphanumérique">
-                            <originalText>
-                              <reference value="#isolat-2-gentamicine" />
-                            </originalText>
+                            <originalText><reference value="#isolat-2-gentamicine" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -1199,9 +1151,7 @@
                   <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#C_ECBU" />
-                  </text>
+                  <text><reference value="#C_ECBU" /></text>
                   <statusCode code="completed" />
                 </act>
               </entryRelationship>

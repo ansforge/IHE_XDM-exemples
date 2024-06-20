@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -75,8 +74,11 @@
          <patient classCode="PSN">
             <name>
                <!-- Nom et prénom(s) de naissance -->
-               <family qualifier="BR">NESSI</family>            
+               <family qualifier="BR">DECOURCY</family>
+               <!-- Prénoms de l’acte de naissance -->
                <given>Ruth Isabelle</given>
+               <!-- Premier prénom de l’acte de naissance -->
+               <given qualifier="BR">Ruth</given>
                <!-- Nom et prénom utilisés -->
                <family qualifier="CL">DECOURCY</family>
                <given qualifier="CL">Ruth</given>   
@@ -109,6 +111,7 @@
                      <houseNumber>27</houseNumber>
                      <streetName>Rue Faubourg Saint-Jacques</streetName>
                      <postalCode>75014</postalCode>
+                     <county>75056</county>
                      <city>PARIS</city>
                   </addr>
                </place>
@@ -280,7 +283,7 @@
       <time xsi:type="IVL_TS" nullFlavor="NA"/>
       <associatedEntity classCode="PROV">
          <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
-         <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" codeSystemName="TRE_A02-ProfessionSavFaire-CISIS"/>
+         <code code="G15_10/SM54" displayName="Médecin - Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5"/>
          <addr>
             <houseNumber>3</houseNumber>
             <streetName>Rue Petit Pont</streetName>

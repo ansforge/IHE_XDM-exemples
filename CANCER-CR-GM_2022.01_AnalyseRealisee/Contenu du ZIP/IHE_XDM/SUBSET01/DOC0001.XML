@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -58,8 +57,8 @@
   <!-- Patient -->
   <recordTarget>
     <patientRole>
-      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-      <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
       <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
       <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
       <!-- Adresse du patient -->
@@ -74,19 +73,23 @@
       <!-- Coordonnées télécom du patient -->
       <telecom value="tel:0144534551" use="H"/>
       <telecom value="tel:0647151010" use="MC"/>
-      <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">NESSI</family>            
-          <given>Ruth Isabelle</given>
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>        
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-        <birthTime value="19770714"/>
+        <birthTime value="19790328"/>
         <!-- Représentant du patient -->
         <guardian>
           <addr use="H">
@@ -521,7 +524,7 @@
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801101201301" />
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5"
-        displayName="Médecin - Oncologie option médicale (SM)"/>
+        displayName="Médecin - Oncologie, opt médicale (SM)"/>
       <addr>
         <houseNumber>4</houseNumber>
         <streetName>Rue Larrey</streetName>
@@ -561,7 +564,7 @@
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802102202302" />
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5"
-        displayName="Médecin - Oncologie option médicale (SM)"/>
+        displayName="Médecin - Oncologie, opt médicale (SM)"/>
       <addr>
         <houseNumber>4</houseNumber>
         <streetName>Rue Larrey</streetName>
@@ -604,7 +607,7 @@
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5"
-        displayName="Médecin - Oncologie option médicale (SM)"/>
+        displayName="Médecin - Oncologie, opt médicale (SM)"/>
       <addr>
         <houseNumber>4</houseNumber>
         <streetName>Rue Larrey</streetName>
@@ -699,7 +702,7 @@
   <componentOf>
     <encompassingEncounter>
       <!-- Type de prise en charge -->
-      <code code="AMB" displayName="Ambulatoire" codeSystem="2.16.840.1.113883.5.4" />
+      <code code="AMB" displayName="Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4" />
       <effectiveTime>
         <low value="201801230730" />
         <high value="201801230930" />
@@ -793,14 +796,6 @@
                       PDGFRA, PIK3R1, PTEN, STK11T</content>
                   </td>
                 </tr>
-                <tr>
-                  <td>Motif de l'analyse demandée</td>
-                  <td>
-                    <content ID="motifExamen" styleCode="Bold">Recherche de mutations somatiques dans
-                      le cadre de la prise en charge thérapeutique d'un patient atteint d'un
-                      adénocarcinome pulmonaire</content>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </text>
@@ -854,9 +849,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="AB234BB2-A154-4132-9C3B-2DA71A74F13D" />
                   <code code="30896-5" displayName=" Numéro d'examen" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                    <originalText>
-                      <reference value="#numeroExamen" />
-                    </originalText>
+                    <originalText><reference value="#numeroExamen" /></originalText>
                   </code>
                   <statusCode code="completed" />
                   <value xsi:type="ST">1324</value>
@@ -871,9 +864,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="E8686C52-3D46-4E42-9DF9-77DABDA9A2DF" />
                   <code code="19145-2" displayName="Titre de l'examen" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                    <originalText>
-                      <reference value="#titreExamen" />
-                    </originalText>
+                    <originalText><reference value="#titreExamen" /></originalText>
                   </code>
                   <statusCode code="completed" />
                   <value xsi:type="ST">Recherche de mutations somatiques d'EGFR, KRAS, BRAF, PI3KCA,
@@ -893,7 +884,20 @@
               <templateId root="1.2.250.1.213.1.1.2.127" />
               <id root="6015D7B6-3191-4916-B7FF-F4F94D086A7F" />
               <code code="42349-1" displayName="Raison de la recommandation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-              <text />
+              <title>Motif de l'analyse demandée</title>
+              <text >
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <content ID="motifExamen" styleCode="Bold">Recherche de mutations somatiques dans
+                          le cadre de la prise en charge thérapeutique d'un patient atteint d'un
+                          adénocarcinome pulmonaire</content>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
             </section>
           </component>
         </section>
@@ -934,8 +938,7 @@
                 </tr>
               </tbody>
             </table>
-            <br />
-          </text>
+            <br /></text>
           
           <!-- [1..1] Entrée FR-Prelevement-APSR -->
           <entry typeCode="COMP">
@@ -977,6 +980,8 @@
                     <name>LABORATOIRE SOUS-TRAITANT</name>
                     <telecom nullFlavor="MSK" />
                     <addr nullFlavor="MSK" />
+                    <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+                      codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
                   </representedOrganization>
                 </assignedEntity>
               </performer>
@@ -1140,6 +1145,8 @@
                     <name>LABORATOIRE SOUS-TRAITANT</name>
                     <telecom nullFlavor="MSK" />
                     <addr nullFlavor="MSK" />
+                    <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+                      codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
                   </representedOrganization>
                 </assignedEntity>
               </performer>
@@ -1183,9 +1190,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="0D65B883-9BBD-42E6-97BF-4A70ED7D61C8" />
                   <code code="53903-1" displayName="Collection method" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Type_Prel" />
-                  </text>
+                  <text><reference value="#Type_Prel" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="B" displayName="Biopsie chirurgicale" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D1" />
@@ -1205,9 +1210,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="C85960A0-25C8-4F9A-9192-1AFF0C2712DA" />
                   <code code="20506-2" displayName="Specimen drawn from" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Organe" />
-                  </text>
+                  <text><reference value="#Organe" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="RB" displayName="BRONCHE" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D3" />
@@ -1227,9 +1230,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="B08EEB3B-97C2-450F-9466-B32BE56DBA43" />
                   <code code="33731-1" displayName="Type histologique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Type_histo" />
-                  </text>
+                  <text><reference value="#Type_histo" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="A7A8" displayName="ADENOCARCINOME BRONCHIOLO-ALVEOLAIRE" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D5" />
@@ -1249,9 +1250,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="0CEC62AE-FE48-4675-9695-44DF711F7E86" />
                   <code code="19772-3" displayName="Preparation techniques" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Cond" />
-                  </text>
+                  <text><reference value="#Cond" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="H" displayName="Histologie et et cytologie par inclusion" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D2" />
@@ -1271,9 +1270,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="BAA2F821-F079-4792-9840-5E9F4F52CD91" />
                   <code code="66746-9" displayName="Specimen type" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Nat_Mat" />
-                  </text>
+                  <text><reference value="#Nat_Mat" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire paraffiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -1293,9 +1290,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="A211A6F2-D64B-43FB-953C-03623F0D67D0" />
                   <code code="GEN-167" displayName="Quantité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Pourcentage" />
-                  </text>
+                  <text><reference value="#Pourcentage" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="PQ" value="50" unit="%"/>
@@ -1404,12 +1399,10 @@
                     <content ID="SeqRef_Cl3">NM_002524.3</content>
                   </td>
                   <td align="left">
-                    <content ID="Variant_Cl3">
-                    </content>
+                    <content ID="Variant_Cl3"/>                    
                   </td>
                   <td align="left">
-                    <content ID="AltProt_Cl3">
-                    </content>
+                    <content ID="AltProt_Cl3"/>                    
                   </td>
                 </tr>
               </tbody>
@@ -1428,8 +1421,7 @@
             <paragraph styleCode="Bold">Comparaison avec des résultats antérieurs : </paragraph>
             <br/><br/>            
             <content ID="historique">N/A</content>
-            <br/><br/>
-          </text>
+            <br/><br/></text>
           <author>
            
             <time value="201801230930+0100" />
@@ -1510,9 +1502,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="9F36BACB-120B-489E-B8BD-1A4C59C2036E" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene_Cl1" />
-                  </text>
+                  <text><reference value="#Gene_Cl1" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Gène -->
@@ -1524,9 +1514,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="8B7AD89F-1BE6-48E8-A279-F61C049BB708" />
                       <code code="48012-9" displayName="Séquence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#SeqRef_Cl1" />
-                      </text>
+                      <text><reference value="#SeqRef_Cl1" /></text>
                       <statusCode code="completed" />
                       <effectiveTime value="201801231245+0100" />
                       <!-- Séquence de référence -->
@@ -1540,9 +1528,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="9A20C207-4B8A-4776-9727-2F51E73575B6" />
                       <code code="69548-6" displayName="Variant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#Variant_Cl1" />
-                      </text>
+                      <text><reference value="#Variant_Cl1" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Variant -->
@@ -1561,9 +1547,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="36DA4D7A-B94D-4E89-B10B-B7139DE6F9BA" />
                       <code code="53045-1" displayName="Altération de la séquence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#AltProt_Cl1" />
-                      </text>
+                      <text><reference value="#AltProt_Cl1" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Altération proteique -->
@@ -1634,9 +1618,7 @@
                     <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="31182DCB-F7AE-494E-AD28-7A8BE301002D" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene_Cl2" />
-                  </text>
+                  <text><reference value="#Gene_Cl2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Gène -->
@@ -1649,9 +1631,7 @@
                       <id root="76784EE8-FB59-4D0C-9967-0823F6F8C748" />
                       <!--Code de l'entrée Séquence de référence -->
                       <code code="48012-9" displayName="Séquence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#SeqRef_Cl2" />
-                      </text>
+                      <text><reference value="#SeqRef_Cl2" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <value xsi:type="ST">NM_001127500.1</value>
@@ -1670,9 +1650,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="09E92363-0365-4C84-BD6C-7AD1FF72417B" />
                       <code code="69548-6" displayName="Variant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#Variant_Cl2" />
-                      </text>
+                      <text><reference value="#Variant_Cl2" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Variant -->
@@ -1691,9 +1669,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="6EA4C144-0ED5-4C91-8B4A-4AC7B52B5E44" />
                       <code code="53045-1" displayName="Altération de la séquence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#AltProt_Cl2" />
-                      </text>
+                      <text><reference value="#AltProt_Cl2" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Altération proteique -->
@@ -1763,9 +1739,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="8E471B84-8154-441D-A196-734730D82299" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene_Cl3" />
-                  </text>
+                  <text><reference value="#Gene_Cl3" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Gène -->
@@ -1782,9 +1756,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="FAE467B8-5A31-4FA4-AC89-62CBB905B65F" />
                       <code code="48012-9" displayName="Séquence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#SeqRef_Cl3" />
-                      </text>
+                      <text><reference value="#SeqRef_Cl3" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Séquence de référence -->
@@ -1804,9 +1776,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="38891104-8263-4CAB-91B1-628D79382B85" />
                       <code code="69548-6" displayName="Variant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#Variant_Cl3" />
-                      </text>
+                      <text><reference value="#Variant_Cl3" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Variant -->
@@ -1825,9 +1795,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="145FF74D-46EE-43BB-BAFD-A499A526E465" />
                       <code code="53045-1" displayName="Altération de la séquence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#AltProt_Cl3" />
-                      </text>
+                      <text><reference value="#AltProt_Cl3" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Altération proteique -->
@@ -1898,9 +1866,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="5810F317-50E0-4336-90C1-1D3C3685C902" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene_Cl4" />
-                  </text>
+                  <text><reference value="#Gene_Cl4" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="KRAS" displayName="KRAS" codeSystem="2.16.840.1.113883.6.281" codeSystemName="HGNC" />
@@ -1991,9 +1957,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="F3ABB061-FCEA-4CFD-815F-2CF148A1CC3E" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene_Cl5" />
-                  </text>
+                  <text><reference value="#Gene_Cl5" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Code du gène -->
@@ -2063,9 +2027,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="37ACFBDE-C20E-472E-AFF2-0E135F89D34F" />
                   <code>
-                    <originalText>
-                      <reference value="#historique" />
-                    </originalText>
+                    <originalText><reference value="#historique" /></originalText>
                     <translation code="MED-549" displayName="Comparaison avec résultats antérieurs" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
                   </code>
                   <statusCode code="completed" />
@@ -2110,7 +2072,7 @@
                     <list>
                       <!-- Mutation avec impact sur une classe de thérapie ciblée -->
                       <item>Présence de la mutation <content ID="Variant" styleCode="Bold">c.2573T&gt;G</content> du gène
-                        <content ID="Gene" styleCode="Bold">EGFR</content> conférant à une <content ID="Impact_mut" styleCode="Bold">Sensibilité</content> à la classe des <content ID="ClasseTherapie" styleCode="Bold">inhibiteurs de la protéine kinase</content>.<br /></item>                      
+                        <content ID="Gene" styleCode="Bold">EGFR</content> conférant à une <content ID="Impact_mut" styleCode="Bold">Sensibilité</content> à la classe des <content ID="ClasseTherapie" styleCode="Bold">inhibiteurs de protéines kinases</content>.<br /></item>                      
                       <!-- Mutation à discuter en staff moléculaire -->
                       <item>Présence d'une mutation du (des) gène(s) <content ID="Gene3" styleCode="Bold">MET</content> à
                         discuter en staff moléculaire.<br /></item>
@@ -2210,9 +2172,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="EB5482AF-B698-4F78-98AE-60F263F2E477" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene" />
-                  </text>
+                  <text><reference value="#Gene" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Code du gène -->
@@ -2224,9 +2184,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="AC456B9F-60F3-4CFA-88D2-893DF6F20C63" />
                       <code code="69548-6" displayName="Variant" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#Variant" />
-                      </text>
+                      <text><reference value="#Variant" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Variant -->
@@ -2240,13 +2198,11 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="ABDC970F-914D-4244-B6CB-78371A256B76" />
                       <code code="MED-299" displayName="Impact de la mutation" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                      <text>
-                        <reference value="#Impact_mut" />
-                      </text>
+                      <text><reference value="#Impact_mut" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Impact de la mutation -->
-                      <value xsi:type="CD" code="GEN-164" displayName="Sensibilité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+                      <value xsi:type="CD" code="83185005" displayName="sensibilité" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                     </observation>
                   </entryRelationship>
                   <!-- 3éme sous-entrée FR-Observation-Anatomo-pathologique : classe de thérapie ciblée -->
@@ -2256,13 +2212,11 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="A8E9A9BF-6608-49B8-AA8B-07B4B4C40DBB" />
                       <code code="69335-8" displayName="Classe de thérapie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#ClasseTherapie" />
-                      </text>
+                      <text><reference value="#ClasseTherapie" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Classe de thérapie ciblée -->
-                      <value xsi:type="CD" code="L01E" displayName="Inhibiteurs de la protéine kinase" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" />
+                      <value xsi:type="CD" code="L01E" displayName="inhibiteurs de protéines kinases" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC" />
                     </observation>
                   </entryRelationship>
                 </observation>
@@ -2276,9 +2230,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="F5B64280-3A4F-4A64-8B17-CE92E4EFBA5C" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene3" />
-                  </text>
+                  <text><reference value="#Gene3" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20220104092200+0100" />
@@ -2297,9 +2249,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="679D188E-643A-4ABE-88DB-2A31203CD73C" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene2" />
-                  </text>
+                  <text><reference value="#Gene2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20220104092200+0100" />
@@ -2314,9 +2264,7 @@
                       <templateId root="1.2.250.1.213.1.1.3.170"/>
                       <id root="9823CBB5-EDCC-4092-BA5A-A2A30B95CDB6" />
                       <code code="69335-8" displayName="Classe de thérapie" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#ClasseTherapie2" />
-                      </text>
+                      <text><reference value="#ClasseTherapie2" /></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA"/>
                       <!-- Classe de thérapie -->
@@ -2336,9 +2284,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.32" />
                   <!--<id root="C405ED81-EAB6-407A-AB2D-97C3A23D2FE6" />-->
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#comments2" />
-                  </text>
+                  <text><reference value="#comments2" /></text>
                   <statusCode code="completed" />
                 </act>
               </component>
@@ -2399,9 +2345,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="E06F35ED-B55A-4C1F-A8E6-924171204EAB" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene4" />
-                  </text>
+                  <text><reference value="#Gene4" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Code du gène -->
@@ -2422,9 +2366,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="2388EFE9-05D4-4CB4-9979-073E7FD49063" />
                   <code code="18818-5" displayName="Quantité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                    <originalText>
-                      <reference value="#Pourcentage2" />
-                    </originalText>
+                    <originalText><reference value="#Pourcentage2" /></originalText>
                   </code>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
@@ -2442,8 +2384,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <!--<id root="0DFF057C-D4D5-4546-BC7C-12DA65130BE6" />-->
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#comments3" />Pas d'anomalie des autres gènes
+                  <text><reference value="#comments3" />Pas d'anomalie des autres gènes
                     analysés.</text>
                   <statusCode code="completed" /><!--
                   <effectiveTime nullFlavor="NA"/>-->
@@ -2506,9 +2447,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="093C74F0-5CD0-47C4-A919-7607B37B6671" />
                   <code code="MED-300" displayName="Qualification de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Qualification2" />
-                  </text>
+                  <text><reference value="#Qualification2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Qualification de la fraction génomique analysée -->
@@ -2530,9 +2469,7 @@
                   <id root="34368D10-C055-4874-90FC-5E2A11737457" />
                   <!--Code de l'entrée Nature de la fraction génomique analysée -->
                   <code code="MED-301" displayName="Nature de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Nat_fraction2" />
-                  </text>
+                  <text><reference value="#Nat_fraction2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-315" displayName="ADN" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -2553,9 +2490,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.32" />
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#comments4" />
-                  </text>
+                  <text><reference value="#comments4" /></text>
                   <statusCode code="completed" /><!--
                   <effectiveTime nullFlavor="NA"/>-->
                 </act>
@@ -2616,9 +2551,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="4182BDC9-A045-465A-93E4-1A614DED4783" />
                   <code code="48018-6" displayName="Gene" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Gene6" />
-                  </text>
+                  <text><reference value="#Gene6" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <!-- Code du gène -->
@@ -2640,9 +2573,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#comments5" />
-                  </text>
+                  <text><reference value="#comments5" /></text>
                   <statusCode code="completed" />
                   <!--<effectiveTime nullFlavor="NA"/>-->
                 </act>
@@ -2821,9 +2752,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="1AC4F101-385F-4899-A36E-D6EF921995FD" />
                   <code code="66746-9" displayName="Nature du prélèvement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-                  <text>
-                    <reference value="#Nat_Mat2" />
-                  </text>
+                  <text><reference value="#Nat_Mat2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire parafiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -2843,9 +2772,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="ED3C87D8-B2D9-4F1A-9C68-4C9C4DB97344" />
                   <code code="8100-0" displayName="Préparation de l'échantillon" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Methode_preparation" />
-                  </text>
+                  <text><reference value="#Methode_preparation" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-302" displayName="macro dissection de la zone d'intérêt" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -2865,9 +2792,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="C2BDB4F4-8C7B-493C-9DC4-3C605D79B5F6" />
                   <code code="MED-546" displayName="Méthode d'extraction de l'ADN génomique tumoral" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#methodeExtractionADN" />
-                  </text>
+                  <text><reference value="#methodeExtractionADN" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -2887,9 +2812,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="0D86A26F-A108-48B1-8A20-9AF0FE6EAF38" />
                   <code code="MED-547" displayName="Méthode d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#MethodeAnalyse" />
-                  </text>
+                  <text><reference value="#MethodeAnalyse" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -2909,9 +2832,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="12F638A5-08CF-4459-94D4-DBF25996A928" />
                   <code code="MED-306" displayName="Séquenceur utilisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#sequenceur" />
-                  </text>
+                  <text><reference value="#sequenceur" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -2931,9 +2852,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="96B28990-868E-4B96-893D-8185661A94FF" />
                   <code code="MED-307" displayName="Sensibilité diagnostique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#sensibiliteDiagnostic" />
-                  </text>
+                  <text><reference value="#sensibiliteDiagnostic" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="REAL" value="10" />
@@ -2953,9 +2872,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="08030EC1-B3D4-4665-ACDB-EFB202932909" />
                   <code code="MED-548" displayName="Profondeur minimale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Prof_min" />
-                  </text>
+                  <text><reference value="#Prof_min" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -2975,9 +2892,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="1873A071-0D6F-4FC3-AEBA-2D362998C22B" />
                   <code code="81249-5" displayName="Référence génomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#genome" />
-                  </text>
+                  <text><reference value="#genome" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -3101,9 +3016,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="9EBD5EBA-1466-4647-BE15-4DF90B3829B0" />
                   <code code="51956-1" displayName="Niveau de couverture" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#couverture" />
-                  </text>
+                  <text><reference value="#couverture" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -3118,9 +3031,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="68772E9A-7876-4C01-A568-106AA807CB8E" />
                   <code code="42071-1" displayName="Sequence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#accession" />
-                  </text>
+                  <text><reference value="#accession" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -3135,9 +3046,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="D7C2506E-C603-4700-9926-52BA90703678" />
                   <code code="MED-308" displayName="Version du pipeline d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#pipeline" />
-                  </text>
+                  <text><reference value="#pipeline" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -3154,9 +3063,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.32" />
                   <!--<id root="C438541D-0DCD-45BA-BE1B-68DE3332F3F4" />-->
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Comment5" />
-                  </text>
+                  <text><reference value="#Comment5" /></text>
                   <statusCode code="completed" />
                 </act>
               </component>
@@ -3188,9 +3095,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="4379386D-81F0-4BBA-BBCA-98F46336C921" />
               <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="#statutDoc" />
-              </text>
+              <text><reference value="#statutDoc" /></text>
               <statusCode code="completed" />
               <effectiveTime value="201801231245+0100" />
               <value xsi:type="CD" code="385651009" displayName="en cours d'exécution" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />

@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -85,8 +84,11 @@
          <patient classCode="PSN">
             <name>
                <!-- Nom et prénom(s) de naissance -->
-               <family qualifier="BR">DECOURCY</family>            
+               <family qualifier="BR">DECOURCY</family>
+               <!-- Prénoms de l’acte de naissance -->
                <given>Ruth Isabelle</given>
+               <!-- Premier prénom de l’acte de naissance -->
+               <given qualifier="BR">Ruth</given>
                <!-- Nom et prénom utilisés -->
                <family qualifier="CL">DECOURCY</family>
                <given qualifier="CL">Ruth</given>   
@@ -370,7 +372,7 @@
          </effectiveTime>
          <location>
             <healthCareFacility>
-               <code code="SA03" displayName="Etablissement Privé PSPH"
+               <code code="SA03" displayName="Etablissement privé PSPH"
                   codeSystem="1.2.250.1.71.4.2.4">
                </code>
             </healthCareFacility>
@@ -488,7 +490,7 @@
                         <templateId root="1.2.250.1.213.1.1.3.60"/>
                         <relatedSubject classCode="PRS">
                            <code code="MTH" displayName="Mère" codeSystem="2.16.840.1.113883.5.111">
-                              <originalText><reference value="parent1"></reference></originalText>
+                              <originalText><reference value="parent1"/></originalText>
                            </code>
                            <addr use="H">
                               <houseNumber>24</houseNumber>
@@ -540,7 +542,7 @@
                         <templateId root="1.2.250.1.213.1.1.3.60"/>
                         <relatedSubject classCode="PRS">
                            <code code="MTH" displayName="Mère" codeSystem="2.16.840.1.113883.5.111">
-                              <originalText><reference value="parent1"></reference></originalText>
+                              <originalText><reference value="parent1"/></originalText>
                            </code>
                            <addr use="H">
                               <houseNumber>24</houseNumber>
@@ -592,7 +594,7 @@
                         <templateId root="1.2.250.1.213.1.1.3.60"/>
                         <relatedSubject classCode="PRS">
                            <code code="FTH" displayName="Père" codeSystem="2.16.840.1.113883.5.111">                              
-                              <originalText><reference value="parent2"></reference></originalText>
+                              <originalText><reference value="parent2"/></originalText>
                            </code>
                            <addr use="H">
                               <houseNumber>24</houseNumber>
@@ -636,7 +638,7 @@
                         <templateId root="1.2.250.1.213.1.1.3.60"/>
                         <relatedSubject classCode="PRS">
                            <code code="FTH" displayName="Père" codeSystem="2.16.840.1.113883.5.111">                              
-                              <originalText><reference value="parent2"></reference></originalText>
+                              <originalText><reference value="parent2"/></originalText>
                            </code>
                            <addr use="H">
                               <houseNumber>24</houseNumber>
@@ -1270,7 +1272,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-BCG-dose-1"/></originalText>
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AN" displayName="Vaccin antituberculeux"
+                                 <translation code="J07AN" displayName="vaccins de la tuberculose"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin antituberculeux</name>
@@ -1325,7 +1327,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-DPT-dose-1"/></originalText>
                                  <!-- code ATC du vaccin -->
-                                 <translation code="J07CA01" displayName="Vaccin diphtérie-polyomielite-tétanos"
+                                 <translation code="J07CA01" displayName="diphtérie-poliomyélite-tétanos"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin diphtérie-polyomielite-tétanos</name>
@@ -1380,7 +1382,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-DPT-dose-2"/></originalText>  
                                  <!-- code ATC du vaccin -->
-                                 <translation code="J07CA01" displayName="Vaccin diphtérie-polyomielite-tétanos"
+                                 <translation code="J07CA01" displayName="diphtérie-poliomyélite-tétanos"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin diphtérie-polyomielite-tétanos</name>                              
@@ -1435,7 +1437,7 @@
                               <code>        
                                  <originalText><reference value="#vaccin-Coq-dose-1"/></originalText>   
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AJ" displayName="Vaccin contre la coqueluche"
+                                 <translation code="J07AJ" displayName="vaccins coquelucheux"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre la coqueluche</name>
@@ -1490,7 +1492,7 @@
                               <code>  
                                  <originalText><reference value="#vaccin-Coq-dose-2"/></originalText> 
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AJ" displayName="Vaccin contre la coqueluche"
+                                 <translation code="J07AJ" displayName="vaccins coquelucheux"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre la coqueluche</name>
@@ -1545,7 +1547,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-InfB-dose-1"/></originalText>     
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AG" displayName="Vaccin anti haemophilus influenzae B"
+                                 <translation code="J07AG" displayName="vaccins de l'Haemophilus influenzae B"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin anti haemophilus influenzae B</name>
@@ -1600,7 +1602,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-InfB-dose-2"/></originalText> 
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AG" displayName="Vaccin anti haemophilus influenzae B"
+                                 <translation code="J07AG" displayName="vaccins de l'Haemophilus influenzae B"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin anti haemophilus influenzae B</name>
@@ -1655,7 +1657,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-HepB-dose-1"/></originalText> 
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07BC01" displayName="Vaccin contre l'hépatite B"
+                                 <translation code="J07BC01" displayName="hépatite B, antigène purifié"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre l'hépatite B</name>
@@ -1710,7 +1712,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-HepB-dose-2"/></originalText>
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07BC01" displayName="Vaccin contre l'hépatite B"
+                                 <translation code="J07BC01" displayName="hépatite B, antigène purifié"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre l'hépatite B</name>
@@ -1765,7 +1767,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-Pneumo-dose-1"/></originalText>
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AL" displayName="Vaccin antipneumococcique"
+                                 <translation code="J07AL" displayName="vaccins pneumococciques"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin antipneumococcique</name>
@@ -1820,7 +1822,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-Pneumo-dose-2"/></originalText>  
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AL" displayName="Vaccin antipneumococcique"
+                                 <translation code="J07AL" displayName="vaccins pneumococciques"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin antipneumococcique</name>
@@ -1875,7 +1877,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-Mening-dose-1"/></originalText>
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AH07" displayName="Vaccin contre le méningocoque C"
+                                 <translation code="J07AH07" displayName="méningocoque C, antigène polysaccharidique purifié conjugué"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre le méningocoque C</name>
@@ -1930,7 +1932,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-Rotavirus-dose-1"/></originalText>
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07BH" displayName="Vaccin contre le rotavirus schéma complet"
+                                 <translation code="J07BH" displayName="vaccins des diarrhées à Rotavirus"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre le rotavirus schéma complet</name>
@@ -1985,7 +1987,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-Rotavirus-dose-2"/></originalText>
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07BH" displayName="Vaccin contre le rotavirus schéma complet"
+                                 <translation code="J07BH" displayName="vaccins des diarrhées à Rotavirus"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre le rotavirus schéma complet</name>
@@ -2095,7 +2097,7 @@
                               <code>
                                  <originalText><reference value="#vaccin-MeningB-dose-2"/></originalText>  
                                  <!-- Code ATC du vaccin -->
-                                 <translation code="J07AH09" displayName="Vaccin contre le méningocoque B"
+                                 <translation code="J07AH09" displayName="méningocoque B, vaccin multicomposant"
                                     codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
                               </code>
                               <name>Vaccin contre le méningocoque B</name>
@@ -2159,9 +2161,7 @@
                      <code code="DRUG" displayName="Médicament"
                         codeSystem="2.16.840.1.113883.5.4"/>                           
                      <!-- Elément narratif de la section -->
-                     <text>
-                        <reference value="#med-1"/>
-                     </text>
+                     <text><reference value="#med-1"/></text>
                      <statusCode code="completed"/>
                      <!-- Durée d'administration -->
                      <effectiveTime xsi:type="IVL_TS">
@@ -2190,9 +2190,7 @@
                            <manufacturedMaterial>
                               <code code="65150617" displayName="BEYFORTUS 100 mg, solution injectable en seringue préremplie"
                                  codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                                 <originalText mediaType="text/xml">
-                                    <reference value="#med-1"/>
-                                 </originalText>
+                                 <originalText mediaType="text/xml"><reference value="#med-1"/></originalText>
                                  <translation code="3400930268636"
                                     displayName="BEYFORTUS 100 mg, solution injectable en seringue préremplie 1 seringue préremplie en verre de 1 mL + 2 aiguilles"
                                     codeSystem="1.2.250.1.213.2.3.2" codeSystemName="CIP"/>
@@ -2248,7 +2246,7 @@
                      <!-- Conformité FR-Rencontre (CI-SIS) -->
                      <templateId root="1.2.250.1.213.1.1.3.58" />
                      <id root="2022BE76-7CC9-11EB-9439-0242AC130101"/>
-                     <code code="AMB" displayName="Ambulatoire"
+                     <code code="AMB" displayName="Ambulatoire (hors établissement)"
                         codeSystem="2.16.840.1.113883.5.4">
                         <!-- rencontre : valeur issue du JDV_Rencontre_CS9_CS24_CISIS (1.2.250.1.213.1.1.5.759) -->
                         <qualifier>
@@ -2273,7 +2271,7 @@
                      <!-- Conformité FR-Rencontre (CI-SIS) -->
                      <templateId root="1.2.250.1.213.1.1.3.58" />
                      <id root="2022BE76-7CC9-11EB-9439-0242AC130101"/>
-                     <code code="AMB" displayName="Ambulatoire"
+                     <code code="AMB" displayName="Ambulatoire (hors établissement)"
                         codeSystem="2.16.840.1.113883.5.4">
                         <!-- rencontre : valeur issue du JDV_Rencontre_CS9_CS24_CISIS (1.2.250.1.213.1.1.5.708) -->
                         <qualifier>
@@ -2297,7 +2295,7 @@
                      <!-- Conformité FR-Rencontre (CI-SIS) -->
                      <templateId root="1.2.250.1.213.1.1.3.58" />
                      <id root="2022BE76-7CC9-11EB-9439-0242AC130101"/>
-                     <code code="AMB" displayName="Ambulatoire"
+                     <code code="AMB" displayName="Ambulatoire (hors établissement)"
                         codeSystem="2.16.840.1.113883.5.4">
                         <!-- rencontre : valeur issue du JDV_Rencontre_CS9_CS24_CISIS (1.2.250.1.213.1.1.5.759) -->
                         <qualifier>

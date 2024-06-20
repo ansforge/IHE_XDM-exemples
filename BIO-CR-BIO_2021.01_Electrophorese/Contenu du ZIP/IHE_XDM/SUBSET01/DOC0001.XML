@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -74,11 +73,15 @@
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
-          <given qualifier="BR">DOMINIQUE</given>
-          <given>DOMINIQUE</given>
-          <family qualifier="BR">PAT-TROIS</family>
-          <family qualifier="SP">PAT-TROIS</family>
-          <family qualifier="CL">PAT-TROIS</family>
+          <!-- Nom et prénom(s) de naissance -->
+          <family qualifier="BR">DECOURCY</family>
+          <!-- Prénoms de l’acte de naissance -->
+          <given>Ruth Isabelle</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">Ruth</given>
+          <!-- Nom et prénom utilisés -->
+          <family qualifier="CL">DECOURCY</family>
+          <given qualifier="CL">Ruth</given>   
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1" />
         <birthTime value="19790328"/>
@@ -489,7 +492,7 @@
   <componentOf>
     <encompassingEncounter>
       <id root="1.2.250.1.71.4.2.1" extension="801234534765" />
-      <code code="AMB" displayName="ambulatoire" codeSystem="2.16.840.1.113883.5.4" />
+      <code code="AMB" displayName="Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4" />
       <effectiveTime>
         <low value="202101040735+0100" />
       </effectiveTime>
@@ -624,21 +627,21 @@
                         <content ID="Proteines">Protéines totales (g/L)</content>
                       </td>
                       <td>75,0</td>
-                      <td>63,00 - 83,00</td>
+                      <td>63,00 à 83,00</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Albumine-pourcentage">Albumine (%)</content>
                       </td>
                       <td>60,0</td>
-                      <td>40 - 80</td>
+                      <td>40 à 80</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Albumine">Albumine (g/L)</content>
                       </td>
                       <td>45,0</td>
-                      <td>36,00 - 48,00</td>
+                      <td>36,00 à 48,00</td>
                     </tr>
                     <tr>
                       <td>
@@ -652,60 +655,60 @@
                         <content ID="Alpha-1-globulines">Alpha1 (g/L)</content>
                       </td>
                       <td>3,8</td>
-                      <td>0,80 - 3,20</td>
+                      <td>0,80 à 3,20</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Alpha-2-globulines-pourcentage">Alpha 2 globulines (%)</content>
                       </td>
                       <td>9,0</td>
-                      <td>8,3 - 10,1</td>
+                      <td>8,3 à 10,1</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Alpha-2-globulines">Alpha2 (g/L)</content>
                       </td>
                       <td>6,8</td>
-                      <td>4,50 - 10,50</td>
+                      <td>4,50 à 10,50</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Beta-globulines-pourcentage">Béta globulines (%)</content>
                       </td>
                       <td>11,0</td>
-                      <td>6 - 12</td>
+                      <td>6 à 12</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Beta-globulines">Béta (g/L)</content>
                       </td>
                       <td>8,3</td>
-                      <td>3,50 - 9,50</td>
+                      <td>3,50 à 9,50</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Gamma-globulines-pourcentage">Gamma globulines (%)</content>
                       </td>
                       <td>15,0</td>
-                      <td>8 - 17</td>
+                      <td>8 à 17</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Gamma-globulines">Gamma (g/L)</content>
                       </td>
                       <td>11,3</td>
-                      <td>6,50 - 14,50</td>
+                      <td>6,50 à 14,50</td>
                     </tr>
                     <tr>
                       <td>
                         <content ID="Rapport-Albumine-globuline">Rapport Albumine/globuline</content>
                       </td>
                       <td>1,50</td>
-                      <td>1 - 5</td>
+                      <td>1 à 5</td>
                     </tr>
                     <tr>
                       <td>Conclusion</td>
-                      <td ID="CONCL">Bisalbuminémie</td>
+                      <td><content ID="CONCL">Bisalbuminémie</content></td>
                       <td />
                     </tr>
                   </tbody>
@@ -714,8 +717,7 @@
                 <br />
                 <paragraph>Résultats validés par Jean DE SANTS - 04/01/2021,
 									11h20</paragraph>
-                <br />
-              </text>
+                <br /></text>
               <!-- Entrée FR-Resultats-examens-de-biologie-medicale : "Electrophorèse des protéines" -->
               <entry typeCode="DRIV">
                 <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
@@ -841,7 +843,7 @@
                           <id root="D5A9EF50-D05E-11DD-AD8B-0800200C9A66" extension="12345678A" />
                           <playingEntity>
                             <!-- Nature d'échantillon -->
-                            <code code="BLD" displayName="sang total" codeSystem="2.16.840.1.113883.5.129" />
+                            <code code="BLD" displayName="sang total" codeSystem="2.16.840.1.113883.18.311" />
                           </playingEntity>
                         </participantRole>
                       </participant>
@@ -863,9 +865,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="2885-2" displayName="Protéines [Masse/Volume] Sérum/Plasma ; Numérique" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Proteines" />
-                            </originalText>
+                            <originalText><reference value="#Proteines" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -890,9 +890,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="13980-8" displayName="Albumine/protéines totales [Fraction massique] Sérum/Plasma ; Numérique ; Électrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Albumine-pourcentage" />
-                            </originalText>
+                            <originalText><reference value="#Albumine-pourcentage" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -908,9 +906,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="2862-1" displayName="Albumine [Masse/Volume] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Albumine" />
-                            </originalText>
+                            <originalText><reference value="#Albumine" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -935,9 +931,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="13978-2" displayName="Alpha-1 globulines/protéines totales [Fraction massique] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Alpha-1-globulines-pourcentage" />
-                            </originalText>
+                            <originalText><reference value="#Alpha-1-globulines-pourcentage" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -953,9 +947,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="2865-4" displayName="Alpha-1 globulines [Masse/Volume] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Alpha-1-globulines" />
-                            </originalText>
+                            <originalText><reference value="#Alpha-1-globulines" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -981,9 +973,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="13981-6" displayName="Alpha-2 globulines/protéines totales [Fraction massique] Sérum/Plasma ; Numérique ; Électrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Alpha-2-globulines-pourcentage" />
-                            </originalText>
+                            <originalText><reference value="#Alpha-2-globulines-pourcentage" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -999,9 +989,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="2868-8" displayName="Alpha-2 globulines [Masse/Volume] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Alpha-2-globulines" />
-                            </originalText>
+                            <originalText><reference value="#Alpha-2-globulines" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -1026,9 +1014,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="13982-4" displayName="Bêta globulines/protéines totales [Fraction massique] Sérum/Plasma ; Numérique ; Électrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Beta-globulines-pourcentage" />
-                            </originalText>
+                            <originalText><reference value="#Beta-globulines-pourcentage" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -1044,9 +1030,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="2871-2" displayName="Beta globulines [Masse/Volume] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Beta-globulines" />
-                            </originalText>
+                            <originalText><reference value="#Beta-globulines" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -1071,9 +1055,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="13983-2" displayName="Gamma globulines/protéines totales [Fraction massique] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Gamma-globulines-pourcentage" />
-                            </originalText>
+                            <originalText><reference value="#Gamma-globulines-pourcentage" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -1089,9 +1071,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="2874-6" displayName="Gamma globulines [Masse/Volume] Sérum/Plasma ; Numérique ; Electrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Gamma-globulines" />
-                            </originalText>
+                            <originalText><reference value="#Gamma-globulines" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -1116,9 +1096,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="44429-9" displayName="Albumine/globulines [Masse ratio] Sérum/Plasma ; Numérique ; Électrophorèse" codeSystem="2.16.840.1.113883.6.1">
-                            <originalText>
-                              <reference value="#Rapport-Albumine-globuline" />
-                            </originalText>
+                            <originalText><reference value="#Rapport-Albumine-globuline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104131933+0100" />
@@ -1136,9 +1114,7 @@
                           <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.32"/>
                           <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                          <text>
-                            <reference value="#CONCL" />
-                          </text>
+                          <text><reference value="#CONCL" /></text>
                           <statusCode code="completed" />
                         </act>
                       </component>
@@ -1227,9 +1203,9 @@
                       <td>
                         <content ID="Uree">Urée</content>
                       </td>
-                      <td>10.02 mmol/L (0.60 g/L)</td>
+                      <td><content styleCode="Bold">10.02 mmol/L (0.60 g/L)</content></td>
                       <td>Anormalement haut</td>
-                      <td>[3.5 - 8.0] mmol/L</td>
+                      <td>3.5 à 8.0 mmol/L (0.21 à 0.48 g/L)</td>
                       <td>8.5 mmol/L (0.51 g/L)</td>
                       <td>7.9 mmol/L (0.48 g/L)</td>
                     </tr>
@@ -1237,9 +1213,9 @@
                       <td>
                         <content ID="Glucose-a-jeun">Glucose à jeun</content>
                       </td>
-                      <td>7.2 mmol/L (1.30 g/L)</td>
+                      <td><content styleCode="Bold">7.2 mmol/L (1.30 g/L)</content></td>
                       <td>Anormalement haut</td>
-                      <td>[3.9 - 6.1] mmol/L</td>
+                      <td>3.9 à 6.1 mmol/L (0.7 à 1.1 g/L)</td>
                       <td>7.2 mmol/L (1.30 g/L)</td>
                       <td>6.0 mmol/L (1.08 g/L)</td>
                     </tr>
@@ -1248,8 +1224,7 @@
                 <br />
                 <paragraph>Résultats validés par Thierry DIAZ - 04/01/2021,
 									11h30</paragraph>
-                <br />
-              </text>
+                <br /></text>
               <!-- Entrée FR-Resultats-examens-de-biologie-medicale : RESULTATS DE BIOCHIMIE -->
               <entry typeCode="DRIV">
                 <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
@@ -1295,9 +1270,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="22664-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Urée [Moles/Volume] Sérum/Plasma ; Numérique">
-                        <originalText>
-                          <reference value="#Uree" />
-                        </originalText>
+                        <originalText><reference value="#Uree" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="202101041010+0100" />
@@ -1351,9 +1324,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="40193-5" displayName="Glucose à jeun [Moles/Volume] Sérum/Plasma ; Numérique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#Glucose-a-jeun" />
-                        </originalText>
+                        <originalText><reference value="#Glucose-a-jeun" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="202101041010+0100" />
@@ -1444,7 +1415,7 @@
                     <content ID="Leucocytes">Leucocytes (10*9/L)</content>
                   </td>
                   <td>8.2</td>
-                  <td>5-10</td>
+                  <td>5 à 10</td>
                   <td />
                   <td>5.8</td>
                 </tr>
@@ -1453,7 +1424,7 @@
                     <content ID="Hematies">Hématies (10*12/L)</content>
                   </td>
                   <td>4.95</td>
-                  <td>4.50-6.00</td>
+                  <td>4.50 à 6.00</td>
                   <td />
                   <td>4.85</td>
                 </tr>
@@ -1462,7 +1433,7 @@
                     <content ID="Hemoglobine">Hémoglobine (g/dL)</content>
                   </td>
                   <td>13.4</td>
-                  <td>11.5-14.5</td>
+                  <td>11.5 à 14.5</td>
                   <td />
                   <td>13.3</td>
                 </tr>
@@ -1471,7 +1442,7 @@
                     <content ID="Hematocrite">Hématocrite (%)</content>
                   </td>
                   <td>45</td>
-                  <td>40.0-54.0</td>
+                  <td>40.0 à 54.0</td>
                   <td />
                   <td>45</td>
                 </tr>
@@ -1480,7 +1451,7 @@
                     <content ID="VGM">Volume globulaire moyen (fL)</content>
                   </td>
                   <td>97</td>
-                  <td>85-95</td>
+                  <td>85 à 95</td>
                   <td>Haut, croissant</td>
                   <td>90</td>
                 </tr>
@@ -1489,7 +1460,7 @@
                     <content ID="IDR">Indice de distribution erythrocytaire (%)</content>
                   </td>
                   <td>17.5</td>
-                  <td>11.5-14.5</td>
+                  <td>11.5 à 14.5</td>
                   <td>Haut</td>
                   <td>13.0</td>
                 </tr>
@@ -1498,7 +1469,7 @@
                     <content ID="CCMH">Concentration corpusculaire moyenne en hémoglobine (g/dL)</content>
                   </td>
                   <td>33.0</td>
-                  <td>32-36</td>
+                  <td>32 à 36</td>
                   <td />
                   <td>32.5</td>
                 </tr>
@@ -1507,7 +1478,7 @@
                     <content ID="TCMH">Teneur corpusculaire moyenne en hémoglobine (pg)</content>
                   </td>
                   <td>31.0</td>
-                  <td>27-31</td>
+                  <td>27 à 31</td>
                   <td />
                   <td>32.5</td>
                 </tr>
@@ -1516,7 +1487,7 @@
                     <content ID="Plaquettes">Plaquettes (10*9/L)</content>
                   </td>
                   <td>220</td>
-                  <td>150-400</td>
+                  <td>150 à 400</td>
                   <td />
                   <td>210</td>
                 </tr>
@@ -1525,7 +1496,7 @@
                     <content ID="VMP">Volume plaquettaire moyen (fL)</content>
                   </td>
                   <td>8</td>
-                  <td>7-10</td>
+                  <td>7 à 10</td>
                   <td />
                   <td>8</td>
                 </tr>
@@ -1543,7 +1514,7 @@
                     <content ID="Polynucléaires-neutrophiles">Polynucléaires neutrophiles (%)</content>
                   </td>
                   <td>72</td>
-                  <td>45-70</td>
+                  <td>45 à 70</td>
                   <td>Haut</td>
                   <td>70</td>
                 </tr>
@@ -1552,7 +1523,7 @@
                     <content ID="Polynucleaires-eosinophiles-pourcentage">Polynuclaires éosinophiles (%)</content>
                   </td>
                   <td>2</td>
-                  <td>1-3</td>
+                  <td>1 à 3</td>
                   <td />
                   <td>2</td>
                 </tr>
@@ -1570,7 +1541,7 @@
                     <content ID="Lymphocytes-pourcentage">Lymphocytes (%)</content>
                   </td>
                   <td>20</td>
-                  <td>20-40</td>
+                  <td>20 à 40</td>
                   <td />
                   <td>20</td>
                 </tr>
@@ -1579,7 +1550,7 @@
                     <content ID="Monocytes-pourcentage">Monocytes (%)</content>
                   </td>
                   <td>6</td>
-                  <td>3-7</td>
+                  <td>3 à 7</td>
                   <td />
                   <td>5</td>
                 </tr>
@@ -1588,8 +1559,7 @@
             <br />
             <paragraph styleCode="Bold" ID="ANISO">Interprétation : Anisocytose</paragraph>
             <paragraph>Résultats validés par Jean DE SANTS - 04/01/2021, 11h20</paragraph>
-            <br />
-          </text>
+            <br /></text>
           <!-- Entrée FR-Resultats-examens-de-biologie-medicale : RESULTATS DE L'HEMOGRAMME -->
           <entry typeCode="DRIV">
             <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
@@ -1644,9 +1614,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="6690-2" codeSystem="2.16.840.1.113883.6.1" displayName="Leucocytes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#Leucocytes" />
-                        </originalText>
+                        <originalText><reference value="#Leucocytes" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1680,9 +1648,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="789-8" codeSystem="2.16.840.1.113883.6.1" displayName="Érythrocytes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#Hematies" />
-                        </originalText>
+                        <originalText><reference value="#Hematies" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1716,9 +1682,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="20509-6" codeSystem="2.16.840.1.113883.6.1" displayName="Hémoglobine [Masse/Volume] Sang ; Numérique ; Résultat calculé">
-                        <originalText>
-                          <reference value="#Hemoglobine" />
-                        </originalText>
+                        <originalText><reference value="#Hemoglobine" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1752,9 +1716,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="4544-3" codeSystem="2.16.840.1.113883.6.1" displayName="Hématocrite [Fraction volumique] Sang ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#Hematocrite" />
-                        </originalText>
+                        <originalText><reference value="#Hematocrite" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1788,9 +1750,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="30428-7" codeSystem="2.16.840.1.113883.6.1" displayName="Volume globulaire moyen [Volume d'entité] Erythrocytes ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#VGM" />
-                        </originalText>
+                        <originalText><reference value="#VGM" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1824,9 +1784,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="30385-9" displayName="Indice de distribution érythrocytaire [Ratio] Érythrocytes ; Numérique" codeSystem="2.16.840.1.113883.6.1">
-                        <originalText>
-                          <reference value="#IDR" />
-                        </originalText>
+                        <originalText><reference value="#IDR" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1860,9 +1818,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="28540-3" displayName="Concentration corpusculaire moyenne en hémoglobine [Masse/Volume] Érythrocytes ; Numérique" codeSystem="2.16.840.1.113883.6.1">
-                        <originalText>
-                          <reference value="#CCMH" />
-                        </originalText>
+                        <originalText><reference value="#CCMH" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1896,9 +1852,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="28539-5" codeSystem="2.16.840.1.113883.6.1" displayName="Teneur corpusculaire moyenne en hémoglobine [Masse d'entité] Érythrocytes ; Numérique">
-                        <originalText>
-                          <reference value="#TCMH" />
-                        </originalText>
+                        <originalText><reference value="#TCMH" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1932,9 +1886,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="777-3" codeSystem="2.16.840.1.113883.6.1" displayName="Plaquettes [Nombre/Volume] Sang ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#Plaquettes" />
-                        </originalText>
+                        <originalText><reference value="#Plaquettes" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -1968,9 +1920,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="32623-1" codeSystem="2.16.840.1.113883.6.1" displayName="Volume moyen plaquettaire [Volume d'entité] Sang ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#VMP" />
-                        </originalText>
+                        <originalText><reference value="#VMP" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2004,9 +1954,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="32207-3" codeSystem="2.16.840.1.113883.6.1" displayName="Indice de distribution plaquettaire [Volume d'entité] Sang ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#IDP" />
-                        </originalText>
+                        <originalText><reference value="#IDP" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2030,9 +1978,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="26511-6" displayName="Polynucléaires neutrophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique" codeSystem="2.16.840.1.113883.6.1">
-                        <originalText>
-                          <reference value="#Polynucleaires-neutrophiles" />
-                        </originalText>
+                        <originalText><reference value="#Polynucleaires-neutrophiles" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2066,9 +2012,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="26450-7" codeSystem="2.16.840.1.113883.6.1" displayName="Polynucléaires éosinophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique">
-                        <originalText>
-                          <reference value="#Polynucleaires-eosinophiles-pourcentage" />
-                        </originalText>
+                        <originalText><reference value="#Polynucleaires-eosinophiles-pourcentage" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2102,9 +2046,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="30180-4" displayName="Polynucléaires basophiles/100 leucocytes [Fraction de nombres] Sang ; Numérique" codeSystem="2.16.840.1.113883.6.1">
-                        <originalText>
-                          <reference value="#Polynucleaires-basophiles-pourcentage" />
-                        </originalText>
+                        <originalText><reference value="#Polynucleaires-basophiles-pourcentage" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2138,9 +2080,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="26478-8" codeSystem="2.16.840.1.113883.6.1" displayName="Lymphocytes totaux/100 leucocytes [Fraction de nombres] Sang ; Numérique">
-                        <originalText>
-                          <reference value="#Lymphocytes-pourcentage" />
-                        </originalText>
+                        <originalText><reference value="#Lymphocytes-pourcentage" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2174,9 +2114,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="26485-3" codeSystem="2.16.840.1.113883.6.1" displayName="Monocytes/100 leucocytes [Fraction de nombres] Sang ; Numérique">
-                        <originalText>
-                          <reference value="#Monocytes-pourcentage" />
-                        </originalText>
+                        <originalText><reference value="#Monocytes-pourcentage" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104113000+0100" />
@@ -2212,9 +2150,7 @@
                       <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.32"/>
                       <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Commentaire" />
-                      <text>
-                        <reference value="#ANISO" />
-                      </text>
+                      <text><reference value="#ANISO" /></text>
                       <statusCode code="completed" />
                     </act>
                   </component>
@@ -2356,21 +2292,21 @@
                   <td>
                     <content ID="isolat-1-amoxicilline">Amoxicilline</content>
                   </td>
-                  <td>&gt;=0,512 (µg/ml)</td>
+                  <td>&gt;=0,512 µg/ml</td>
                   <td>R</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-1-ampicilline">Ampicilline</content>
                   </td>
-                  <td>&lt;0,128 (µg/ml)</td>
+                  <td>&lt;0,128 µg/ml</td>
                   <td>I</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-1-gentamicine">Gentamicine</content>
                   </td>
-                  <td>&lt;0,0032 (µg/ml)</td>
+                  <td>&lt;0,0032 µg/ml</td>
                   <td>S</td>
                 </tr>
               </tbody>
@@ -2403,21 +2339,21 @@
                   <td>
                     <content ID="isolat-2-amoxicilline">Amoxicilline</content>
                   </td>
-                  <td>&lt;0,012 (µg/ml)</td>
+                  <td>&lt;0,012 µg/ml</td>
                   <td>S</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-2-ampicilline">Ampicilline</content>
                   </td>
-                  <td>&lt;0,013 (µg/ml)</td>
+                  <td>&lt;0,013 µg/ml</td>
                   <td>S</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="isolat-2-gentamicine">Gentamicine</content>
                   </td>
-                  <td>&lt;0,014 (µg/ml)</td>
+                  <td>&lt;0,014 µg/ml</td>
                   <td>S</td>
                 </tr>
               </tbody>
@@ -2425,8 +2361,7 @@
             <br />
             <paragraph styleCode="bold" ID="C_ECBU">Traitement immédiat</paragraph>
             <paragraph>Résultats validés par Jean DE SANTS - 4 janvier 2021, 11h20</paragraph>
-            <br />
-          </text>
+            <br /></text>
           <!-- Entrée FR-Resultats-examens-de-biologie-medicale : RESULTATS DE L'ECBU -->
           <entry typeCode="DRIV">
             <!-- Conformité Laboratory Report Data Processing Entry (IHE PALM) -->
@@ -2473,9 +2408,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.77"/>
                   <!-- Code affiné NABM de l'acte -->
                   <code code="5201" displayName="EX MICROBIO URINES (ECBU)" codeSystem="1.2.250.1.213.2.7" codeSystemName="NABM">
-                    <originalText>
-                      <reference value="#prelevement-code-nabm" />
-                    </originalText>
+                    <originalText><reference value="#prelevement-code-nabm" /></originalText>
                   </code>
                   <!-- Date et heure du prélèvement -->
                   <effectiveTime>
@@ -2486,12 +2419,10 @@
                     <participantRole classCode="SPEC">
                       <!-- Identifiant de l'échantillon -->
                       <id root="1.2.250.1.71.4.2.1" extension="801234567893" />
-                      <!-- Nature de l'échantillon : valeur issue du JDV_HL7_SpecimenType-CISIS (2.16.840.1.113883.5.129) -->
+                      <!-- Nature de l'échantillon : valeur issue du JDV_HL7_SpecimenType-CISIS (2.16.840.1.113883.21.327) -->
                       <playingEntity>
-                        <code code="UR" displayName="urine" codeSystem="2.16.840.1.113883.5.129">
-                          <originalText>
-                            <reference value="#prelevement-nature-echantillon" />
-                          </originalText>
+                        <code code="UR" displayName="Urine" codeSystem="2.16.840.1.113883.18.311">
+                          <originalText><reference value="#prelevement-nature-echantillon" /></originalText>
                         </code>
                       </playingEntity>
                     </participantRole>
@@ -2517,9 +2448,7 @@
                   <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.78"/>
                   <code>
-                    <originalText>
-                      <reference value="#CBU_EXDIR" />                    
-                    </originalText>
+                    <originalText><reference value="#CBU_EXDIR" /></originalText>
                     <translation code="4" displayName="Examen macroscopique" codeSystem="2.16.840.1.113883.5.84" codeSystemName="HL7:ObservationMethod"/>                    
                   </code>  
                   <statusCode code="completed" />
@@ -2530,17 +2459,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="5778-6" codeSystem="2.16.840.1.113883.6.1" displayName="Couleur [Type] Urine ; Résultat textuel">
-                        <originalText>
-                          <reference value="#CBU-couleur" />
-                        </originalText>
+                      <code code="5778-6" codeSystem="2.16.840.1.113883.6.1" displayName="Couleur [Type] Urine ; Résultat nominal">
+                        <originalText><reference value="#CBU-couleur" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-couleur-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-couleur-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -2551,17 +2476,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="5767-9" codeSystem="2.16.840.1.113883.6.1" displayName="Aspect [Aspect] Urine ; Résultat textuel">
-                        <originalText>
-                          <reference value="#CBU-aspect" />
-                        </originalText>
+                      <code code="5767-9" codeSystem="2.16.840.1.113883.6.1" displayName="Aspect [Aspect] Urine ; Résultat nominal">
+                        <originalText><reference value="#CBU-aspect" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-aspect-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-aspect-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -2575,9 +2496,7 @@
                   <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.78"/>
                   <code>
-                    <originalText>
-                      <reference value="#CBU_MICRO" />
-                    </originalText>
+                    <originalText><reference value="#CBU_MICRO" /></originalText>
                     <translation code="107" displayName="Microscopie" codeSystem="2.16.840.1.113883.5.84" codeSystemName="HL7:ObservationMethod"/>
                   </code>
                   <statusCode code="completed" />
@@ -2588,10 +2507,8 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="24122-4" codeSystem="2.16.840.1.113883.6.1" displayName="Leucocytes [Nombre/Volume] Urine ; Numérique ; Comptage manuel">
-                        <originalText>
-                          <reference value="#CBU-leucocytes" />
-                        </originalText>
+                      <code code="30405-5" codeSystem="2.16.840.1.113883.6.1" displayName="Leucocytes [Nombre/Volume] Urine ; Numérique">
+                        <originalText><reference value="#CBU-leucocytes" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
@@ -2605,10 +2522,8 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="799-7" codeSystem="2.16.840.1.113883.6.1" displayName="Érythrocytes [Nombre/Volume] Urine ; Numérique ; Comptage manuel">
-                        <originalText>
-                          <reference value="#CBU-erythrocytes" />
-                        </originalText>
+                      <code code="30391-7" codeSystem="2.16.840.1.113883.6.1" displayName="Érythrocytes [Nombre/Volume] Urine ; Numérique">
+                        <originalText><reference value="#CBU-erythrocytes" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
@@ -2622,17 +2537,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="24123-2" codeSystem="2.16.840.1.113883.6.1" displayName="Cellules épithéliales [Nombre/Volume] Urine ; Numérique ; Comptage manuel">
-                        <originalText>
-                          <reference value="#CBU-epitheliales" />
-                        </originalText>
+                      <code code="30383-4" codeSystem="2.16.840.1.113883.6.1" displayName="Cellules épithéliales [Nombre/Volume] Urine ; Numérique">
+                        <originalText><reference value="#CBU-epitheliales" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-epitheliales-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-epitheliales-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -2643,17 +2554,13 @@
                       <templateId root="1.3.6.1.4.1.19376.1.3.1.6"/>
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
-                      <code code="653-6" codeSystem="2.16.840.1.113883.6.1" displayName="Observation microscopique [Identification] Urine ; Résultat textuel ; Coloration Gram">
-                        <originalText>
-                          <reference value="#CBU-gram" />
-                        </originalText>
+                      <code code="653-6" codeSystem="2.16.840.1.113883.6.1" displayName="Observation microscopique [Identification] Urine ; Résultat nominal ; Coloration Gram">
+                        <originalText><reference value="#CBU-gram" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104131933+0100" />
                       <value xsi:type="CD">
-                        <originalText>
-                          <reference value="#CBU-gram-resultat" />
-                        </originalText>
+                        <originalText><reference value="#CBU-gram-resultat" /></originalText>
                       </value>
                     </observation>
                   </component>
@@ -2676,9 +2583,7 @@
                         <!-- code de l'agent infectieux (SNOMED-CT) -->
                         <code code="112283007" displayName="Escherichia coli (organism)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                           <!-- Précision sur l'agent infectieux -->
-                          <originalText>
-                            <reference value="#isolat-1" />
-                          </originalText>
+                          <originalText><reference value="#isolat-1" /></originalText>
                           <!-- code de l'agent infectieux (NCBI-Taxonomy) -->
                           <translation code="562" displayName="Escherichia coli" codeSystem="2.16.840.1.113883.3.9471" codeSystemName="NCBI-Taxonomy"/>
                         </code>
@@ -2693,9 +2598,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="51480-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bactérie [Nombre/Volume] Urine ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#isolat-1-denombrement" />
-                        </originalText>
+                        <originalText><reference value="#isolat-1-denombrement" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104155000+0100" />
@@ -2710,9 +2613,7 @@
                       <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.78"/>
                       <code code="18769-0" displayName="Antibiogramme" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#isolat-1-antibiogramme" />
-                        </originalText>
+                        <originalText><reference value="#isolat-1-antibiogramme" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <!-- Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent : Amoxicilline -->
@@ -2723,9 +2624,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="20-8" codeSystem="2.16.840.1.113883.6.1" displayName="Amoxicilline+clavulanate [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-1-amoxicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-1-amoxicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -2744,9 +2643,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="28-1" codeSystem="2.16.840.1.113883.6.1" displayName="Ampicilline [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-1-ampicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-1-ampicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -2765,9 +2662,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="18928-2" codeSystem="2.16.840.1.113883.6.1" displayName="Gentamicine [Sensibilité] Isolat ; Alphanumérique">
-                            <originalText>
-                              <reference value="#isolat-1-gentamicine" />
-                            </originalText>
+                            <originalText><reference value="#isolat-1-gentamicine" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -2799,9 +2694,7 @@
                         <!-- code de l'agent infectieux (SNOMED-CT) -->
                         <code code="58800005" displayName="Genus Streptococcus (organism)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                           <!-- Précision sur l'agent infectieux -->
-                          <originalText>
-                            <reference value="#isolat-2" />
-                          </originalText>                          
+                          <originalText><reference value="#isolat-2" /></originalText>                          
                           <!-- code de l'agent infectieux (NCBI-Taxonomy) -->
                           <translation code="1306" displayName="Streptococcus sp." codeSystem="2.16.840.1.113883.3.9471" codeSystemName="NCBI-Taxonomy"/>
                         </code>
@@ -2816,9 +2709,7 @@
                       <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.80"/>
                       <code code="51480-2" codeSystem="2.16.840.1.113883.6.1" displayName="Bactérie [Nombre/Volume] Urine ; Numérique ; Comptage automate">
-                        <originalText>
-                          <reference value="#isolat-2-denombrement" />
-                        </originalText>
+                        <originalText><reference value="#isolat-2-denombrement" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <effectiveTime value="20210104155000+0100" />
@@ -2833,9 +2724,7 @@
                       <!-- Conformité FR-Batterie-examens-de-biologie-medicale (CI-SIS) -->
                       <templateId root="1.2.250.1.213.1.1.3.78"/>
                       <code code="18769-0" displayName="Antibiogramme" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                        <originalText>
-                          <reference value="#isolat-2-antibiogramme" />
-                        </originalText>
+                        <originalText><reference value="#isolat-2-antibiogramme" /></originalText>
                       </code>
                       <statusCode code="completed" />
                       <!-- Entrée FR-Resultat-examens-de-biologie-element-clinique-pertinent : Amoxicilline -->
@@ -2846,9 +2735,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="20-8" codeSystem="2.16.840.1.113883.6.1" displayName="Amoxicilline+clavulanate [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-2-amoxicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-2-amoxicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -2867,9 +2754,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="28-1" codeSystem="2.16.840.1.113883.6.1" displayName="Ampicilline [Sensibilité] Isolat ; Alphanumérique ; CMI">
-                            <originalText>
-                              <reference value="#isolat-2-ampicilline" />
-                            </originalText>
+                            <originalText><reference value="#isolat-2-ampicilline" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -2888,9 +2773,7 @@
                           <!-- Conformité FR-Resultat-examens-de-biologie-element-clinique-pertinent (CI-SIS) -->
                           <templateId root="1.2.250.1.213.1.1.3.80"/>
                           <code code="18928-2" codeSystem="2.16.840.1.113883.6.1" displayName="Gentamicine [Sensibilité] Isolat ; Alphanumérique">
-                            <originalText>
-                              <reference value="#isolat-2-gentamicine" />
-                            </originalText>
+                            <originalText><reference value="#isolat-2-gentamicine" /></originalText>
                           </code>
                           <statusCode code="completed" />
                           <effectiveTime value="20210104155000+0100" />
@@ -2915,9 +2798,7 @@
                   <!-- Conformité FR-Commentaire-ER (CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#C_ECBU" />
-                  </text>
+                  <text><reference value="#C_ECBU" /></text>
                   <statusCode code="completed" />
                 </act>
               </entryRelationship>

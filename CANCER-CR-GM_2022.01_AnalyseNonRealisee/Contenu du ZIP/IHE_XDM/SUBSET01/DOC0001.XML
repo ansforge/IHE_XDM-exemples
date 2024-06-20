@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -58,8 +57,8 @@
   <!-- Patient -->
   <recordTarget>
     <patientRole>
-      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-      <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
       <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
       <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
       <!-- Adresse du patient -->
@@ -74,19 +73,23 @@
       <!-- Coordonnées télécom du patient -->
       <telecom value="tel:0144534551" use="H"/>
       <telecom value="tel:0647151010" use="MC"/>
-      <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">NESSI</family>            
-          <given>Ruth Isabelle</given>
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>        
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-        <birthTime value="19770714"/>
+        <birthTime value="19790328"/>
         <!-- Représentant du patient -->
         <guardian>
           <addr use="H">
@@ -522,7 +525,7 @@
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801101201301" />
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5"
-        displayName="Médecin - Oncologie option médicale (SM)"/>
+        displayName="Médecin - Oncologie, opt médicale (SM)"/>
       <addr>
         <houseNumber>4</houseNumber>
         <streetName>Rue Larrey</streetName>
@@ -562,7 +565,7 @@
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802102202302" />
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5"
-        displayName="Médecin - Oncologie option médicale (SM)"/>
+        displayName="Médecin - Oncologie, opt médicale (SM)"/>
       <addr>
         <houseNumber>4</houseNumber>
         <streetName>Rue Larrey</streetName>
@@ -605,7 +608,7 @@
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5"
-        displayName="Médecin - Oncologie option médicale (SM)"/>
+        displayName="Médecin - Oncologie, opt médicale (SM)"/>
       <addr>
         <houseNumber>4</houseNumber>
         <streetName>Rue Larrey</streetName>
@@ -700,7 +703,7 @@
   <componentOf>
     <encompassingEncounter>
       <!-- Type de prise en charge -->
-      <code code="AMB" displayName="Ambulatoire" codeSystem="2.16.840.1.113883.5.4" />
+      <code code="AMB" displayName= "Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4" />
       <effectiveTime>
         <low value="201801230730" />
         <high value="201801230930" />
@@ -796,14 +799,6 @@
                       PDGFRA, PIK3R1, PTEN, STK11T</content>
                   </td>
                 </tr>
-                <tr>
-                  <td>Motif de l'analyse demandée</td>
-                  <td>
-                    <content ID="motifExamen" styleCode="Bold">Recherche de mutations somatiques dans
-                      le cadre de la prise en charge thérapeutique d'un patient atteint d'un
-                      adénocarcinome pulmonaire</content>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </text>
@@ -856,9 +851,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="89FEBF2E-7628-4755-86CB-FE797E7AD31F" />
                   <code code="30896-5" displayName=" Numéro d'examen" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                    <originalText>
-                      <reference value="#numeroExamen" />
-                    </originalText>
+                    <originalText><reference value="#numeroExamen" /></originalText>
                   </code>
                   <statusCode code="completed" />
                   <value xsi:type="ST">1324</value>
@@ -873,9 +866,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.80" />
                   <id root="BF45C00B-BFBB-43C9-9DF0-843DF4D6E23F" />
                   <code code="19145-2" displayName="Titre de l'examen" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
-                    <originalText>
-                      <reference value="#titreExamen" />
-                    </originalText>
+                    <originalText><reference value="#titreExamen" /></originalText>
                   </code>
                   <statusCode code="completed" />
                   <value xsi:type="ST">Recherche de mutations somatiques d'EGFR, KRAS, BRAF, PI3KCA,
@@ -895,7 +886,20 @@
               <templateId root="1.2.250.1.213.1.1.2.127" />
               <id root="744852E2-0AEE-47A2-8C3E-4D407E1C3489" />
               <code code="42349-1" displayName="Raison de la recommandation" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-              <text />
+              <title>Motif de l'analyse demandée</title>
+              <text >
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <content ID="motifExamen" styleCode="Bold">Recherche de mutations somatiques dans
+                          le cadre de la prise en charge thérapeutique d'un patient atteint d'un
+                          adénocarcinome pulmonaire</content>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </text>
             </section>
           </component>
         </section>
@@ -932,8 +936,7 @@
                 </tr>
               </tbody>
             </table>
-            <br />
-          </text>
+            <br /></text>
           <!-- [1..1] Entrée FR-Prelevement-APSR -->
           <entry typeCode="COMP">
             <procedure classCode="PROC" moodCode="EVN">
@@ -976,6 +979,8 @@
                     <name>LABORATOIRE SOUS-TRAITANT</name>
                     <telecom nullFlavor="MSK" />
                     <addr nullFlavor="MSK" />
+                    <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+                      codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
                   </representedOrganization>
                 </assignedEntity>
               </performer>
@@ -1198,6 +1203,8 @@
                     <name>LABORATOIRE SOUS-TRAITANT</name>
                     <telecom nullFlavor="MSK" />
                     <addr nullFlavor="MSK" />
+                    <standardIndustryClassCode code="ETABLISSEMENT" displayName="Etablissement de santé"
+                      codeSystem="1.2.250.1.213.1.1.4.9" codeSystemName="practiceSettingCode"/>
                   </representedOrganization>
                 </assignedEntity>
               </performer>
@@ -1301,9 +1308,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="24F06819-E1DC-4355-88DF-EF7498D68FBE" />
                   <code code="53903-1" displayName="Collection method" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Type_Prel" />
-                  </text>
+                  <text><reference value="#Type_Prel" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="B" displayName="Biopsie chirurgicale" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D1" />
@@ -1318,9 +1323,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="7151D497-B51C-4291-8FB1-F6372B9AA469" />
                   <code code="20506-2" displayName="Specimen drawn from" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Organe" />
-                  </text>
+                  <text><reference value="#Organe" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="RB" displayName="BRONCHE" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D3" />
@@ -1335,9 +1338,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="15592B4A-4999-4FED-8A99-BB668CF24313" />
                   <code code="33731-1" displayName="Type histologique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Type_histo" />
-                  </text>
+                  <text><reference value="#Type_histo" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="A7A8" displayName="ADENOCARCINOME BRONCHIOLO-ALVEOLAIRE" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D5" />
@@ -1352,9 +1353,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="24E6C763-2680-4AF2-A218-C1D5ECD648C0" />
                   <code code="19772-3" displayName="Preparation techniques" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Cond" />
-                  </text>
+                  <text><reference value="#Cond" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="H" displayName="Histologie et et cytologie par inclusion" codeSystem="1.2.250.1.213.2.11" codeSystemName="ADICAP-D2" />
@@ -1369,9 +1368,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="DB1A30CD-0F52-4491-A64F-B394ECD2AA74" />
                   <code code="66746-9" displayName="Nature du prélèvement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Nat_Mat" />
-                  </text>
+                  <text><reference value="#Nat_Mat" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire paraffiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -1386,9 +1383,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="D9DFA4FF-3600-44EF-9F73-015517736262" />
                   <code code="GEN-167" displayName="Quantité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Pourcentage" />
-                  </text>
+                  <text><reference value="#Pourcentage" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="PQ" value="50" unit="%"/>
@@ -1542,9 +1537,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="0BFEC584-87D5-4D66-B233-121ED4A88D90" />
                   <code code="MED-300" displayName="Qualification de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Qualification" />
-                  </text>
+                  <text><reference value="#Qualification" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="GEN-166" displayName="Qualité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -1559,9 +1552,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="49E737D2-3719-4DB0-8F27-67FFBC61C7F9" />
                   <code code="MED-301" displayName="Nature de la fraction génomique analysée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Nat_fraction" />
-                  </text>
+                  <text><reference value="#Nat_fraction" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-315" displayName="ADN" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -1577,9 +1568,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.32"/>
                   <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Commentaire" />
-                  <text>
-                    <reference value="#comments1" />
-                  </text>
+                  <text><reference value="#comments1" /></text>
                   <statusCode code="completed" />
                 </act>
               </component>
@@ -1750,9 +1739,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="5644B2A1-C01D-4B6C-828E-6B3720CD0557" />
                   <code code="66746-9" displayName="Nature du prélèvement" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Nat_Mat2" />
-                  </text>
+                  <text><reference value="#Nat_Mat2" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-310" displayName="Bloc tissulaire parafiné" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -1767,9 +1754,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="8E8A033A-20C2-4CDB-8262-62A3029959A4" />
                   <code code="8100-0" displayName="Préparation de l'échantillon" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Methode_preparation" />
-                  </text>
+                  <text><reference value="#Methode_preparation" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="CD" code="MED-302" displayName="macro dissection de la zone d'intérêt" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -1784,9 +1769,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="99DB06C4-0EC1-4143-8569-985C69AC8920" />
                   <code code="MED-546" displayName="Méthode d'extraction de l'ADN génomique tumoral" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#methodeExtractionADN" />
-                  </text>
+                  <text><reference value="#methodeExtractionADN" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -1801,9 +1784,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="E12E2599-A0E9-41FA-B409-7E7D85CFAEAE" />
                   <code code="MED-547" displayName="Méthode d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#MethodeAnalyse" />
-                  </text>
+                  <text><reference value="#MethodeAnalyse" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -1818,9 +1799,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="4016F04B-53C0-46D5-8CDD-8EDBDC513F84" />
                   <code code="MED-306" displayName="Séquenceur utilisé" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#sequenceur" />
-                  </text>
+                  <text><reference value="#sequenceur" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -1835,9 +1814,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="60BB65E6-44F5-4375-89BA-2F10C11B1C5F" />
                   <code code="MED-307" displayName="Sensibilité diagnostique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#sensibiliteDiagnostic" />
-                  </text>
+                  <text><reference value="#sensibiliteDiagnostic" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="REAL" value="10" />
@@ -1852,9 +1829,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="8C056CC5-498B-45A5-BA8A-5AA62174D182" />
                   <code code="MED-548" displayName="Profondeur minimale" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#Prof_min" />
-                  </text>
+                  <text><reference value="#Prof_min" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -1869,9 +1844,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="5D8AE732-9821-440E-AE0C-0F8A423356A8" />
                   <code code="81249-5" displayName="Référence génomique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#genome" />
-                  </text>
+                  <text><reference value="#genome" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA"/>
                   <value xsi:type="ST" />
@@ -1996,9 +1969,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="2AAF0245-25B0-4A86-B9A8-DD1A92EC7A13" />
                   <code code="51956-1" displayName="Niveau de couverture" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#couverture" />
-                  </text>
+                  <text><reference value="#couverture" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="201801231245+0100" />
                   <value xsi:type="ST" />
@@ -2013,9 +1984,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="4A8BA687-9B6C-4DBE-B9E0-FE4E9FB6D73D" />
                   <code code="42071-1" displayName="Sequence de référence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#accession" />
-                  </text>
+                  <text><reference value="#accession" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="201801231245+0100" />
                   <value xsi:type="ST" />
@@ -2030,9 +1999,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.102"/>
                   <id root="E5E55C32-17B1-404D-8DAF-9BA4FFF6408C" />
                   <code code="MED-308" displayName="Version du pipeline d'analyse" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-                  <text>
-                    <reference value="#pipeline" />
-                  </text>
+                  <text><reference value="#pipeline" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="201801231245+0100" />
                   <value xsi:type="ST" />
@@ -2048,9 +2015,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.32" />
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#Comment5" />
-                  </text>
+                  <text><reference value="#Comment5" /></text>
                   <statusCode code="completed" />
                 </act>
               </component>
@@ -2082,9 +2047,7 @@
               <templateId root="1.2.250.1.213.1.1.3.48.16" />
               <id root="E84F5F4B-A707-4441-8994-285EFD69CF4E" />
               <code code="GEN-065" displayName="Statut du document" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
-              <text>
-                <reference value="#statutDoc" />
-              </text>
+              <text><reference value="#statutDoc" /></text>
               <statusCode code="completed" />
               <effectiveTime value="201801231245+0100" />
               <value xsi:type="CD" code="9571008" displayName="approuvé" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />

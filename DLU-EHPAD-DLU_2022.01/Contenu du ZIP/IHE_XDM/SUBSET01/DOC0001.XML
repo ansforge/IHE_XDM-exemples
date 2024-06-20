@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?>
@@ -27,6 +26,8 @@
       -	Remplacement de la section FR-Elements-cliniques-rapportes (1.2.250.1.213.1.1.2.46) par la section FR-Documents-ajoutes (1.2.250.1.213.1.1.2.37).
       05/12/2022 : Nouvelle version 2022.01
       - Modification des terminologies et JDVs
+        28/08/2023 : Modification des terminologies et JDVs
+        08/12/2023 : Mise à jour de JDV
       **********************************************************************************************************
 -->
 
@@ -68,8 +69,8 @@
 	<!-- Patient -->
 	<recordTarget>
 		<patientRole>
-			<!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-			<id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+			<!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+			<id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
 			<!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
 			<id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
 			<!-- Adresse du patient -->
@@ -84,20 +85,24 @@
 			<!-- Coordonnées télécom du patient -->
 			<telecom value="tel:0144534551" use="H"/>
 			<telecom value="tel:0647151010" use="MC"/>
-			<telecom value="mailto:277076322082910@patient.mssante.fr"/>
+			<telecom value="mailto:279035121518989@patient.mssante.fr"/>
 			<!-- Identité du patient -->
 			<patient classCode="PSN">
 				<name>
 					<!-- Nom et prénom(s) de naissance -->
-					<family qualifier="BR">NESSI</family>            
-					<given>Ruth Isabelle</given>
+					<!-- Nom de l’acte de naissance -->
+					<family qualifier="BR">PAT-TROIS</family> 
+					<!-- Prénoms de l’acte de naissance -->
+					<given>DOMINIQUE MARIE-LOUISE</given>
+					<!-- Premier prénom de l’acte de naissance -->
+					<given qualifier="BR">DOMINIQUE</given>
 					<!-- Nom et prénom utilisés -->
-					<family qualifier="CL">DECOURCY</family>
-					<given qualifier="CL">Ruth</given>   
+					<family qualifier="CL">PAT-TROIS</family>
+					<given qualifier="CL">DOMINIQUE</given>        
 				</name>
 				<administrativeGenderCode code="F" displayName="Féminin"
 					codeSystem="2.16.840.1.113883.5.1"/>
-				<birthTime value="19770714"/>
+				<birthTime value="19790328"/>
 				<!-- Représentant du patient -->
 				<guardian>
 					<addr use="H">
@@ -226,7 +231,7 @@
 			<!-- PS identifié par son N°RPPS -->
 			<id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
 			<code code="G15_10/SM26" codeSystem="1.2.250.1.213.1.1.4.5"
-				displayName="Médecin - Qualifié en Médecin Générale (SM)"/>
+				displayName="Médecin - Qualifié en Médecine Générale (SM)"/>
 			<addr>
 				<houseNumber>142</houseNumber>
 				<streetName>Rue du Belvédère</streetName>
@@ -331,7 +336,7 @@
 	<!-- Contexte de la prise en charge -->
 	<componentOf>
 		<encompassingEncounter>
-			<code code="IMP" displayName="Consultation interne à la structure de soins"
+			<code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)"
 				codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActEncounterCode"/>
 			<effectiveTime>
 				<high value="20200327153500+0100"/>
@@ -413,8 +418,7 @@
 							<id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE"/>
 							<code code="11302-7" displayName="Etablissement de santé de préférence"
 								codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-							<text><reference value="#dlu2020"/>
-							</text>
+							<text><reference value="#dlu2020"/></text>
 							<statusCode code="normal"/>
 							<effectiveTime nullFlavor="NAV"/>
 							<participant typeCode="RCV">
@@ -499,9 +503,7 @@
 									<id root="B47243F7-6470-43DC-97FA-4FA67A384BF4"/>
 									<code code="282291009" codeSystem="2.16.840.1.113883.6.96"
 										codeSystemName="SNOMED CT" displayName="interprétation diagnostique"/>
-									<text>
-										<reference value="#probleme-001"/>
-									</text>
+									<text><reference value="#probleme-001"/></text>
 									<statusCode code="completed"/>
 									<effectiveTime>
 										<low value="20200327"/>
@@ -509,9 +511,7 @@
 									</effectiveTime>
 									<value xsi:type="CD" code="J41.0" displayName="Bronchite chronique simple"
 										codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
-										<originalText>
-											<reference value="#probleme-001"/>
-										</originalText>
+										<originalText><reference value="#probleme-001"/></originalText>
 									</value>
 								</observation>
 							</entryRelationship>
@@ -587,9 +587,7 @@
 									</effectiveTime>
 									<value xsi:type="CD" code="I21" displayName="Infarctus aigu du myocarde"
 										codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
-										<originalText>
-											<reference value="#antecedent-med-001"/>
-										</originalText>
+										<originalText><reference value="#antecedent-med-001"/></originalText>
 									</value>
 								</observation>
 							</entryRelationship>
@@ -805,9 +803,7 @@
 							</effectiveTime>
 							<doseQuantity>
 								<translation>
-									<originalText>
-										<reference value="#TRT-DOSE-001"/>
-									</originalText>
+									<originalText><reference value="#TRT-DOSE-001"/></originalText>
 								</translation>
 								<low value="2" unit="{count}" />
 								<high value="4" unit="{count}"/>
@@ -828,12 +824,11 @@
 									<manufacturedMaterial classCode="MMAT">
 										<code code="68496001" displayName="AMPICILLINE PANPHARMA 500 mg, poudre et solution pour préparation injectable"
 											codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-											<originalText>
-												<reference value="#TRT_MED-001"/>
-											</originalText>
+											<originalText><reference value="#TRT_MED-001"/></originalText>
 											<translation code="J01CA01" displayName="AMPICILLINE PANPHARMA 500 mg, gélule"
 												codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
 										</code>
+										<name>AMPICILLINE PANPHARMA 500 mg, poudre et solution pour préparation injectable</name>
 									</manufacturedMaterial>
 								</manufacturedProduct>
 							</consumable>
@@ -941,9 +936,7 @@
 								<templateId root="2.16.840.1.113883.10.20.1.36"/>
 								<externalDocument classCode="DOC" moodCode="EVN">
 									<id root="FB56FC8D-5DC2-4A75-8681-C307336F60E1"/>
-									<text>
-										<reference value="ftp://ftp.ihe.net/advancedirectives/durand#124/"></reference>
-									</text>
+									<text><reference value="ftp://ftp.ihe.net/advancedirectives/durand#124/"/></text>
 								</externalDocument>
 							</reference>
 						</observation>
@@ -1079,12 +1072,10 @@
 							<!-- Conformité FR-Simple-Observation (CI-SIS) -->
 							<templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="0D1629B3-CC69-4632-81F3-2301FD4C318B"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="DLU_001" displayName="Peut Alerter"
-								codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP"/>
-							<text>
-								<reference value="#evr1"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="288575003" displayName="capable de communiquer"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr1"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="false"/>
@@ -1099,12 +1090,10 @@
 							<!-- Conformité FR-Simple-Observation (CI-SIS) -->
 							<templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="CCF80A78-0212-43EF-89E5-F37F3B30C3AF"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-91200" displayName="Orienté"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr2"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="247663003" displayName="bien orienté"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr2"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1119,12 +1108,10 @@
 							<!-- Conformité CI-SIS -->
 							<templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="1483FA34-3810-4C2D-A611-9BE5E4D1A703"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-91210" displayName="Désorienté"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr3"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="62476001" displayName="désorienté(e)"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr3"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="false"/>
@@ -1139,12 +1126,10 @@
 							<!-- Conformité CI-SIS -->
 							<templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="8449D1AF-C44B-4598-AC0B-CE0DF77575A5"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-92540" displayName="Agité" codeSystem="1.2.250.1.213.2.12"
-								codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr4"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="24199005" displayName="sensation d'agitation" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr4"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1159,12 +1144,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="3CC2A9BF-EE87-492F-87DD-E7CBC71E94ED"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F91.3" displayName="Opposant"
-								codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10"/>
-							<text>
-								<reference value="#evr5"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="248043008" displayName="comportement non-conciliant"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr5"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1179,12 +1162,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="4511AA1C-FD6E-463E-8F33-2A3865A81799"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-94034" displayName="Risque suicidaire"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr6"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="425104003" displayName="comportement suicidaire"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr6"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1199,12 +1180,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="B4F9F29B-EE99-4B56-A7EF-B939DC190989"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="DA-74910" displayName="Handicap visuel"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr7"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="397540003" displayName="malvoyance"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr7"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1219,12 +1198,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="E6A2FD17-BF64-412B-A978-255A50167827"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="DA-95000" displayName="Handicap auditif"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr8"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="15188001" displayName="perte auditive"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr8"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1239,12 +1216,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="114FFEDC-6968-499D-95A5-F6E8408F8354"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-94800" displayName="Handicap de langage"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr9"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="62305002" displayName="trouble du langage"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr9"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1259,12 +1234,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="DBF786AA-EB03-460F-8EEA-7D7708D9D2D8"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="A-A1800" displayName="Chute" codeSystem="1.2.250.1.213.2.12"
-								codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr10"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="161898004" displayName="chutes" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr10"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1279,12 +1252,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="301D8AC8-4CE5-45BE-A2A5-C087EB0FFAAC"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-18000" displayName="Déambulation"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr11"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="50239007" displayName="errance"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr11"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1299,12 +1270,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="F7FD31CF-A595-4531-B693-9D048B5F1270"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="F-95250" displayName="Fugue" codeSystem="1.2.250.1.213.2.12"
-								codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr12"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="248046000" displayName="fugue" codeSystem="2.16.840.1.113883.6.96"
+								codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr12"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="false"/>
@@ -1319,12 +1288,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="3546908F-75C7-4996-92DD-9133E3D626AF"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="PA-10130" displayName="Contention"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr13"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="386423001" displayName="contention physique"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr13"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1339,12 +1306,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="226AA75D-B25A-406C-9E8C-F37ADE42DB40"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="M-36784" displayName="Risque d'escarre"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr14"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="285304000" displayName="à risque d'escarre"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr14"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="true"/>
@@ -1359,12 +1324,10 @@
                            <!-- Conformité CI-SIS -->
                            <templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="79C1467D-BC99-454E-BA8E-DD3CC0EADE57"/>
-							<!-- valeur issue du JDV_ObservationEtatPatient-CISIS (1.2.250.1.213.1.1.5.514) -->
-							<code code="M-39280" displayName="Risque de fausses routes"
-								codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>
-							<text>
-								<reference value="#evr15"/>
-							</text>
+							<!-- valeur issue du JDV_ObservationEtatPatient_CISIS (1.2.250.1.213.1.1.5.514) -->
+							<code code="249492002" displayName="fausse route alimentaire"
+								codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+							<text><reference value="#evr15"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NA"/>
 							<value xsi:type="BL" value="false"/>
@@ -1423,7 +1386,7 @@
 							<!-- Conformité FR-Simple-Observation (CI-SIS) -->
 							<templateId root="1.2.250.1.213.1.1.3.48" />
 							<id root="194AE3B0-FA7D-49D6-8C90-86139E9AF5BE"/>
-							<code code="U83.71" displayName="Bactérie Multi Résistante"
+							<code code="U83.71" displayName="Bactérie multirésistante [BMR]"
 								codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10" />
 							<text><reference value="#bmr1"/></text>
 							<statusCode code="completed"/>
@@ -1485,12 +1448,10 @@
 							<id root="11F78C7B-4EF8-456F-94AC-200107DA9DE9"/>
 							<code code="IMMUNIZ" displayName="Immunization"
 								codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
-							<text>
-								<reference value="teta"/>
-							</text>
+							<text><reference value="teta"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NASK"/>
-							<!-- JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+							<!-- JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
 							<routeCode code="20035000" displayName="voie intramusculaire"
 								codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
 							<doseQuantity nullFlavor="NA"/>
@@ -1511,6 +1472,7 @@
 											<translation code="J07AM01" displayName="vaccin antitétanique"
 												codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
 										</code>
+										<name>VACCIN TETANIQUE PASTEUR, suspension injectable en seringue préremplie vaccin tétanique adsorbé</name>
 										<lotNumberText>6547</lotNumberText>
 									</manufacturedMaterial>
 								</manufacturedProduct>
@@ -1530,12 +1492,10 @@
 							<id root="0513DAE8-B97A-4AAF-8448-71DAE0C7F662"/>
 							<code code="IMMUNIZ" displayName="Immunization"
 								codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode"/>
-							<text>
-								<reference value="vaxi"/>
-							</text>
+							<text><reference value="vaxi"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NASK"/>
-							<!-- JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+							<!-- JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
 							<routeCode code="20035000" displayName="voie intramusculaire"
 								codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
 							<doseQuantity nullFlavor="NA"/>
@@ -1556,6 +1516,7 @@
 											<translation code="J07BB01" displayName="Grippe inactivée, virus entier"
 												codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
 										</code>
+										<name>VAXIGRIPTETRA, suspension injectable en seringue préremplie. Vaccin grippal quadrivalent (inactivé, à virion fragmenté)</name>
 										<lotNumberText>0076543</lotNumberText>
 									</manufacturedMaterial>
 								</manufacturedProduct>
@@ -1578,7 +1539,7 @@
 							<text><reference value="pneumo"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime nullFlavor="NASK"/>
-							<!-- JDV_ImmunizationRouteCodes-CISIS (1.2.250.1.213.1.1.5.676) -->
+							<!-- JDV_ImmunizationRouteCodes_CISIS (1.2.250.1.213.1.1.5.676) -->
 							<routeCode code="20035000" displayName="voie intramusculaire"
 								codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
 							<doseQuantity nullFlavor="NA"/>
@@ -1599,6 +1560,7 @@
 											<translation code="J07AL" displayName="Vaccin pneumococcique"
 												codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC"/>
 										</code>
+										<name>PNEUMOVAX en flacon. Vaccin pneumococcique polyosidique</name>
 										<lotNumberText>0012345</lotNumberText>
 									</manufacturedMaterial>
 								</manufacturedProduct>
@@ -1718,7 +1680,7 @@
 						</table>
 					</text>
 
-					<!-- Pour chaque document du jeu de valeur JDV_ChecklistDLU-CISIS (1.2.250.1.213.1.1.5.71) -->
+					<!-- Pour chaque document du jeu de valeur JDV_ChecklistDLU_CISIS (1.2.250.1.213.1.1.5.71) -->
 
 					<!-- [1..*] Entrée FR-Document-attache : Attestation de la carte vitale -->
 					<entry>

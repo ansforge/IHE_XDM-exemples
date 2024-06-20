@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
 <?oxygen SCHSchema="../schematrons/CI-SIS_ANEST-CR-CPA_2022.01.sch"?>
+
 <ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="urn:hl7-org:v3 ../infrastructure/cda/CDA_extended.xsd" xmlns="urn:hl7-org:v3">
   <!-- 
@@ -18,6 +18,7 @@
       **********************************************************************************************************	
       21/12/2020 : Création		
       21/07/2021 : Correction unités pour la consommation de tabac et d'alcool
+      25/08/2023 : Migration des terminologies et JDVs après validation
 	  **********************************************************************************************************
    -->
   <realmCode code="FR" />
@@ -48,10 +49,10 @@
   <!-- Patient -->
   <recordTarget>
     <patientRole>
-      <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-      <id extension="277076322082910" root="1.2.250.1.213.1.4.8" />
+      <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+      <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
       <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
-      <id extension="1234567890121" root="1.2.3.4.567.8.9.10" />
+      <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
       <!-- Adresse du patient -->
       <addr>
         <houseNumber>28</houseNumber>
@@ -62,21 +63,25 @@
         <country>FRANCE</country>
       </addr>
       <!-- Coordonnées télécom du patient -->
-      <telecom value="tel:0144534551" use="H" />
-      <telecom value="tel:0647151010" use="MC" />
-      <telecom value="mailto:277076322082910@patient.mssante.fr" />
+      <telecom value="tel:0144534551" use="H"/>
+      <telecom value="tel:0647151010" use="MC"/>
+      <telecom value="mailto:279035121518989@patient.mssante.fr"/>
       <!-- Identité du patient -->
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">NESSI</family>            
-          <given>Ruth Isabelle</given>
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
+          <!-- Prénoms de l’acte de naissance -->
+          <given>DOMINIQUE MARIE-LOUISE</given>
+          <!-- Premier prénom de l’acte de naissance -->
+          <given qualifier="BR">DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>        
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
-        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1" />
-        <birthTime value="19770714" />
+        <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
+        <birthTime value="19790328"/>
         <!-- Représentant du patient -->
         <guardian>
           <addr use="H">
@@ -86,7 +91,7 @@
             <city>PARIS</city>
             <country>FRANCE</country>
           </addr>
-          <telecom value="tel:0147150000" use="H" />
+          <telecom value="tel:0147150000" use="H"/>
           <guardianPerson>
             <name>
               <prefix>MME</prefix>
@@ -238,7 +243,7 @@
     <time nullFlavor="NA" />
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801984758437" />
-      <code code="G15_10/SM26" displayName=" Médecin - Qualifié en Médecin Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
+      <code code="G15_10/SM26" displayName="Médecin - Qualifié en Médecine Générale (SM)" codeSystem="1.2.250.1.213.1.1.4.5" />
       <addr>
         <houseNumber>3</houseNumber>
         <streetName>Rue Petit Pont</streetName>
@@ -323,7 +328,7 @@
   <componentOf>
     <encompassingEncounter>
       <!-- Type de prise en charge -->
-      <code code="EXTERNE" displayName="acte et consultation externe (établissement)" codeSystem="1.2.250.1.213.1.1.4.2.291" />
+      <code code="EXTERNE" displayName="Acte et consultation externe (établissement)" codeSystem="1.2.250.1.213.1.1.4.2.291" />
       <!-- Date de la prise en charge -->
       <effectiveTime>
         <high value="20200317171100+0100" />
@@ -484,9 +489,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="724BFE32-E30C-4003-9F6E-8196066B387E" />
                   <code code="8302-2" displayName="Taille" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="taille" />
-                  </text>
+                  <text><reference value="taille" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="176" unit="cm" />
@@ -505,9 +508,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="5D9FBE13-92A9-4327-A753-34E757C5D4B3" />
                   <code code="29463-7" displayName="Poids" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="poids" />
-                  </text>
+                  <text><reference value="poids" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="59" unit="kg" />
@@ -526,9 +527,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="76F581A1-BCD9-45D3-A0B8-30B3885F3332" />
                   <code code="39156-5" displayName="Index de masse corporelle (IMC)" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="imc" />
-                  </text>
+                  <text><reference value="imc" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="19" unit="kg/m2" />
@@ -547,9 +546,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="5F49E4B7-19CE-46A6-8941-971EDD668C72" />
                   <code code="8480-6" displayName="Pression artérielle systolique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#pression-arterielle-systolique" />
-                  </text>
+                  <text><reference value="#pression-arterielle-systolique" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="120" unit="mm[Hg]" />
@@ -568,9 +565,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="7508F19B-BA2D-4FAD-A87D-2EA3CC99A01A" />
                   <code code="8462-4" displayName="Pression artérielle diastolique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#pression-arterielle-diastolique" />
-                  </text>
+                  <text><reference value="#pression-arterielle-diastolique" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="80" unit="mm[Hg]" />
@@ -589,9 +584,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="ED02EBB3-C740-4809-864E-DE7E6E754AAC" />
                   <code code="8867-4" displayName="Fréquence cardiaque" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#frequence-cardiaque" />
-                  </text>
+                  <text><reference value="#frequence-cardiaque" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="60" unit="/min" />
@@ -610,9 +603,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.50" />
                   <id root="B9F74538-834B-441A-BEA8-707EF4644160" />
                   <code code="20564-1" displayName="Saturation en O2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#frequence-cardiaque" />
-                  </text>
+                  <text><reference value="#frequence-cardiaque" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
                   <value xsi:type="PQ" value="95" unit="%" />
@@ -677,9 +668,7 @@
                   <id root="68F4934C-4C1E-473F-B89A-95D8E0AEC507" />
                   <code code="MED-593" displayName="Accès veineux difficile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
                   </code>
-                  <text>
-                    <reference value="#acces-veineux" />
-                  </text>
+                  <text><reference value="#acces-veineux" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20200319" />
                   <value xsi:type="BL" value="true" />
@@ -693,9 +682,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-acces-veineux" />
-                      </text>
+                      <text><reference value="#commentaire-acces-veineux" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -754,9 +741,7 @@
                   <id root="34509226-D2BB-49DD-92BE-25E9717942F4" />
                   <code code="MED-638" displayName="Score de Mallampati" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
                   </code>
-                  <text>
-                    <reference value="#score-mallampati" />
-                  </text>
+                  <text><reference value="#score-mallampati" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20200319" />
                   <value xsi:type="CD" code="MED-634" displayName="Classe 1 : toute la luette et les loges amygdaliennes sont visibles" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
@@ -772,9 +757,7 @@
                   <id root="6BDA18D8-9EF9-4EE7-AA53-D9F2B04C1BDA" />
                   <code code="MED-639" displayName="Ouverture de bouche" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
                   </code>
-                  <text>
-                    <reference value="#ouverture-bouche" />
-                  </text>
+                  <text><reference value="#ouverture-bouche" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20200319" />
                   <value xsi:type="PQ" value="5" unit="mm" />
@@ -790,9 +773,7 @@
                   <id root="B16360BD-6B61-4684-B58A-67926BE9E33B" />
                   <code code="MED-640" displayName="Distance thyromentonnière" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
                   </code>
-                  <text>
-                    <reference value="#distance-thyromenton" />
-                  </text>
+                  <text><reference value="#distance-thyromenton" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20200319" />
                   <value xsi:type="PQ" value="5" unit="mm" />
@@ -843,7 +824,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <content ID="probleme-pneumologique-01">[CIM-10 : J40] Bronchite</content>
+                    <content ID="probleme-pneumologique-01">[CIM-10 : J40] Bronchite, non précisée aigüe ou chronique</content>
                   </td>
                   <td>
                     <content ID="commentaire-probleme-pneumologique-01">(texte libre)</content>
@@ -896,8 +877,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <content ID="probleme-diabete-01">[CIM-10 : E10.9] Diabète sucré de type
-                      1, sans complication</content>
+                    <content ID="probleme-diabete-01">[CIM-10 : E10] Diabète sucré de type 1</content>
                   </td>
                   <td>
                     <content ID="commentaire-probleme-diabete-01">(texte libre)</content>
@@ -958,7 +938,7 @@
                 <low value="20200318" />
               </effectiveTime>
               <!-- Problèmes cardio-vasculaires -->
-              <!-- [0..*] Entrée FR-Probleme : Hypertension essentielle -->
+              <!-- [0..*] Entrée FR-Probleme : Hypertension essentielle (primitive) -->
               <entryRelationship typeCode="SUBJ" inversionInd="false">
                 <observation classCode="OBS" moodCode="EVN" negationInd="true">
                   <!-- Conformité CCD -->
@@ -970,17 +950,13 @@
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-cardio-vasculaire-01" />
-                  </text>
+                  <text><reference value="#probleme-cardio-vasculaire-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <value xsi:type="CD" code="I10" displayName="Hypertension essentielle" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-cardio-vasculaire-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-cardio-vasculaire-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -992,9 +968,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-cardio-vasculaire-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-cardio-vasculaire-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1012,17 +986,13 @@
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-cardio-vasculaire-02" />
-                  </text>
+                  <text><reference value="#probleme-cardio-vasculaire-02" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <value xsi:type="CD" code="I26" displayName="Embolie pulmonaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-cardio-vasculaire-02" />
-                    </originalText>
+                    <originalText><reference value="#probleme-cardio-vasculaire-02" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1034,9 +1004,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-cardio-vasculaire-02" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-cardio-vasculaire-02" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1055,17 +1023,13 @@
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-pneumologique-01" />
-                  </text>
+                  <text><reference value="#probleme-pneumologique-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="J40" displayName="Bronchite" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-pneumologique-01" />
-                    </originalText>
+                  <value xsi:type="CD" code="J40" displayName="Bronchite, non précisée aigüe ou chronique" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                    <originalText><reference value="#probleme-pneumologique-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1077,9 +1041,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-pneumologique-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-pneumologique-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1098,17 +1060,13 @@
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-metabolique-01" />
-                  </text>
+                  <text><reference value="#probleme-metabolique-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
                   <value xsi:type="CD" code="E03.9" displayName="Hypothyroïdie, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-metabolique-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-metabolique-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1120,9 +1078,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-metabolique-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-metabolique-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1140,17 +1096,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-neurologique-01" />
-                  </text>
+                  <text><reference value="#probleme-neurologique-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
                   <value xsi:type="CD" code="G22" displayName="Syndrome parkinsonien au cours de maladies classées ailleurs" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-neurologique-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-neurologique-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1162,9 +1114,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-neurologique-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-neurologique-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1182,17 +1132,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-psychiatrique-01" />
-                  </text>
+                  <text><reference value="#probleme-psychiatrique-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
                   <value xsi:type="CD" code="F33" displayName="Trouble dépressif récurrent" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-psychiatrique-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-psychiatrique-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1204,16 +1150,14 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-psychiatrique-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-psychiatrique-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
                 </observation>
               </entryRelationship>
               <!-- Problèmes digestifs -->
-              <!-- [0..*] Entrée FR-Probleme : Reflux gastro-oesophagien -->
+              <!-- [0..*] Entrée FR-Probleme : Reflux gastroœsophagien -->
               <entryRelationship typeCode="SUBJ" inversionInd="false">
                 <observation classCode="OBS" moodCode="EVN">
                   <!-- Conformité CCD -->
@@ -1224,17 +1168,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-digestif-01" />
-                  </text>
+                  <text><reference value="#probleme-digestif-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="K21" displayName="Reflux gastro-oesophagien" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-digestif-01" />
-                    </originalText>
+                  <value xsi:type="CD" code="K21" displayName="Reflux gastroœsophagien" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                    <originalText><reference value="#probleme-digestif-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1246,9 +1186,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-digestif-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-digestif-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1266,17 +1204,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-renal-nephrologique-01" />
-                  </text>
+                  <text><reference value="#probleme-renal-nephrologique-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
                   <value xsi:type="CD" code="N04" displayName="Syndrome néphrotique" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-renal-nephrologique-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-renal-nephrologique-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1288,9 +1222,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-renal-nephrologique-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-renal-nephrologique-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1308,17 +1240,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-diabete-01" />
-                  </text>
+                  <text><reference value="#probleme-diabete-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="E10.9" displayName="Diabète sucré de type 1, sans complication" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-diabete-01" />
-                    </originalText>
+                  <value xsi:type="CD" code="E10" displayName="Diabète sucré de type 1" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                    <originalText><reference value="#probleme-diabete-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1330,9 +1258,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-diabete-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-diabete-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1350,17 +1276,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-cancer-01" />
-                  </text>
+                  <text><reference value="#probleme-cancer-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
                   <value xsi:type="CD" code="MED-670" displayName="Cancer" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
-                    <originalText>
-                      <reference value="#probleme-cancer-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-cancer-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1372,9 +1294,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-cancer-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-cancer-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1392,17 +1312,13 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#probleme-infectieux-01" />
-                  </text>
+                  <text><reference value="#probleme-infectieux-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low value="20180923" />
                   </effectiveTime>
                   <value xsi:type="CD" code="B19" displayName="Hépatite virale, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#probleme-infectieux-01" />
-                    </originalText>
+                    <originalText><reference value="#probleme-infectieux-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1414,9 +1330,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-probleme-infectieux-01" />
-                      </text>
+                      <text><reference value="#commentaire-probleme-infectieux-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1432,9 +1346,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.32" />
                   <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#problemes-commentaire" />
-                  </text>
+                  <text><reference value="#problemes-commentaire" /></text>
                   <statusCode code="completed" />
                 </act>
               </entryRelationship>
@@ -1511,7 +1423,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <content ID="antecedent-gynecologique-01">[CIM-10 : N76.0] Vaginite</content>
+                    <content ID="antecedent-gynecologique-01">[CIM-10 : N76.0] Vaginite aigüe</content>
                   </td>
                   <td>
                     <content ID="commentaire-antecedent-gynecologique-01">(texte libre)</content>
@@ -1519,8 +1431,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <content ID="antecedent-obstetrical-01">[CIM-10 : O03.9] Avortement spontané
-                      complet ou sans précision, sans complication</content>
+                    <content ID="antecedent-obstetrical-01">[CIM-10 : O03] Avortement spontané</content>
                   </td>
                   <td>
                     <content ID="commentaire-antecedent-obstetrical-01">(texte libre)</content>
@@ -1528,7 +1439,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <content ID="antecedent-infectieux-01">[CIM-10 : B16] Hépatite aiguë B</content>
+                    <content ID="antecedent-infectieux-01">[CIM-10 : B16] Hépatite aigüe B</content>
                   </td>
                   <td>
                     <content ID="commentaire-antecedent-infectieux-01">(texte libre)</content>
@@ -1585,18 +1496,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#antecedent-medical-01" />
-                  </text>
+                  <text><reference value="#antecedent-medical-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Antécédent médical : code CIM-10 -->
                   <value xsi:type="CD" code="J81" displayName="Œdème pulmonaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#antecedent-medical-01" />
-                    </originalText>
+                    <originalText><reference value="#antecedent-medical-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1608,9 +1515,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-antecedent-medical-01" />
-                      </text>
+                      <text><reference value="#commentaire-antecedent-medical-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1627,18 +1532,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#antecedent-medical-02" />
-                  </text>
+                  <text><reference value="#antecedent-medical-02" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Antécédent médical : code CIM-10 -->
                   <value xsi:type="CD" code="J44.9" displayName="Maladie pulmonaire obstructive chronique, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#antecedent-medical-02" />
-                    </originalText>
+                    <originalText><reference value="#antecedent-medical-02" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1650,9 +1551,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-antecedent-medical-02" />
-                      </text>
+                      <text><reference value="#commentaire-antecedent-medical-02" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1669,18 +1568,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#antecedent-gynecologique-01" />
-                  </text>
+                  <text><reference value="#antecedent-gynecologique-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Antécédents gynécologiques : code CIM-10 -->
-                  <value xsi:type="CD" code="N76.0" displayName="Vaginite" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#antecedent-gynecologique-01" />
-                    </originalText>
+                  <value xsi:type="CD" code="N76.0" displayName="Vaginite aigüe" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                    <originalText><reference value="#antecedent-gynecologique-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1692,9 +1587,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-antecedent-gynecologique-01" />
-                      </text>
+                      <text><reference value="#commentaire-antecedent-gynecologique-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1711,18 +1604,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#antecedent-obstetrical-01" />
-                  </text>
+                  <text><reference value="#antecedent-obstetrical-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Antécédent obstetrical : code CIM-10 -->
-                  <value xsi:type="CD" code="O03.9" displayName="Avortement spontané complet ou sans précision, sans complication" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#antecedent-obstetrical-01" />
-                    </originalText>
+                  <value xsi:type="CD" code="O03" displayName="Avortement spontané" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                    <originalText><reference value="#antecedent-obstetrical-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1734,9 +1623,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-antecedent-obstetrical-01" />
-                      </text>
+                      <text><reference value="#commentaire-antecedent-obstetrical-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1753,18 +1640,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#antecedent-infectieux-01" />
-                  </text>
+                  <text><reference value="#antecedent-infectieux-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Antécédents infectieux : code CIM-10 -->
-                  <value xsi:type="CD" code="B16" displayName="Hépatite aiguë B" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#antecedent-infectieux-01" />
-                    </originalText>
+                  <value xsi:type="CD" code="B16" displayName="Hépatite aigüe B" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                    <originalText><reference value="#antecedent-infectieux-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1776,9 +1659,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-antecedent-infectieux-01" />
-                      </text>
+                      <text><reference value="#commentaire-antecedent-infectieux-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1795,18 +1676,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#trouble-hemostase-01" />
-                  </text>
+                  <text><reference value="#trouble-hemostase-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Troubles de l'hémostase : code CIM-10 -->
                   <value xsi:type="CD" code="D68.9" displayName="Anomalie de la coagulation, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#trouble-hemostase-01" />
-                    </originalText>
+                    <originalText><reference value="#trouble-hemostase-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1818,9 +1695,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-hemostase-01" />
-                      </text>
+                      <text><reference value="#commentaire-hemostase-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1837,18 +1712,14 @@
                   <templateId root="1.2.250.1.213.1.1.3.37" />
                   <id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5" />
                   <code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-                  <text>
-                    <reference value="#hemopathie-01" />
-                  </text>
+                  <text><reference value="#hemopathie-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime>
                     <low nullFlavor="UNK" />
                   </effectiveTime>
                   <!-- Hémopathie : code CIM-10 -->
                   <value xsi:type="CD" code="D75.9" displayName="Maladie du sang et des organes hématopoïétiques, sans précision" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
-                    <originalText>
-                      <reference value="#hemopathie-01" />
-                    </originalText>
+                    <originalText><reference value="#hemopathie-01" /></originalText>
                   </value>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
                   <entryRelationship typeCode="SUBJ" inversionInd="true">
@@ -1860,9 +1731,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-hemopathie-01" />
-                      </text>
+                      <text><reference value="#commentaire-hemopathie-01" /></text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -1978,14 +1847,14 @@
                 <tr>
                   <td>
                     <content ID="risques-sociaux">Risques sociaux (codé à partir du
-                      JDV_FacteursDeRisqueSociaux-CISIS)</content>
+                      JDV_FacteursDeRisqueSociaux_CISIS)</content>
                   </td>
                   <td>Isolement</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="risques-professionnels">Risques professionnels (codé à partir du
-                      JDV_FacteursDeRisqueProfessionnels-CISIS)</content>
+                      JDV_FacteursDeRisqueProfessionnels_CISIS)</content>
                   </td>
                   <td>Silice</td>
                 </tr>
@@ -2010,7 +1879,7 @@
                 <tr>
                   <td>
                     <content ID="sedentarite">Sédentarité (codé à partir du
-                      JDV_Sedentarite-CISIS)</content>
+                      JDV_Sedentarite_CISIS)</content>
                   </td>
                   <td>Peu d'activité</td>
                 </tr>
@@ -2028,7 +1897,7 @@
                 </tr>
                 <tr>
                   <td>
-                    <content ID="drogue">Drogues (codé à partir du JDV_NiveauDependance-CISIS)
+                    <content ID="drogue">Drogues (codé à partir du JDV_NiveauDependance_CISIS)
                     </content>
                   </td>
                   <td>Dépendance moyenne</td>
@@ -2060,21 +1929,19 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="C06B54F9-C6A9-4ABE-8414-A66969B67ACA" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
                   <name code="GEN-232" displayName="Risques sociaux" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#risques-sociaux" />
-              </text>
+              <text><reference value="#risques-sociaux" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_FacteursDeRisqueSociaux-CISIS (1.2.250.1.213.1.1.5.488) -->
-              <value xsi:type="CD" code="GEN-188" displayName="Isolement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <!-- JDV_FacteursDeRisqueSociaux_CISIS (1.2.250.1.213.1.1.5.488) -->
+              <value xsi:type="CD" code="422650009" displayName="isolement social" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </observation>
           </entry>
           <!-- [1..*] Entrée FR-Habitus-Mode-de-vie : Risques professionnels - Exposition à des produits toxiques -->
@@ -2089,16 +1956,14 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="A0FEE676-B9EA-4EBE-AE61-CCB610E3D14E" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="92944-8" displayName="Exposition à des produits toxiques" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-              <text>
-                <reference value="#risques-professionnels" />
-              </text>
+              <text><reference value="#risques-professionnels" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_FacteursDeRisqueProfessionnels-CISIS (1.2.250.1.213.1.1.5.490) -->
+              <!-- JDV_FacteursDeRisqueProfessionnels_CISIS (1.2.250.1.213.1.1.5.490) -->
               <value xsi:type="CD" code="83581005" displayName="silice colloidale" codeSystem="2.16.840.1.113883.6.96" />
             </observation>
           </entry>
@@ -2114,23 +1979,19 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="6F551051-8985-41CF-97FA-A0804F8D3BE1" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
                   <name code="GEN-207" displayName="Facteurs de risques environnementaux" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#risques-environnementaux" />
-              </text>
+              <text><reference value="#risques-environnementaux" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
               <value xsi:type="CD">
-                <originalText>
-                  <reference value="#risques-environnementaux" />
-                </originalText>
+                <originalText><reference value="#risques-environnementaux" /></originalText>
               </value>
             </observation>
           </entry>
@@ -2146,23 +2007,19 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="E339E1C9-C6DD-4D1C-A564-B74A1B68AC69" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
                   <name code="ORG-075" displayName="Activité professionnelle" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#activite-professionnelle" />
-              </text>
+              <text><reference value="#activite-professionnelle" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
               <value xsi:type="CD">
-                <originalText>
-                  <reference value="#activite-professionnelle" />
-                </originalText>
+                <originalText><reference value="#activite-professionnelle" /></originalText>
               </value>
             </observation>
           </entry>
@@ -2178,11 +2035,9 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="D39B63A5-C116-4FE4-880A-565549008211" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="73985-4" displayName="Exercice physique"  codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-              <text>
-                <reference value="#activite-sportive" />
-              </text>
+              <text><reference value="#activite-sportive" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2202,21 +2057,19 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="CF4E510E-3E82-4D99-B597-C9F08E20484B" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
                   <name code="GEN-208" displayName="Sédentarité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#sedentarite" />
-              </text>
+              <text><reference value="#sedentarite" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_Sedentarite-CISIS (1.2.250.1.213.1.1.5.485) -->
-              <value xsi:type="CD" code="GEN-202" displayName="Peu d'activité" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <!-- JDV_Sedentarite_CISIS (1.2.250.1.213.1.1.5.485) -->
+              <value xsi:type="CD" code="228446001" displayName="fait peu d'exercice" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </observation>
           </entry>
           <!-- [1..*] Entrée FR-Habitus-Mode-de-vie : Tabac -->
@@ -2231,11 +2084,9 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="00FD3FEF-41F0-4C8C-B538-6D8B90CE107E" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="74011-8" displayName="Consommation tabagique" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-              <text>
-                <reference value="#tabac" />
-              </text>
+              <text><reference value="#tabac" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2255,11 +2106,9 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="FA502B35-5355-46A9-8EB3-A4D2FD9B71C1" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="74013-4" displayName="Consommation d'alcool" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
-              <text>
-                <reference value="#alcool" />
-              </text>
+              <text><reference value="#alcool" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2279,17 +2128,15 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="1678CF79-B078-42C0-89B2-09ED049EC732" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
-              <code code="42831-8" displayName="Consommation de drogue"
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <code code="11343-1" displayName="Consommation de drogue non médicales"
                 codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-              <text>
-                <reference value="#drogue" />
-              </text>
+              <text><reference value="#drogue" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_NiveauDependance-CISIS (1.2.250.1.213.1.1.5.483) -->
+              <!-- JDV_NiveauDependance_CISIS (1.2.250.1.213.1.1.5.483) -->
               <value xsi:type="CD" code="GEN-199" displayName="Dépendance moyenne" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
             </observation>
           </entry>
@@ -2305,24 +2152,20 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="8D3E75AC-FD29-47BD-A590-5E2C409928B7" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
                   <name code="GEN-050" displayName="Voyage" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#voyage-recent" />
-              </text>
+              <text><reference value="#voyage-recent" /></text>
               <statusCode code="completed" />
               <!-- Date du voyage -->
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
               <value xsi:type="CD">
-                <originalText>
-                  <reference value="#voyage-recent" />
-                </originalText>
+                <originalText><reference value="#voyage-recent" /></originalText>
               </value>
             </observation>
           </entry>
@@ -2338,23 +2181,19 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.52" />
               <id root="9928D69E-B256-4604-AB31-2BD9EA60BF72" />
-              <!-- JDV_SocialHistoryCodes-CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
+              <!-- JDV_SocialHistoryCodes_CISIS (1.2.250.1.213.1.1.4.2.283.4) -->
               <code code="11345-6" displayName="Autre élément social" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
                 <qualifier>
                   <name code="GEN-231" displayName="Fait(s) marquant(s)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="fait-marquant" />
-              </text>
+              <text><reference value="fait-marquant" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200921" />
               </effectiveTime>
               <value xsi:type="CD">
-                <originalText>
-                  <reference value="#fait-marquant" />
-                </originalText>
+                <originalText><reference value="#fait-marquant" /></originalText>
               </value>
             </observation>
           </entry>
@@ -2402,27 +2241,27 @@
                 <tr>
                   <td>
                     <content ID="aide-deplacement">Aide au déplacement (codé à partir du
-                      JDV_AideAuDeplacement-CISIS)</content>
+                      JDV_AideAuDeplacement_CISIS)</content>
                   </td>
                   <td>Fauteuil roulant</td>
                 </tr>
                 <tr>
                   <td>
-                    <content ID="score-GIR">Score GIR (codé à partir du JDV_GIR-CISIS)</content>
+                    <content ID="score-GIR">Score GIR (codé à partir du JDV_GIR_CISIS)</content>
                   </td>
                   <td>GIR-1</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="score-Duke">Score Duke (codé à partir du
-                      JDV_ScoreDuke-CISIS)</content>
+                      JDV_ScoreDuke_CISIS)</content>
                   </td>
                   <td>Aptitude physique excellente (Score de Duke &gt; 10 MET)</td>
                 </tr>
                 <tr>
                   <td>
                     <content ID="support-nutritionnel">Support nutritionnel (codé à partir du
-                      JDV_SupportNutritionnel-CISIS)</content>
+                      JDV_SupportNutritionnel_CISIS)</content>
                   </td>
                   <td>Alimentation mixée</td>
                 </tr>
@@ -2456,17 +2295,13 @@
               <templateId root="1.2.250.1.213.1.1.3.25" />
               <id root="1C16C272-B051-4CBB-A655-E51663CE5B4E" />
               <code code="95034-5" displayName="Aide à domicile" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-              <text>
-                <reference value="#aide-domicile" />
-              </text>
+              <text><reference value="#aide-domicile" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
               <value xsi:type="CD">
-                <originalText>
-                  <reference value="#aide-domicile" />
-                </originalText>
+                <originalText><reference value="#aide-domicile" /></originalText>
               </value>
             </observation>
           </entry>
@@ -2487,9 +2322,7 @@
                   <name code="MED-596" displayName="Le patient est-il capable de se lever et de traverser le local de consultation en moins de 15 secondes ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#deplacement" />
-              </text>
+              <text><reference value="#deplacement" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2514,9 +2347,7 @@
                   <name code="MED-597" displayName="Le patient a-t-il effectué une chute dans les 6 derniers mois ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#chute" />
-              </text>
+              <text><reference value="#chute" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2541,15 +2372,13 @@
                   <name code="MED-598" displayName="Aide au déplacement" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#aide-deplacement" />
-              </text>
+              <text><reference value="#aide-deplacement" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_AideAuDeplacement-CISIS (1.2.250.1.213.1.1.5.489) -->
-              <value xsi:type="CD" code="GEN-195" displayName="Fauteuil roulant" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <!-- JDV_AideAuDeplacement_CISIS (1.2.250.1.213.1.1.5.489) -->
+              <value xsi:type="CD" code="301578005" displayName="se déplace en fauteuil roulant" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
             </observation>
           </entry>
           <!-- Entrée FR-Evaluation : Score GIR (codé à partir d'un JDV) -->
@@ -2569,14 +2398,12 @@
                   <name code="MED-346" displayName="Perte d'autonomie" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#score-GIR" />
-              </text>
+              <text><reference value="#score-GIR" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_GIR-CISIS (1.2.250.1.213.1.1.5.53) -->
+              <!-- JDV_GIR_CISIS (1.2.250.1.213.1.1.5.53) -->
               <value xsi:type="CD" code="MED-344" displayName="GIR-6" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
             </observation>
           </entry>
@@ -2597,14 +2424,12 @@
                   <name code="MED-633" displayName="Aptitude physique" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#score-Duke" />
-              </text>
+              <text><reference value="#score-Duke" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_ScoreDuke-CISIS (1.2.250.1.213.1.1.5.493) -->
+              <!-- JDV_ScoreDuke_CISIS (1.2.250.1.213.1.1.5.493) -->
               <value xsi:type="CD" code="MED-589" displayName="Aptitude physique excellente (Score de Duke &gt; 10 MET)" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
             </observation>
           </entry>
@@ -2625,14 +2450,12 @@
                   <name code="MED-599" displayName="Support nutritionnel" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#support-nutritionnel" />
-              </text>
+              <text><reference value="#support-nutritionnel" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
               </effectiveTime>
-              <!-- JDV_SupportNutritionnel-CISIS (1.2.250.1.213.1.1.5.487) -->
+              <!-- JDV_SupportNutritionnel_CISIS (1.2.250.1.213.1.1.5.487) -->
               <value xsi:type="CD" code="MED-575" displayName="Alimentation mixée" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
             </observation>
           </entry>
@@ -2653,9 +2476,7 @@
                   <name code="MED-650" displayName="Le patient a-t-il perdu du poids involontairement pendant ces derniers 6 mois ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#malnutrition-perte-poids" />
-              </text>
+              <text><reference value="#malnutrition-perte-poids" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2680,9 +2501,7 @@
                   <name code="MED-651" displayName="Le patient a-t-il mangé moins que d'habitude depuis plus d'une semaine ?" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
                 </qualifier>
               </code>
-              <text>
-                <reference value="#malnutrition-perte-appetit" />
-              </text>
+              <text><reference value="#malnutrition-perte-appetit" /></text>
               <statusCode code="completed" />
               <effectiveTime>
                 <low value="20200323" />
@@ -2723,7 +2542,7 @@
                     <content ID="typeAllergie">(texte libre)</content>
                   </td>
                   <td>
-                    <content ID="agentResponsable">[CIS : 68787715] PARACETAMOL BIOGARAN 1 g, comprimé</content>
+                    <content ID="agentResponsable">[CIS : 68787715] paracétamol</content>
                   </td>
                   <td>
                     <content ID="Reaction">[CIM-10 : T78.3] Urticaire</content>
@@ -2770,11 +2589,9 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.41" />
                   <id root="D21A81A6-EFE4-429A-A1C3-D1BBCC74619D" />
-                  <!-- Type d'allergie /hypersensibilité : valeur provenant de JDV_HL7_ObservationIntoleranceType-CISIS (2.16.840.1.113883.1.11.19700) -->
-                  <code code="DALG" displayName="Allergie médicamenteuse" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode" />
-                  <text>
-                    <reference value="#typeAllergie" />
-                  </text>
+                  <!-- Type d'effet indésirable prévisible : valeur provenant de JDV_TypeEffetIndesirablePrevisible_CISIS (1.2.250.1.213.1.1.5.794) -->
+                  <code code="416098002" displayName="allergie médicamenteuse" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <text><reference value="#typeAllergie" /></text>
                   <statusCode code="completed" />
                   <!-- Date de l'allergie / hypersensibilité -->
                   <effectiveTime xsi:type="IVL_TS">
@@ -2782,17 +2599,13 @@
                   </effectiveTime>
                   <!-- Description clinique de l'allergie / hypersensibilité -->
                   <value xsi:type="CD">
-                    <originalText>
-                      <reference value="#" />
-                    </originalText>
+                    <originalText><reference value="#" /></originalText>
                   </value>
                   <participant typeCode="CSM">
                     <participantRole classCode="MANU">
                       <playingEntity classCode="MMAT">
-                        <code code="N02BE01" displayName="PARACETAMOL BIOGARAN 1 g, comprimé" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC">
-                          <originalText>
-                            <reference value="#agentResponsable" />
-                          </originalText>
+                        <code code="N02BE01" displayName="paracétamol" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC">
+                          <originalText><reference value="#agentResponsable" /></originalText>
                         </code>
                         <name>Paracétamol</name>
                       </playingEntity>
@@ -2812,18 +2625,14 @@
                       <id root="01D700BB-206A-42ED-BC03-ED5975659FF6" />
                       <code code="418799008" displayName="symptôme rapporté par le patient ou le répondant" codeSystem="2.16.840.1.113883.6.96"
                        codeSystemName="SNOMED CT"/>
-                      <text>
-                        <reference value="#Reaction" />
-                      </text>
+                      <text><reference value="#Reaction" /></text>
                       <statusCode code="completed" />
                       <effectiveTime>
                         <low value="20100212" />
                       </effectiveTime>
                       <!-- Code à trouver dans la CIM-11 -->
                       <value xsi:type="CD" code="126485001" displayName="urticaire" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
-                        <originalText>
-                          <reference value="#Reaction" />
-                        </originalText>
+                        <originalText><reference value="#Reaction" /></originalText>
                       </value>
                     </observation>
                   </entryRelationship>
@@ -2837,11 +2646,9 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.29" />
                       <code code="SEV" displayName="Sévérité" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode" />
-                      <text>
-                        <reference value="#severite" />
-                      </text>
+                      <text><reference value="#severite" /></text>
                       <statusCode code="completed" />
-                      <!-- JDV_SeveriteObservation-CISIS (1.2.250.1.213.1.1.5.675) -->
+                      <!-- JDV_SeveriteObservation_CISIS (1.2.250.1.213.1.1.5.675) -->
                       <value xsi:type="CD" code="6736007" displayName="modéré" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                     </observation>
                   </entryRelationship>
@@ -2855,8 +2662,7 @@
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.32" />
                       <code code="48767-8" displayName="Commentaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text>
-                        <reference value="#commentaire-allergie" />-</text>
+                      <text><reference value="#commentaire-allergie" />-</text>
                       <statusCode code="completed" />
                     </act>
                   </entryRelationship>
@@ -2932,9 +2738,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" />
               <id root="8609F763-4F75-4FB5-A1A3-A6A269D15F4A" />
               <code code="DRUG" codeSystem="2.16.840.1.113883.5.4" displayName="Médicament" codeSystemName="HL7 :ActCode" />
-              <text>
-                <reference />
-              </text>
+              <text><reference /></text>
               <statusCode code="completed" />
               <!-- Date de début et fin de traitement -->
               <effectiveTime xsi:type="IVL_TS">
@@ -2952,16 +2756,12 @@
               <doseQuantity>
                 <low value="1" unit="{count}">
                   <translation>
-                    <originalText>
-                      <reference value="#doseMin-001" />
-                    </originalText>
+                    <originalText><reference value="#doseMin-001" /></originalText>
                   </translation>
                 </low>
                 <high value="1" unit="{count}">
                   <translation>
-                    <originalText>
-                      <reference value="#doseMax-001" />
-                    </originalText>
+                    <originalText><reference value="#doseMax-001" /></originalText>
                   </translation>
                 </high>
               </doseQuantity>
@@ -2977,9 +2777,7 @@
                   <manufacturedMaterial>
                     <!-- Code médicament - CIS -->
                     <code code="60019927" displayName="SOLIAN 100 mg, comprimé sécable" codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-                      <originalText>
-                        <reference value="#med-CIS-001" />
-                      </originalText>
+                      <originalText><reference value="#med-CIS-001" /></originalText>
                       <!-- Code médicament - ATC -->
                       <translation code="N05AL05" displayName="Antipsychotique" codeSystem="2.16.840.1.113883.6.73" codeSystemName="ATC">
                       </translation>
@@ -2992,10 +2790,7 @@
               <!-- Précondition (conditions préalables à l'utilisation du médicament) -->
               <precondition>
                 <criterion>
-                  <text>
-                    <reference value="#condition-001">
-                    </reference>
-                  </text>
+                  <text><reference value="#condition-001"/></text>
                 </criterion>
               </precondition>
             </substanceAdministration>
@@ -3047,16 +2842,11 @@
                   <templateId root="1.2.250.1.213.1.1.3.48" />
                   <id root="2714D00E-26AA-4E7D-95F9-C5AE5316CE1E" />
                   <code code="69764-9" displayName="Type de document" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                  <text>
-                    <reference value="#titreDoc" />
-                  </text>
+                  <text><reference value="#titreDoc" /></text>
                   <statusCode code="completed" />
                   <effectiveTime value="20191215" />
                   <value xsi:type="CD" nullFlavor="NA">
-                    <originalText>
-                      <reference value="#titreDoc">
-                      </reference>
-                    </originalText>
+                    <originalText><reference value="#titreDoc"/></originalText>
                   </value>
                   <!--
                   <value xsi:type="ST">CR Echo-Doppler veineux du 15/12/2019</value>-->

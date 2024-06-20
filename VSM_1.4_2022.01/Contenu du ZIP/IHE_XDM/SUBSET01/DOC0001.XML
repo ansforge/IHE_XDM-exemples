@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
@@ -82,8 +81,8 @@
 	<!-- Patient -->
 	<recordTarget>
 		<patientRole>
-			<!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-			<id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+			<!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+			<id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
 			<!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
 			<id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
 			<!-- Adresse du patient -->
@@ -98,19 +97,23 @@
 			<!-- Coordonnées télécom du patient -->
 			<telecom value="tel:0144534551" use="H"/>
 			<telecom value="tel:0647151010" use="MC"/>
-			<telecom value="mailto:277076322082910@patient.mssante.fr"/>
+			<telecom value="mailto:279035121518989@patient.mssante.fr"/>
 			<!-- Identité du patient -->
 			<patient classCode="PSN">
 				<name>
 					<!-- Nom et prénom(s) de naissance -->
-					<family qualifier="BR">NESSI</family>            
-					<given>Ruth Isabelle</given>
+					<!-- Nom de l’acte de naissance -->
+					<family qualifier="BR">PAT-TROIS</family> 
+					<!-- Prénoms de l’acte de naissance -->
+					<given>DOMINIQUE MARIE-LOUISE</given>
+					<!-- Premier prénom de l’acte de naissance -->
+					<given qualifier="BR">DOMINIQUE</given>
 					<!-- Nom et prénom utilisés -->
-					<family qualifier="CL">DECOURCY</family>
-					<given qualifier="CL">Ruth</given>   
+					<family qualifier="CL">PAT-TROIS</family>
+					<given qualifier="CL">DOMINIQUE</given>        
 				</name>
 				<administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-				<birthTime value="19770714"/>
+				<birthTime value="19790328"/>
 				<!-- Représentant du patient -->
 				<guardian>
 					<addr use="H">
@@ -248,7 +251,7 @@
 			<id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
 			<!-- Profession / spécialité du PS -->
 			<code code="G15_10/SM26" codeSystem="1.2.250.1.213.1.1.4.5" codeSystemName="RPPS"
-				displayName="Médecin - Qualifié en Médecin Générale (SM)"/>
+				displayName="Médecin - Qualifié en Médecine Générale (SM)"/>
 			<!-- Adresse du PS-->
 			<addr>
 				<houseNumber>3</houseNumber>
@@ -423,7 +426,7 @@
 	<componentOf>
 		<encompassingEncounter>
 			<!-- Type de prise en charge -->
-			<code code="EXTERNE" displayName="acte et consultation externe (établissement)"
+			<code code="EXTERNE" displayName="Acte et consultation externe (établissement)"
 				codeSystem="1.2.250.1.213.1.1.4.2.291"/>
 			<!-- Date de la prise en charge -->
 			<effectiveTime>
@@ -569,14 +572,12 @@
 													<id root="12DA3A06-18E7-40B7-9397-1FA5B1552472"/>
 													<!--<code code="G-1009" displayName="Diagnostic" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>-->
 													<code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-													<text>
-														<reference value="#pb-actif-01"/>
-													</text>
+													<text><reference value="#pb-actif-01"/></text>
 													<statusCode code="completed"/>
 													<effectiveTime>
 														<low value="20190811"/>
 													</effectiveTime>
-													<value xsi:type="CD" code="G45.9" displayName="Accident Ischémique Cérébral Transitoire"
+													<value xsi:type="CD" code="G45.9" displayName="Accident ischémique cérébral transitoire, sans précision"
 														codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
 														<originalText><reference value="#pb-actif-01"/></originalText>
 													</value>
@@ -614,9 +615,7 @@
 													<id root="12DA3A06-18E7-40B7-9397-1FA5B1552472"/>
 													<!--<code code="G-1009" displayName="Diagnostic" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>-->
 													<code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-													<text>
-														<reference value="#pb-actif-02"/>
-													</text>
+													<text><reference value="#pb-actif-02"/></text>
 													<statusCode code="completed"/>
 													<effectiveTime>
 														<low value="20190811"/>
@@ -693,9 +692,7 @@
 													<id root="21872220-FBDF-4BCC-85B1-61D1BBB420A5"/>
 													<!--<code code="G-1009" displayName="Diagnostic" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>-->
 													<code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-													<text>
-														<reference value="#antecedent-med-01"/>
-													</text>
+													<text><reference value="#antecedent-med-01"/></text>
 													<statusCode code="completed"/>
 													<effectiveTime>
 														<low value="20180422"/>
@@ -740,15 +737,13 @@
 													<id root="FC21DC59-43D5-4BB0-ACC7-3601784BFBC0"/>
 													<!--<code code="G-1009" displayName="Diagnostic" codeSystem="1.2.250.1.213.2.12" codeSystemName="SNOMED 3.5"/>-->
 													<code code="282291009" displayName="interprétation diagnostique" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
-													<text>
-														<reference value="#antecedent-med-02"/>
-													</text>
+													<text><reference value="#antecedent-med-02"/></text>
 													<statusCode code="completed"/>
 													<effectiveTime>
 														<low value="20180114"/>
 														<high value="20180125"/>
 													</effectiveTime>
-													<value xsi:type="CD" code="I21.1" displayName="Infarctus transmural inférieur"
+													<value xsi:type="CD" code="I21.1" displayName="Infarctus transmural aigu du myocarde, de la paroi inférieure"
 														codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
 														<originalText><reference value="#antecedent-med-02"/></originalText>
 													</value>
@@ -772,7 +767,7 @@
 									<!-- Conformité FR-Historique-des-actes (FR CI-SIS) -->
 									<templateId root="1.2.250.1.213.1.1.2.136" />
 									<id root="6F7DBEC2-0E15-48F0-B61E-00B0753BFCAD"/>
-									<code code="47519-4" displayName="Antécédents chirurgicaux"
+									<code code="47519-4" displayName="Historique des actes"
 										codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
 									<title>Antécédents chirurgicaux</title>									
 									<text>
@@ -838,7 +833,7 @@
 													<!-- Conformité FR-Reference-interne (FR CI-SIS) -->
 													<templateId root="1.2.250.1.213.1.1.3.36" />
 													<id root="FC21DC59-43D5-4BB0-ACC7-3601784BFBC0"/>
-													<code code="I21.1" displayName="Infarctus transmural inférieur"
+													<code code="I21.1" displayName="Infarctus transmural aigu du myocarde, de la paroi inférieure"
 														codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
 														<originalText><reference value="#acte-001-motif"/></originalText>
 													</code>
@@ -925,9 +920,7 @@
 													</effectiveTime>
 													<!-- Description clinique de l'allergie / intolérance : non renseigné -->
 													<value xsi:type="CD">
-														<originalText>
-															<reference value="#" />
-														</originalText>
+														<originalText><reference value="#" /></originalText>
 													</value>
 													<!-- Agent responsable de l'allergie / de l'intolérance -->
 													<participant typeCode="CSM">
@@ -935,9 +928,7 @@
 															<playingEntity classCode="MMAT">
 																<code code="60234100" displayName="PARACETAMOL"
 																	codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-																	<originalText>
-																		<reference value="#allergie-001-agent"/>
-																	</originalText>
+																	<originalText><reference value="#allergie-001-agent"/></originalText>
 																</code>
 																<name/>
 															</playingEntity>
@@ -1049,7 +1040,7 @@
 											<!-- Conformité FR-Habitus-Mode-de-vie (FR CI-SIS) -->
 											<templateId root="1.2.250.1.213.1.1.3.52" />
 											<id root="8378F25F-7EC2-4CEE-A9A5-168030827D07"/>
-											<code code="42831-8" displayName="Consommation de drogue"
+											<code code="11343-1" displayName="Consommation de drogue non médicales"
 												codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
 											<text><reference value="#drogue"/></text>
 											<statusCode code="completed"/>
@@ -1139,9 +1130,7 @@
 												<relatedSubject classCode="PRS">
 													<code code="MTH" displayName="Mère"
 														codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode">
-														<originalText>
-															<reference value="#antecedent-familial-001-sujet"/>
-														</originalText>
+														<originalText><reference value="#antecedent-familial-001-sujet"/></originalText>
 													</code>
 													<subject>
 														<administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
@@ -1168,9 +1157,7 @@
 													<effectiveTime nullFlavor="UNK"/>
 													<value xsi:type="CD" code="D57.1" displayName="Anémie drépanocytaire"
 														codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
-														<originalText>
-															<reference value="#antecedent-familial-001-probleme"/>
-														</originalText>
+														<originalText><reference value="#antecedent-familial-001-probleme"/></originalText>
 													</value>
 												</observation>
 											</component>
@@ -1276,7 +1263,7 @@
 									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" />
 									<id root="AADC9C14-F1CA-4177-B2C8-A5178D5B3CA0"/>
 									<code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"/>
-									<text><reference value="#med-001-pdt"></reference></text>
+									<text><reference value="#med-001-pdt"/></text>
 									<statusCode code="completed"/>
 									<!-- Durée du traitement -->
 									<effectiveTime xsi:type="IVL_TS">
@@ -1289,7 +1276,7 @@
 									</effectiveTime>
 									<!-- Voie d'administration -->
 									<routeCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM">
-										<originalText><reference value="#med-001-voie"></reference></originalText>
+										<originalText><reference value="#med-001-voie"/></originalText>
 									</routeCode>   									
 									<!-- Dose à administrer -->
 									<doseQuantity>
@@ -1356,7 +1343,7 @@
 									<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1" />
 									<id root="8609F763-4F75-4FB5-A1A3-A6A269D15F4A"/>
 									<code code="DRUG" displayName="Médicament" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActCode"></code>
-									<text><reference value="#med-002-pdt"></reference></text>
+									<text><reference value="#med-002-pdt"/></text>
 									<statusCode code="completed"/>
 									<!-- Durée du traitement -->
 									<effectiveTime xsi:type="IVL_TS">
@@ -1369,7 +1356,7 @@
 									</effectiveTime>
 									<!-- Voie d'administration -->
 									<routeCode code="20053000" displayName="Voie orale" codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM">
-										<originalText><reference value="#med-002-voie"></reference></originalText>
+										<originalText><reference value="#med-002-voie"/></originalText>
 									</routeCode>       
 									<!-- Dose à administrer -->
 									<doseQuantity>
@@ -1391,9 +1378,7 @@
 												<!-- Code CIS du produit -->
 												<code code="63245753" displayName="COUMADINE 5mg, comprimé sécable"
 													codeSystem="1.2.250.1.213.2.3.1" codeSystemName="CIS">
-													<originalText mediaType="text/xml">
-														<reference value="#med-002-pdt"/>
-													</originalText>
+													<originalText mediaType="text/xml"><reference value="#med-002-pdt"/></originalText>
 													<!-- Code CIP du produit -->
 													<translation code="3400935693099" displayName="COUMADINE 5mg, comprimé sécable, plaquette(s) thermoformée(s) PVC-aluminium de 30 comprimé(s)"
 														codeSystem="1.2.250.1.213.2.3.2" codeSystemName="CIP"/>
@@ -1411,11 +1396,9 @@
 											<!-- Conformité FR-Reference-interne (FR CI-SISI)  -->
 											<templateId root="1.2.250.1.213.1.1.3.36"/>
 											<id root="12DA3A06-18E7-40B7-9397-1FA5B1552472"/>
-											<code code="G45.9" displayName="Accident Ischémique Cérébral Transitoire"
+											<code code="G45.9" displayName="Accident ischémique cérébral transitoire, sans précision"
 												codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
-												<originalText mediaType="text/xml">
-													<reference value="#med-002-motif"/>
-												</originalText>
+												<originalText mediaType="text/xml"><reference value="#med-002-motif"/></originalText>
 											</code>											
 										</act>
 									</entryRelationship>

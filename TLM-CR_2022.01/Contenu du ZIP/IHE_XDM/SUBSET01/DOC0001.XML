@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../FeuilleDeStyle/CDA-FO.xsl"?>
 
 <?oxygen SCHSchema="../schematrons/profils/IHE.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/IHE_XDS-SD.sch"?>
-<?oxygen SCHSchema="../schematrons/profils/CI-SIS_StructurationMinimale.sch"?>
+<?oxygen SCHSchema="../schematrons/profils/structurationMinimale/ASIP-STRUCT-MIN-StrucMin.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_ModelesDeContenusCDA.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/CI-SIS_Modeles_ANS.sch"?>
 <?oxygen SCHSchema="../schematrons/profils/terminologies/schematron/terminologie.sch"?> 
@@ -64,8 +63,8 @@
     <!-- Patient -->
     <recordTarget>
         <patientRole>
-            <!-- INS-NIR de production : 1.2.250.1.213.1.4.8 -->
-            <id extension="277076322082910" root="1.2.250.1.213.1.4.8"/>
+            <!-- INS-NIR de test : 1.2.250.1.213.1.4.10 -->
+            <id extension="279035121518989" root="1.2.250.1.213.1.4.10"/>
             <!-- IPP du patient dans l'établissement avec root = l'OID de l'ES -->
             <id extension="1234567890121" root="1.2.3.4.567.8.9.10"/>
             <!-- Adresse du patient -->
@@ -80,19 +79,23 @@
             <!-- Coordonnées télécom du patient -->
             <telecom value="tel:0144534551" use="H"/>
             <telecom value="tel:0647151010" use="MC"/>
-            <telecom value="mailto:277076322082910@patient.mssante.fr"/>
+            <telecom value="mailto:279035121518989@patient.mssante.fr"/>
             <!-- Identité du patient -->
             <patient classCode="PSN">
                 <name>
                     <!-- Nom et prénom(s) de naissance -->
-                    <family qualifier="BR">NESSI</family>            
-                    <given>Ruth Isabelle</given>
+                    <!-- Nom de l’acte de naissance -->
+                    <family qualifier="BR">PAT-TROIS</family> 
+                    <!-- Prénoms de l’acte de naissance -->
+                    <given>DOMINIQUE MARIE-LOUISE</given>
+                    <!-- Premier prénom de l’acte de naissance -->
+                    <given qualifier="BR">DOMINIQUE</given>
                     <!-- Nom et prénom utilisés -->
-                    <family qualifier="CL">DECOURCY</family>
-                    <given qualifier="CL">Ruth</given>   
+                    <family qualifier="CL">PAT-TROIS</family>
+                    <given qualifier="CL">DOMINIQUE</given>        
                 </name>
                 <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1"/>
-                <birthTime value="19770714"/>
+                <birthTime value="19790328"/>
                 <!-- Représentant du patient -->
                 <guardian>
                     <addr use="H">
@@ -442,7 +445,7 @@
     <componentOf>
         <encompassingEncounter>
             <!-- Type de prise en charge -->
-            <code code="VR" displayName="Virtuelle" codeSystem="2.16.840.1.113883.5.4"/>
+            <code code="VR" displayName="Virtuelle (exemple : RCP en l'absence du patient)" codeSystem="2.16.840.1.113883.5.4"/>
             <!-- Date de la PRC -->
             <effectiveTime>
                 <low value="20200327"/>
@@ -497,7 +500,7 @@
                     <!-- Numéro FINESS -->
                     <id root="1.2.250.1.71.4.2.2" extension="1120456789"/>
                     <!-- Modalité d'exercice -->
-                    <code code="SA03" displayName="Etablissement Privé PSPH"
+                    <code code="SA03" displayName="Etablissement privé PSPH"
                         codeSystem="1.2.250.1.71.4.2.4" codeSystemName="healthCareFacilityTypeCode"/>
                     <!-- Localisation de l'ES -->
                     <location>
