@@ -39,7 +39,7 @@
   <!-- Conformité au modèle du document CANCER-D2LM-FIDD_2022.01 -->
   <templateId root="1.2.250.1.213.1.1.1.28" extension="2022.01" />
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.28.1"/>
+  <id root="1.2.250.1.213.1.1.1.28.2022.1.1"/>
   <!-- Type de document -->
   <code code="18748-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CR d'imagerie médicale" />
   <!-- Titre du document -->
@@ -51,7 +51,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="79B27C0A-2730-4327-BDE4-AB28861B8A91"/>
+  <setId root="1.2.250.1.213.1.1.1.28.2022.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1" />
 
@@ -146,7 +146,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie du Petit Pont</name>
         <telecom value="tel:0131931902" use="EC"/>
         <addr>
@@ -193,7 +193,7 @@
   <custodian>
     <assignedCustodian>
       <representedCustodianOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie du Petit Pont</name>
         <telecom value="tel:0131931902" use="EC"/>
         <addr>
@@ -231,7 +231,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie du Petit Pont</name>
         <telecom value="tel:0131931902" use="EC"/>
         <addr>
@@ -387,7 +387,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
             <name>Centre de radiologie du Petit Pont</name>
             <telecom value="tel:0131931902" use="EC"/>
             <addr>

@@ -44,7 +44,7 @@
   <!-- Déclaration de conformité aux spécifications F-PRC-DCI -->
   <templateId root="1.2.250.1.213.1.1.1.2.1.3"  extension="2022.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.2.1.3.2" />
+  <id root="1.2.250.1.213.1.1.1.2.1.3.2022.1.1" />
   <!-- Type de document -->
   <code code="34133-9" displayName="Synthèse d'épisode de soins" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
@@ -56,9 +56,9 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="B65FE496-EDEC-470C-A2AA-E505BA7E03CA"/>
+  <setId root="1.2.250.1.213.1.1.1.2.1.3.2022.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
-  <versionNumber value="1" />
+  <versionNumber value="2" />
 
   <!-- Patient -->
   <recordTarget>
@@ -193,7 +193,7 @@
 
   <!-- Responsable (signataire) du document -->
   <legalAuthenticator>
-    <time value="20060922" />
+    <time value="20060922152530+0100" />
     <signatureCode code="S" />
     <assignedEntity>
       <id root="1.2.250.1.71" extension="801234567897" />
@@ -215,8 +215,8 @@
   <participant typeCode="INF">
     <functionCode code="ATTPHYS" displayName="Référent - Responsable du patient dans la structure de soins" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20060922100000" />
-      <high value="20060922110000" />
+      <low value="20060922100000+0100" />
+      <high value="20060922110000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
@@ -239,8 +239,8 @@
   <participant typeCode="INF">
     <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20060922100000" />
-      <high value="20060922110000" />
+      <low value="20060922100000+0100" />
+      <high value="20060922110000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802926406900" />

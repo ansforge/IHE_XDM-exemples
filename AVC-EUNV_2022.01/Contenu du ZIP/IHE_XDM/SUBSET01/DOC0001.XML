@@ -34,11 +34,11 @@
   <!-- Conformité au Volet Episode de soin en UNV (EUNV) -->
   <templateId root="1.2.250.1.213.1.1.1.16" extension="2022.01"/>
   <!-- Unique ID obligatoire -->
-  <id root="1.2.250.1.213.1.1.1.16.1" />
+  <id root="1.2.250.1.213.1.1.1.16.2022.1.1" />
   <!-- Type de document -->
   <code code="34133-9" displayName="Synthèse d'épisode de soins" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
-  <title>Fiche d'épisode de soin en unité neuro-vasculaire (AVC-EUNV)</title>
+  <title>Fiche d'épisode de soin en unité neuro-vasculaire</title>
   <!-- Date de création du document -->
   <effectiveTime value="20181001111700+0100" />
   <!-- Niveau de confidentialité du document -->
@@ -46,7 +46,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant du lot de version d'un même document -->
-  <setId root="8884F8DE-8068-43E1-AC0D-3D24BA838C52"/>
+  <setId root="1.2.250.1.213.1.1.1.16.2022.1"/>
   <!-- Version du document -->
   <versionNumber value="1" />
 
@@ -133,7 +133,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -181,7 +181,7 @@
   <custodian typeCode="CST">
     <assignedCustodian classCode="ASSIGNED">
       <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom value="tel:0442515151" use="WP" />
         <addr>
@@ -261,7 +261,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -1551,7 +1551,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="F930A233-D89F-49A4-86E8-344D37FC6D3C" />
-              <code code="EAQM004" displayName="Echo-Doppler cervical" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="EAQM004" displayName="Echo-Doppler cervical" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="echoDoppler"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1566,7 +1566,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8352B130-AAE6-4541-B7D1-4516AC182074" />
-              <code code="EAQM002" displayName="DTC" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="EAQM002" displayName="DTC" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="dtc"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1581,7 +1581,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="DA78C7CD-F066-484C-B840-2032421C91F6"/>
-              <code code="ACQN001" displayName="ARM Cervicale" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+              <code code="ACQN001" displayName="ARM Cervicale" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               <text><reference value="armCervicale"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20181001"/>
@@ -1596,7 +1596,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="E599F408-B6F9-41BC-A6F2-78787BA3B944" />
-              <code code="EBQH006" displayName="Angiographie cervicale" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="EBQH006" displayName="Angiographie cervicale" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="angioscanner"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1611,7 +1611,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="16264E10-CE45-4CBD-84AB-ABB1CAA2BC7E" />
-              <code code="DEQP003" displayName="ECG" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="DEQP003" displayName="ECG" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="ecg"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1626,7 +1626,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="8B8AA227-7C95-486D-9A11-EB645BB127E1" />
-              <code code="DEQP004" displayName="Scope" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="DEQP004" displayName="Scope" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="scope"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1641,7 +1641,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="3E136C79-3FF1-4E3C-B233-3094521D3057" />
-              <code code="DEQP005" displayName="Holter" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="DEQP005" displayName="Holter" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="holter"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1656,7 +1656,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="15CE7FEB-6A24-420D-A79D-7A8599B4AD6D" />
-              <code code="DZQM006" displayName="Echographie Transthoracique" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="DZQM006" displayName="Echographie Transthoracique" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="echoTrans"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />
@@ -1671,7 +1671,7 @@
               <!-- Conformité CI-SIS Simple Observation -->
               <templateId root="1.2.250.1.213.1.1.3.48" />
               <id root="C08B5338-2EC7-4FC0-B057-45F391E656FA" />
-              <code code="DZQJ001" displayName="Echographie Transoesophagienne" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+              <code code="DZQJ001" displayName="Echographie Transoesophagienne" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
               <text><reference value="echoTransoesophagienne"/></text>
               <statusCode code="completed" />
               <effectiveTime value="20181001" />

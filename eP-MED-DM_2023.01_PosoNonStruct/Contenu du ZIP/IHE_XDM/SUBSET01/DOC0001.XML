@@ -42,7 +42,7 @@
   <!-- Conformité au modèle de document eP-MED-DM_2023.01 -->
   <templateId root="1.2.250.1.213.1.1.1.39" extension="2023.01"/>  
   <!-- Identifiant du document CDA -->
-  <id root="1.2.250.1.213.1.1.1.39.2.1"/>
+  <id root="1.2.250.1.213.1.1.1.39.2023.1.1"/>
   <!-- Type de document -->
   <code code="57833-6" displayName="Prescription de produits de santé" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <!-- Titre du document -->
@@ -55,7 +55,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="1.2.250.1.213.1.1.1.39.2"/>
+  <setId root="1.2.250.1.213.1.1.1.39.2023.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1"/>
 
@@ -321,7 +321,7 @@
   <participant typeCode="PRF">
     <!-- Date d'exécution souhaitée -->
     <time xsi:type="IVL_TS">
-      <high value="20211202"/>
+      <high value="20211202093000+0100"/>
     </time>
     <!-- Exécutant (obligatoire si prescription de TSO sur ordonnance sécurisée, nullFlavor possible dans les autres cas) -->
     <associatedEntity classCode="PROV">

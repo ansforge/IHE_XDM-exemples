@@ -18,7 +18,7 @@
       - Sections utilisées dans ce document :
             [1..1] FR-Raison-de-la-recommandation-non-code : 1.3.6.1.4.1.19376.1.5.3.1.3.1
             [1..1] FR-Traitements-a-l-admission            : 1.3.6.1.4.1.19376.1.5.3.1.3.20
-            [1..1] FR-Allergies-et-hypersensibilites            : 1.3.6.1.4.1.19376.1.5.3.1.3.13
+            [1..1] FR-Allergies-et-hypersensibilites       : 1.3.6.1.4.1.19376.1.5.3.1.3.13
             [0..1] FR-Antecedents-medicaux                 : 1.3.6.1.4.1.19376.1.5.3.1.3.8
             [0..1] FR-Antecedents-chirurgicaux             : 1.3.6.1.4.1.19376.1.5.3.1.3.12
             [1..1] FR-Commentaire-non-code                 : 1.3.6.1.4.1.19376.1.4.1.2.16
@@ -45,7 +45,7 @@
     <!-- Conformité au modèle du document LDL-EES version 2022.01 -->
     <templateId root="1.2.250.1.213.1.1.1.21" extension="2022.01"/>
     <!-- Identifiant du document -->
-    <id root="1.2.250.1.213.1.1.1.21.12345.1"/> 
+    <id root="1.2.250.1.213.1.1.1.21.2022.1.1"/> 
     <!-- Type de document -->
     <code code="18761-7" displayName="Note de transfert (dont lettre de liaison à l'entrée en établissement de soins)" codeSystem="2.16.840.1.113883.6.1"/>
     <!-- Titre du document -->
@@ -57,7 +57,7 @@
     <!-- Langue du document -->
     <languageCode code="fr-FR"/>
     <!-- Identifiant commun à toutes les versions successives du document -->
-    <setId root="1.2.250.1.213.1.1.1.21.12345"/>
+    <setId root="1.2.250.1.213.1.1.1.21.2022.1"/>
     <!-- Numéro de la version du présent document (entier positif) -->
     <versionNumber value="1"/>
     

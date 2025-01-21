@@ -41,7 +41,7 @@
   <!-- Conformité au modèle de document FRCP version 2022.01-->
   <templateId root="1.2.250.1.213.1.1.1.8" extension="2022.01" />
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.8.1" />
+  <id root="1.2.250.1.213.1.1.1.8.2022.2.1" />
   <!-- Type du document -->
   <code code="34794-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CR de réunion de concertation pluridisciplinaire" />
   <!-- Titre du document = Dénomination de la RCP -->
@@ -53,7 +53,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="433F6BD6-28F5-4D72-9583-9C66C1B00224"/>
+  <setId root="1.2.250.1.213.1.1.1.8.2022.2"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1" />
 
@@ -157,7 +157,7 @@
       </assignedPerson>
       <!-- Organisation du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Centre Hospitalier d'Angers</name>
         <addr>
           <houseNumber>4</houseNumber>
@@ -252,7 +252,7 @@
       </assignedPerson>
       <!-- Etablissement de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Centre Hospitalier d'Angers</name>
         <telecom value="tel:0242515100" use="PUB" />
         <addr>
@@ -299,7 +299,7 @@
       </associatedPerson>
       <!-- Etablissement de rattachement du PS -->
       <scopingOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Centre Hospitalier d'Angers</name>
         <telecom value="tel:0242515100" use="PUB" />
         <addr>
@@ -641,7 +641,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Centre Hospitalier d'Angers</name>
             <telecom value="tel:0242515100" use="PUB" />
             <addr>
@@ -687,7 +687,7 @@
       <code code="VR" displayName="Virtuelle (exemple : RCP en l'absence du patient)" codeSystem="2.16.840.1.113883.5.4" />
       <!-- Date de la RCP -->
       <effectiveTime>
-        <low value="20190218" />
+        <low value="20190218171100+0100" />
       </effectiveTime>
       <!-- [1..1] Etablissement de santé au sein duquel la RCP est organisée - pas forcément présent si visioconférence  -->
       <location>
@@ -1197,7 +1197,7 @@
               </tbody>
             </table>
           </text>
-          <!-- [1..*] Entrée FR-Liste-des-problemes : Tumeur 1 -->
+          <!-- [1..*] Entrée FR-Liste-des-problemes-cancer : Tumeur 1 -->
           <entry>
             <act classCode="ACT" moodCode="EVN">
               <!-- Conformité CCD -->
@@ -1206,8 +1206,10 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
               <!-- Conformité IHE PCC -->
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
-              <!-- Conformité CI-SIS -->
+              <!-- Conformité FR-Liste-des-problemes CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.39"/>
+              <!-- Conformité CI-SIS -->
+              <templateId root="1.2.250.1.213.1.1.3.39.1"/>
               <id root="015B3222-62B8-4A27-801F-A414B285D58B" />
               <code nullFlavor="NA" />
               <statusCode code="active" />
@@ -1252,8 +1254,9 @@
                     <!-- Latéralité -->
                     <qualifier>
                       <name code="20228-3" displayName="Latéralité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <value code="C25228" displayName="droit" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCIT">
-                        <originalText><reference value="#lateralite-1" /></originalText>
+                      <!-- code latéralité : JDV_ModificateurTopographique_CISIS (1.2.250.1.213.1.1.5.688) -->
+                      <value code="24028007" displayName="droit" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                      <originalText><reference value="#lateralite-1" /></originalText>
                       </value>
                     </qualifier>
                   </targetSiteCode>
@@ -1281,7 +1284,7 @@
                         </qualifier>
                         <!-- Version de la nomenclature TNM utilisée -->
                         <qualifier>
-                          <name code="21917-0" displayName="Version TNM utilisée" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
+                          <name code="21917-0" displayName="Version TNM Classification" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                           <value xsi:type="CD" code="7" displayName="TNM_UICC 7ème édition" codeSystem="2.16.840.1.113883.15.6" codeSystemName="TNM_UICC" />
                         </qualifier>
                       </value>
@@ -1339,9 +1342,9 @@
                       <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                       <!-- Conformité CI-SIS -->
                       <templateId root="1.2.250.1.213.1.1.3.48"/>
-                      <id />
+                      <id root="EDDB9FC6-2CC6-4AF8-BA4A-559E840ED075"/>
                       <code code="21918-8" displayName="Autre classification du stade" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
-                      <text><reference /></text>
+                      <text><reference value="#"/></text>
                       <statusCode code="completed" />
                       <effectiveTime nullFlavor="NA" />
                       <value xsi:type="CD">
@@ -2029,7 +2032,7 @@
           <!-- Auteur de cette conclution du CRO [1..1] (dans cet exemple, auteur de la FRCP car ressaisie manuelle) -->
           <author>
             <!-- Date du CRO -->
-            <time value="20190218"/>
+            <time value="20190218094914+0100"/>
             <assignedAuthor>
               <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
               <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5" codeSystemName="RPPS"
@@ -2050,7 +2053,7 @@
                 </name>
               </assignedPerson>
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                 <name>Centre Hospitalier d'Angers</name>
                 <addr>
                   <houseNumber>4</houseNumber>
@@ -2108,7 +2111,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Centre Hospitalier d'Angers</name>
                     <addr>
                       <streetName>Rue Larrey</streetName>
@@ -2124,7 +2127,7 @@
               </performer>
               <!-- Auteur de la conclusion d'origine -->
               <author>
-                <time value="20190115"/>
+                <time value="20190115094914+0100"/>
                 <assignedAuthor>
                   <id root="1.2.250.1.71.4.2.1" extension="801234568875"/>
                   <code code="G15_10/SCH10" displayName="Médecin - Chirurgie générale (SCH)"
@@ -2145,7 +2148,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Centre Hospitalier d'Angers</name>
                     <addr>
                       <streetName>Rue Larrey</streetName>
@@ -2246,7 +2249,7 @@
           </text>
           <!-- Auteur de cette conclution du CR-ACP (dans cet exemple, auteur de la FRCP car ressaisie manuelle) -->
           <author>
-            <time value="20190218"/>
+            <time value="20190218094914+0100"/>
             <assignedAuthor>
               <!-- PS identifié par son N°RPPS -->
               <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
@@ -2273,7 +2276,7 @@
               </assignedPerson>
               <!-- Organisation du PS -->
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                 <name>Centre Hospitalier d'Angers</name>
                 <addr>
                   <houseNumber>4</houseNumber>
@@ -2330,7 +2333,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -2343,7 +2346,7 @@
               </performer>
               <!-- Auteur de la conclusion d'origine -->
               <author>
-                <time value="20190115"/>
+                <time value="20190115094914+0100"/>
                 <assignedAuthor>
                   <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
                   <code code="G15_10/SM01"
@@ -2363,7 +2366,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -2491,7 +2494,7 @@
           </text>
           <!-- Auteur de cette conclution du CR-GM (dans cet exemple, auteur de la FRCP car ressaisie manuelle) -->
           <author>
-            <time value="20190218"/>
+            <time value="20190218094914+0100"/>
             <assignedAuthor>
               <!-- PS identifié par son N°RPPS -->
               <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
@@ -2518,7 +2521,7 @@
               </assignedPerson>
               <!-- Organisation du PS -->
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                 <name>Centre Hospitalier d'Angers</name>
                 <addr>
                   <houseNumber>4</houseNumber>
@@ -2573,7 +2576,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -2607,7 +2610,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -3123,7 +3126,7 @@
       <component>
         <section>
           <!-- Conformité CI-SIS -->
-          <templateId root="1.2.250.1.213.1.1.2.45"/>
+          <templateId root="1.2.250.1.213.1.1.2.175"/>
           <id root="F52D9DC1-4FD7-4AE9-AC2C-6976BADB1658"/>
           <code code="35510-7" displayName="Essais cliniques - Informations générales"
             codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>

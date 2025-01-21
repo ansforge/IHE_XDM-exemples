@@ -39,7 +39,7 @@
    <!-- Conformité spécifications CSE-MDE_2023.01 -->
    <templateId root="1.2.250.1.213.1.1.1.5.4" extension="2023.01"/>
    <!-- Identifiant du document -->
-   <id root="1.2.250.1.213.1.1.1.5.4.1.1"/>
+   <id root="1.2.250.1.213.1.1.1.5.2023.1.1"/>
    <!-- Code du document -->
    <code code="29274-8" displayName="Mesures de signes vitaux" codeSystem="2.16.840.1.113883.6.1"/>
    <!-- Titre du document -->
@@ -51,9 +51,9 @@
    <!-- Langage utilisé dans le document -->
    <languageCode code="fr-FR"/>
    <!-- Identifiant commun à toutes les versions successives du document -->
-   <setId root="1.2.250.1.213.1.1.1.5.4.1"/>
+   <setId root="1.2.250.1.213.1.1.1.5.4.2023.1"/>
    <!-- Numéro de la version du présent document (entier positif) -->
-   <versionNumber value="1"/>
+   <versionNumber value="4"/>
    
    <!-- Patient -->
    <recordTarget>
@@ -142,7 +142,7 @@
             </name>
          </assignedPerson>
          <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de santé du Belvédère</name>
             <telecom value="tel:0140404022" use="WP"/>
             <addr>
@@ -227,7 +227,7 @@
    <custodian>
       <assignedCustodian>
          <representedCustodianOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de santé du Belvédère</name>
             <telecom value="tel:0140404022" use="WP"/>
             <addr>
@@ -242,7 +242,7 @@
 
    <!-- Responsable du document -->
    <legalAuthenticator>
-      <time value="20230106113623+100"/>
+      <time value="20230106113623+0100"/>
       <signatureCode code="S"/>
       <assignedEntity>
          <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
@@ -263,7 +263,7 @@
             </name>
          </assignedPerson>
          <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de santé du Belvédère</name>            
             <telecom value="tel:0140404022" use="WP"/>
             <addr>
@@ -301,7 +301,7 @@
          </associatedPerson>
          <!-- Etablissement de rattachement du PS -->
          <scopingOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de santé du Belvédère</name>
             <telecom value="tel:0140404022" use="WP"/>
             <addr>
@@ -344,7 +344,7 @@
                   </name>
                </assignedPerson>
                <representedOrganization>
-                  <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+                  <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
                   <name>Centre de santé du Belvédère</name>
                   <telecom value="tel:0140404022"/>
                   <addr>
@@ -365,8 +365,8 @@
       <encompassingEncounter>
          <code code="AMB" codeSystem="2.16.840.1.113883.5.4" displayName="Ambulatoire (hors établissement)"/>
          <effectiveTime>
-            <low value="20230106111510"/>
-            <high value="20230106113623"/>
+            <low value="20230106111510+0100"/>
+            <high value="20230106113623+0100"/>
          </effectiveTime>
          <location>
             <healthCareFacility>

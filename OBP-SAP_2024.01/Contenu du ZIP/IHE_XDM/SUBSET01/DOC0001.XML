@@ -40,7 +40,7 @@
   <!-- Conformité au Volet Synthèse antepartum (OBP-SAP_2024.01)-->
   <templateId root="1.2.250.1.213.1.1.1.12.1" extension="2024.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.12.1.1" />
+  <id root="1.2.250.1.213.1.1.1.12.1.2024.1.1" />
   <!-- Type de document -->
   <code code="57055-6" displayName="Synthèse antepartum" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
@@ -52,7 +52,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="F2EAD3DA-E98A-47A4-89E7-CD0B0E98A600"/>
+  <setId root="1.2.250.1.213.1.1.1.12.1.2024.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1" />
 
@@ -127,7 +127,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -235,7 +235,7 @@
   <participant typeCode="INF">
     <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20230322" />
+      <low value="20230322163000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
@@ -263,7 +263,7 @@
       <originalText>Sage-femme referente</originalText>
     </functionCode>
     <time xsi:type="IVL_TS">
-      <low value="20230322" />
+      <low value="20230322163000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
@@ -301,7 +301,7 @@
       <originalText>Praticien ayant suivi la patiente</originalText>
     </functionCode>
     <time xsi:type="IVL_TS">
-      <low value="20230322" />
+      <low value="20230322163000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
@@ -345,7 +345,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -615,7 +615,7 @@
                   <text><reference value="#antecedent-familial-01" /></text>
                   <statusCode code="completed" />
                   <effectiveTime nullFlavor="NA" />
-                  <value xsi:type="CD" code="D57.1" displayName="Anémie drépanocytaire" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                  <value xsi:type="CD" code="D57.1" displayName="Anémie à hématies falciformes sans crises" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText><reference value="#antecedent-familial-01" /></originalText>
                   </value>
                 </observation>
@@ -1141,7 +1141,8 @@
                   <templateId root="1.2.250.1.213.1.1.3.41" />
                   <id root="BD75F82B-6BB7-4138-A038-03A1C5336B84" />
                   <!-- Allergy -->
-                  <code code="609328004" displayName="Allergie" codeSystem="2.16.840.1.113883.6.96" />
+                  <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
+                  <code code="609328004" displayName="allergie" codeSystem="2.16.840.1.113883.6.96" />
                   <text><reference value="alg" /></text>
                   <statusCode code="completed" />
                   <effectiveTime xsi:type="IVL_TS">
@@ -1598,7 +1599,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Clinique du Belvédère</name>
                     <addr>
                       <houseNumber>142</houseNumber>
@@ -1644,7 +1645,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Clinique du Belvédère</name>
                     <addr>
                       <houseNumber>142</houseNumber>
@@ -1691,7 +1692,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Clinique du Belvédère</name>
                     <addr>
                       <houseNumber>142</houseNumber>
@@ -1739,7 +1740,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Clinique du Belvédère</name>
                     <addr>
                       <houseNumber>142</houseNumber>

@@ -29,11 +29,11 @@
   <!-- Sortie de l'UNV (SUNV)-->
   <templateId root="1.2.250.1.213.1.1.1.17" extension="2022.01"/>
   <!-- Unique ID obligatoire -->
-  <id root="1.2.250.1.213.1.1.1.17.1"/>
+  <id root="1.2.250.1.213.1.1.1.17.2022.1.1"/>
   <!-- Type de document -->
   <code code="34133-9" displayName="Synthèse d'épisode de soins" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
-  <title>Fiche de suivi en unité neuro-vasculaire (AVC-SUNV)</title>
+  <title>Fiche de sortie d'unité neuro-vasculaire</title>
   <!-- Date de création du document -->
   <effectiveTime value="20181003111700+0100" />
   <!-- Niveau de confidentialité du document -->
@@ -41,7 +41,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant du lot de version d'un même document -->
-  <setId root="8306C3BD-2B1C-447D-B22D-BE686DDEE5AB" />
+  <setId root="1.2.250.1.213.1.1.1.17.2022.1" />
   <!-- Version du document -->
   <versionNumber value="1" />
 
@@ -128,7 +128,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -253,7 +253,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -639,8 +639,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td rowspan="3">03/10/2018</td>
-                  <td rowspan="3">Autre Etablissement de santé</td>
+                  <td>03/10/2018</td>
+                  <td>Autre Etablissement de santé</td>
                   <td>Clinique Geoffroy St-Hilaire<br />44 Rue Geoffroy St-Hilaire<br />75005 PARIS</td>
                 </tr>
               </tbody>

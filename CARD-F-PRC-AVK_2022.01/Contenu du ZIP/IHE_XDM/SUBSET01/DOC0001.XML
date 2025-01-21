@@ -44,7 +44,7 @@
   <!-- Déclaration de conformité aux spécifications F-PRC-AVK -->
   <templateId root="1.2.250.1.213.1.1.1.2.1.1" extension="2022.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.2.1.1.2"/>
+  <id root="1.2.250.1.213.1.1.1.2.1.1.2022.1.1"/>
   <!-- Type de document -->
   <code code="34133-9" displayName="Synthèse d'épisode de soins" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
@@ -56,10 +56,9 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="9A7D3B4D-B2CB-46EC-AFA9-96176A91CCDD" />
+  <setId root="1.2.250.1.213.1.1.1.2.1.1.2022.1" />
   <!-- Numéro de la version du présent document (entier positif) -->
-  <versionNumber value="1" />
-
+  <versionNumber value="2" />
   <!-- Patient -->
   <recordTarget>
     <patientRole>
@@ -188,7 +187,7 @@
 
   <!-- Responsable (signataire) du document -->
   <legalAuthenticator>
-    <time value="20060922" />
+    <time value="20060922094914+0100" />
     <signatureCode code="S" />
     <assignedEntity>
       <id root="1.2.250.1.71" extension="801234567897" />
@@ -210,7 +209,7 @@
   <participant typeCode="INF">
     <functionCode code="ATTPHYS" displayName="Référent - Responsable du patient dans la structure de soins" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20060922" />
+      <low value="20060922094914+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
@@ -234,7 +233,7 @@
   <participant typeCode="INF">
     <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20060922" />
+      <low value="20060922094914+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="802926406900" />
@@ -1047,7 +1046,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.41"/>
                   <id root="89F90417-BDE0-4814-B2FF-0BC1CFF675E3" />
-                  <!-- DNAINT = Drug non-allergy intolerance -->
+                  <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
                   <code code="609398007" codeSystem="2.16.840.1.113883.6.96" displayName="hypersensibilité non allergique médicamenteuse" codeSystemName="SNOMED CT">
                     <originalText><reference value="#avk0013" /></originalText>
                   </code>
@@ -1106,6 +1105,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.41"/>
                   <id root="AF948AAC-5CD8-4FA7-910C-39BD37D3C44F" />
+                  <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
                   <code code="609398007" codeSystem="2.16.840.1.113883.6.96" displayName="hypersensibilité non allergique médicamenteuse">
                     <originalText mediaType="text/xml"><reference value="#avk0016" /></originalText>
                   </code>
@@ -1164,6 +1164,7 @@
                   <!-- Conformité CI-SIS -->
                   <templateId root="1.2.250.1.213.1.1.3.41"/>
                   <id root="F7815C36-42A3-4D05-93D7-DA6651F7B2D3" />
+                  <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
                   <code code="609398007" codeSystem="2.16.840.1.113883.6.96" displayName="hypersensibilité non allergique médicamenteuse">
                     <originalText mediaType="text/xml"><reference value="#avk0019" /></originalText>
                   </code>
@@ -1224,6 +1225,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.41"/>
                   <id root="F48A173A-5D10-425B-80A5-AAC9E404BD29" />
                   <!-- Allergie -->
+                  <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
                   <code code="609328004" codeSystem="2.16.840.1.113883.6.96" displayName="allergie" codeSystemName="SNOMED CT">
                     <originalText><reference value="#avk0022" /></originalText>
                   </code>

@@ -38,7 +38,7 @@
   <!-- Conformité au modèle de document CR-GM -->
   <templateId root="1.2.250.1.213.1.1.1.32" extension="2022.01" />
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.32.2"/>
+  <id root="1.2.250.1.213.1.1.1.32.2022.1.1"/>
   <!-- Type du document -->
   <code code="51969-4" displayName="CR de génétique moléculaire" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
@@ -50,7 +50,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="4B15172E-2745-4B47-A780-30C4C3071AA6"/>
+  <setId root="1.2.250.1.213.1.1.1.32.2022.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="2" />
 
@@ -123,7 +123,8 @@
   
   <!-- 1er auteur du CR-GM : Pathologiste responsable du diagnostic -->
   <author>
-    <functionCode nullFlavor="NA">
+    <functionCode code="ATTPHYS" codeSystem="2.16.840.1.113883.5.88" codeSystemName="Participation Function" 
+      displayName="Référent - Responsable du patient dans la structure de soins"> 
       <!-- Commentaire sur l'auteur -->
       <originalText>Pathologiste responsable du diagnostic</originalText>
     </functionCode>
@@ -163,7 +164,6 @@
   
   <!-- 2eme auteur du CR-GM : Pathologiste responsable de la qualification -->
   <author>
-    <!-- <functionCode nullFlavor="NA"> -->
     <functionCode code="ATTPHYS" codeSystem="2.16.840.1.113883.5.88" codeSystemName="Participation Function" 
       displayName="Référent - Responsable du patient dans la structure de soins"> 
 
@@ -705,8 +705,8 @@
       <!-- Type de prise en charge -->
       <code code="AMB" displayName= "Ambulatoire (hors établissement)" codeSystem="2.16.840.1.113883.5.4" />
       <effectiveTime>
-        <low value="201801230730" />
-        <high value="201801230930" />
+        <low value="20180117121700+0100" />
+        <high value="20180123121700+0100" />
       </effectiveTime>
       <!-- Biologiste et laboratoire responsables -->
       <responsibleParty>

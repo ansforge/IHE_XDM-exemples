@@ -42,7 +42,7 @@
   <!-- Conformité au Volet TLM_DA -->
   <templateId root="1.2.250.1.213.1.1.1.38" extension="2022.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.38.2"/>
+  <id root="1.2.250.1.213.1.1.1.38.2022.1.1"/>
   <!-- Type de document -->
   <code code="75496-0" displayName="Demande d'acte de télémédecine"
     codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
@@ -56,9 +56,9 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="B4DE32C1-F2D3-4F9B-A3E7-A9C82DB15A5E"/>
+  <setId root="1.2.250.1.213.1.1.1.38.2022.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
-  <versionNumber value="1"/>
+  <versionNumber value="2"/>
 
   <!-- Patient -->
   <recordTarget>
@@ -277,7 +277,7 @@
       </assignedPerson>
       <!-- Etablissement de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+        <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
         <name>Centre de soins le Belvédère</name>
         <addr>
           <houseNumber>88</houseNumber>
@@ -359,7 +359,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de soins le Belvédère</name>
             <addr>
               <houseNumber>88</houseNumber>
@@ -411,7 +411,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de soins le Belvédère</name>
             <addr>
               <houseNumber>88</houseNumber>
@@ -435,7 +435,7 @@
       <code code="VR" displayName="Virtuelle (exemple : RCP en l'absence du patient)" codeSystem="2.16.840.1.113883.5.4"/>
       <!-- Date de la prise en charge -->
       <effectiveTime>
-        <low value="20191219"/>
+        <low value="20191219175045+0100"/>
       </effectiveTime>
       <!-- Responsable de la prise en charge (identifié par son N°RPPS) -->
       <responsibleParty>
@@ -463,7 +463,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
             <name>Centre de soins le Belvédère</name>
             <addr>
               <houseNumber>88</houseNumber>
@@ -822,9 +822,10 @@
 
                       <!-- Auteur  -->
                       <author>
-                        <time value="19990812"/>
+                        <time value="19990812153500+0100"/>
                         <assignedAuthor>
-                          <id nullFlavor="UNK"/>
+                          <!-- PS identifié par son N°RPPS -->
+                          <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
                           <addr nullFlavor="NAV"/>
                           <telecom nullFlavor="NAV"/>
                           <assignedPerson>
@@ -928,6 +929,7 @@
                           <templateId root="1.2.250.1.213.1.1.3.41"/>
                           <id root="B18197B9-78A0-4DF6-9811-A464D942B063"/>
                           <!-- Type d'allergie / hypersensibilité -->
+                          <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
                           <code code="416098002" displayName="allergie médicamenteuse"
                             codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                           <text><reference value="#TypeAllergie"/></text>
@@ -1109,7 +1111,7 @@
                           <text><reference value="#patho004"/></text>
                           <statusCode code="completed"/>
                           <effectiveTime nullFlavor="NAV"/>
-                          <value xsi:type="CD" code="D57.1" displayName="Anémie drépanocytaire"
+                          <value xsi:type="CD" code="D57.1" displayName="Anémie à hématies falciformes sans crises"
                             codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
                             <originalText><reference value="#antécédent-fam-001"/></originalText>
                           </value>
@@ -1385,7 +1387,7 @@
               </performer>
               <!-- Prescripteur -->
               <author>
-                <time value="20190711"/>
+                <time value="20190711153500+0100"/>
                 <assignedAuthor>
                   <!-- Identifiant du prescripteur -->
                   <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>

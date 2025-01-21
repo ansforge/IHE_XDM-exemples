@@ -29,11 +29,11 @@
   <!-- Evaluation Pluri Professionnelle Post AVC (PostAVC)-->
   <templateId root="1.2.250.1.213.1.1.1.25" extension="2022.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.25.1"/>
+  <id root="1.2.250.1.213.1.1.1.25.2022.1.1"/>
   <!-- Type de document -->
   <code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CR ou fiche de consultation ou de visite" />
   <!-- Titre du document -->
-  <title>Compte-rendu de consultation d'évaluation pluri-professionnelle post AVC (AVC-PAVC)</title>
+  <title>Compte-rendu de consultation d'évaluation pluri-professionnelle post AVC</title>
   <!-- Date de création du document -->
   <effectiveTime value="20181201110000+0100" />
   <!-- Niveau de confidentialité du document -->
@@ -41,7 +41,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant du lot de version d'un même document -->
-  <setId root="0884CBAB-5CBA-43BF-B5AD-9A4A54B659FC"/>
+  <setId root="1.2.250.1.213.1.1.1.25.2022.1"/>
   <!-- Version du document -->
   <versionNumber value="1" />
   <!-- Patient -->
@@ -128,7 +128,7 @@
       </assignedPerson>
       <representedOrganization>
         <!--id national de la structure-->
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -275,7 +275,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -2137,7 +2137,7 @@
               <text><reference value="#lieuDeVie"/></text>
               <statusCode code="active" />
               <effectiveTime nullFlavor="MSK" />
-              <value xsi:type="CD" code="GEN-117" displayName="Domicile" codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP" />
+              <value xsi:type="CD" code="264362003" displayName="Domicile" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </observation>
           </entry>
           <!-- Mode de vie -->
@@ -2789,7 +2789,7 @@
               <effectiveTime>
                 <low nullFlavor="UNK" />
               </effectiveTime>
-              <value xsi:type="CD" code="105529008" displayName="vit seul" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+              <value xsi:type="CD" code="371153006" displayName="indépendant(e)" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
             </observation>
           </entry>
         </section>

@@ -60,7 +60,7 @@
 	<!-- Conformité au Volet Synthèse Médicale (VSM)-->
 	<templateId root="1.2.250.1.213.1.1.1.13" extension="201310"/>
 	<!-- Identifiant du document -->
-	<id root="1.2.250.1.213.1.1.1.13.1"/>
+	<id root="1.2.250.1.213.1.1.1.13.2022.1.1"/>
 	<!-- Type de document -->
 	<code code="SYNTH" displayName="Synthèse"
 		codeSystem="1.2.250.1.213.1.1.4.12"/>
@@ -74,7 +74,7 @@
 	<!-- Langue du document -->
 	<languageCode code="fr-FR"/>
 	<!-- Identifiant commun à toutes les versions successives du document -->
-	<setId root="FD68E882-D426-4348-AFFA-2B9DD8A4D44A" />
+	<setId root="1.2.250.1.213.1.1.1.13.2022.1" />
 	<!-- Numéro de la version du présent document (entier positif) -->
 	<versionNumber value="1"/>
 	
@@ -178,7 +178,7 @@
 			</assignedPerson>
 			<!-- Etablissement de rattachement du PS -->
 			<representedOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+				<id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
 				<name>Centre de soins le Belvédère</name>
 				<addr>
 					<houseNumber>3</houseNumber>
@@ -272,7 +272,7 @@
 			</assignedPerson>
 			<!-- Etablissement de rattachement du PS -->
 			<representedOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+				<id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
 				<name>Centre de soins le Belvédère</name>
 				<addr>
 					<houseNumber>3</houseNumber>
@@ -314,7 +314,7 @@
 			</assignedPerson>
 			<!-- Etablissement de rattachement du PS -->
 			<representedOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+				<id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
 				<name>Centre de soins le Belvédère</name>
 				<addr>
 					<houseNumber>3</houseNumber>
@@ -332,7 +332,7 @@
 	<participant typeCode="INF">
 		<functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88"/>
 		<time xsi:type="IVL_TS">
-			<low value="20200312"/>
+			<low value="202003121120+0100"/>
 		</time>
 		<associatedEntity classCode="PROV">
 			<id root="1.2.250.1.71.4.2.1" extension="801234567897"/>			
@@ -356,7 +356,7 @@
 			</associatedPerson>
 			<!-- Etablissement de rattachement du PS -->
 			<scopingOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+				<id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
 				<name>Centre de soins le Belvédère</name>
 				<addr>
 					<houseNumber>3</houseNumber>
@@ -406,7 +406,7 @@
 					</assignedPerson>
 					<!-- Etablissement de rattachement du PS -->
 					<representedOrganization>
-						<id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+						<id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
 						<name>Centre de soins le Belvédère</name>
 						<addr>
 							<houseNumber>3</houseNumber>
@@ -460,7 +460,7 @@
 					</assignedPerson>
 					<!-- Etablissement de rattachement du PS -->
 					<representedOrganization>
-						<id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+						<id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
 						<name>Centre de soins le Belvédère</name>
 						<addr>
 							<houseNumber>3</houseNumber>
@@ -806,7 +806,7 @@
 											<effectiveTime value="20180114"/>
 											<!-- Exécutant de l'acte -->
 											<author>
-												<time value="20180114"/>
+												<time value="20180114111700+0100"/>
 												<assignedAuthor>
 													<id nullFlavor="UNK"/>
 													<addr nullFlavor="NAV"/>
@@ -910,8 +910,8 @@
 													<templateId root="1.2.250.1.213.1.1.3.41" />
 													<id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2A0"/>
 													<!-- Type d'allergie /intolérance -->
-													<code code="DALG" displayName="Allergie à un produit pharmaceutique"
-														codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType"/>
+													<code code="416098002" displayName="allergie médicamenteuse"
+														codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
 													<text><reference value="#allergie-001-type"/></text>	
 													<statusCode code="completed"/>
 													<!-- Date de l'allergie / intolérance -->
@@ -1155,7 +1155,7 @@
 													<text><reference value="#antecedent-familial-001-probleme"/></text>
 													<statusCode code="completed"/>
 													<effectiveTime nullFlavor="UNK"/>
-													<value xsi:type="CD" code="D57.1" displayName="Anémie drépanocytaire"
+													<value xsi:type="CD" code="D57.1" displayName="Anémie à hématies falciformes sans crises"
 														codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM10">
 														<originalText><reference value="#antecedent-familial-001-probleme"/></originalText>
 													</value>

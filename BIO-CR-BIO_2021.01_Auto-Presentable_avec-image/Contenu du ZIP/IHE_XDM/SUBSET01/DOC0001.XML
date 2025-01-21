@@ -45,8 +45,8 @@
 			<c:templateId root="1.3.6.1.4.1.19376.1.3.3"/>
 			<!-- Déclarations de conformité au modèle CR-BIO du CI-SIS -->
 			<c:templateId root="1.2.250.1.213.1.1.1.55"/>
-			<!-- Unique ID obligatoire  -->
-			<c:id root="1.3.6.1.4.1.19376.1.3.3.5"/>
+			<!-- Unique ID obligatoire -->
+			<c:id root="1.2.250.1.213.1.1.1.55.2021.2.1"/>
 			<!-- Type de document -->
 			<c:code code="11502-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
 				displayName="CR d'examens biologiques"/>
@@ -58,8 +58,8 @@
 			<c:confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
 			<!-- Langue du document -->
 			<c:languageCode code="fr-FR"/>
-			<!-- identifiant commun à toutes les versions successives du comtpe rendu -->
-			<c:setId root="9799B9FD-59F8-491F-AF9D-893830842467"/>
+			<!-- identifiant commun à toutes les versions successives du comtpe rendu  -->
+			<c:setId root="1.2.250.1.213.1.1.1.55.2021.2"/>
 			<!-- numéro de la version courante (entier positif): la première version -->
 			<c:versionNumber value="1"/>
 			<!-- Patient -->
@@ -247,7 +247,7 @@
 				<c:templateId root='1.3.6.1.4.1.19376.1.3.3.1.6'/>
 				<!-- Date de la prescription -->
 				<c:time xsi:type="c:IVL_TS">
-					<c:high value="20210101"/>
+					<c:high value="202101010735+0100"/>
 				</c:time>
 				<c:associatedEntity classCode="PROV">
 					<c:id root="1.2.250.1.71.4.2.1" extension="810002422979"/>

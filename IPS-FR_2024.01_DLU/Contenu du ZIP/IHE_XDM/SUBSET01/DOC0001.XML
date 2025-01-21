@@ -37,9 +37,9 @@
   <!-- Conformité au Volet International Patient Summary - France (IPS-FR_2024.01)-->
   <templateId root="1.2.250.1.213.1.1.1.51" extension="2024.01"/>
   <!-- Identifiant unique du document -->
-  <id root="1.2.250.1.213.1.1.1.13.2"/>
+  <id root="1.2.250.1.213.1.1.1.51.2024.2.1"/>
   <!-- Type de document -->
-  <code code="74207-2" displayName="Dossier de liaison d'urgence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+  <code code="74207-2" displayName="Document de liaison d'urgence" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
   <!-- Titre du document -->
   <title>SYNTHESE MEDICALE</title>
   <!-- Date de création du document -->
@@ -50,7 +50,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="AA2F476F-CA64-47BF-AED1-852692B493D9"/>
+  <setId root="1.2.250.1.213.1.1.1.51.2024.2"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="2"/>
 
@@ -149,7 +149,7 @@
       </assignedPerson>
       <!-- ES de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>EHPAD DE BOULOGNE-BILLANCOURT</name>
         <telecom value="tel:0131931902" use="DIR"/>
         <telecom value="tel:0605061902" use="EC"/>
@@ -200,7 +200,7 @@
     <assignedCustodian>
       <representedCustodianOrganization>
         <!-- Identifiant de l'organisation -->
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <!-- Nom de l'organisation -->
         <name>EHPAD DE BOULOGNE-BILLANCOURT</name>
         <!-- Coordonnées télécom de l'organisation -->
@@ -243,7 +243,7 @@
       </assignedPerson>
       <!-- ES de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>EHPAD DE BOULOGNE-BILLANCOURT</name>
         <telecom value="tel:0131931902" use="DIR"/>
         <telecom value="tel:0605061902" use="EC"/>
@@ -288,7 +288,7 @@
       </associatedPerson>
       <!-- Etablissement de rattachement du PS -->
       <scopingOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="2801234567897"/>
+        <id root="1.2.250.1.71.4.2.2" extension="2801234567"/>
         <name>Centre de soins le Belvédère</name>
         <addr>
           <houseNumber>3</houseNumber>
@@ -313,7 +313,7 @@
     <!-- EHPAD -->
     <associatedEntity classCode="PROV">   
       <scopingOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>EHPAD DE BOULOGNE-BILLANCOURT</name>
         <telecom value="tel:0131931902" use="DIR"/>
         <telecom value="tel:0605061902" use="EC"/>
@@ -458,7 +458,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
             <name>EHPAD DE BOULOGNE-BILLANCOURT</name>
             <addr>
               <houseNumber>142</houseNumber>
@@ -719,7 +719,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20220211"/>
                       <value xsi:type="CD" code="confirmed" displayName="Confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -846,7 +846,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20230705"/>
                       <value xsi:type="CD" code="confirmed" displayName="Confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -889,7 +889,7 @@
                     <low value="20230521"/>
                   </effectiveTime>
                   <value xsi:type="CD" code="114" displayName="epilepsie"
-                    codeSystem="1.2.250.1.213.2.78" codeSystemName="DRC">
+                    codeSystem="1.2.250.1.213.2.9" codeSystemName="DRC">
                     <originalText>
                       <reference value="#probleme-03"/>
                     </originalText>
@@ -973,7 +973,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20230521"/>
                       <value xsi:type="CD" code="confirmed" displayName="Confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1101,7 +1101,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20220211"/>
                       <value xsi:type="CD" code="confirmed" displayName="Confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1241,7 +1241,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20220211"/>
                       <value xsi:type="CD" code="unconfirmed" displayName="Non confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1444,7 +1444,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20180422"/>
                       <value xsi:type="CD" code="confirmed" displayName="Confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1572,7 +1572,7 @@
                       <statusCode code="completed"/>
                       <effectiveTime value="20180114"/>
                       <value xsi:type="CD" code="confirmed" displayName="Confirmé"
-                        codeSystem="2.16.840.1.113883.4.642.4.1075" codeSystemName="HL7:condition-ver-status"/>
+                        codeSystem="2.16.840.1.113883.4.642.1.1075" codeSystemName="HL7:condition-ver-status"/>
                     </observation>
                   </entryRelationship>
                   <!-- [0..1] Entrée FR-Commentaire-ER -->
@@ -1668,7 +1668,7 @@
               <templateId root="2.16.840.1.113883.10.20.1.25"/>
               <!-- Conformité FR-Acte (CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
-              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D3L"/>
+              <id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
               <!-- Code de l'acte -->
               <code code="103735009" displayName="Soins palliatifs"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
@@ -1718,16 +1718,17 @@
               <!-- Date de l'acte -->
               <effectiveTime value="20180114"/>
               <!-- Voie d’abord -->
-              <approachSiteCode code="20023000" displayName="Voie intraartérielle"
-                codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
+              <approachSiteCode code="229801003" displayName="intra-arterial"
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
               <!-- Localisation anatomique -->
               <targetSiteCode code="41801008" displayName="artère coronaire"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
               <!-- Exécutant de l'acte -->
               <author>
-                <time value="20180114"/>
+                <time value="20180114111700+0100"/>
                 <assignedAuthor>
-                  <id nullFlavor="UNK"/>
+                  <!-- PS identifié par son N°RPPS -->
+                  <id root="1.2.250.1.71.4.2.1" extension="801234567897"/>
                   <addr nullFlavor="NAV"/>
                   <telecom nullFlavor="NAV"/>
                   <assignedPerson>
@@ -1802,8 +1803,8 @@
               <!-- Date de l'acte -->
               <effectiveTime value="20161208"/>
               <!-- Voie d’abord -->
-              <approachSiteCode code="20023000" displayName="Voie intraartérielle"
-                codeSystem="0.4.0.127.0.16.1.1.2.1" codeSystemName="EDQM"/>
+              <approachSiteCode code="229801003" displayName="intra-arterial"
+                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
               <!-- Entrée FR-Commentaire-ER -->
               <entryRelationship typeCode="SUBJ" inversionInd="true">
                 <act classCode="ACT" moodCode="EVN">
@@ -1917,7 +1918,7 @@
                   <templateId root="1.2.250.1.213.1.1.3.41"/>
                   <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2A0"/>
                   <!-- Type d'allergie / hypersensibilité -->
-                  <!-- valeur issue du JDV_TypeEffetIndesirablePrevisible_CISIS (1.2.250.1.213.1.1.5.794). -->
+                  <!-- valeur issue de JDV_TypeEvenementIndesirablePrevisible_CISIS  (1.2.250.1.213.1.1.5.794). -->
                   <code code="416098002" displayName="allergie médicamenteuse"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                   <text>
@@ -2189,7 +2190,7 @@
               <templateId root="1.2.250.1.213.1.1.3.210"/>
               <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE3B1"/>
               <!-- Type d'effet indésirable -->
-              <!-- valeur issue du JDV_TypeEffetIndesirable_CISIS (1.2.250.1.213.1.1.5.785) -->
+              <!-- valeur issue de JDV_OrigineEffetIndesirable_CISIS (1.2.250.1.213.1.1.5.785) -->
               <code code="79899007" displayName="interaction médicamenteuse"
                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
               <text>
@@ -2333,7 +2334,7 @@
                   <text><reference value="#effet-indesirable-01-imputabilite"/></text>
                   <statusCode code="completed"/>
                   <!-- valeur du JDV_Imputabilite_CISIS (1.2.250.1.213.1.1.5.786) -->
-                  <value xsi:type="CD" code="255545003" displayName="certain"
+                  <value xsi:type="CD" code="17162000" displayName="certain(e)"
                          codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText><reference value="#effet-indesirable-01-imputabilite"/></originalText>
                   </value>
@@ -2352,7 +2353,7 @@
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
                   <!-- valeur du JDV_Gravite_CISIS (1.2.250.1.213.1.1.5.787) -->
-                  <value xsi:type="CD" code="451771000124108" displayName="Non grave"
+                  <value xsi:type="CD" code="255604002" displayName="gravité légère"
                          codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText><reference value="#effet-indesirable-01-gravite"/></originalText>
                   </value>
@@ -2370,8 +2371,8 @@
                   <text><reference value="#effet-indesirable-01-evolution"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="NA"/>
-                  <!-- valeur du JDV_Evolution_CISIS (1.2.250.1.213.1.1.5.788) -->
-                  <value xsi:type="CD" code="XXXXXX" displayName="Guérison sans séquelle"
+                  <!-- valeur du JDV_Evolution_CISIS (1.2.250.1.213.1.1.5.788) / code : (Demande de création SNOMED CT en cours)-->
+                  <value xsi:type="CD" code="1352007006" displayName="Guérison sans séquelle"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText><reference value="#effet-indesirable-01-evolution"/></originalText>
                   </value>
@@ -3647,7 +3648,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFG"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130012"/>
                   <code xsi:type="CD" code="425104003" displayName="comportement suicidaire"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -3709,7 +3710,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFH"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130007"/>
                   <code xsi:type="CD" code="397540003" displayName="malvoyance"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -3752,7 +3753,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFI"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130006"/>
                   <code xsi:type="CD" code="15188001" displayName="perte auditive"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -3795,7 +3796,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFJ"/>
+                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFD"/>
                   <code xsi:type="CD" code="62305002" displayName="trouble du langage"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -3857,7 +3858,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFK"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130008"/>
                   <code xsi:type="CD" code="161898004" displayName="chutes" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CT">
                     <originalText>
@@ -3900,7 +3901,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFL"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130009"/>
                   <code xsi:type="CD" code="50239007" displayName="errance"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -3943,7 +3944,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFM"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130003"/>
                   <code xsi:type="CD" code="248046000" displayName="fugue" codeSystem="2.16.840.1.113883.6.96"
                     codeSystemName="SNOMED CT">
                     <originalText>
@@ -3986,7 +3987,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFN"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130003"/>
                   <code xsi:type="CD" code="386423001" displayName="contention physique"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -4048,7 +4049,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFO"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130003"/>
                   <code xsi:type="CD" code="285304000" displayName="à risque d'escarre"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -4091,7 +4092,7 @@
                   <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
                   <!-- FR-Evaluation (FR CI-SIS) -->
                   <templateId root="1.2.250.1.213.1.1.3.25"/>
-                  <id root="FB97F8B7-7D3D-474A-B6A6-7D55D4DA3AFP"/>
+                  <id root="582BB12C-7B63-11EB-9439-0242AC130011"/>
                   <code xsi:type="CD" code="249492002" displayName="fausse route alimentaire"
                     codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
                     <originalText>
@@ -4547,7 +4548,7 @@
               <tbody>
                 <tr>
                   <td><content ID="antecedent-familial-001-sujet">Mère</content></td>
-                  <td><content ID="antecedent-familial-001-probleme">Anémie drépanocytaire (CIM-10 : D57.1)</content></td>
+                  <td><content ID="antecedent-familial-001-probleme">Anémie à hématies falciformes sans crises (CIM-10 : D57.1)</content></td>
                   <td><content ID="antecedent-familial-001-commentaire">(texte libre)</content></td>
                 </tr>
               </tbody>
@@ -4600,7 +4601,7 @@
                   <text><reference value="#antecedent-familial-001-probleme"/></text>
                   <statusCode code="completed"/>
                   <effectiveTime nullFlavor="UNK"/>
-                  <value xsi:type="CD" code="D57.1" displayName="Anémie drépanocytaire"
+                  <value xsi:type="CD" code="D57.1" displayName="Anémie à hématies falciformes sans crises"
                     codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText>
                       <reference value="#antecedent-familial-001-probleme"/>
@@ -4761,7 +4762,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Cabinet médical du Dr MULLER</name>
                     <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire"
@@ -4899,7 +4900,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Cabinet médical du Dr MULLER</name>
                     <!-- JDV_J04-XdsPracticeSettingCode-CISIS (1.2.250.1.213.1.1.5.467) -->
                     <standardIndustryClassCode code="AMBULATOIRE" displayName="Ambulatoire"
@@ -5235,7 +5236,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1"/>
               <!-- Conformité FR-Demande-d-examen-ou-de-suivi (FR CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.27"/>
-              <id root="f83d3db2-c511-4cfa-b216-773f6deadb4d"/>
+              <id root="F83D3DB2-C511-4CFA-B216-773F6DEADB4D"/>
               <!-- Type d’examen -->
               <code code="22748-8" displayName="Cholestérol LDL [Moles/Volume] Sérum/Plasma ; Numérique" 
                     codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
@@ -5272,7 +5273,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.20.3.1"/>
               <!-- Conformité FR-Demande-d-examen-ou-de-suivi (FR CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.27"/>
-              <id root="f83d3db2-c511-4cfa-b216-773f6deadb4E"/>
+              <id root="F83D3DB2-C511-4CFA-B216-773F6DEADB4E"/>
               <!-- Autre demande d’examen ou de suivi -->
               <code code="GEN-092.04.20" displayName="Autre demande d’examen ou de suivi"
                 codeSystem="1.2.250.1.213.1.1.4.322" codeSystemName="TA_ASIP">
@@ -5436,7 +5437,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
               <!-- Conformité FR-Rencontre (FR CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.58"/>
-              <id root="4AA6dcfc-6628-42e7-8d6f-68621568f584"/>
+              <id root="4AA6DCFC-6628-42E7-8D6F-68621568F584"/>
               <!-- Type de Rencontre : Valeur issue du JDV_HL7_ActEncounterCode_CISIS (2.16.840.1.113883.1.11.13955) -->
               <code code="AMB" displayName="Ambulatoire"
                 codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActEncounterCode"/>
@@ -5453,9 +5454,10 @@
                   <telecom nullFlavor="NAV"/>
                   <assignedPerson>
                     <name>
-                      <prefix>PR</prefix>
+                      <prefix>M</prefix>
                       <given>Jacques</given>
                       <family>PETITJEAN</family>
+                      <suffix>DR</suffix>
                     </name>
                   </assignedPerson>
                   <representedOrganization>
@@ -6025,7 +6027,7 @@
               <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.7"/>
               <!-- Conformité FR-Directive-Anticipee (FR CI-SIS) -->
               <templateId root="1.2.250.1.213.1.1.3.54"/>
-              <id root="4FD525FD-8712-40F9-BF31-EF9A25069Q76"/>
+              <id root="4FD525FD-8712-40F9-BF31-EF9A25069C25"/>
               <!-- valeur issue du JDV_TypeDirectiveAnticipee-CISIS (1.2.250.1.213.1.1.5.136) -->
               <code code="42348-3" displayName="Directives anticipées"
                 codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
@@ -6071,7 +6073,7 @@
           <!-- Conformité FR-Resultats (CI-SIS) -->
           <templateId root="1.2.250.1.213.1.1.2.244"/>
           <id root="770B0DC2-A6B8-468E-8432-632B18D35F68"/>
-          <code code="30954-2" displayName="Résultats d'examens" codeSystem="2.16.840.1.113883.6.1"
+          <code code="30954-2" displayName="Résultats d’examens" codeSystem="2.16.840.1.113883.6.1"
             codeSystemName="LOINC"/>
           <title>Résultats</title>
           <text>            
@@ -6235,7 +6237,7 @@
                   <effectiveTime value="20240329"/>
                   <value xsi:type="BL" value="false"/>                  
                   <!-- Entrée FR-Commentaire-ER -->
-                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                  <entryRelationship typeCode="COMP" inversionInd="true">
                     <act classCode="ACT" moodCode="EVN">
                       <!-- Conformité Comment (CCD) -->
                       <templateId root="2.16.840.1.113883.10.20.1.40"/>
@@ -6293,7 +6295,7 @@
                   </assignedPerson>
                   <representedOrganization>
                     <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-                    <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Centre de radiologie Ambroise</name>
                     <telecom value="tel:0146000000"/>
                     <addr>
@@ -6341,7 +6343,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <name>Centre de radiologie Ambroise</name>
                     <telecom value="tel:0146000000"/>
                     <addr>
@@ -6382,7 +6384,7 @@
                     </originalText>                
                   </targetSiteCode>                  
                   <!-- Entrée FR-Commentaire-ER -->
-                  <entryRelationship typeCode="SUBJ" inversionInd="true">
+                  <entryRelationship typeCode="COMP" inversionInd="true">
                     <act classCode="ACT" moodCode="EVN">
                       <!-- Conformité Comment (CCD) -->
                       <templateId root="2.16.840.1.113883.10.20.1.40"/>

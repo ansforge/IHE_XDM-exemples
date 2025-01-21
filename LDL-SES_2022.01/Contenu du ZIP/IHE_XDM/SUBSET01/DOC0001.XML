@@ -52,7 +52,7 @@
     <!-- Conformité au modèle du document LDL-SES version 2022.01 -->
     <templateId root="1.2.250.1.213.1.1.1.29" extension="2022.01"/>
     <!-- Identifiant du document -->
-    <id root="1.2.250.1.213.1.1.1.29.1"/> 
+    <id root="1.2.250.1.213.1.1.1.29.2022.1.1"/> 
     <!-- Type de document -->
     <code code="11490-0" displayName="Lettre de liaison à la sortie d'un établissement de soins"
         codeSystem="2.16.840.1.113883.6.1"  codeSystemName="LOINC"/> 
@@ -65,7 +65,7 @@
     <!-- Langue du document -->
     <languageCode code="fr-FR"/>
     <!-- Identifiant commun à toutes les versions successives du document -->
-    <setId root="8FA485AB-C5FF-4313-9B3F-4E8FB541F5C5"/>
+    <setId root="1.2.250.1.213.1.1.1.29.2022.1"/>
     <!-- Numéro de la version du présent document (entier positif) -->
     <versionNumber value="1"/>
    
@@ -255,7 +255,7 @@
     
     <!-- Responsable du document -->
     <legalAuthenticator>
-        <time value="20191203133000-0100"/>
+        <time value="20191203133000+0100"/>
         <signatureCode code="S"/>
         <assignedEntity>            
             <!-- Identifiant RPPS du PS -->
@@ -530,7 +530,7 @@
                             <text><reference value="modaliteE"/></text>
                             <statusCode code="completed"/>
                             <effectiveTime value="20181029"/>
-                            <value xsi:type="CE" code="4563007" displayName="hospitalisation, transfert d'un autre hôpital ou établissement de santé" 
+                            <value xsi:type="CE" code="107724000" displayName="transfert d'un(e) patient(e)" 
                                 codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                             <author>
                                 <time value="20191203133000+0100"/>
@@ -1284,6 +1284,7 @@
                                     <templateId root="1.2.250.1.213.1.1.3.41" />
                                     <id root="C64C6013-C8AF-4938-AD10-1B7D26DEE2A0"/>
                                     <!-- Type d'allergie / intolérance -->
+                                    <!-- Valeur issue du JDV_TypeEvenementIndesirablePrevisible_CISIS(1.2.250.1.213.1.1.5.794)-->
                                     <code code="416098002" displayName="allergie médicamenteuse"
                                         codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
                                     <text><reference value="#NO-ALL"/></text>

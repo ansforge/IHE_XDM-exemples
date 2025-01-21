@@ -36,11 +36,11 @@
   <!-- Admission en UNV (AUNV)-->
   <templateId root="1.2.250.1.213.1.1.1.15" extension="2022.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.15.1"/>
+  <id root="1.2.250.1.213.1.1.1.15.2022.1.1"/>
   <!-- Type de document -->
   <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Synthèse d'épisode de soins" />
   <!-- Titre du document -->
-  <title>Fiche d'admission en unité neuro-vasculaire (AVC-AUNV)</title>
+  <title>Fiche d'admission en unité neuro-vasculaire</title>
   <!-- Date de création du document -->
   <effectiveTime value="20180923232000+0100" />
   <!-- Niveau de confidentialité du document -->
@@ -48,7 +48,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant du lot de version d'un même document -->
-  <setId root="A039FC54-2DAC-4E13-8F0F-F99A6B74ED15"/>
+  <setId root="1.2.250.1.213.1.1.1.15.2022.1"/>
   <!-- Version du document -->
   <versionNumber value="1" />
   <!-- Patient -->
@@ -135,7 +135,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -271,7 +271,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -1373,7 +1373,7 @@
                   <effectiveTime>
                     <low value="2006" />
                   </effectiveTime>
-                  <value xsi:type="CD" code="I74.3" displayName="AOMI" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
+                  <value xsi:type="CD" code="I74.3" displayName="Embolie et thrombose des artères des membres inférieurs" codeSystem="2.16.840.1.113883.6.3" codeSystemName="CIM-10">
                     <originalText><reference value="#aomi" /></originalText>
                   </value>
                 </observation>

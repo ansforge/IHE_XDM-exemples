@@ -1,7 +1,7 @@
 Emetteur: 
 ============= 
     . Nom: DR MEDIONI Stéphane
-    . Organisme: Centre de soins le Belvédère (2801234567897) 
+    . Organisme: Centre de soins le Belvédère (2801234567) 
     . Adresse : 3 Rue Petit Pont 75005 PARIS
     . Téléphone : tel:0147150000
 

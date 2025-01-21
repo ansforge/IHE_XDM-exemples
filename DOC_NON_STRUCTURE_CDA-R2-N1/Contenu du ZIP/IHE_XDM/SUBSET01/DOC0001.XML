@@ -33,21 +33,21 @@
   <!-- Déclaration de conformité IHE XDS-SD -->
   <templateId root="1.3.6.1.4.1.19376.1.2.20"/>
   <!-- Identifiant du document -->
-  <id root="1.3.6.1.4.1.19376.1.2.20.1"/>
+  <id root="1.3.6.1.4.1.19376.1.2.20.12345.1.1"/>
   <!-- Type de document -->
   <code code="11502-2" displayName="CR d'examens biologiques" codeSystem="2.16.840.1.113883.6.1"
     codeSystemName="LOINC"/>
   <!-- Titre du document -->
   <title>Compte rendu d'examens biologiques</title>
   <!-- Date de création du document -->
-  <effectiveTime value="20210401134745+0200"/>
+  <effectiveTime value="20210401134745+0100"/>
   <!-- Niveau de confidentialité du document -->
   <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"
     codeSystemName="Confidentiality"/>
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="F5CAAF6A-8047-46F1-89B8-A500B3161CB7"/>
+  <setId root="1.3.6.1.4.1.19376.1.2.20.12345.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1"/>
   
@@ -178,7 +178,7 @@
 
   <!-- Responsable du document -->
   <legalAuthenticator>
-    <time value="20200701134745+0200"/>
+    <time value="20200701134745+0100"/>
     <signatureCode code="S"/>
     <assignedEntity>
       <id root="1.2.250.1.71.4.2.1" extension="807505123456"/>

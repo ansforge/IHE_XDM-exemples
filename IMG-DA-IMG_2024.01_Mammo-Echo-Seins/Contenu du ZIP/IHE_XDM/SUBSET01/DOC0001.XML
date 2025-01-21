@@ -37,7 +37,7 @@
     <!-- Conformité Modèle IMG-DA-IMG du CI-SIS -->
     <templateId root="1.2.250.1.213.1.1.1.47" extension="2024.01"/>
     <!-- Identifiant du document -->
-    <id root="1.2.250.1.213.1.1.1.47.6"/>
+    <id root="1.2.250.1.213.1.1.1.47.2024.1.1"/>
     <!-- Type de document -->
     <code code="55115-0" displayName="Demande d'acte d'imagerie" codeSystem="2.16.840.1.113883.6.1"
         codeSystemName="LOINC"> </code>
@@ -50,7 +50,7 @@
     <!-- Langue du document -->
     <languageCode code="fr-FR"/>
     <!-- Identifiant du lot de version d'un même document -->
-    <setId root="FEFA97DE-C6FC-4151-8758-B4511CE5905D"/>
+    <setId root="1.2.250.1.213.1.1.1.47.2024.1"/>
     <!-- Numéro de version d'un même document -->
     <versionNumber value="1"/>
 
@@ -190,7 +190,7 @@
     <custodian typeCode="CST">
         <assignedCustodian classCode="ASSIGNED">
             <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-                <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+                <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                 <name>Centre de soins du Belvédère</name>
                 <telecom value="tel:0142515151" use="WP"/>
                 <addr>
@@ -308,7 +308,7 @@
             </associatedPerson>
             <!-- Etablissement de rattachement du PS -->
             <scopingOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="2801234567897" />
+                <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
                 <name>Centre de soins le Belvédère</name>
                 <addr>
                     <houseNumber>3</houseNumber>
@@ -346,7 +346,7 @@
             </associatedPerson>
             <!-- Etablissement de rattachement du PS -->
             <scopingOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="2801234567897" />
+                <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
                 <name>Centre de soins le Belvédère</name>
                 <addr>
                     <houseNumber>3</houseNumber>
@@ -457,7 +457,7 @@
                         </name>
                     </assignedPerson>
                     <representedOrganization>
-                        <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+                        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                         <name>Centre de radiologie Ambroise</name>
                         <telecom value="tel:0146000000"/>
                         <addr>
@@ -480,12 +480,12 @@
             <code code="AMB" displayName="Ambulatoire (hors établissement)"
                 codeSystem="2.16.840.1.113883.5.4"/>
             <effectiveTime>
-                <low value="20210112102500"/>
-                <high value="20210112111700"/>
+                <low value="20210112102500+0100"/>
+                <high value="20210112111700+0100"/>
             </effectiveTime>
             <location>
                 <healthCareFacility>
-                    <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
                     <code code="SA08" displayName="Cabinet de groupe"
                         codeSystem="1.2.250.1.71.4.2.4"/>
                     <location>

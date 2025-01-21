@@ -33,7 +33,7 @@
   <!-- Conformité spécifications au modèle OPH-CR-RTN_2022.01 -->
   <templateId root="1.2.250.1.213.1.1.1.18" extension="2022.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.18.1"/>
+  <id root="1.2.250.1.213.1.1.1.18.2022.1.1"/>
   <!-- Type de document -->
   <code code="75492-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CR d'acte diagnostique à visée préventive ou de dépistage" />
   <!-- Titre du document -->
@@ -45,7 +45,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="E56081F9-C910-40FE-9D17-67F520F7114B"/>
+  <setId root="1.2.250.1.213.1.1.1.18.2022.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1" />
 
@@ -133,7 +133,7 @@
       </assignedPerson>
       <!-- Identifiant du cabinet de l'orthoptiste FINESS (1+n°FINESS)  -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="11238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1123888725" />
         <name>Cabinet Orthoptiste</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -182,7 +182,7 @@
     <assignedCustodian>
       <representedCustodianOrganization>
         <!-- Identifiant du cabinet de l'orthoptiste FINESS (1+n°FINESS)  -->
-        <id root="1.2.250.1.71.4.2.2" extension="11238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1123888725" />
         <name>Cabinet Orthoptiste</name>
         <telecom value="tel:0442515151" use="WP" />
         <addr>
@@ -298,7 +298,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- Identifiant du cabinet de l'orthoptiste FINESS (1+n°FINESS)  -->
-            <id root="1.2.250.1.71.4.2.2" extension="11238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1123888725" />
             <name>Cabinet Orthoptiste</name>
             <telecom nullFlavor="MSK" />
             <addr nullFlavor="MSK" />
@@ -327,7 +327,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="11238887"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1123888725"/>
             <name>Cabinet Orthoptiste</name>
           </representedOrganization>
         </assignedEntity>

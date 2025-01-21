@@ -48,7 +48,7 @@
 	<!-- Conformité au modèle DLU-EHPAD-DLU 2022.01 -->
 	<templateId root="1.2.250.1.213.1.1.1.22" extension="2022.01"/>
 	<!-- Identifiant du document -->
-	<id root="1.2.250.1.213.1.1.1.22.1"/>
+	<id root="1.2.250.1.213.1.1.1.22.2022.1.1"/>
 	<!-- Type de document -->
 	<code code="74207-2" displayName="Dossier de liaison d'urgence"
 		codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
@@ -62,7 +62,7 @@
 	<!-- Langue du document -->
 	<languageCode code="fr-FR"/>
 	<!-- Identifiant commun à toutes les versions successives du document -->
-	<setId root="98E2BDB3-4FE9-432B-AF82-D4B2AEBC7C77"/>
+	<setId root="1.2.250.1.213.1.1.1.22.2022.1"/>
 	<!-- Numéro de la version du présent document (entier positif) -->
 	<versionNumber value="1"/>
 
@@ -160,7 +160,7 @@
 			</assignedPerson>
 			<!-- ES de rattachement du PS -->
 			<representedOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+				<id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 				<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 				<telecom value="tel:0131931902" use="DIR"/>
 				<telecom value="tel:0605061902" use="EC"/>
@@ -210,7 +210,7 @@
 	<custodian typeCode="CST">
 		<assignedCustodian classCode="ASSIGNED">
 			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-				<id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+				<id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 				<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 				<telecom value="tel:0131931902" use="DIR"/>
 				<addr>
@@ -249,7 +249,7 @@
 			</assignedPerson>
 			<!-- ES de rattachement du PS -->
 			<representedOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+				<id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 				<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 				<telecom value="tel:0131931902" use="DIR"/>
 				<telecom value="tel:0605061902" use="EC"/>
@@ -315,7 +315,7 @@
 					</assignedPerson>
 					<!-- Numéro FINESS de l'ES  -->
 					<representedOrganization>
-						<id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+						<id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 						<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 						<telecom value="tel:0131931902" use="EC"/>
 						<addr>
@@ -362,7 +362,7 @@
 					</assignedPerson>
 					<!-- ES de rattachement du PS -->
 					<representedOrganization>
-						<id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+						<id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 						<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 						<telecom value="tel:0131931902" use="DIR"/>
 						<telecom value="tel:0605061902" use="EC"/>
@@ -422,6 +422,40 @@
 							<statusCode code="normal"/>
 							<effectiveTime nullFlavor="NAV"/>
 							<participant typeCode="RCV">
+								<time nullFlavor="NAV"/>
+								<participantRole classCode="ROL">
+									<!-- Numéro FINESS de l'ES  -->
+									<id root="1.2.250.1.71.4.2.2" extension="101765376"/>
+									<addr>
+										<houseNumber>22</houseNumber>
+										<streetName>Rue du Paradis</streetName>
+										<postalCode>92100</postalCode>
+										<city>Boulogne-Billancourt</city>
+									</addr>
+									<telecom value="tel:0131931902" use="EC"/>
+									<playingEntity>
+										<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<participant typeCode="ORG">
+								<time nullFlavor="NAV"/>
+								<participantRole classCode="ROL">
+									<!-- Numéro FINESS de l'ES  -->
+									<id root="1.2.250.1.71.4.2.2" extension="101765376"/>
+									<addr>
+										<houseNumber>22</houseNumber>
+										<streetName>Rue du Paradis</streetName>
+										<postalCode>92100</postalCode>
+										<city>Boulogne-Billancourt</city>
+									</addr>
+									<telecom value="tel:0131931902" use="EC"/>
+									<playingEntity>
+										<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
+									</playingEntity>
+								</participantRole>
+							</participant>
+							<participant typeCode="DST">
 								<time nullFlavor="NAV"/>
 								<participantRole classCode="ROL">
 									<!-- Numéro FINESS de l'ES  -->
@@ -668,9 +702,9 @@
 									<!-- FR-Allergie-ou-hypersensibilite (CI-SIS) -->
 									<templateId root="1.2.250.1.213.1.1.3.41" />
 									<id root="19815241-10CD-47C4-9B32-CD98D2B01B2A"/>
-									<code code="FALG" codeSystem="2.16.840.1.113883.5.4"
-										codeSystemName="HL7:ObservationIntoleranceType"
-										displayName="Allergie alimentaire"/>
+									<code code="414285001" codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED CT"
+										displayName="allergie alimentaire"/>
 									<text><reference value="#allergie-001"/></text>
 									<statusCode code="completed"/>
 									<effectiveTime>
@@ -709,9 +743,9 @@
 									<!-- FR-Allergie-ou-hypersensibilite (CI-SIS) -->
 									<templateId root="1.2.250.1.213.1.1.3.41" />
 									<id root="C0BE19DC-4445-4B40-8355-A6564EB3813C"/>
-									<code code="DALG" codeSystem="2.16.840.1.113883.5.4"
-										codeSystemName="HL7:ObservationIntoleranceType"
-										displayName="Allergie médicamenteuse"/>
+									<code code="416098002" codeSystem="2.16.840.1.113883.6.96"
+										codeSystemName="SNOMED CT"
+										displayName="allergie médicamenteuse"/>
 									<text><reference value="#allergie-002"/></text>
 									<statusCode code="completed"/>
 									<effectiveTime>
@@ -925,7 +959,7 @@
 							<id root="EB45376A-18AF-4D64-AE2D-592C04302205"/>
 							<code code="42348-3" codeSystem="2.16.840.1.113883.6.1"
 								displayName="Directives anticipées" codeSystemName="LOINC"/>
-							<text><reference value="a definir"/></text>
+							<text><reference value="ftp://ftp.ihe.net/advancedirectives/durand#124/"/></text>
 							<statusCode code="completed"/>
 							<effectiveTime>
 								<low value="20180221100000"/>

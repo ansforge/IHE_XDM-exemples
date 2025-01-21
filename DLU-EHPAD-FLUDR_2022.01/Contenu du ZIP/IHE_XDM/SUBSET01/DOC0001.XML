@@ -48,7 +48,7 @@
 	<!-- Conformité au modèle DLU-FLUDR v2022.01 -->
 	<templateId root="1.2.250.1.213.1.1.1.24" extension="2022.01"/>
 	<!-- Identifiant du document -->
-	<id root="1.2.250.1.213.1.1.1.24.1"/>
+	<id root="1.2.250.1.213.1.1.1.24.2022.1.1"/>
 	<!-- Type de document -->
 	<code code="74207-2" displayName="Dossier de liaison d'urgence"
 		codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
@@ -62,7 +62,7 @@
 	<!-- Langue du document -->
 	<languageCode code="fr-FR"/>
 	<!-- Identifiant commun à toutes les versions successives du document -->
-	<setId root="66410CF5-0562-42E6-BE04-06FF28072E00"/>
+	<setId root="1.2.250.1.213.1.1.1.24.2022.1"/>
 	<!-- Numéro de la version du présent document (entier positif) -->
 	<versionNumber value="1"/>
 	
@@ -241,7 +241,7 @@
 				</name>
 			</informationRecipient>
 			<receivedOrganization>
-				<id root="1.2.250.1.71.4.2.2" extension="101238887"/>
+				<id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 				<name>EHPAD DE BOULOGNE-BILLANCOURT</name>
 				<telecom value="tel:0131931902" use="DIR"/>
 				<telecom value="tel:0605061902" use="EC"/>
@@ -374,8 +374,8 @@
 			<code code="IMP" displayName="Hospitalisation (établissement, y compris HAD)"
 				codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7:ActEncounterCode"/>
 			<effectiveTime>
-				<low value="20200327153500"/>
-				<high value="20200328175500"/>
+				<low value="20200327153500+0100"/>
+				<high value="20200328175500+0100"/>
 			</effectiveTime>
 			<responsibleParty>
 				<assignedEntity>
@@ -499,7 +499,7 @@
 							</effectiveTime>
 							<participant typeCode="DST">
 								<!-- Identifiant de l'ES de destination -->								
-								<templateId root="1.2.250.1.71.4.2.2" extension="101238887"/>
+								<templateId root="1.2.250.1.71.4.2.2" extension="1750803447"/>
 								<participantRole classCode="SDLOC">
 									<!-- Identifiant de l’entité ayant effectué le transfert -->
 									<id root="6DA489A9-D085-4D7E-B669-1EC4973EFA68"/>

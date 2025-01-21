@@ -41,7 +41,7 @@
   <!-- Conformité Modèle IMG-CR-IMG du CI-SIS -->
   <templateId root="1.2.250.1.213.1.1.1.45" extension="2024.01"/>
   <!-- Unique ID obligatoire -->
-  <id root="1.2.250.1.213.1.1.1.45.2"/>
+  <id root="1.2.250.1.213.1.1.1.45.2024.1.1"/>
   <!-- Type de document -->  
   <code code="18748-4" displayName="CR d’imagerie médicale" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
     <!-- valeur issue du JDV_CodesDocumentImagerie_CISIS (1.2.250.1.213.1.1.5.687) -->
@@ -61,7 +61,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant du lot de version d'un même document -->
-  <setId root="D52DE737-001D-4031-B571-0A0ED7C42300"/>
+  <setId root="1.2.250.1.213.1.1.1.45.2024.1"/>
   <!-- Numéro de version d'un même document -->
   <versionNumber value="2"/>
   
@@ -166,7 +166,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -215,7 +215,7 @@
   <custodian typeCode="CST">
     <assignedCustodian classCode="ASSIGNED">
       <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-        <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -257,7 +257,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -299,7 +299,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -341,7 +341,7 @@
         </name>
       </associatedPerson>
       <scopingOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
         <name>Cabinet du DR MEDIONI</name>
         <telecom value="tel:0147150000" use="WP"/>
         <addr>
@@ -426,7 +426,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-            <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
             <name>Centre de radiologie Ambroise</name>
             <telecom value="tel:0146000000"/>
             <addr>
@@ -496,7 +496,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-            <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
             <name>Centre de radiologie Ambroise</name>
             <telecom value="tel:0146000000"/>
             <addr>
@@ -565,7 +565,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-            <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
             <name>Centre de radiologie Ambroise</name>
             <telecom value="tel:0146000000"/>
             <addr>
@@ -604,12 +604,12 @@
       <code code="AMB" displayName="Ambulatoire (hors établissement)"
         codeSystem="2.16.840.1.113883.5.4"/>
       <effectiveTime>
-        <low value="20210108102500" />
-        <high value="20210108111700" />
+        <low value="20210108102500+0100" />
+        <high value="20210108111700+0100" />
       </effectiveTime>
       <location>
         <healthCareFacility>
-          <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
+          <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
           <code code="SA08" displayName="Cabinet de groupe" codeSystem="1.2.250.1.71.4.2.4"/>
           <location>
             <name>Centre de radiologie Ambroise</name>
@@ -644,7 +644,7 @@
           <title>Addendum</title>
           <text>(texte libre)</text>
           <author>
-            <time value="20210110143000+0500" />
+            <time value="20210110143000+0100" />
             <assignedAuthor>
               <!-- [1..1] Identifiant du PS (Id RPPS du PS obligatoire pour les PS) -->
               <id root="1.2.250.1.71.4.2.1" extension="801234560812" />
@@ -669,7 +669,7 @@
                 </name>
               </assignedPerson>
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="101235555" />
+                <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
                 <name>Centre de radiologie Ambroise</name>
                 <telecom value="tel:0146000000" />
                 <addr>

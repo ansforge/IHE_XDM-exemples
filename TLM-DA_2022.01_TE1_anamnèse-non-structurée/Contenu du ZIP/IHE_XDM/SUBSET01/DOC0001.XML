@@ -42,7 +42,7 @@
   <!-- Conformité au Volet TLM_DA -->
   <templateId root="1.2.250.1.213.1.1.1.38" extension="2022.01" />
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.38.1"/>
+  <id root="1.2.250.1.213.1.1.1.38.2022.3.1"/>
   <!-- Type de document -->
   <code code="75496-0" displayName="Demande d'acte de télémédecine" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
@@ -54,7 +54,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="C3F21F6D-0EE5-49C5-8F76-C848D7A27618"/>
+  <setId root="1.2.250.1.213.1.1.1.38.2022.3"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1" />
 
@@ -269,7 +269,7 @@
       </assignedPerson>
       <!-- Etablissement de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="2801234567897" />
+        <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
         <name>Centre de soins le Belvédère</name>
         <addr>
           <houseNumber>88</houseNumber>
@@ -317,7 +317,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897" />
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
             <name>Centre de soins le Belvédère</name>
             <addr>
               <houseNumber>88</houseNumber>
@@ -340,7 +340,7 @@
       <code code="VR" displayName="Virtuelle" codeSystem="2.16.840.1.113883.5.4" />
       <!-- Date de la PEC -->
       <effectiveTime>
-        <low value="20210327" />
+        <low value="20210327154500+0100" />
       </effectiveTime>
       <!-- Responsable de la prise en charge (identifié par son N°RPPS) -->
       <responsibleParty>
@@ -367,7 +367,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="2801234567897" />
+            <id root="1.2.250.1.71.4.2.2" extension="2801234567" />
             <name>Centre de soins le Belvédère</name>
             <addr>
               <houseNumber>88</houseNumber>
@@ -708,7 +708,7 @@
               </performer>
               <!-- Prescripteur -->
               <author>
-                <time value="20190711" />
+                <time value="20190711153500+0100" />
                 <assignedAuthor>
                   <!-- Identifiant du prescripteur -->
                   <id root="1.2.250.1.71.4.2.1" extension="10100997245" />

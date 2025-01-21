@@ -40,7 +40,7 @@
   <!-- Conformité au Volet Synthèse Suites de Couches Enfant (OBP-SCE_2024.01)-->
   <templateId root="1.2.250.1.213.1.1.1.12.5" extension="2024.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.12.5.1"/>
+  <id root="1.2.250.1.213.1.1.1.12.5.2024.1.1"/>
   <!-- Type de document -->
   <code code="78489-2" displayName="Synthèse Enfant en Maternité" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
   <!-- Titre du document -->
@@ -52,7 +52,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR" />
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="1.2.250.1.213.1.1.9"/>
+  <setId root="1.2.250.1.213.1.1.1.12.5.2024.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1" />
 
@@ -141,7 +141,7 @@
       </assignedPerson>
       <!-- Numéro FINESS de l'ES (optionnel)  -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
         <name>Clinique du Belvédère</name>
         <telecom nullFlavor="NAV" />
         <addr>
@@ -218,7 +218,7 @@
 
   <!-- Responsable de la validation de la synthèse -->
   <legalAuthenticator>
-    <time value="20210329094914-0100" />
+    <time value="20210329094914+0100" />
     <signatureCode code="S" />
     <assignedEntity>
       <!-- PS identifié par son N°RPPS -->
@@ -240,7 +240,7 @@
       <originalText>Anesthésiste</originalText>
     </functionCode>
     <time xsi:type="IVL_TS">
-      <low value="20230425" />
+      <low value="20230425080000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234562121" />
@@ -276,7 +276,7 @@
   <participant typeCode="INF">
     <functionCode code="PCP" displayName="Médecin traitant" codeSystem="2.16.840.1.113883.5.88" />
     <time xsi:type="IVL_TS">
-      <low value="20230425" />
+      <low value="20230425080000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
@@ -304,7 +304,7 @@
       <originalText>Sage-femme referente</originalText>
     </functionCode>
     <time xsi:type="IVL_TS">
-      <low value="20230425" />
+      <low value="20230425080000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
@@ -342,7 +342,7 @@
       <originalText>Praticien ayant suivi la patiente</originalText>
     </functionCode>
     <time xsi:type="IVL_TS">
-      <low value="20230425" />
+      <low value="20230425080000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
@@ -370,7 +370,7 @@
       <originalText>Pédiatre</originalText>
     </functionCode>
     <time xsi:type="IVL_TS">
-      <low value="20230425" />
+      <low value="20230425080000+0100" />
     </time>
     <associatedEntity classCode="PROV">
       <id root="1.2.250.1.71.4.2.1" extension="801234566565" />
@@ -413,7 +413,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -449,7 +449,7 @@
             </name>
           </assignedPerson>
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
             <name>Clinique du Belvédère</name>
             <telecom nullFlavor="NAV" />
             <addr>
@@ -464,7 +464,7 @@
       </responsibleParty>
       <location>
         <healthCareFacility>
-          <id root="1.2.250.1.71.4.2.2" extension="101238887" />
+          <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
           <code code="SA04" displayName="Etablissement privé non PSPH" codeSystem="1.2.250.1.71.4.2.4" />
           <location>
             <name>Clinique du Belvédère</name>

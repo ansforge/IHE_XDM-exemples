@@ -44,7 +44,7 @@
   <!-- Conformité au modèle du document CNAM-HR -->
   <templateId root="1.2.250.1.213.1.1.1.36" extension="2021.01"/>
   <!-- Identifiant du document -->
-  <id root="1.2.250.1.213.1.1.1.36.1"/>
+  <id root="1.2.250.1.213.1.1.1.36.2021.1.1"/>
   <!-- Type du document -->
   <code code="REMB" codeSystem="1.2.250.1.213.1.1.4.12" displayName="Données de remboursement"/>
   <!-- Titre du document -->
@@ -57,7 +57,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant du lot de version d'un même document -->
-  <setId root="06068847-7B66-4A0E-86CB-B7580377F221"/>
+  <setId root="1.2.250.1.213.1.1.1.36.2021.1"/>
   <!-- Identifiant de la version du document -->
   <versionNumber value="1"/>
 
@@ -403,7 +403,7 @@
                   </performer> 
                   <!-- Prescripteur -->
                   <author>
-                    <time value="20190526"/>
+                    <time value="20190526094914+0100"/>
                     <assignedAuthor>
                       <!-- Identifiant du prescripteur -->
                       <id root="1.2.250.1.71.4.2.1" extension="697121458706"/>
@@ -524,7 +524,7 @@
                   </performer>
                   <!-- Prescripteur -->
                   <author>
-                    <time value="20190311"/>
+                    <time value="20190311094914+0100"/>
                     <assignedAuthor>
                       <!-- Identifiant du prescripteur -->
                       <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
@@ -646,7 +646,7 @@
                   </performer>
                   <!-- Prescripteur -->
                   <author>
-                    <time value="20190308"/>
+                    <time value="20190308094914+0100"/>
                     <assignedAuthor>
                       <!-- Identifiant du prescripteur -->
                       <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
@@ -820,7 +820,7 @@
                   </performer>
                   <!-- Prescripteur -->
                   <author>
-                    <time value="20190711"/>
+                    <time value="20190711094914+0100"/>
                     <assignedAuthor>
                       <!-- Identifiant du prescripteur -->
                       <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
@@ -912,7 +912,7 @@
                   </performer>
                   <!-- Prescripteur -->
                   <author>
-                    <time value="20190708"/>
+                    <time value="20190708094914+0100"/>
                     <assignedAuthor>
                       <!-- Identifiant du prescripteur -->
                       <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
@@ -1003,7 +1003,7 @@
                   </performer>
                   <!-- Prescripteur -->
                   <author>
-                    <time value="20190626"/>
+                    <time value="20190626094914+0100"/>
                     <assignedAuthor>
                       <!-- Identifiant du prescripteur -->
                       <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
@@ -1121,7 +1121,7 @@
               </performer>      
               <!-- Prescripteur -->
               <author>
-                <time value="20190711"/>
+                <time value="20190711094914+0100"/>
                 <assignedAuthor>
                   <!-- Identifiant du prescripteur -->
                   <id root="1.2.250.1.71.4.2.1" extension="10100997245"/>
@@ -1195,9 +1195,10 @@
               </performer>              
               <!-- Prescripteur -->
               <author>
-                <time value="20190528"/>
+                <time value="20190528094914+0100"/>
                 <assignedAuthor>
-                  <id nullFlavor="UNK"/>
+                  <!-- Identifiant du prescripteur -->
+                  <id root="1.2.250.1.71.4.2.1" extension="10100997245" />
                   <!-- Etablissement du prescripteur -->
                   <representedOrganization>
                     <id root="1.2.250.1.71.4.2.2" extension="1750300550"/>

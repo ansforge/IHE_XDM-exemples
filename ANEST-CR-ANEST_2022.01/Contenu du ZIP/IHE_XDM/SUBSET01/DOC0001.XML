@@ -38,7 +38,7 @@
   <!-- Déclaration de conformité aux spécifications du modèle CR-ANEST version 2022 -->
   <templateId root="1.2.250.1.213.1.1.1.40" extension="2022.01"/>
   <!-- Identifiant unique du document -->
-  <id root="1.2.250.1.213.1.1.1.40.1"/>
+  <id root="1.2.250.1.213.1.1.1.40.2022.1.1"/>
   <!-- Type de document -->
   <code code="77436-4" displayName="CR d'anesthésie" codeSystem="2.16.840.1.113883.6.1"
     codeSystemName="LOINC"/>
@@ -52,7 +52,7 @@
   <!-- Langue du document -->
   <languageCode code="fr-FR"/>
   <!-- Identifiant commun à toutes les versions successives du document -->
-  <setId root="1EF3111D-5E47-4379-B0AB-BFABAA2F1B9D"/>
+  <setId root="1.2.250.1.213.1.1.1.40.2022.1"/>
   <!-- Numéro de la version du présent document (entier positif) -->
   <versionNumber value="1"/>
   <!-- Patient -->
@@ -204,7 +204,7 @@
   </custodian>
   <!-- Responsable du document -->
   <legalAuthenticator>
-    <time value="20200319111700-0100"/>
+    <time value="20200319111700+0100"/>
     <signatureCode code="S"/>
     <assignedEntity>
       <!-- PS identifié par son N°RPPS -->
