@@ -110,8 +110,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -377,7 +377,7 @@
   <!-- Acte documenté par le document (Mammographie de dépistage)-->
   <documentationOf>
     <serviceEvent>
-      <code code="QEQK004" displayName="Mammographie de dépistage" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" />
+      <code code="QEQK004" displayName="Mammographie de dépistage" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" />
       <!-- Date de l'examen -->
       <effectiveTime>
         <low value="20210729111700+0100" />

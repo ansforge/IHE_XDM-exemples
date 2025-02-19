@@ -116,8 +116,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -505,7 +505,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="21C415B8-533A-4BAA-8EF0-D900E0FDAA27" />
-              <code code="DELF015" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM" displayName="Implantation d'un stimulateur cardiaque définitif, avec pose d'une sonde intraatriale et d'une sonde intraventriculaire droites, et d'une sonde dans une veine cardiaque gauche par voie veineuse transcutanée">
+              <code code="DELF015" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM" displayName="Implantation d'un stimulateur cardiaque définitif, avec pose d'une sonde intraatriale et d'une sonde intraventriculaire droites, et d'une sonde dans une veine cardiaque gauche par voie veineuse transcutanée">
                 <originalText mediaType="text/xml"><reference value="#psc0001" /></originalText>
               </code>
               <text><reference value="#psc0001" /></text>

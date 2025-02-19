@@ -1,393 +1,344 @@
-<ns5:SubmitObjectsRequest xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
-                          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-   <RegistryObjectList xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"><!--##################################################################--><!--RegistryPackage--><!--##################################################################-->
-      <ns2:RegistryPackage xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
-                           id="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                           status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"><!--===================--><!--SubmissionTime--><!--===================-->
-         <ns2:Slot name="submissionTime">
-            <ns2:ValueList>
-               <ns2:Value>20250120113440</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--Name-->
-         <!--===================-->
-         <ns2:Name>
-            <ns2:LocalizedString charset="UTF8"
-                                 value="CR de consultation pré-anesthésique"
-                                 xml:lang="FR"/>
-         </ns2:Name>
-         <!--===================-->
-         <!--Description (comments)-->
-         <!--===================-->
-         <ns2:Description>
-            <ns2:LocalizedString charset="UTF8" value="" xml:lang="FR"/>
-         </ns2:Description>
-         <!--===================-->
-         <!--Classification-->
-         <!--===================-->
-         <ns2:Classification classificationNode="urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="SubmissionSet01_c001"
-                             nodeRepresentation=""/>
-         <!--===================-->
-         <!--Author attributes-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:fabf36c6-55e8-46d4-80ad-ed100397883f"
-                             nodeRepresentation=""><!--===================--><!--AuthorInstitution--><!--===================-->
-            <ns2:Slot name="authorInstitution">
-               <ns2:ValueList>
-                  <ns2:Value>Hôpital Européen Georges Pompidou^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1750803447</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <!--===================-->
-            <!--AuthorPerson-->
-            <!--===================-->
-            <ns2:Slot name="authorPerson">
-               <ns2:ValueList>
-                  <ns2:Value>801234567897^LEGRIS^Pierre^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <!--===================-->
-            <!--authorSpecialty-->
-            <!--===================-->
-            <ns2:Slot name="authorSpecialty">
-               <ns2:ValueList>
-                  <ns2:Value>G15_10/SM02^Médecin - Anesthésie-réanimation (SM)^1.2.250.1.213.1.1.4.5</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-         </ns2:Classification>
-         <!--===================-->
-         <!--HealthcareFacility-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="SubmissionSet01_c002"
-                             nodeRepresentation="SA01">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString charset="UTF8" value="Etablissement public de santé" xml:lang="FR"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--PatientId-->
-         <!--===================-->
-         <ns2:ExternalIdentifier id="urn:uuid:178aa7a1-c179-49af-a34a-a74a656a0530"
-                                 identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446"
-                                 registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6"
-                                 value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
-            <ns2:Name>
-               <ns2:LocalizedString value="XDSSubmissionSet.patientId"/>
-            </ns2:Name>
-         </ns2:ExternalIdentifier>
-         <!--===================-->
-         <!--SourceId-->
-         <!--===================-->
-         <ns2:ExternalIdentifier id="urn:uuid:58c7a515-10bc-48a3-9e9a-087b2f798baa"
-                                 identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832"
-                                 registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6"
-                                 value="1.2.250.1.71.4.2.2.1750803447">
-            <ns2:Name>
-               <ns2:LocalizedString value="XDSSubmissionSet.sourceId"/>
-            </ns2:Name>
-         </ns2:ExternalIdentifier>
-         <!--===================-->
-         <!--UniqueId-->
-         <!--===================-->
-         <ns2:ExternalIdentifier id="urn:uuid:66e48db0-ed20-4139-b797-13e7e652abdf"
-                                 identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8"
-                                 registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6"
-                                 value="1.2.250.1.213.1.1.1.1.2025.1.1.1737369280433">
-            <ns2:Name>
-               <ns2:LocalizedString value="XDSSubmissionSet.uniqueId"/>
-            </ns2:Name>
-         </ns2:ExternalIdentifier>
-      </ns2:RegistryPackage>
-      <!--##################################################################-->
-      <!--Extrinsic object - CDA ANEST-CR-CPA_2022.01.xml-->
-      <!--##################################################################-->
-      <ns2:ExtrinsicObject xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
-                           id="urn:uuid:5a3c50da-e7b4-498d-98dc-fa21538fd99d"
-                           mimeType="text/xml"
-                           objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"
-                           status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"><!--===================--><!--Hash--><!--===================-->
-         <ns2:Slot name="hash">
-            <ns2:ValueList>
-               <ns2:Value>4B346C0CECDA84870D8315631CCA49D25FD6F860</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--Size-->
-         <!--===================-->
-         <ns2:Slot name="size">
-            <ns2:ValueList>
-               <ns2:Value>392302</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--URI-->
-         <!--===================-->
-         <ns2:Slot name="URI">
-            <ns2:ValueList>
-               <ns2:Value>DOC0001.XML</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--CreationTime-->
-         <!--===================-->
-         <ns2:Slot name="creationTime">
-            <ns2:ValueList>
-               <ns2:Value>20200317161100</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--LangageCode-->
-         <!--===================-->
-         <ns2:Slot name="languageCode">
-            <ns2:ValueList>
-               <ns2:Value>fr-FR</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--LegalAuthenticator-->
-         <!--===================-->
-         <ns2:Slot name="legalAuthenticator">
-            <ns2:ValueList>
-               <ns2:Value>801234567897^LEGRIS^Pierre^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--ServiceStartTime-->
-         <!--===================-->
-         <ns2:Slot name="serviceStartTime">
-            <ns2:ValueList>
-               <ns2:Value>20200317161100</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--SourcePatientId-->
-         <!--===================-->
-         <ns2:Slot name="sourcePatientId">
-            <ns2:ValueList>
-               <ns2:Value>1234567890121^^^&amp;1.2.3.4.567.8.9.10&amp;ISO^PI</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--SourcePatientInfo-->
-         <!--===================-->
-         <ns2:Slot name="sourcePatientInfo">
-            <ns2:ValueList>
-               <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^DOMINIQUE MARIE-LOUISE^^^^L</ns2:Value>
-               <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^^^^^D</ns2:Value>
-               <ns2:Value>PID-7|19790328</ns2:Value>
-               <ns2:Value>PID-8|F</ns2:Value>
-               <ns2:Value>PID-11|^^^^^^BDL^^63220</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-         <!--===================-->
-         <!--Name-->
-         <!--===================-->
-         <ns2:Name>
-            <ns2:LocalizedString charset="UTF8"
-                                 value="CR de consultation pré-anesthésique"
-                                 xml:lang="FR"/>
-         </ns2:Name>
-         <!--===================-->
-         <!--Description (Comments)-->
-         <!--===================-->
-         <ns2:Description>
-            <ns2:LocalizedString charset="UTF8" value="" xml:lang="FR"/>
-         </ns2:Description>
-         <!--===================-->
-         <!--EventCodeList-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4"
-                             classifiedObject="urn:uuid:5a3c50da-e7b4-498d-98dc-fa21538fd99d"
-                             id="urn:uuid:b8788e09-0c36-476c-96a4-3fe2615008dc"
-                             nodeRepresentation="CS"
-                             objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>1.2.250.1.215.200.3.3</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString charset="UTF8"
-                                    value="Consultation au cabinet par le médecin spécialiste qualifié"
-                                    xml:lang="FR"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--Authors Attributes-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:9faff7c5-4647-4d89-b13b-1952ddfb5e10"
-                             nodeRepresentation=""><!--===================--><!--AuthorInstitution--><!--===================-->
-            <ns2:Slot name="authorInstitution">
-               <ns2:ValueList>
-                  <ns2:Value>Hôpital Européen Georges Pompidou^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1750803447</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <!--===================-->
-            <!--AuthorPerson-->
-            <!--===================-->
-            <ns2:Slot name="authorPerson">
-               <ns2:ValueList>
-                  <ns2:Value>801234567897^LEGRIS^Pierre^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <!--===================-->
-            <!--AuthorSpecialty-->
-            <!--===================-->
-            <ns2:Slot name="authorSpecialty">
-               <ns2:ValueList>
-                  <ns2:Value>G15_10/SM02^Médecin - Anesthésie-réanimation (SM)^1.2.250.1.213.1.1.4.5</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-         </ns2:Classification>
-         <!--===================-->
-         <!--Class-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:bf7b646e-8d1b-4e47-914b-88c8bd107c54"
-                             nodeRepresentation="10">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>1.2.250.1.213.1.1.4.1</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString value="Compte rendu"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--Confidentiality-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:d989ce13-009f-4d50-936d-112d3087511c"
-                             nodeRepresentation="N">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>2.16.840.1.113883.5.25</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString value="Normal"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--Format-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:717a2eac-e686-41bd-b77b-f0c7c56d9715"
-                             nodeRepresentation="urn:asip:ci-sis:cr-cpa:2020">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>1.2.250.1.213.1.1.4.2.282</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString value="Compte rendu de consultation pré-anesthésique"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--HealthcareFacility-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:272e07f4-8937-4e19-927a-7d9798d522b3"
-                             nodeRepresentation="SA01">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString value="Etablissement public de santé"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--Practice Settings-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:a4e8d3a9-3bec-4919-8ade-cb75eff5fb39"
-                             nodeRepresentation="ETABLISSEMENT">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>1.2.250.1.213.1.1.4.9</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString charset="UTF8" value="Etablissement de santé" xml:lang="FR"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--Type-->
-         <!--===================-->
-         <ns2:Classification classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983"
-                             classifiedObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                             id="urn:uuid:bfa013e7-c7aa-40fa-9397-0160d250f952"
-                             nodeRepresentation="34749-2">
-            <ns2:Slot name="codingScheme">
-               <ns2:ValueList>
-                  <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
-               </ns2:ValueList>
-            </ns2:Slot>
-            <ns2:Name>
-               <ns2:LocalizedString charset="UTF8"
-                                    value="CR de consultation pré-anesthésique"
-                                    xml:lang="FR"/>
-            </ns2:Name>
-         </ns2:Classification>
-         <!--===================-->
-         <!--PatientId-->
-         <!--===================-->
-         <ns2:ExternalIdentifier id="urn:uuid:16612127-6663-467b-960a-a6cc4eedaa3c"
-                                 identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427"
-                                 registryObject="urn:uuid:4a889fd4-012f-4000-e008-12c48372fe64"
-                                 value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
-            <ns2:Name>
-               <ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
-            </ns2:Name>
-         </ns2:ExternalIdentifier>
-         <!--===================-->
-         <!--UniqueId-->
-         <!--===================-->
-         <ns2:ExternalIdentifier id="urn:uuid:a3b43573-f4a2-4fd3-adc0-6ce917889377"
-                                 identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
-                                 registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0"
-                                 value="1.2.250.1.213.1.1.1.41.2022.1.1">
-            <ns2:Name>
-               <ns2:LocalizedString charset="UTF8" value="XDSDocumentEntry.uniqueId" xml:lang="FR"/>
-            </ns2:Name>
-         </ns2:ExternalIdentifier>
-      </ns2:ExtrinsicObject>
-      <!--===================-->
-      <!--ASSOCIATIONS-->
-      <!--===================-->
-      <ns2:Association xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
-                       associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"
-                       id="urn:uuid:ba1659fd-fc38-4219-9e3a-736851b48b3d"
-                       objectType="Original"
-                       sourceObject="urn:uuid:7475d624-1d29-4fd7-9c51-8b00312417ab"
-                       targetObject="urn:uuid:dccc3ec7-f9ca-4ab9-8d7f-55ca294f3b74">
-         <ns2:Slot name="SubmissionSetStatus">
-            <ns2:ValueList>
-               <ns2:Value>Original</ns2:Value>
-            </ns2:ValueList>
-         </ns2:Slot>
-      </ns2:Association>
-   </RegistryObjectList>
-</ns5:SubmitObjectsRequest>
+ <ns5:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
+     <RegistryObjectList xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+         <!--##################################################################-->
+         <!--RegistryPackage-->
+         <!--##################################################################-->
+         <ns2:RegistryPackage  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" id="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef"  status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"  >
+             <!--===================-->
+             <!--SubmissionTime-->
+             <!--===================-->
+             <ns2:Slot name="submissionTime"> 
+                 <ns2:ValueList>
+                     <ns2:Value>20250218154248</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--Name-->
+             <!--===================-->
+             <ns2:Name>
+                 <ns2:LocalizedString xml:lang="FR" charset="UTF8" value="CR de consultation pré-anesthésique"/>
+             </ns2:Name>
+             <!--===================-->
+             <!--Description (comments)-->
+             <!--===================-->
+             <ns2:Description>
+                 <ns2:LocalizedString xml:lang="FR" charset="UTF8" value=""/>
+             </ns2:Description>
+             <!--===================-->
+             <!--Classification-->
+             <!--===================-->
+             <ns2:Classification id = "SubmissionSet01_c001"
+             classificationNode = "urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd"	classifiedObject = "urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation = "" />
+             <!--===================-->
+             <!--Author attributes-->
+             <!--===================-->
+             <ns2:Classification id="urn:uuid:3228fa0c-e0cf-4177-8c0a-16b9d4abdaca" classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation=""> 
+             <!--===================-->
+             <!--AuthorInstitution-->
+             <!--===================-->
+                 <ns2:Slot name="authorInstitution">
+                     <ns2:ValueList>
+                         <ns2:Value>Hôpital Européen Georges Pompidou^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1750803447</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+             <!--===================-->
+             <!--AuthorPerson-->
+             <!--===================-->
+             <ns2:Slot name="authorPerson">
+                 <ns2:ValueList>
+                 <ns2:Value>801234567897^LEGRIS^Pierre^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--AuthorSpecialty-->
+             <!--===================-->
+             <ns2:Slot name="authorSpecialty">
+                 <ns2:ValueList>
+                     <ns2:Value>G15_10/SM02^Médecin - Anesthésie-réanimation (SM)^1.2.250.1.213.1.1.4.5</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             </ns2:Classification>
+             <!--===================-->
+             <!--HealthcareFacility-->
+             <!--===================-->
+             <ns2:Classification id="SubmissionSet01_c002" classificationScheme="urn:uuid:aa543740-bdda-424e-8c96-df4873be8500" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="SA01" >
+                 <ns2:Slot name="codingScheme" >
+                     <ns2:ValueList>
+                         <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+                 <ns2:Name>
+                     <ns2:LocalizedString xml:lang="FR" charset="UTF8" value="Etablissement public de santé"/>	
+                 </ns2:Name>
+             </ns2:Classification>
+             <!--===================-->
+             <!--PatientId-->
+             <!--===================-->
+             <ns2:ExternalIdentifier id="urn:uuid:d98194c6-effa-415a-8363-9abf3e3af4f1" identificationScheme="urn:uuid:6b5aea1a-874d-4603-a4bc-96a0a7b38446" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+                 <ns2:Name>
+                     <ns2:LocalizedString value="XDSSubmissionSet.patientId"/>
+                 </ns2:Name>
+             </ns2:ExternalIdentifier>
+             <!--===================-->
+             <!--SourceId-->
+             <!--===================-->
+             <ns2:ExternalIdentifier id="urn:uuid:4c2b6e15-3ec9-4a1c-9d7b-0a6e062c17c1" identificationScheme="urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.71.4.2.2.1750803447">
+                 <ns2:Name>
+                     <ns2:LocalizedString value="XDSSumissionSet.sourceId"/>
+                 </ns2:Name>
+             </ns2:ExternalIdentifier>
+             <!--===================-->
+             <!--UniqueId-->
+             <!--===================-->
+             <ns2:ExternalIdentifier id="urn:uuid:b939ff47-8e2d-4bd7-bbb2-91089222fb4b" identificationScheme="urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8" registryObject="urn:uuid:a6e06ca8-0c75-4064-9e5d-88b9045a9ab6" value="1.2.250.1.213.1.1.1.1.2025.2.2.638754901683419233">
+                 <ns2:Name>
+                     <ns2:LocalizedString value="XDSSubmissionSet.uniqueId"/>
+                 </ns2:Name>
+             </ns2:ExternalIdentifier>
+         </ns2:RegistryPackage>
+         <!-- ################################################################## -->
+         <!--   Extrinsic object - CDA DOC0001.XML-->
+         <!-- ################################################################## -->
+         <ns2:ExtrinsicObject mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" id="urn:uuid:urn:uuid:7d4f6cf3-e6be-4286-8fa3-773997ca7b03" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Approved"	>
+             <!--===================-->
+             <!--Hash-->
+             <!--===================-->
+             <ns2:Slot name="hash">
+                 <ns2:ValueList>
+                     <ns2:Value>D5FA9FF3102627AA5302800EB48CE81AC3F83C89</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--Size-->
+             <!--===================-->
+             <ns2:Slot name="size">
+                 <ns2:ValueList>
+                     <ns2:Value>392302</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--URI-->
+             <!--===================-->
+             <ns2:Slot name="URI">
+                 <ns2:ValueList>
+                     <ns2:Value>DOC0001.XML</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--CreationTime-->
+             <!--===================-->
+             <ns2:Slot name="creationTime">
+                 <ns2:ValueList>
+                     <ns2:Value>20200317161100</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--LangageCode-->
+             <!--===================-->
+             <ns2:Slot name="languageCode">
+                 <ns2:ValueList>
+                     <ns2:Value>fr-FR</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--LegalAuthenticator-->
+             <!--===================-->
+             <ns2:Slot name="legalAuthenticator">
+                 <ns2:ValueList>
+                     <ns2:Value>801234567897^LEGRIS^Pierre^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--ServiceStartTime-->
+             <!--===================-->
+             <ns2:Slot name="serviceStartTime">
+                 <ns2:ValueList>
+                     <ns2:Value>20200317161100</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--ServiceStopTime-->
+             <!--===================-->
+             <!--===================-->
+             <!--SourcePatientId-->
+             <!--===================-->
+             <ns2:Slot name="sourcePatientId">
+                 <ns2:ValueList>
+                     <ns2:Value>1234567890121^^^&amp;1.2.3.4.567.8.9.10&amp;ISO^PI</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--SourcePatientInfo-->
+             <!--===================-->
+             <ns2:Slot name="sourcePatientInfo">
+                 <ns2:ValueList>
+                     <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^DOMINIQUE MARIE-LOUISE^^^^L</ns2:Value>
+                     <ns2:Value>PID-5|PAT-TROIS^DOMINIQUE^^^^^D</ns2:Value>
+                     <ns2:Value>PID-7|19790328</ns2:Value>
+                     <ns2:Value>PID-8|F</ns2:Value>
+                     <ns2:Value>PID-11|^^^^^^BDL^^51215</ns2:Value>
+                 </ns2:ValueList>
+             </ns2:Slot>
+             <!--===================-->
+             <!--Name-->
+             <!--===================-->
+             <ns2:Name>
+                 <ns2:LocalizedString xml:lang="FR" charset="UTF8"                  value="CR de consultation pré-anesthésique"/>
+             </ns2:Name>
+             <!--===================-->
+             <!--Description (Comments)-->
+             <!--===================-->
+             <ns2:Description>
+                 <ns2:LocalizedString xml:lang="FR" charset="UTF8"                  value=""/>
+             </ns2:Description>
+             <!--===================-->
+             <!--EventCodeList-->
+             <!--===================-->
+             <ns2:Classification classificationScheme="urn:uuid:2c6b8cb7-8b2a-4051-b291-b1ae6a575ef4" classifiedObject="urn:uuid:urn:uuid:7d4f6cf3-e6be-4286-8fa3-773997ca7b03" id="urn:uuid:53e2299d-0468-4fce-8a80-728b222aa6be"               nodeRepresentation="CS" objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification" >
+                 <ns2:Slot name="codingScheme">
+                     <ns2:ValueList>
+                         <ns2:Value>1.2.250.1.215.200.3.3</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+                 <ns2:Name>
+                     <ns2:LocalizedString xml:lang="FR" charset="UTF8"                      value="Consultation au cabinet par le médecin spécialiste qualifié"/>
+                 </ns2:Name>
+             </ns2:Classification>
+             <!--*********************************************************-->
+             <!--  Authors Attributes -->
+             <!--*********************************************************-->
+             <ns2:Classification id="urn:uuid:ca16a6f2-4f0b-4cef-9fd2-7311e175adbf" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation=""> 
+                 <!--===================-->
+                 <!--AuthorInstitution-->
+                 <!--===================-->
+                 <ns2:Slot name="authorInstitution">
+                     <ns2:ValueList>
+                         <ns2:Value>Hôpital Européen Georges Pompidou^^^^^&amp;1.2.250.1.71.4.2.2&amp;ISO^IDNST^^^1750803447</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+                 <!--===================-->
+                 <!--AuthorPerson-->
+                 <!--===================-->
+                 <ns2:Slot name="authorPerson">
+                     <ns2:ValueList>
+                     <ns2:Value>801234567897^LEGRIS^Pierre^^^^^^&amp;1.2.250.1.71.4.2.1&amp;ISO^D^^^IDNPS</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+                 <!--===================-->
+                 <!--AuthorSpecialty-->
+                 <!--===================-->
+                 <ns2:Slot name="authorSpecialty">
+                     <ns2:ValueList>
+                         <ns2:Value>G15_10/SM02^Médecin - Anesthésie-réanimation (SM)^1.2.250.1.213.1.1.4.5</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+                 </ns2:Classification>
+                 <!--*********************************************************-->
+                 <!--  Class -->
+                 <!--*********************************************************-->
+                 <!--  -->
+                 <ns2:Classification id="urn:uuid:c144c9ce-2e60-4d74-89e2-313111b09c0d" classificationScheme="urn:uuid:41a5887f-8865-4c09-adf7-e362475b143a" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="10">
+                     <ns2:Slot name="codingScheme">
+                         <ns2:ValueList>
+                             <ns2:Value>1.2.250.1.213.1.1.4.1</ns2:Value>
+                         </ns2:ValueList>
+                     </ns2:Slot>
+                     <ns2:Name>
+                         <ns2:LocalizedString value="Compte rendu"/>
+                     </ns2:Name>
+                 </ns2:Classification>
+                 <!-- ***************************************************************************-->
+                 <!--     Confidentiality  -->
+                 <!-- ***************************************************************************-->
+                 <ns2:Classification id="urn:uuid:197f1716-fb20-49c2-83e3-8a272af15729" classificationScheme="urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="N">
+                     <ns2:Slot name="codingScheme">
+                         <ns2:ValueList>
+                             <ns2:Value>2.16.840.1.113883.5.25</ns2:Value>
+                         </ns2:ValueList>
+                     </ns2:Slot>
+                     <ns2:Name>
+                         <ns2:LocalizedString value="Normal"/>
+                     </ns2:Name>
+                 </ns2:Classification>
+                 <!--***********************************-->
+                 <!--  Format -->
+                 <!--***********************************-->
+                 <ns2:Classification id="urn:uuid:92e3131b-aaa2-4607-99df-d7d3454dc137" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="urn:asip:ci-sis:cr-cpa:2020"> 
+                     <ns2:Slot name="codingScheme">
+                         <ns2:ValueList>
+                             <ns2:Value>1.2.250.1.213.1.1.4.2.282</ns2:Value>
+                         </ns2:ValueList>
+                     </ns2:Slot>
+                     <ns2:Name>
+                         <ns2:LocalizedString value="Compte rendu de consultation pré-anesthésique"/>
+                     </ns2:Name>
+                 </ns2:Classification>
+                 <!--***********************************-->
+                 <!--  HealthcareFacility -->
+                 <!--***********************************-->
+                 <ns2:Classification id="urn:uuid:718a3159-a62c-4957-96b6-29d2cc17cf81" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="SA01">
+                     <ns2:Slot name="codingScheme">
+                         <ns2:ValueList>
+                             <ns2:Value>1.2.250.1.71.4.2.4</ns2:Value>
+                         </ns2:ValueList>
+                     </ns2:Slot>
+                     <ns2:Name>
+                         <ns2:LocalizedString value="Etablissement public de santé"/>
+                     </ns2:Name>
+                 </ns2:Classification>
+                 <!--********************************-->
+                 <!--  Practice Settings -->
+                 <!--********************************-->
+                 <ns2:Classification id="urn:uuid:e4425bf8-4ff9-47fe-9b1e-29903b1383f5" classificationScheme="urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="ETABLISSEMENT">
+                     <ns2:Slot name="codingScheme">
+                         <ns2:ValueList>
+                             <ns2:Value>1.2.250.1.213.1.1.4.9</ns2:Value>
+                         </ns2:ValueList>
+                     </ns2:Slot>
+                     <ns2:Name>
+                         <ns2:LocalizedString  xml:lang="FR" charset="UTF8"  value="Etablissement de santé"   />
+                     </ns2:Name>
+                 </ns2:Classification>
+                 <!--********************************-->
+                 <!--  Type -->
+                 <!--********************************-->
+                 <ns2:Classification id="urn:uuid:277323f4-2355-41e6-8be5-5bc63dc263cd" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" nodeRepresentation="34749-2">
+                     <ns2:Slot name="codingScheme">
+                         <ns2:ValueList>
+                             <ns2:Value>2.16.840.1.113883.6.1</ns2:Value>
+                         </ns2:ValueList>
+                     </ns2:Slot>
+                     <ns2:Name>
+                         <ns2:LocalizedString  xml:lang="FR" charset="UTF8"  value="CR de consultation pré-anesthésique"   />
+                     </ns2:Name>
+                 </ns2:Classification>
+                 <!--********************************-->
+                 <!--  PatientId -->
+                 <!--********************************-->
+                 <ns2:ExternalIdentifier id="urn:uuid:ba6122ae-2870-427f-9f20-5055ece4197e" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" registryObject="urn:uuid:4a889fd4-012f-4000-e008-12c48372fe64" value="279035121518989^^^&amp;1.2.250.1.213.1.4.10&amp;ISO^NH">
+                     <ns2:Name>
+                         <ns2:LocalizedString value="XDSDocumentEntry.patientId"/>
+                     </ns2:Name>
+                 </ns2:ExternalIdentifier>
+                 <!--********************************-->
+                 <!--  UniqueId -->
+                 <!--********************************-->
+                 <ns2:ExternalIdentifier id="urn:uuid:7801c1d9-e942-41b6-b8ae-f97a09f37aea" identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab" registryObject="b576aac4-33be-4875-b875-f8ee50bf66e0" value="1.2.250.1.213.1.1.1.41.2022.1.1">
+                     <ns2:Name>
+                         <ns2:LocalizedString xml:lang="FR" charset="UTF8"  value="XDSDocumentEntry.uniqueId"/>
+                     </ns2:Name>
+                 </ns2:ExternalIdentifier>
+             </ns2:ExtrinsicObject>
+             <!--*****************************************-->
+             <!--*            ASSOCIATIONS -->
+             <!--*****************************************-->
+             <ns2:Association id="urn:uuid:c72dad8b-f665-4269-9fb9-21dccd571d0a" objectType="Original" associationType="urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember"               sourceObject="urn:uuid:653851a6-a254-435a-b265-5d4da4cd41ef" targetObject="urn:uuid:urn:uuid:7d4f6cf3-e6be-4286-8fa3-773997ca7b03"  xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"  >
+                 <ns2:Slot name="SubmissionSetStatus">
+                     <ns2:ValueList>
+                         <ns2:Value>Original</ns2:Value>
+                     </ns2:ValueList>
+                 </ns2:Slot>
+             </ns2:Association>
+     </RegistryObjectList>
+ </ns5:SubmitObjectsRequest>
+

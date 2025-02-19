@@ -115,8 +115,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -132,7 +132,7 @@
     <time value="20110929094914+0100" />
     <assignedAuthor>
       <!-- PS identifié par son N°RPPS -->
-      <id root="1.2.250.1.71.4.2.1" extension="801234567897" />
+      <id root="1.2.250.1.71.4.2.1" extension="401234567890009" />
       <!-- Profession / Spécialité du PS -->
       <code code="G15_10/SM36" codeSystem="1.2.250.1.213.1.1.4.5" displayName="Médecin - Oncologie, opt médicale (SM)" />
       <!-- Adresse du PS -->
@@ -155,7 +155,7 @@
       </assignedPerson>
       <!-- Organisation du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <id root="1.2.250.1.71.4.2.2" extension="1750100125" />
         <name>Centre Hospitalier d'Angers</name>
         <addr>
           <houseNumber>4</houseNumber>
@@ -246,7 +246,7 @@
       </assignedPerson>
       <!-- Etablissement de rattachement du PS -->
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
         <name>Centre Hospitalier d'Angers</name>
         <telecom value="tel:0242515100" use="PUB" />
         <addr>
@@ -292,7 +292,7 @@
       </associatedPerson>
       <!-- Etablissement de rattachement du PS -->
       <scopingOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+        <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
         <name>Centre Hospitalier d'Angers</name>
         <telecom value="tel:0242515100" use="PUB" />
         <addr>
@@ -619,7 +619,7 @@
           </assignedPerson>
           <!-- Etablissement de rattachement du PS -->
           <representedOrganization>
-            <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+            <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
             <name>Centre Hospitalier d'Angers</name>
             <telecom value="tel:0242515100" use="PUB" />
             <addr>
@@ -1977,7 +1977,7 @@
                 </name>
               </assignedPerson>
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                 <name>Centre Hospitalier d'Angers</name>
                 <addr>
                   <houseNumber>4</houseNumber>
@@ -2031,7 +2031,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                     <name>Centre Hospitalier d'Angers</name>
                     <addr>
                       <streetName>Rue Larrey</streetName>
@@ -2065,7 +2065,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                     <name>Centre Hospitalier d'Angers</name>
                     <addr>
                       <streetName>Rue Larrey</streetName>
@@ -2188,7 +2188,7 @@
               </assignedPerson>
               <!-- Organisation du PS -->
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                 <name>Centre Hospitalier d'Angers</name>
                 <addr>
                   <houseNumber>4</houseNumber>
@@ -2241,7 +2241,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -2272,7 +2272,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -2424,7 +2424,7 @@
               </assignedPerson>
               <!-- Organisation du PS -->
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                 <name>Centre Hospitalier d'Angers</name>
                 <addr>
                   <houseNumber>4</houseNumber>
@@ -2476,7 +2476,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>
@@ -2542,7 +2542,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                    <id root="1.2.250.1.71.4.2.2" extension="1801234567897" />
                     <name>Laboratoire Pasteur</name>
                     <addr>
                       <houseNumber>10</houseNumber>

@@ -117,8 +117,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -368,7 +368,7 @@
       <code code="24727-0"  displayName="CT Head W contrast IV"  codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="ACQH004"  displayName="Scanographie du crâne, de son contenu et du tronc, avec injection intraveineuse de produit de contraste" 
-          codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+          codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
         <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM">
           <qualifier>
@@ -437,7 +437,7 @@
       <code code="36235-0"  displayName="CT Neck W contrast IV" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="LCQH001"  displayName="Scanographie des tissus mous du cou, avec injection intraveineuse de produit de contraste" 
-          codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+          codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
         <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4"
           codeSystemName="DCM">
@@ -507,7 +507,7 @@
       <code code="24978-9"  displayName="CT Thoracic spine" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="ZBQH001"  displayName="Scanographie du thorax, avec injection intraveineuse de produit de contraste" 
-          codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+          codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
         <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM">
           <qualifier>

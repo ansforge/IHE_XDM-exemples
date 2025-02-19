@@ -96,8 +96,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -505,7 +505,7 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="D3DCE1E0-EB52-47CB-8507-D33F0041D138" />
               <!-- code de l'acte -->
-              <code code="JNMD002" displayName="Révision de la cavité de l'utérus après délivrance naturelle" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="JNMD002" displayName="Révision de la cavité de l'utérus après délivrance naturelle" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText><reference value="#scm0001" /></originalText>
               </code>
               <text><reference value="scm0001" /></text>

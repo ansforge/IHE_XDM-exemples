@@ -60,7 +60,7 @@
       <!-- Adresse du patient -->
       <addr>
         <houseNumber>28</houseNumber>
-        <streetName>Av de Breteuil</streetName>
+        <streetName>Avenue de Breteuil</streetName>
         <unitID>Escalier A</unitID>
         <postalCode>75007</postalCode>
         <city>PARIS</city>
@@ -74,14 +74,15 @@
       <patient classCode="PSN">
         <name>
           <!-- Nom et prénom(s) de naissance -->
-          <family qualifier="BR">DECOURCY</family>
+          <!-- Nom de l’acte de naissance -->
+          <family qualifier="BR">PAT-TROIS</family> 
           <!-- Prénoms de l’acte de naissance -->
-          <given>Ruth Isabelle</given>
+          <given>DOMINIQUE MARIE-LOUISE</given>
           <!-- Premier prénom de l’acte de naissance -->
-          <given qualifier="BR">Ruth</given>
+          <given qualifier="BR">DOMINIQUE</given>
           <!-- Nom et prénom utilisés -->
-          <family qualifier="CL">DECOURCY</family>
-          <given qualifier="CL">Ruth</given>   
+          <family qualifier="CL">PAT-TROIS</family>
+          <given qualifier="CL">DOMINIQUE</given>        
         </name>
         <administrativeGenderCode code="F" displayName="Féminin" codeSystem="2.16.840.1.113883.5.1" />
         <birthTime value="19790328"/>
@@ -89,7 +90,7 @@
         <guardian>
           <addr use="H">
             <houseNumber>28</houseNumber>
-            <streetName>Av de Breteuil</streetName>
+            <streetName>Avenue de Breteuil</streetName>
             <postalCode>75007</postalCode>
             <city>PARIS</city>
             <country>FRANCE</country>
@@ -107,8 +108,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>

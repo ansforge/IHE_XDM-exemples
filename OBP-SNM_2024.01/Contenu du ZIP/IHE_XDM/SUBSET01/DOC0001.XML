@@ -96,8 +96,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -695,7 +695,7 @@
                   <!-- valeur issue du JDV_ActeOBP_CISIS (1.2.250.1.213.1.1.5.757) -->
                   <code code="236945008" displayName="intervention obstétricale ante partum" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" >
                     <qualifier>
-                      <value code="YYYY095" displayName="Assistance pédiatrique avant la naissance, sur appel du praticien responsable de l'accouchement, pour une situation de risque néonatal, avec établissement d'un compte rendu" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                      <value code="YYYY095" displayName="Assistance pédiatrique avant la naissance, sur appel du praticien responsable de l'accouchement, pour une situation de risque néonatal, avec établissement d'un compte rendu" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
                     </qualifier>
                   </code>
                   <text><reference value="#acte-pretpartum-1" /></text>

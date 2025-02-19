@@ -113,8 +113,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -291,7 +291,7 @@
       <!-- Code de l'acte  -->
       <code code="JQGA003"
         displayName="Accouchement par césarienne au cours du travail, par laparotomie"
-        codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+        codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
       <!-- Date de l'acte -->
       <effectiveTime>
         <low value="20200319091100+0100"/>
@@ -665,7 +665,7 @@
               <!-- Acte [CCAM] -->
               <code code="JQGA003"
                 displayName="Accouchement par césarienne au cours du travail, par laparotomie"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText><reference value="#CHIR-acte-CCAM"></reference></originalText>
               </code>
               <text><reference value="#CHIR-type-01"/></text>
@@ -884,7 +884,7 @@
               <id root="CFF8AFA9-1C53-4C48-819A-3B1A65CDF34D"/>
               <code code="EPLF002"
                 displayName="Pose d'un cathéter veineux central, par voie transcutanée"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText><reference value="acces-veineux-central"/></originalText>
               </code>
               <text><reference value="#acces-veineux-central"/></text>
@@ -1083,7 +1083,7 @@
               <id root="8E882DD6-BC20-449E-A6E9-2CF681D7ECFE"/>
               <!-- Code et libellé de l'acte -->
               <code code="GDFA014" displayName="Laryngectomie supraglottique"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               <text><reference value="#ventilation-dispositif-supraglottique"/></text>
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
@@ -1135,7 +1135,7 @@
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="3B1B8223-49E2-455E-90A1-BD1B457297E6"/>
               <!-- Code et libellé de l'acte -->
-              <code code="GELD004" displayName="Intubation trachéale" codeSystem="1.2.250.1.213.2.5"
+              <code code="GELD004" displayName="Intubation trachéale" codeSystem="1.2.250.1.215.300.1"
                 codeSystemName="CCAM">
                 <originalText><reference value="#intubation"/></originalText>
               </code>
@@ -1285,7 +1285,7 @@
               <id root="8E882DD6-BC20-449E-A6E9-2CF681D5EDFF"/>
               <!-- Code et libellé de l'acte -->
               <code code="GEPA004" displayName="Trachéotomie, par cervicotomie"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               <text><reference value="#Tracheotomie-par-cervicotomie"/></text>
               <statusCode code="completed"/>
               <!-- Date de l'acte -->
@@ -1472,7 +1472,7 @@
               <!-- Type de transfusion : voir guide SFAR -->
               <code code="FELF006"
                 displayName="Transfusion de produit sanguin labile non érythrocytaire"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               <text><reference value="#transfusion"/></text>
               <statusCode code="completed"/>
               <effectiveTime value="20200319"/>

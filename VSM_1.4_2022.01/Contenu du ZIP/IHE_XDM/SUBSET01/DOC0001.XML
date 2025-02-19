@@ -136,8 +136,8 @@
 				<birthplace>
 					<place>
 						<addr>
-							<county>63220</county>
-							<city>MAZOIRES</city>
+							<county>51215</county>
+							<city>DOMPREMY</city>
 						</addr>
 					</place>
 				</birthplace>
@@ -799,7 +799,7 @@
 											<id root="A6BC7FD2-EC3F-4E01-B567-854B087D1D9B"/>
 											<!-- Code de l'acte -->
 											<code code="DDAF004"  displayName="Dilatation intraluminale de 2 vaisseaux coronaires avec pose d'endoprothèse, par voie artérielle transcutanée"
-												codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+												codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
 											<text><reference value="#acte-001"/></text>
 											<statusCode code="completed"/>
 											<!-- Date de l'acte -->

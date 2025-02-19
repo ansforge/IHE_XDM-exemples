@@ -111,8 +111,8 @@
                 <birthplace>
                     <place>
                         <addr>
-                            <county>63220</county>
-                            <city>MAZOIRES</city>
+                            <county>51215</county>
+                            <city>DOMPREMY</city>
                         </addr>
                     </place>
                 </birthplace>
@@ -188,7 +188,7 @@
     <custodian typeCode="CST">
         <assignedCustodian classCode="ASSIGNED">
             <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-                <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+                <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
                 <name>HU ROBERT DEBRE APHP</name>
                 <telecom value="tel:0142515151" use="WP"/>
                 <addr>
@@ -423,7 +423,7 @@
             </effectiveTime>
             <location>
                 <healthCareFacility>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
                     <code code="SA01" displayName="Etablissement public de santé"
                         codeSystem="1.2.250.1.71.4.2.4"/>
                     <location>

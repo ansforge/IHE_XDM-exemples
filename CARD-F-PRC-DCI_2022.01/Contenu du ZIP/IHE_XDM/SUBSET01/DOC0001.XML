@@ -118,8 +118,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -509,7 +509,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="08A225F0-928B-471F-A493-B5083D1E9365" />
-              <code code="DELF013" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="DELF013" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText mediaType="text/xml"><reference value="#def0001" /></originalText>
               </code>
               <text><reference value="#def0001" /></text>
@@ -554,7 +554,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="FC663C65-F1B2-4737-BB89-0D1B553C6BC8" />
-              <code code="DELF014" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="DELF014" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText mediaType="text/xml"><reference value="#def0001" /></originalText>
               </code>
               <text><reference value="#def0001" /></text>

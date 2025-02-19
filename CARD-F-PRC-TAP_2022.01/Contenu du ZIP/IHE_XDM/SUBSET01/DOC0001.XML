@@ -116,8 +116,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -1046,7 +1046,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="B540A0B5-2BBA-4481-85B4-FCCECCDC9AAD" />
-              <code code="DDAF004" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="DDAF004" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText mediaType="text/xml"><reference value="#tap0009" /></originalText>
               </code>
               <text><reference value="#tap0009" /></text>
@@ -1119,7 +1119,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="437E605B-2CEF-447C-AE30-AE173EE5C354" />
-              <code code="EBAF010" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="EBAF010" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText mediaType="text/xml"><reference value="#tap0010" /></originalText>
               </code>
               <text><reference value="#tap0010" /></text>
@@ -1179,7 +1179,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="08FF15FE-7348-4242-98F5-7B03EBB07724" />
-              <code code="EAAF004" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="EAAF004" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText mediaType="text/xml"><reference value="#tap0011" /></originalText>
               </code>
               <text><reference value="#tap0011" /></text>
@@ -1241,7 +1241,7 @@
               <!-- Conformité CI-SIS -->
               <templateId root="1.2.250.1.213.1.1.3.62"/>
               <id root="AC34D75A-3DD2-4B2D-9316-C97329EE59D2" />
-              <code code="EDAF001" codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+              <code code="EDAF001" codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText mediaType="text/xml"><reference value="#tap0032" /></originalText>
               </code>
               <text><reference value="#tap0032" /></text>

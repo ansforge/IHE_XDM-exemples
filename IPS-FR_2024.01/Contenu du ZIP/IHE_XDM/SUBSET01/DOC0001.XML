@@ -110,8 +110,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -1548,7 +1548,7 @@
               <!-- Code de l'acte -->
               <code code="DDAF004"
                 displayName="Dilatation intraluminale de 2 vaisseaux coronaires avec pose d'endoprothèse, par voie artérielle transcutanée"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM">
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM">
                 <originalText><reference value="acte-01"/></originalText>
               </code>
               <text>
@@ -4107,7 +4107,7 @@
               <!-- Code de l'acte -->
               <code code="CBLA001"
                 displayName="Pose d'une prothèse auditive implantable dans l'oreille moyenne"
-                codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               <text><reference value="#plan-acte-01-code"/></text>
               <!-- valeur issue du JDV_HL7_ActStatus-CISIS (2.16.840.1.113883.1.11.15933) -->
               <statusCode code="active"/>
@@ -5059,7 +5059,7 @@
                   </assignedPerson>
                   <representedOrganization>
                     <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
                     <name>Centre de radiologie Ambroise</name>
                     <telecom value="tel:0146000000"/>
                     <addr>
@@ -5107,7 +5107,7 @@
                     </name>
                   </assignedPerson>
                   <representedOrganization>
-                    <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+                    <id root="1.2.250.1.71.4.2.2" extension="101235555"/>
                     <name>Centre de radiologie Ambroise</name>
                     <telecom value="tel:0146000000"/>
                     <addr>

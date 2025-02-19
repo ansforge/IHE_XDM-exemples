@@ -123,8 +123,8 @@
         <birthplace>
           <place>
             <addr>
-              <county>63220</county>
-              <city>MAZOIRES</city>
+              <county>51215</county>
+              <city>DOMPREMY</city>
             </addr>
           </place>
         </birthplace>
@@ -166,7 +166,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -215,7 +215,7 @@
   <custodian typeCode="CST">
     <assignedCustodian classCode="ASSIGNED">
       <representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -257,7 +257,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -299,7 +299,7 @@
         </name>
       </assignedPerson>
       <representedOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
         <name>Centre de radiologie Ambroise</name>
         <telecom value="tel:0146000000"/>
         <addr>
@@ -341,7 +341,7 @@
         </name>
       </associatedPerson>
       <scopingOrganization>
-        <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+        <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
         <name>Cabinet du DR MEDIONI</name>
         <telecom value="tel:0147150000" use="WP"/>
         <addr>
@@ -383,7 +383,7 @@
       <code code="24727-0"  displayName="CT Head W contrast IV"  codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="ACQH004"  displayName="Scanographie du crâne, de son contenu et du tronc, avec injection intraveineuse de produit de contraste" 
-          codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+          codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
         <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM">
           <qualifier>
@@ -426,7 +426,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
             <name>Centre de radiologie Ambroise</name>
             <telecom value="tel:0146000000"/>
             <addr>
@@ -452,7 +452,7 @@
       <code code="36235-0"  displayName="CT Neck W contrast IV" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="LCQH001"  displayName="Scanographie des tissus mous du cou, avec injection intraveineuse de produit de contraste" 
-          codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+          codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
         <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4"
           codeSystemName="DCM">
@@ -496,7 +496,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
             <name>Centre de radiologie Ambroise</name>
             <telecom value="tel:0146000000"/>
             <addr>
@@ -522,7 +522,7 @@
       <code code="24978-9"  displayName="CT Thoracic spine" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
         <!-- [0..1] code CCAM de l'acte documenté  --> 
         <translation code="ZBQH001"  displayName="Scanographie du thorax, avec injection intraveineuse de produit de contraste" 
-          codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+          codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
         <!-- [1..*] Modalité d'imagerie : Valeur issue du JDV_ModaliteAcquisition_CISIS (1.2.250.1.213.1.1.5.618) -->
         <translation code="CT" displayName="Tomodensitométrie" codeSystem="1.2.840.10008.2.16.4" codeSystemName="DCM">
           <qualifier>
@@ -565,7 +565,7 @@
           </assignedPerson>
           <representedOrganization>
             <!-- [1..1] Identifiant de l'établissement : obligatoire pour la DRIM Box -->
-            <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+            <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
             <name>Centre de radiologie Ambroise</name>
             <telecom value="tel:0146000000"/>
             <addr>
@@ -609,7 +609,7 @@
       </effectiveTime>
       <location>
         <healthCareFacility>
-          <id root="1.2.250.1.71.4.2.2" extension="1750803447"/>
+          <id root="1.2.250.1.71.4.2.2" extension="1920008059"/>
           <code code="SA08" displayName="Cabinet de groupe" codeSystem="1.2.250.1.71.4.2.4"/>
           <location>
             <name>Centre de radiologie Ambroise</name>
@@ -669,7 +669,7 @@
                 </name>
               </assignedPerson>
               <representedOrganization>
-                <id root="1.2.250.1.71.4.2.2" extension="1750803447" />
+                <id root="1.2.250.1.71.4.2.2" extension="1920008059" />
                 <name>Centre de radiologie Ambroise</name>
                 <telecom value="tel:0146000000" />
                 <addr>
@@ -933,7 +933,7 @@
                 <!-- Acte CCAM​ -->
                 <translation code="ACQH004" 
                   displayName="Scanographie du crâne, de son contenu et du tronc, avec injection intraveineuse de produit de contraste" 
-                  codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                  codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               </code>
               <text><reference value="#acte-01-description"/></text>
               <effectiveTime value="20210108111700"/>
@@ -1378,7 +1378,7 @@
                 <!-- Acte CCAM​ -->
                 <translation code="LCQH001" 
                   displayName="Scanographie des tissus mous du cou, avec injection intraveineuse de produit de contraste" 
-                  codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                  codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               </code>
               <text><reference value="#acte-02-description"/></text>
               <effectiveTime value="20210108111700"/>              
@@ -1852,7 +1852,7 @@
                 <!-- Acte CCAM​ -->
                 <translation code="ZBQH001" 
                   displayName="Scanographie du thorax, avec injection intraveineuse de produit de contraste" 
-                  codeSystem="1.2.250.1.213.2.5" codeSystemName="CCAM"/>
+                  codeSystem="1.2.250.1.215.300.1" codeSystemName="CCAM"/>
               </code>
               <text><reference value="#acte-03-description"/></text>
               <effectiveTime value="20210108111700"/>              
